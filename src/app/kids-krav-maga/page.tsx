@@ -30,11 +30,11 @@ export default function KidsKravMagaPage() {
                 The classes focus on health, exercise, self-confidence and of
                 course, a whole range of anti-bullying and self-defence
                 activities taught in a fun and engaging format. In addition to
-                the above, there's also a focus on personal and group
+                the above, there&apos;s also a focus on personal and group
                 interactive social skills.
               </p>
               <p className="text-lg">
-                All kids' and teens' classes are taught through games and
+                All kids&apos; and teens&apos; classes are taught through games and
                 activities and are designed to be inclusive to all.
               </p>
             </div>
@@ -46,12 +46,12 @@ export default function KidsKravMagaPage() {
             <div className="mb-8 rounded-lg bg-green-50 p-8">
               <p className="mb-6 text-lg">
                 Our trial class will give your Kids and Teens an introduction to
-                what Krav Maga is all about. We don't break for the summer, so
+                what Krav Maga is all about. We don&apos;t break for the summer, so
                 feel free to book in for a trial, no need to message ahead! But
-                if you'd like to, you can reach Barbara on 07512027411.
+                if you&apos;d like to, you can reach Barbara on 07512027411.
               </p>
               <p className="text-lg">
-                They'll meet our friendly instructors, and get to meet some new
+                They&apos;ll meet our friendly instructors, and get to meet some new
                 friends all while learning some valuable life skills and having
                 fun!
               </p>
@@ -82,7 +82,7 @@ export default function KidsKravMagaPage() {
               <div className="mt-6 rounded-lg bg-blue-50 p-4">
                 <p className="text-gray-700">
                   Ages 14-16 are welcome to join the adult class with an
-                  accompanying adult or can stay in the teens' class. Ages 17+
+                  accompanying adult or can stay in the teens&apos; class. Ages 17+
                   are welcome to the adult class without an accompanying adult.
                   Adult membership prices will apply.
                 </p>
@@ -101,7 +101,7 @@ export default function KidsKravMagaPage() {
                 </p>
                 <div className="rounded-lg bg-yellow-50 p-4">
                   <p className="font-semibold text-gray-700">
-                    We don't stop the classes for school holidays, only for two
+                    We don&apos;t stop the classes for school holidays, only for two
                     weeks over Christmas and New Years!
                   </p>
                 </div>
@@ -189,7 +189,7 @@ export default function KidsKravMagaPage() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-gray-600">
-                Both my daughters attend and I've watched their confidence
+                Both my daughters attend and I&apos;ve watched their confidence
                 blossom around other kids AND adults since day one.
               </p>
             </div>

@@ -136,7 +136,7 @@ export default function PrivateCorporateTuitionPage() {
               </div>
               <div className="mt-6 rounded-lg bg-pink-50 p-4">
                 <p className="text-gray-700">
-                  If you're a female looking to book a 1-2-1 session with
+                  If you&apos;re a female looking to book a 1-2-1 session with
                   Robert, you can request Barbara to be there at the class as
                   well for no extra charge.
                 </p>
@@ -169,7 +169,7 @@ export default function PrivateCorporateTuitionPage() {
                 </h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>
-                    • We can take any amount of people, there's no upper limit
+                    • We can take any amount of people, there&apos;s no upper limit
                   </li>
                   <li>
                     • We can have multiple instructors who can come along to
@@ -177,7 +177,7 @@ export default function PrivateCorporateTuitionPage() {
                   </li>
                   <li>
                     • We have partnerships with a number of venues in Glasgow if
-                    you don't have a suitable area
+                    you don&apos;t have a suitable area
                   </li>
                   <li>
                     • The rental fee for our venues would be on top of the event
@@ -191,12 +191,12 @@ export default function PrivateCorporateTuitionPage() {
                   </li>
                   <li>• We will bring all the equipment necessary</li>
                   <li>
-                    • You don't need to wear gym clothes to do Krav Maga but
+                    • You don&apos;t need to wear gym clothes to do Krav Maga but
                     trainers are encouraged for ankle stability
                   </li>
                   <li>
                     • The classes are not physically demanding, therefore
-                    they're suitable for mid-day as well
+                    they&apos;re suitable for mid-day as well
                   </li>
                 </ul>
               </div>
@@ -309,7 +309,7 @@ export default function PrivateCorporateTuitionPage() {
 
             <div className="rounded-lg bg-white p-8 shadow-lg">
               <p className="mb-6 text-lg">
-                Have you ever wondered how you'd cope with being attacked in a
+                Have you ever wondered how you&apos;d cope with being attacked in a
                 car either as a driver or as a passenger from the side, from the
                 rear, from inside or outside the car? SKMS executive car rage
                 seminar will provide all the necessary tools, including the car,

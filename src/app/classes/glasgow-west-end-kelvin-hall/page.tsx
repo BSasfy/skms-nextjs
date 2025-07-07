@@ -93,7 +93,7 @@ export default function GlasgowWestEndKelvinHallPage() {
             <p className="leading-relaxed text-gray-700">
               The courses focus on teaching awareness, prevention, building
               self-confidence, recognising and utilising your natural instincts
-              to stay safe and grow stronger mentally and physically. We'll
+              to stay safe and grow stronger mentally and physically. We&apos;ll
               learn the basics of Krav Maga, the worlds most effective
               self-defense system. All techniques are modular and suitable for
               all ages and abilities.

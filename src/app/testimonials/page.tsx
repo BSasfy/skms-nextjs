@@ -46,7 +46,7 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "Training KM was the best decision I have ever made for my
+                &quot;Training KM was the best decision I have ever made for my
                 health as well as my safety. Without a doubt I am safer, feel
                 braver but best of all it helps control my Fibromyalgia so now I
                 have less pain. It helped restore my strength after major
@@ -54,14 +54,15 @@ export default function TestimonialsPage() {
                 I encourage everyone to treat Krav Maga as an important life
                 skill that will benefit you for the rest of your life. Seize any
                 opportunity with open arms to train with the excellent,
-                welcoming and encouraging teachers at SKMS. Don't be timid! The
-                company is great too- very sociable and warm hearted, you'll
-                have so many laughs as they teach that you'll be amazed what you
-                can do and how fast you learn skills. every single time you go,
-                that could save your life. No one is competitive, age, height
-                etc. doesn't matter because everyone helps each other, there's
-                nothing I haven't liked about going to SKMS. I feel very lucky
-                they crossed my path. 🙂"
+                welcoming and encouraging teachers at SKMS. Don&apos;t be timid!
+                The company is great too- very sociable and warm hearted,
+                you&apos;ll have so many laughs as they teach that you&apos;ll
+                be amazed what you can do and how fast you learn skills. every
+                single time you go, that could save your life. No one is
+                competitive, age, height etc. doesn&apos;t matter because
+                everyone helps each other, there&apos;s nothing I haven&apos;t
+                liked about going to SKMS. I feel very lucky they crossed my
+                path. 🙂&quot;
               </blockquote>
             </div>
 
@@ -78,8 +79,8 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "I can thoroughly recommend the SKMS classes and tutors. I had
-                some base in other martial arts but had none in Krav Maga.
+                &quot;I can thoroughly recommend the SKMS classes and tutors. I
+                had some base in other martial arts but had none in Krav Maga.
                 Finding a martial art which I could practice and work around a
                 injured knee was my aim. I was also keen to build up my fitness
                 after becoming a father. Before attending I contacted Robert who
@@ -90,7 +91,7 @@ export default function TestimonialsPage() {
                 atmosphere. I am now about to attend a regular class. My
                 experience is that the community and communication aspects are
                 of a very high standard. The email and Whatsapp group are all
-                very informative and welcoming."
+                very informative and welcoming.&quot;
               </blockquote>
             </div>
 
@@ -105,15 +106,16 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "My son and I started Krav Maga with SKMS just over two years
-                ago. He wanted to do something more varied and practical than
-                traditional martial arts and I went to keep him company. Since
-                then we have both really enjoyed it, made friends, got fitter
-                and traded bruises in a friendly atmosphere. The instructors are
-                great and will encourage you to achieve your best and are always
-                ready to help with advice. I'm heading to Israel next year to
-                train with the Global Instructors Team which is a reflection of
-                how much I have got from Robert and his top team."
+                &quot;My son and I started Krav Maga with SKMS just over two
+                years ago. He wanted to do something more varied and practical
+                than traditional martial arts and I went to keep him company.
+                Since then we have both really enjoyed it, made friends, got
+                fitter and traded bruises in a friendly atmosphere. The
+                instructors are great and will encourage you to achieve your
+                best and are always ready to help with advice. I&apos;m heading
+                to Israel next year to train with the Global Instructors Team
+                which is a reflection of how much I have got from Robert and his
+                top team.&quot;
               </blockquote>
             </div>
 
@@ -130,17 +132,17 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "I took the women's self defense class whilst living in Scotland
-                for a year, as I wanted to learn to protect myself better. I
-                liked it so much that I started the regular course until I left
-                Scotland. Now, two years later, I've started taking up classes
-                in The Netherlands again. It may sound cliché, but there's a
-                "krav" vibe that is connected to the sports itself, and you can
-                find it in any country. Krav Maga has made me fitter, stronger
-                and more self-confident. I feel like they should make it a
-                mandatory subject in all schools. But until that has become a
-                reality, taking classes with Robert at SKMS is a great
-                alternative"
+                &quot;I took the women&apos;s self defense class whilst living
+                in Scotland for a year, as I wanted to learn to protect myself
+                better. I liked it so much that I started the regular course
+                until I left Scotland. Now, two years later, I&apos;ve started
+                taking up classes in The Netherlands again. It may sound cliché,
+                but there&apos;s a &quot;krav vibe that is connected to the
+                sports itself, and you can find it in any country. Krav Maga has
+                made me fitter, stronger and more self-confident. I feel like
+                they should make it a mandatory subject in all schools. But
+                until that has become a reality, taking classes with Robert at
+                SKMS is a great alternative&quot;
               </blockquote>
             </div>
 
@@ -157,10 +159,10 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "Learning Krav Maga has allowed me to feel confident in my
-                ability to defend myself and others, whether it's on a night out
-                or travelling alone in a new country. Best decision I've made
-                for my self confidence!"
+                &quot;Learning Krav Maga has allowed me to feel confident in my
+                ability to defend myself and others, whether it&apos;s on a
+                night out or travelling alone in a new country. Best decision
+                I&apos;ve made for my self confidence!&quot;
               </blockquote>
             </div>
 
@@ -177,12 +179,12 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "Private lessons helped me develop my Krav skills very quickly.
-                The one on one lessons are fantastic they were at a time that
-                suited me. We trained outside in potentially real life
+                &quot;Private lessons helped me develop my Krav skills very
+                quickly. The one on one lessons are fantastic they were at a
+                time that suited me. We trained outside in potentially real life
                 situation. It was easy for Robert to pin point and fix mistakes
                 that might not get picked up in a class full of students. All in
-                all, I would highly recommend SKMS private lessons."
+                all, I would highly recommend SKMS private lessons.&quot;
               </blockquote>
             </div>
 
@@ -199,11 +201,11 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "Learning Krav Maga with SKMS is a true confidence builder.
+                &quot;Learning Krav Maga with SKMS is a true confidence builder.
                 Robert and the other trainers are dedicated to making training
                 fun and epic while maintaining a safe environment for all.
-                Couldn't ask for more team spirit, more dedication, or a better
-                Krav Maga experience."
+                Couldn&apos;t ask for more team spirit, more dedication, or a
+                better Krav Maga experience.&quot;
               </blockquote>
             </div>
 
@@ -220,12 +222,12 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "I began Krav Maga in 2016, with the pro-active intention to
-                learn some basic self-defence as I started university. The
+                &quot;I began Krav Maga in 2016, with the pro-active intention
+                to learn some basic self-defence as I started university. The
                 classes are fun, energetic and informative. They have greatly
                 helped to build and improve my self-confidence. Overall I highly
                 recommend learning Krav Maga through SKMS, it was definitely one
-                of the best decisions I made."
+                of the best decisions I made.&quot;
               </blockquote>
             </div>
 
@@ -242,10 +244,10 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "Krav classes have had a positive effect on both my confidence
-                and my fitness levels. A very welcoming community and keen
-                instructors. Would recommend for anyone looking for pragmatic
-                self defence experience."
+                &quot;Krav classes have had a positive effect on both my
+                confidence and my fitness levels. A very welcoming community and
+                keen instructors. Would recommend for anyone looking for
+                pragmatic self defence experience.&quot;
               </blockquote>
             </div>
 
@@ -260,8 +262,9 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <blockquote className="text-gray-700 italic">
-                "Both my daughters attend and I've watched their confidence
-                blossom around other kids AND adults since day one."
+                &quot;Both my daughters attend and I&apos;ve watched their
+                confidence blossom around other kids AND adults since day
+                one.&quot;
               </blockquote>
             </div>
           </div>

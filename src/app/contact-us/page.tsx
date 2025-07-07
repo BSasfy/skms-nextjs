@@ -33,9 +33,10 @@ export default function ContactUsPage() {
               Get in Touch
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-gray-700">
-              We'd love to hear from you. If you're interested in coming along
-              to one of our classes or would like to find out more about Krav
-              Maga, please fill out the form and we'll be in touch soon.
+              We&apos;d love to hear from you. If you&apos;re interested in
+              coming along to one of our classes or would like to find out more
+              about Krav Maga, please fill out the form and we&apos;ll be in
+              touch soon.
             </p>
           </div>
 
@@ -250,7 +251,7 @@ export default function ContactUsPage() {
               <p>• We typically respond to all inquiries within 24 hours</p>
               <p>• For urgent matters, please call us directly</p>
               <p>
-                • We're happy to answer any questions about our classes,
+                • We&apos;re happy to answer any questions about our classes,
                 pricing, or Krav Maga in general
               </p>
               <p>

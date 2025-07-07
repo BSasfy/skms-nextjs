@@ -55,7 +55,8 @@ export default function RobertBennettPage() {
                   <strong>Current Level:</strong> IKMF Expert Level 1
                 </p>
                 <p>
-                  <strong>Role:</strong> Oversees all instructors' development
+                  <strong>Role:</strong> Oversees all instructors&apos;
+                  development
                 </p>
                 <p>
                   <strong>Status:</strong> Highest-ranking instructor in
@@ -146,7 +147,7 @@ export default function RobertBennettPage() {
             </ul>
             <div className="space-y-2">
               <p className="text-gray-700">
-                To see our rates, visit{" "}
+                To see our rates, visit
                 <Link
                   href="/prices"
                   className="font-semibold text-blue-600 hover:text-blue-800"
@@ -165,9 +166,9 @@ export default function RobertBennettPage() {
           {/* Personal Quote */}
           <div className="mb-8 border-l-4 border-blue-500 bg-blue-50 p-6">
             <blockquote className="text-lg text-gray-700 italic">
-              "As a father, I quickly realised how effective and practical Krav
-              Maga was in relation to other systems when dealing with self
-              defence, especially for kids."
+              &quot;As a father, I quickly realised how effective and practical
+              Krav Maga was in relation to other systems when dealing with self
+              defence, especially for kids.&quot;
             </blockquote>
             <p className="mt-2 text-right text-gray-600">- Robert Bennett</p>
           </div>
@@ -239,7 +240,7 @@ export default function RobertBennettPage() {
           {/* Instructor Achievements */}
           <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
             <h3 className="mb-4 text-xl font-bold text-gray-900">
-              Robert's Achievements
+              Robert&apos;s Achievements
             </h3>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="rounded-lg border border-gray-200 p-4 text-center">

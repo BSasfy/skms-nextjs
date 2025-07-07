@@ -40,8 +40,8 @@ export default function TrialPage() {
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-gray-700">
               Our trial class will give you an introduction to what Krav Maga is
-              all about. You'll meet our friendly instructors, get to meet some
-              new friends all while getting a great workout and having fun!
+              all about. You&apos;ll meet our friendly instructors, get to meet
+              some new friends all while getting a great workout and having fun!
             </p>
           </div>
 
@@ -99,7 +99,7 @@ export default function TrialPage() {
                 </li>
               </ul>
               <p className="mt-4 text-gray-700">
-                Would you prefer a beginners' block? Have a look{" "}
+                Would you prefer a beginners&apos; block? Have a look
                 <Link
                   href="/beginners"
                   className="font-semibold text-blue-600 hover:text-blue-800"
@@ -145,7 +145,7 @@ export default function TrialPage() {
                 Women Only and Mixed Adult Beginners Courses:
               </h4>
               <p className="text-gray-700">
-                Check out our beginners' courses{" "}
+                Check out our beginners&apos; courses
                 <Link
                   href="/beginners"
                   className="font-semibold text-blue-600 hover:text-blue-800"
@@ -211,22 +211,23 @@ export default function TrialPage() {
                   </div>
                 </div>
                 <blockquote className="text-sm text-gray-700 italic">
-                  "Training KM was the best decision I have ever made for my
-                  health as well as my safety. Without a doubt I am safer, feel
-                  braver but best of all it helps control my Fibromyalgia so now
-                  I have less pain. It helped restore my strength after major
-                  surgery too, stopping me feeling so vulnerable after being
-                  sick. I encourage everyone to treat Krav Maga as an important
-                  life skill that will benefit you for the rest of your life.
-                  Seize any opportunity with open arms to train with the
-                  excellent, welcoming and encouraging teachers at SKMS. Don't
-                  be timid! The company is great too- very sociable and warm
-                  hearted, you'll have so many laughs as they teach that you'll
-                  be amazed what you can do and how fast you learn skills. every
-                  single time you go, that could save your life. No one is
-                  competitive, age, height etc. doesn't matter because everyone
-                  helps each other, there's nothing I haven't liked about going
-                  to SKMS. I feel very lucky they crossed my path. 🙂"
+                  &quot;Training KM was the best decision I have ever made for
+                  my health as well as my safety. Without a doubt I am safer,
+                  feel braver but best of all it helps control my Fibromyalgia
+                  so now I have less pain. It helped restore my strength after
+                  major surgery too, stopping me feeling so vulnerable after
+                  being sick. I encourage everyone to treat Krav Maga as an
+                  important life skill that will benefit you for the rest of
+                  your life. Seize any opportunity with open arms to train with
+                  the excellent, welcoming and encouraging teachers at SKMS.
+                  Don&apos;t be timid! The company is great too- very sociable
+                  and warm hearted, you&apos;ll have so many laughs as they
+                  teach that you&apos;ll be amazed what you can do and how fast
+                  you learn skills. every single time you go, that could save
+                  your life. No one is competitive, age, height etc.
+                  doesn&apos;t matter because everyone helps each other,
+                  there&apos;s nothing I haven&apos;t liked about going to SKMS.
+                  I feel very lucky they crossed my path. 🙂&quot;
                 </blockquote>
               </div>
 
@@ -241,16 +242,16 @@ export default function TrialPage() {
                   </div>
                 </div>
                 <blockquote className="text-sm text-gray-700 italic">
-                  "My son and I started Krav Maga with SKMS just over two years
-                  ago. He wanted to do something more varied and practical than
-                  traditional martial arts and I went to keep him company. Since
-                  then we have both really enjoyed it, made friends, got fitter
-                  and traded bruises in a friendly atmosphere. The instructors
-                  are great and will encourage you to achieve your best and are
-                  always ready to help with advice. I'm heading to Israel next
-                  year to train with the Global Instructors Team which is a
-                  reflection of how much I have got from Robert and his top
-                  team."
+                  &quot;My son and I started Krav Maga with SKMS just over two
+                  years ago. He wanted to do something more varied and practical
+                  than traditional martial arts and I went to keep him company.
+                  Since then we have both really enjoyed it, made friends, got
+                  fitter and traded bruises in a friendly atmosphere. The
+                  instructors are great and will encourage you to achieve your
+                  best and are always ready to help with advice. I&apos;m
+                  heading to Israel next year to train with the Global
+                  Instructors Team which is a reflection of how much I have got
+                  from Robert and his top team.&quot;
                 </blockquote>
               </div>
 
@@ -267,17 +268,17 @@ export default function TrialPage() {
                   </div>
                 </div>
                 <blockquote className="text-sm text-gray-700 italic">
-                  "I took the women's self defense class whilst living in
-                  Scotland for a year, as I wanted to learn to protect myself
+                  &quot;I took the women&apos;s self defense class whilst living
+                  in Scotland for a year, as I wanted to learn to protect myself
                   better. I liked it so much that I started the regular course
-                  until I left Scotland. Now, two years later, I've started
+                  until I left Scotland. Now, two years later, I&apos;ve started
                   taking up classes in The Netherlands again. It may sound
-                  cliché, but there's a "krav" vibe that is connected to the
-                  sports itself, and you can find it in any country. Krav Maga
-                  has made me fitter, stronger and more self-confident. I feel
-                  like they should make it a mandatory subject in all schools.
-                  But until that has become a reality, taking classes with
-                  Robert at SKMS is a great alternative"
+                  cliché, but there&apos;s a &quot;krav vibe that is connected
+                  to the sports itself, and you can find it in any country. Krav
+                  Maga has made me fitter, stronger and more self-confident. I
+                  feel like they should make it a mandatory subject in all
+                  schools. But until that has become a reality, taking classes
+                  with Robert at SKMS is a great alternative&quot;
                 </blockquote>
               </div>
 
@@ -294,10 +295,10 @@ export default function TrialPage() {
                   </div>
                 </div>
                 <blockquote className="text-sm text-gray-700 italic">
-                  "Learning Krav Maga has allowed me to feel confident in my
-                  ability to defend myself and others, whether it's on a night
-                  out or travelling alone in a new country. Best decision I've
-                  made for my self confidence!"
+                  &quot;Learning Krav Maga has allowed me to feel confident in
+                  my ability to defend myself and others, whether it&apos;s on a
+                  night out or travelling alone in a new country. Best decision
+                  I&apos;ve made for my self confidence!&quot;
                 </blockquote>
               </div>
 
@@ -314,13 +315,13 @@ export default function TrialPage() {
                   </div>
                 </div>
                 <blockquote className="text-sm text-gray-700 italic">
-                  "Private lessons helped me develop my Krav skills very
+                  &quot;Private lessons helped me develop my Krav skills very
                   quickly. The one on one lessons are fantastic they were at a
                   time that suited me. We trained outside in potentially real
                   life situation. It was easy for Robert to pin point and fix
                   mistakes that might not get picked up in a class full of
                   students. All in all, I would highly recommend SKMS private
-                  lessons."
+                  lessons.&quot;
                 </blockquote>
               </div>
             </div>

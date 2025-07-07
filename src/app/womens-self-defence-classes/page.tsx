@@ -7,10 +7,10 @@ export default function WomensSelfDefenceClassesPage() {
       <section className="bg-gradient-to-b from-purple-900 to-purple-800 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            Women's Self Defence Classes and Seminars
+            Women&apos;s Self Defence Classes and Seminars
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Women's Only Self Defence Glasgow
+            Women&apos;s Only Self Defence Glasgow
           </p>
           <Link
             href="/trial"
@@ -35,7 +35,7 @@ export default function WomensSelfDefenceClassesPage() {
               </h3>
               <p className="mb-6 text-lg">
                 Come along and learn the basics of Krav Maga – with only women
-                participants. It's a safe space and a time just for you.
+                participants. It&apos;s a safe space and a time just for you.
               </p>
 
               <div className="mb-6 rounded-lg bg-purple-50 p-6">
@@ -66,7 +66,7 @@ export default function WomensSelfDefenceClassesPage() {
                   £40 for the 4 weeks – all 4 classes!
                 </p>
                 <p className="text-lg text-purple-800">
-                  Are you a student? Then it's only £30!
+                  Are you a student? Then it&apos;s only £30!
                 </p>
                 <p className="text-gray-600">
                   The classes are aimed at 18+ but teens 14 and above are
@@ -114,7 +114,7 @@ export default function WomensSelfDefenceClassesPage() {
                 and empower you in everyday life!!
               </p>
               <p className="text-lg text-gray-700">
-                You'll meet our friendly instructors, get to meet some new
+                You&apos;ll meet our friendly instructors, get to meet some new
                 friends all while getting a great workout and having fun!
               </p>
               <p className="mt-4 text-gray-600">
@@ -191,7 +191,7 @@ export default function WomensSelfDefenceClassesPage() {
             </p>
 
             <p className="mb-8 text-lg">
-              Stay Away Women's Self-Defence courses and seminars are suitable
+              Stay Away Women&apos;s Self-Defence courses and seminars are suitable
               for women of all abilities; no previous martial arts or
               self-defence training is necessary.
             </p>
@@ -206,7 +206,7 @@ export default function WomensSelfDefenceClassesPage() {
             <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
               <p className="mb-6 text-lg">
                 Women have to confront two main threats: sexual assault and
-                sexual harassment. It's a common assumption that resisting and
+                sexual harassment. It&apos;s a common assumption that resisting and
                 counter attacking the attacker may aggravate him and cause him
                 to become more violent.
               </p>
@@ -225,7 +225,7 @@ export default function WomensSelfDefenceClassesPage() {
                 <li className="flex items-start">
                   <span className="mr-3 font-bold text-purple-600">•</span>
                   <span>
-                    Overcome the difference in attacker's size and strength
+                    Overcome the difference in attacker&apos;s size and strength
                   </span>
                 </li>
                 <li className="flex items-start">
@@ -280,10 +280,10 @@ export default function WomensSelfDefenceClassesPage() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-gray-600">
-                I took the women's self defense class whilst living in Scotland
+                I took the women&apos;s self defense class whilst living in Scotland
                 for a year, as I wanted to learn to protect myself better. I
                 liked it so much that I started the regular course until I left
-                Scotland. Now, two years later, I've started taking up classes
+                Scotland. Now, two years later, I&apos;ve started taking up classes
                 in The Netherlands again.
               </p>
             </div>
@@ -300,8 +300,8 @@ export default function WomensSelfDefenceClassesPage() {
               </div>
               <p className="text-sm leading-relaxed text-gray-600">
                 Learning Krav Maga has allowed me to feel confident in my
-                ability to defend myself and others, whether it's on a night out
-                or travelling alone in a new country. Best decision I've made
+                ability to defend myself and others, whether it&apos;s on a night out
+                or travelling alone in a new country. Best decision I&apos;ve made
                 for my self confidence!
               </p>
             </div>
@@ -357,7 +357,7 @@ export default function WomensSelfDefenceClassesPage() {
               </div>
               <p className="text-sm leading-relaxed text-gray-600">
                 Absolutely love SKMS classes! Everyone is super friendly and the
-                trainers are patient and understanding. I've definitely learned
+                trainers are patient and understanding. I&apos;ve definitely learned
                 some self defence techniques that I hopefully will never need to
                 use, but I feel prepared!
               </p>

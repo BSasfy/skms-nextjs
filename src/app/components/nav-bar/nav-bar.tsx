@@ -28,7 +28,7 @@ export default function NavBar() {
               </li>
               <li>
                 <Link href="/womens-self-defence-classes/">
-                  Women's Self Defence Glasgow
+                  Women&apos;s Self Defence Glasgow
                 </Link>
               </li>
               <li>

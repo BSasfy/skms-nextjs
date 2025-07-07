@@ -11,7 +11,7 @@ export default function JoinPage() {
             Sign Up to a Monthly Membership
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Join Glasgow's only IKMF affiliated Krav Maga club.
+            Join Glasgow&apos;s only IKMF affiliated Krav Maga club.
           </p>
           <Link
             href="/trial"
@@ -149,7 +149,7 @@ export default function JoinPage() {
             {/* Additional Information */}
             <div className="mt-8 rounded-lg bg-blue-50 p-6">
               <h4 className="mb-4 text-lg font-bold text-blue-900">
-                What's Included:
+                What&apos;s Included:
               </h4>
               <ul className="space-y-2 text-gray-700">
                 <li>• Access to all regular classes at your chosen location</li>
@@ -205,7 +205,7 @@ export default function JoinPage() {
             Ready to Start Your Krav Maga Journey?
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Join Glasgow's premier Krav Maga club and transform your life with
+            Join Glasgow&apos;s premier Krav Maga club and transform your life with
             confidence, fitness, and self-defense skills.
           </p>
 

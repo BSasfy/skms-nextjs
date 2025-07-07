@@ -59,13 +59,13 @@ export default function BarbaraSasfyPage() {
                 Lead Instructor in Civilian Krav Maga
               </h3>
               <p className="mb-4 text-gray-700">
-                Barbara has completed Civilian, Kids and Women's instruction
+                Barbara has completed Civilian, Kids and Women&apos;s instruction
                 courses. She is teaching:
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li>• Mixed Adult classes</li>
                 <li>• Kids classes</li>
-                <li>• Women's Beginners courses</li>
+                <li>• Women&apos;s Beginners courses</li>
               </ul>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function BarbaraSasfyPage() {
               Community Work and Seminars
             </h3>
             <p className="mb-4 text-gray-700">
-              Barbara has carried out Women's self-defence Seminars and classes
+              Barbara has carried out Women&apos;s self-defence Seminars and classes
               for:
             </p>
             <div className="grid gap-4 md:grid-cols-2">
@@ -184,7 +184,7 @@ export default function BarbaraSasfyPage() {
           {/* Instructor Specializations */}
           <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
             <h3 className="mb-4 text-xl font-bold text-gray-900">
-              Barbara's Specializations
+              Barbara&apos;s Specializations
             </h3>
             <div className="grid gap-6 md:grid-cols-3">
               <div className="rounded-lg border border-gray-200 p-4 text-center">
@@ -204,7 +204,7 @@ export default function BarbaraSasfyPage() {
               <div className="rounded-lg border border-gray-200 p-4 text-center">
                 <h4 className="mb-2 font-bold text-gray-900">Women Only</h4>
                 <p className="text-sm text-gray-600">
-                  Specialized women's self-defense courses
+                  Specialized women&apos;s self-defense courses
                 </p>
               </div>
             </div>

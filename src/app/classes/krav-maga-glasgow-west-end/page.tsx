@@ -27,7 +27,7 @@ export default function KravMagaGlasgowWestEndPage() {
               Krav Maga Glasgow West End
             </h1>
             <p className="mb-8 text-xl">
-              Professional self-defense training in Glasgow's West End
+              Professional self-defense training in Glasgow&apos;s West End
             </p>
             <Link
               href="/trial"

@@ -85,8 +85,8 @@ export default function StudentsPage() {
             <p className="leading-relaxed text-gray-700">
               These induction courses are designed to give you the basic skills
               required to gain a fundamental understanding of the basics of
-              self-defence. It'll give you a great workout, teach you several
-              techniques and you'll meet like-minded others. Places are limited
+              self-defence. It&apos;ll give you a great workout, teach you several
+              techniques and you&apos;ll meet like-minded others. Places are limited
               – Book now!
             </p>
           </div>
@@ -97,7 +97,7 @@ export default function StudentsPage() {
               Glasgow Club Kelvinhall
             </h3>
             <p className="mb-4 text-gray-700">
-              Message us if you can't find us or ask reception for Self Defence!
+              Message us if you can&apos;t find us or ask reception for Self Defence!
             </p>
             <p className="text-gray-700">
               Got a question? You can reach us on WhatsApp (07512027411) or via
@@ -148,7 +148,7 @@ export default function StudentsPage() {
           {/* Course Benefits */}
           <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
             <h3 className="mb-4 text-xl font-bold text-gray-900">
-              What You'll Learn
+              What You&apos;ll Learn
             </h3>
             <div className="grid gap-6 md:grid-cols-2">
               <div>
