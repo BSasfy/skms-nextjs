@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+    <main className="flex min-h-screen flex-col items-center justify-center text-black">
       <div>Banner with WO, Adults, Kids, clickable</div>
       <Link href="/trial">Book a Trial Class</Link>
       <div>same component as in /classes with all the 4 classes</div>

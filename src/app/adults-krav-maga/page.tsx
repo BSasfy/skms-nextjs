@@ -159,11 +159,11 @@ export default function AdultsKravMagaPage() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-gray-600">
-                I took the women&apos;s self defense class whilst living in Scotland
-                for a year, as I wanted to learn to protect myself better. I
-                liked it so much that I started the regular course until I left
-                Scotland. Now, two years later, I&apos;ve started taking up classes
-                in The Netherlands again.
+                I took the women&apos;s self defense class whilst living in
+                Scotland for a year, as I wanted to learn to protect myself
+                better. I liked it so much that I started the regular course
+                until I left Scotland. Now, two years later, I&apos;ve started
+                taking up classes in The Netherlands again.
               </p>
             </div>
 
@@ -179,9 +179,9 @@ export default function AdultsKravMagaPage() {
               </div>
               <p className="text-sm leading-relaxed text-gray-600">
                 Learning Krav Maga has allowed me to feel confident in my
-                ability to defend myself and others, whether it&apos;s on a night out
-                or travelling alone in a new country. Best decision I&apos;ve made
-                for my self confidence!
+                ability to defend myself and others, whether it&apos;s on a
+                night out or travelling alone in a new country. Best decision
+                I&apos;ve made for my self confidence!
               </p>
             </div>
 
@@ -213,8 +213,8 @@ export default function AdultsKravMagaPage() {
             Sign up for a trial class below!
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-lg">
-            We&apos;ll be in touch once we have updates on restarting the classes
-            post COVID.
+            We&apos;ll be in touch once we have updates on restarting the
+            classes post COVID.
           </p>
 
           <div className="space-y-4">
