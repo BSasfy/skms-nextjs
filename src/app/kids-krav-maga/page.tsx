@@ -1,25 +1,17 @@
 import Link from "next/link";
+import HeaderBanner from "../components/header/header";
 
 export default function KidsKravMagaPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-green-900 to-green-800 py-16 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            Kids and Teens Krav Maga with SKMS!
-          </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Weekly classes all year round for £35/month!
-          </p>
-          <Link
-            href="/trial"
-            className="rounded-lg bg-orange-600 px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-orange-700"
-          >
-            Book a Trial Class
-          </Link>
-        </div>
-      </section>
+      <HeaderBanner
+        title="Kids and Teens Krav Maga with SKMS!"
+        subtitle="Weekly classes all year round for £35/month!"
+        description="Weekly classes all year round for £35/month!"
+        link="/trial"
+        linkText="Book a Trial Class"
+      />
 
       {/* Main Content Section */}
       <section className="bg-gray-50 py-16">
@@ -34,8 +26,8 @@ export default function KidsKravMagaPage() {
                 interactive social skills.
               </p>
               <p className="text-lg">
-                All kids&apos; and teens&apos; classes are taught through games and
-                activities and are designed to be inclusive to all.
+                All kids&apos; and teens&apos; classes are taught through games
+                and activities and are designed to be inclusive to all.
               </p>
             </div>
 
@@ -46,14 +38,14 @@ export default function KidsKravMagaPage() {
             <div className="mb-8 rounded-lg bg-green-50 p-8">
               <p className="mb-6 text-lg">
                 Our trial class will give your Kids and Teens an introduction to
-                what Krav Maga is all about. We don&apos;t break for the summer, so
-                feel free to book in for a trial, no need to message ahead! But
-                if you&apos;d like to, you can reach Barbara on 07512027411.
+                what Krav Maga is all about. We don&apos;t break for the summer,
+                so feel free to book in for a trial, no need to message ahead!
+                But if you&apos;d like to, you can reach Barbara on 07512027411.
               </p>
               <p className="text-lg">
-                They&apos;ll meet our friendly instructors, and get to meet some new
-                friends all while learning some valuable life skills and having
-                fun!
+                They&apos;ll meet our friendly instructors, and get to meet some
+                new friends all while learning some valuable life skills and
+                having fun!
               </p>
             </div>
 
@@ -82,9 +74,9 @@ export default function KidsKravMagaPage() {
               <div className="mt-6 rounded-lg bg-blue-50 p-4">
                 <p className="text-gray-700">
                   Ages 14-16 are welcome to join the adult class with an
-                  accompanying adult or can stay in the teens&apos; class. Ages 17+
-                  are welcome to the adult class without an accompanying adult.
-                  Adult membership prices will apply.
+                  accompanying adult or can stay in the teens&apos; class. Ages
+                  17+ are welcome to the adult class without an accompanying
+                  adult. Adult membership prices will apply.
                 </p>
               </div>
             </div>
@@ -101,8 +93,8 @@ export default function KidsKravMagaPage() {
                 </p>
                 <div className="rounded-lg bg-yellow-50 p-4">
                   <p className="font-semibold text-gray-700">
-                    We don&apos;t stop the classes for school holidays, only for two
-                    weeks over Christmas and New Years!
+                    We don&apos;t stop the classes for school holidays, only for
+                    two weeks over Christmas and New Years!
                   </p>
                 </div>
               </div>

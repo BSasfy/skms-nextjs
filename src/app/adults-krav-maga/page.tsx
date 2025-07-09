@@ -1,26 +1,17 @@
 import Link from "next/link";
+import HeaderBanner from "../components/header/header";
 
 export default function AdultsKravMagaPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-900 to-blue-800 py-16 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            Start Training with SKMS!
-          </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Book a course or a trial class or fill in our form, and we will
-            contact you as soon as we can!
-          </p>
-          <Link
-            href="/trial"
-            className="rounded-lg bg-red-600 px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-red-700"
-          >
-            Book a Trial Class!
-          </Link>
-        </div>
-      </section>
+      <HeaderBanner
+        title="Start Training with SKMS!"
+        subtitle="Book a course or a trial class or fill in our form, and we will contact you as soon as we can!"
+        description="Book a course or a trial class or fill in our form, and we will contact you as soon as we can!"
+        link="/trial"
+        linkText="Book a Trial Class!"
+      />
 
       {/* Class Timetable Section */}
       <section className="bg-gray-50 py-16">

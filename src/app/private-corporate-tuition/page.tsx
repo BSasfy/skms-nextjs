@@ -1,25 +1,17 @@
 import Link from "next/link";
+import HeaderBanner from "../components/header/header";
 
 export default function PrivateCorporateTuitionPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-indigo-900 to-indigo-800 py-16 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            Start Training with SKMS!
-          </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Fill in our form, and we will contact you as soon as we can!
-          </p>
-          <Link
-            href="/trial"
-            className="rounded-lg bg-orange-600 px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-orange-700"
-          >
-            Book me in now!
-          </Link>
-        </div>
-      </section>
+      <HeaderBanner
+        title="Start Training with SKMS!"
+        subtitle="Fill in our form, and we will contact you as soon as we can!"
+        description="Fill in our form, and we will contact you as soon as we can!"
+        link="/trial"
+        linkText="Book me in now!"
+      />
 
       {/* Private Tuition Section */}
       <section className="bg-gray-50 py-16">
@@ -169,7 +161,8 @@ export default function PrivateCorporateTuitionPage() {
                 </h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>
-                    • We can take any amount of people, there&apos;s no upper limit
+                    • We can take any amount of people, there&apos;s no upper
+                    limit
                   </li>
                   <li>
                     • We can have multiple instructors who can come along to
@@ -191,8 +184,8 @@ export default function PrivateCorporateTuitionPage() {
                   </li>
                   <li>• We will bring all the equipment necessary</li>
                   <li>
-                    • You don&apos;t need to wear gym clothes to do Krav Maga but
-                    trainers are encouraged for ankle stability
+                    • You don&apos;t need to wear gym clothes to do Krav Maga
+                    but trainers are encouraged for ankle stability
                   </li>
                   <li>
                     • The classes are not physically demanding, therefore
@@ -309,12 +302,12 @@ export default function PrivateCorporateTuitionPage() {
 
             <div className="rounded-lg bg-white p-8 shadow-lg">
               <p className="mb-6 text-lg">
-                Have you ever wondered how you&apos;d cope with being attacked in a
-                car either as a driver or as a passenger from the side, from the
-                rear, from inside or outside the car? SKMS executive car rage
-                seminar will provide all the necessary tools, including the car,
-                to bring the skills to the forefront of your reactions should
-                the need ever arise.
+                Have you ever wondered how you&apos;d cope with being attacked
+                in a car either as a driver or as a passenger from the side,
+                from the rear, from inside or outside the car? SKMS executive
+                car rage seminar will provide all the necessary tools, including
+                the car, to bring the skills to the forefront of your reactions
+                should the need ever arise.
               </p>
 
               <div className="mb-6 rounded-lg bg-red-50 p-6">

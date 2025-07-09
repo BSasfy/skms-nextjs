@@ -1,26 +1,17 @@
 import Link from "next/link";
+import HeaderBanner from "../components/header/header";
 
 export default function JoinPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-900 to-blue-800 py-16 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-6 text-4xl font-bold md:text-6xl">Join SKMS</h1>
-          <h2 className="mb-6 text-2xl font-bold md:text-3xl">
-            Sign Up to a Monthly Membership
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Join Glasgow&apos;s only IKMF affiliated Krav Maga club.
-          </p>
-          <Link
-            href="/trial"
-            className="rounded-lg bg-orange-600 px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-orange-700"
-          >
-            Join a Trial Class
-          </Link>
-        </div>
-      </section>
+      <HeaderBanner
+        title="Join SKMS"
+        subtitle="Sign Up to a Monthly Membership"
+        description="Join Glasgow's only IKMF affiliated Krav Maga club."
+        link="/trial"
+        linkText="Join a Trial Class"
+      />
 
       {/* Main Content Section */}
       <section className="bg-gray-50 py-16">
@@ -205,8 +196,8 @@ export default function JoinPage() {
             Ready to Start Your Krav Maga Journey?
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Join Glasgow&apos;s premier Krav Maga club and transform your life with
-            confidence, fitness, and self-defense skills.
+            Join Glasgow&apos;s premier Krav Maga club and transform your life
+            with confidence, fitness, and self-defense skills.
           </p>
 
           <div className="space-y-4">

@@ -1,25 +1,17 @@
 import Link from "next/link";
+import HeaderBanner from "../components/header/header";
 
 export default function WomensSelfDefenceClassesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-purple-900 to-purple-800 py-16 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            Women&apos;s Self Defence Classes and Seminars
-          </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Women&apos;s Only Self Defence Glasgow
-          </p>
-          <Link
-            href="/trial"
-            className="rounded-lg bg-pink-600 px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-pink-700"
-          >
-            Book now
-          </Link>
-        </div>
-      </section>
+      <HeaderBanner
+        title="Women's Self Defence Classes and Seminars"
+        subtitle="Women's Only Self Defence Glasgow"
+        description="Women's Only Self Defence Glasgow"
+        link="/trial"
+        linkText="Book now"
+      />
 
       {/* Course Details Section */}
       <section className="bg-gray-50 py-16">
@@ -191,8 +183,8 @@ export default function WomensSelfDefenceClassesPage() {
             </p>
 
             <p className="mb-8 text-lg">
-              Stay Away Women&apos;s Self-Defence courses and seminars are suitable
-              for women of all abilities; no previous martial arts or
+              Stay Away Women&apos;s Self-Defence courses and seminars are
+              suitable for women of all abilities; no previous martial arts or
               self-defence training is necessary.
             </p>
 
@@ -206,9 +198,9 @@ export default function WomensSelfDefenceClassesPage() {
             <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
               <p className="mb-6 text-lg">
                 Women have to confront two main threats: sexual assault and
-                sexual harassment. It&apos;s a common assumption that resisting and
-                counter attacking the attacker may aggravate him and cause him
-                to become more violent.
+                sexual harassment. It&apos;s a common assumption that resisting
+                and counter attacking the attacker may aggravate him and cause
+                him to become more violent.
               </p>
               <p className="text-lg">
                 This assumption is wrong: studies have shown that immediate and
@@ -280,11 +272,11 @@ export default function WomensSelfDefenceClassesPage() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-gray-600">
-                I took the women&apos;s self defense class whilst living in Scotland
-                for a year, as I wanted to learn to protect myself better. I
-                liked it so much that I started the regular course until I left
-                Scotland. Now, two years later, I&apos;ve started taking up classes
-                in The Netherlands again.
+                I took the women&apos;s self defense class whilst living in
+                Scotland for a year, as I wanted to learn to protect myself
+                better. I liked it so much that I started the regular course
+                until I left Scotland. Now, two years later, I&apos;ve started
+                taking up classes in The Netherlands again.
               </p>
             </div>
 
@@ -300,9 +292,9 @@ export default function WomensSelfDefenceClassesPage() {
               </div>
               <p className="text-sm leading-relaxed text-gray-600">
                 Learning Krav Maga has allowed me to feel confident in my
-                ability to defend myself and others, whether it&apos;s on a night out
-                or travelling alone in a new country. Best decision I&apos;ve made
-                for my self confidence!
+                ability to defend myself and others, whether it&apos;s on a
+                night out or travelling alone in a new country. Best decision
+                I&apos;ve made for my self confidence!
               </p>
             </div>
 
@@ -357,9 +349,9 @@ export default function WomensSelfDefenceClassesPage() {
               </div>
               <p className="text-sm leading-relaxed text-gray-600">
                 Absolutely love SKMS classes! Everyone is super friendly and the
-                trainers are patient and understanding. I&apos;ve definitely learned
-                some self defence techniques that I hopefully will never need to
-                use, but I feel prepared!
+                trainers are patient and understanding. I&apos;ve definitely
+                learned some self defence techniques that I hopefully will never
+                need to use, but I feel prepared!
               </p>
             </div>
           </div>
