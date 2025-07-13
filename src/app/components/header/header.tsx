@@ -24,7 +24,7 @@ export default function HeaderBanner({
       className="relative h-50 content-center bg-cover bg-center bg-no-repeat text-gray-50 lg:h-80"
       style={{
         backgroundColor: "rgba(75, 75, 75, 0.7)",
-        backgroundImage: `linear-gradient(rgba(6,46,95,0.9), rgba(6,46,95,0.9)), url(${img})`,
+        backgroundImage: `linear-gradient(rgba(6,46,95,0.7), rgba(6,46,95,0.7)), url(${img})`,
       }}
     >
       <div className="container mx-auto px-4 text-center">

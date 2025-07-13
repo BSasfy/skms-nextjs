@@ -103,7 +103,7 @@ export default function WomensSelfDefenceClassesPage() {
             </p>
 
             <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
-              <p className="text-6xl font-bold">"</p>
+              <p className="text-6xl font-bold">&quot;</p>
               <p className="mb-6 text-lg">
                 Women have to confront two main threats: sexual assault and
                 sexual harassment. It&apos;s a common assumption that resisting
@@ -115,7 +115,7 @@ export default function WomensSelfDefenceClassesPage() {
                 aggressive responses including fighting back are effective (Dr
                 Judith Herman, author Trauma and Recovery).
               </p>
-              <p className="justify-self-end text-6xl font-bold">"</p>
+              <p className="justify-self-end text-6xl font-bold">&quot;</p>
             </div>
 
             <div className="rounded-lg bg-blue-50 p-8">
