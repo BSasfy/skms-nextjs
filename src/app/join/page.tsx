@@ -6,6 +6,7 @@ export default function JoinPage() {
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <HeaderBanner
+        img="/banners/punching-bag-banner.jpg"
         title="Join SKMS"
         subtitle="Sign Up to a Monthly Membership"
         description="Join Glasgow's only IKMF affiliated Krav Maga club."

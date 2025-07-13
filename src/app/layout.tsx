@@ -1,8 +1,9 @@
-import "@/styles/globals.css";
+import "@/app/globals.css";
 
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import NavBar from "./components/nav-bar/nav-bar";
+import Footer from "./components/footer/footer";
 
 export const metadata: Metadata = {
   title: "SKMS Krav Maga",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className="bg-white">
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
