@@ -28,8 +28,8 @@ export default function HeaderBanner({
       }}
     >
       <div className="container mx-auto px-4 text-center">
-        <h1 className="mb-6 text-4xl font-bold md:text-6xl">{title}</h1>
-        <h2 className="mb-6 text-2xl font-bold max-lg:hidden md:text-3xl">
+        <h1 className="mb-6 text-4xl font-bold lg:text-6xl">{title}</h1>
+        <h2 className="mb-6 text-2xl font-bold max-lg:hidden lg:text-3xl">
           {subtitle}
         </h2>
         <p className="mx-auto mb-8 max-w-2xl text-xl max-lg:hidden">
