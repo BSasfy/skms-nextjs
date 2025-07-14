@@ -60,39 +60,49 @@ export default function Footer() {
       {/* Mobile Footer */}
       <div
         id="mobile-footer"
-        className="mx-4 flex justify-between justify-items-center md:hidden"
+        className="mx-4 flex justify-between text-[#FFFBF2] md:hidden"
       >
-        <div className="flex items-center">
-          <div className="pt-1 pr-2">
-            <span className="material-symbols-outlined">location_on</span>
-          </div>
-          <Link href="https://g.co/kgs/pkVZCCb">Firhill</Link>
-          <div className="pt-1 pr-2">
-            <span className="material-symbols-outlined">location_on</span>
-          </div>
-          <Link href="https://maps.app.goo.gl/nsXgcsAQ6jiSkzaVA">
-            Kelvinhall
-          </Link>
-        </div>
-        <div className="flex items-center gap-4">
-          <div className="relative mt-[3px] mr-1 h-4 w-4">
+        <div className="flex items-center gap-5">
+          {/* <div className="relative">
+            <Link href="tel:+4407512027411">
+              <div className="">
+                <span className="material-symbols-outlined">call</span>
+              </div>
+            </Link>
+          </div> */}
+
+          <div className="relative h-4 w-4">
             <Link href="https://www.facebook.com/scottishkravmaga/">
               <Image src="/facebook_logo.png" alt="Facebook Logo" fill />
             </Link>
           </div>
 
-          <div className="relative mt-[3px] mr-1 h-4 w-4">
+          <div className="relative h-4 w-4">
             <Link href="https://www.instagram.com/skmskravmaga/">
               <Image src="/instagram_logo.png" alt="Instagram Logo" fill />
             </Link>
           </div>
         </div>
 
-        <div className="flex items-center">
-          <div className="pt-1 pr-2">
-            <span className="material-symbols-outlined">call</span>
-          </div>
-          <Link href="tel:+4407512027411">Phone Us</Link>
+        <div className="mx-auto flex gap-4 pt-1 pl-[10%]"></div>
+
+        <div className="right-0 flex items-center pt-1">
+          <Link href="https://g.co/kgs/pkVZCCb" className="flex pr-2">
+            <div className="pr-2">
+              <span className="material-symbols-outlined">location_on</span>
+            </div>
+            Firhill
+          </Link>
+
+          <Link
+            href="https://maps.app.goo.gl/nsXgcsAQ6jiSkzaVA"
+            className="flex"
+          >
+            <div className="pr-2">
+              <span className="material-symbols-outlined">location_on</span>
+            </div>
+            Kelvinhall
+          </Link>
         </div>
       </div>
     </footer>

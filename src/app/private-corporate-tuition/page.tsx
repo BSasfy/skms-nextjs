@@ -9,7 +9,7 @@ export default function PrivateCorporateTuitionPage() {
         title="Start Training with SKMS!"
         subtitle="Fill in our form, and we will contact you as soon as we can!"
         description="Fill in our form, and we will contact you as soon as we can!"
-        link="/trial"
+        link="https://www.sumupbookings.com/scottish-krav-maga-systems-ltd"
         linkText="Book me in now!"
       />
 
@@ -200,8 +200,8 @@ export default function PrivateCorporateTuitionPage() {
                   info@scotkravmaga.co.uk!
                 </p>
                 <Link
-                  href="/trial"
-                  className="rounded-lg bg-indigo-600 px-6 py-3 font-bold text-white transition-colors duration-200 hover:bg-indigo-700"
+                  href="tel:07849114110"
+                  className="rounded-lg bg-blue-600 px-6 py-3 font-bold text-white transition-colors duration-200 hover:bg-blue-700"
                 >
                   Contact Us
                 </Link>

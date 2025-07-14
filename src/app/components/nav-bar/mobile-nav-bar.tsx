@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function MobileNavBar() {
   return (
-    <div className="fixed top-[85px] left-0 flex h-[90vh] w-full items-center bg-[#181818]">
+    <div className="fixed top-[80px] left-0 flex h-[90vh] w-full items-center bg-[#181818]">
       <ul className="flex w-full flex-col text-center font-medium">
         <li className="content-center">
           <Link
