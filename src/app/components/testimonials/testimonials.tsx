@@ -2,7 +2,7 @@ export default function Testimonials() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-3xl font-bold">
+        <h2 className="mb-12 text-center text-4xl font-extrabold uppercase">
           What Our Students Say
         </h2>
 

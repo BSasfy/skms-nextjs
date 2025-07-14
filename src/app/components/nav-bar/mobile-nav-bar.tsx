@@ -39,7 +39,7 @@ export default function MobileNavBar() {
         </li>
         <li className="content-center">
           <Link
-            href="/classes"
+            href="/adults-krav-maga"
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Mixed Adult

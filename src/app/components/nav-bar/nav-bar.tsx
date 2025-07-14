@@ -98,7 +98,7 @@ export default function NavBar() {
               <div className="-ml-15 bg-gray-950 p-4">
                 <li className="hover:text-blue-800">
                   <Link
-                    href="/timetable/"
+                    href="/classes/krav-maga-glasgow-west-end/"
                     onClick={() => setIsLocationsOpen(false)}
                   >
                     Mixed Adult - Firhill
@@ -106,7 +106,7 @@ export default function NavBar() {
                 </li>
                 <li className="hover:text-blue-800">
                   <Link
-                    href="/classes/krav-maga-glasgow-west-end/"
+                    href="/classes/glasgow-west-end-kelvin-hall/"
                     onClick={() => setIsLocationsOpen(false)}
                   >
                     Mixed Adult - Kelvinhall
@@ -114,7 +114,7 @@ export default function NavBar() {
                 </li>
                 <li className="hover:text-blue-800">
                   <Link
-                    href="/classes/glasgow-west-end-kelvin-hall/"
+                    href="/classes/womens-self-defence-classes/"
                     onClick={() => setIsLocationsOpen(false)}
                   >
                     Women Only - Kelvinhall
@@ -165,7 +165,7 @@ export default function NavBar() {
               </div>
             </ul>
           </div>
-          <div
+          {/* <div
             onMouseOver={() => setIsAboutUsOpen(true)}
             onMouseLeave={() => setIsAboutUsOpen(false)}
           >
@@ -213,7 +213,7 @@ export default function NavBar() {
                 </li>
               </div>
             </ul>
-          </div>
+          </div> */}
           <div
             onMouseOver={() => setIsTrialOpen(true)}
             onMouseLeave={() => setIsTrialOpen(false)}

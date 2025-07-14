@@ -1,52 +1,67 @@
+import HeaderBanner from "@/app/components/header/header";
 import Link from "next/link";
 
 export default function GlasgowWestEndKelvinHallPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 py-16 text-white">
-        <div className="container mx-auto px-4">
-          <nav className="mb-8">
-            <ul className="flex flex-wrap gap-4 text-sm">
-              <li>
-                <Link href="/" className="hover:text-blue-200">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/classes" className="hover:text-blue-200">
-                  Classes
-                </Link>
-              </li>
-              <li className="text-blue-200">Krav Maga at Kelvin Hall</li>
-            </ul>
-          </nav>
-
-          <div className="text-center">
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              Krav Maga at Kelvin Hall
-            </h1>
-            <p className="mb-8 text-xl">
-              Professional self-defense training at Glasgow Club Kelvin Hall
-            </p>
-            <Link
-              href="/trial"
-              className="rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
-            >
-              Book a Beginners Course
-            </Link>
-          </div>
-        </div>
-      </div>
+      <HeaderBanner
+        img="/banners/punching-bag-banner.jpg"
+        title="Join SKMS"
+        subtitle="Sign Up to a Monthly Membership"
+        description="Join Glasgow's only IKMF affiliated Krav Maga club."
+        link="https://scottish-krav-maga-systems-ltd.sumupstore.com/category/trial-class"
+        linkText="Join a Trial Class"
+      />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-4xl">
           {/* Location Info */}
+
+          {/* Regular Classes */}
+          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
+            <h3 className="mb-4 text-xl font-bold text-gray-900">
+              Regular class – running all year round after the beginners
+              courses:
+            </h3>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="font-medium">Class times:</span>
+                <span className="text-gray-600">
+                  Thursdays, 6-7 pm – all year round!
+                </span>
+              </div>
+              <p className="text-gray-700">
+                Beginners are always welcome. These classes are the most
+                suitable for complete beginners! All ages and fitness levels are
+                welcome!
+              </p>
+              <p className="text-sm text-gray-600">
+                Ages 15-17 are welcome but should be accompanied by an adult.
+              </p>
+            </div>
+            <div className="mt-6 text-center">
+              <Link
+                href="https://scottish-krav-maga-systems-ltd.sumupstore.com/category/trial-class"
+                className="rounded-lg bg-[#005EB8] px-6 py-2 font-semibold text-white transition-colors hover:bg-[#0059b8cf]"
+              >
+                Book a trial class!
+              </Link>
+            </div>
+          </div>
           <div className="mb-8 border-l-4 border-blue-500 bg-blue-50 p-6">
             <h2 className="mb-4 text-2xl font-bold text-blue-900">
               Glasgow Club Kelvin Hall
             </h2>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238.645197636717!2d-4.294278200000001!3d55.868821999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48884571b57f74d9%3A0x2e6de1c3ea49aee2!2sGlasgow%20Club%20Kelvin%20Hall!5e0!3m2!1sen!2suk!4v1752526188680!5m2!1sen!2suk"
+              width="600"
+              height="450"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <p className="mb-4 text-lg text-gray-700">
               <strong>
                 Mixed Adult class for all levels, trialists welcome all year
@@ -80,7 +95,7 @@ export default function GlasgowWestEndKelvinHallPage() {
 
             <div className="text-center">
               <Link
-                href="/trial"
+                href="https://scottish-krav-maga-systems-ltd.sumupstore.com/category/beginners-course"
                 className="rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
               >
                 BOOK NOW!
@@ -98,38 +113,6 @@ export default function GlasgowWestEndKelvinHallPage() {
               self-defense system. All techniques are modular and suitable for
               all ages and abilities.
             </p>
-          </div>
-
-          {/* Regular Classes */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
-              Regular class – running all year round after the beginners
-              courses:
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="font-medium">Class times:</span>
-                <span className="text-gray-600">
-                  Thursdays, 6-7 pm – all year round!
-                </span>
-              </div>
-              <p className="text-gray-700">
-                Beginners are always welcome. These classes are the most
-                suitable for complete beginners! All ages and fitness levels are
-                welcome!
-              </p>
-              <p className="text-sm text-gray-600">
-                Ages 15-17 are welcome but should be accompanied by an adult.
-              </p>
-            </div>
-            <div className="mt-6 text-center">
-              <Link
-                href="/trial"
-                className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
-              >
-                Book a trial class HERE!
-              </Link>
-            </div>
           </div>
 
           {/* Contact Information */}
@@ -156,7 +139,7 @@ export default function GlasgowWestEndKelvinHallPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
+          {/* <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
             <h3 className="mb-4 text-xl font-bold text-gray-900">
               Send us a message!
             </h3>
@@ -185,64 +168,20 @@ export default function GlasgowWestEndKelvinHallPage() {
                 Send Message
               </button>
             </form>
-          </div>
-
-          {/* Newsletter Subscription */}
-          <div className="mb-8 rounded-lg bg-blue-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-blue-900">
-              Want to keep up-to-date with SKMS?
-            </h3>
-            <p className="mb-4 text-blue-800">Subscribe our newsletter</p>
-            <form className="flex flex-col gap-4 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                type="submit"
-                className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+          </div> */}
 
           {/* Motto */}
-          <div className="py-8 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">
-              Stay Safe, Get Fit, Hit Hard!
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-700">
-              <strong>SKMS Krav Maga</strong> will bring out the best in you. We
-              make Krav Maga accessible, affordable and fun.
-            </p>
-          </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 py-8 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">
-            Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
-          </p>
-          <div className="mt-4 space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-blue-300">
-              Privacy Policy
-            </Link>
-            <Link href="/disclaimer" className="hover:text-blue-300">
-              Website Disclaimer
-            </Link>
-            <Link href="/accessibility" className="hover:text-blue-300">
-              Accessibility Policy
-            </Link>
-            <Link href="/sitemap" className="hover:text-blue-300">
-              Sitemap
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <div className="bg-[#023462] py-8 text-center text-white">
+        <h2 className="mb-4 text-3xl font-bold">
+          Stay Safe, Get Fit, Hit Hard!
+        </h2>
+        <p className="mx-auto max-w-2xl text-lg">
+          <strong>SKMS Krav Maga</strong> will bring out the best in you. We
+          make Krav Maga accessible, affordable and fun.
+        </p>
+      </div>
     </main>
   );
 }
