@@ -56,11 +56,11 @@ export default function GlasgowWestEndKelvinHallPage() {
             </h2>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238.645197636717!2d-4.294278200000001!3d55.868821999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48884571b57f74d9%3A0x2e6de1c3ea49aee2!2sGlasgow%20Club%20Kelvin%20Hall!5e0!3m2!1sen!2suk!4v1752526188680!5m2!1sen!2suk"
-              width="600"
+              width="100%"
               height="450"
-              allowfullscreen=""
+              allowFullScreen={true}
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
             <p className="mb-4 text-lg text-gray-700">
               <strong>

@@ -148,10 +148,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        <MembershipsGrid />
         {/* <div>Blue banner screenshot</div> */}
-        <Testimonials />
       </div>
+      <MembershipsGrid />
+      <Testimonials />
     </main>
   );
 }
