@@ -23,7 +23,7 @@ export default function NavBar() {
     <div className="min-h-20 content-center justify-between bg-gray-950/90 px-8 text-sm font-bold text-white">
       <div className="mx-auto flex max-w-[1400px] gap-10 lg:gap-20 xl:gap-42">
         <Link href={"/"}>
-          <Image src="/logo.png" alt="SKMS Logo" width={100} height={100} />
+          <Image src="/Logo.png" alt="SKMS Logo" width={100} height={100} />
         </Link>
 
         <div className="flex w-full items-center justify-between overflow-hidden max-[900px]:hidden">
