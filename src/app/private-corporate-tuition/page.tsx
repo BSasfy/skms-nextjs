@@ -109,7 +109,8 @@ export default function PrivateCorporateTuitionPage() {
               <div className="space-y-4">
                 <div className="border-l-4 border-indigo-600 pl-4">
                   <h4 className="text-lg font-bold text-indigo-900">
-                    Robert Bennett
+                    Robert Bennett -{" "}
+                    <Link href="tel:07849114110">07849114110</Link>
                   </h4>
                   <p className="text-gray-700">
                     Head instructor and club owner, 15 years of Krav Maga
@@ -118,7 +119,8 @@ export default function PrivateCorporateTuitionPage() {
                 </div>
                 <div className="border-l-4 border-indigo-600 pl-4">
                   <h4 className="text-lg font-bold text-indigo-900">
-                    Barbara Sasfy
+                    Barbara Sasfy -{" "}
+                    <Link href="tel:07512027411">07512027411</Link>
                   </h4>
                   <p className="text-gray-700">
                     Women Only, Kids and Adult Krav Maga instructor, 10 years of
@@ -146,9 +148,9 @@ export default function PrivateCorporateTuitionPage() {
 
             <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
               <p className="mb-6 text-lg">
-                Prices from £1000 for a 2.5-hour session and a 30 minute QnA for
+                Prices from £800 for a 2.5-hour session and a 30 minute QnA for
                 up to 20 people. Charities can access the session with a
-                discount, starting from £500. Please message us for details.
+                discount, starting from £400. Please message us for details.
               </p>
               <p className="mb-6 text-lg">
                 Session length, number of participants, content and price are
@@ -263,13 +265,11 @@ export default function PrivateCorporateTuitionPage() {
       {/* Call to Action Section */}
       <section className="bg-indigo-900 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold">
-            Sign up for a trial class below!
-          </h2>
+          <h2 className="mb-6 text-3xl font-bold">Inquire now!</h2>
 
           <div className="space-y-4">
             <Link
-              href="/trial"
+              href="mailto:info@scotkravmaga.co.uk"
               className="inline-block rounded-lg bg-orange-600 px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-orange-700"
             >
               Send us a message!
@@ -331,10 +331,10 @@ export default function PrivateCorporateTuitionPage() {
                   info@scotkravmaga.co.uk!
                 </p>
                 <Link
-                  href="/trial"
+                  href="mailto:info@scotkravmaga.co.uk"
                   className="rounded-lg bg-red-600 px-6 py-3 font-bold text-white transition-colors duration-200 hover:bg-red-700"
                 >
-                  Book Car Rage Seminar
+                  Inquire now!
                 </Link>
               </div>
             </div>

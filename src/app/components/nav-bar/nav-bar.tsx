@@ -114,7 +114,7 @@ export default function NavBar() {
                 </li>
                 <li className="hover:text-blue-800">
                   <Link
-                    href="/classes/womens-self-defence-classes/"
+                    href="/womens-self-defence-classes/"
                     onClick={() => setIsLocationsOpen(false)}
                   >
                     Women Only - Kelvinhall

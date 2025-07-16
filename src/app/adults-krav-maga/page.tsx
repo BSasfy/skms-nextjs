@@ -82,7 +82,7 @@ export default function AdultsKravMagaPage() {
             </Link>
           </div>
           <div className="mt-8 text-center">
-            <Link href="/trial" className="text-lg font-medium">
+            <Link href="/timetable" className="text-lg font-medium">
               Looking for a beginners&apos; course instead?{" "}
               <span className="text-blue-600 underline hover:text-blue-800">
                 Click HERE!
