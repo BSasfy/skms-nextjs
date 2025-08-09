@@ -51,23 +51,34 @@ export default function TrialPage() {
               Book a trial class
             </h3>
             <div className="grid gap-6 md:grid-cols-3">
-              <div className="rounded-lg border border-gray-200 p-6 text-center">
-                <h4 className="mb-2 text-lg font-bold">Adult Trial Class</h4>
-                <p className="text-3xl font-bold text-blue-600">£12.00</p>
-                <p className="text-sm text-gray-600">GBP</p>
-              </div>
-              <div className="rounded-lg border border-gray-200 p-6 text-center">
-                <h4 className="mb-2 text-lg font-bold">
-                  Kids and Junior Trial
-                </h4>
-                <p className="text-3xl font-bold text-blue-600">£8.00</p>
-                <p className="text-sm text-gray-600">GBP</p>
-              </div>
-              <div className="rounded-lg border border-gray-200 p-6 text-center">
-                <h4 className="mb-2 text-lg font-bold">Adult Concession</h4>
-                <p className="text-3xl font-bold text-blue-600">£10.00</p>
-                <p className="text-sm text-gray-600">GBP</p>
-              </div>
+              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class">
+                {" "}
+                <div className="rounded-lg border border-gray-200 p-6 text-center">
+                  <h4 className="mb-2 text-lg font-bold">Adult Trial Class</h4>
+                  <p className="text-3xl font-bold text-blue-600">£12.00</p>
+                  <p className="text-sm text-gray-600">GBP</p>
+                </div>
+              </Link>
+
+              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class">
+                {" "}
+                <div className="rounded-lg border border-gray-200 p-6 text-center">
+                  <h4 className="mb-2 text-lg font-bold">
+                    Kids and Junior Trial
+                  </h4>
+                  <p className="text-3xl font-bold text-blue-600">£8.00</p>
+                  <p className="text-sm text-gray-600">GBP</p>
+                </div>
+              </Link>
+
+              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class-student-discount">
+                {" "}
+                <div className="rounded-lg border border-gray-200 p-6 text-center">
+                  <h4 className="mb-2 text-lg font-bold">Adult Concession</h4>
+                  <p className="text-3xl font-bold text-blue-600">£10.00</p>
+                  <p className="text-sm text-gray-600">GBP</p>
+                </div>
+              </Link>
             </div>
           </div>
 
@@ -77,29 +88,41 @@ export default function TrialPage() {
               Class timetable:
             </h3>
             <p className="mb-6 text-gray-700">
-              <strong>Class locations:</strong> Firhill Sports Complex (kids,
-              teens and adults) and Kelvin Hall (adults).
+              <strong>Class locations:</strong>{" "}
+              <Link href="https://maps.app.goo.gl/fsp7TmioZ25shdn97">
+                Firhill Sports Complex
+              </Link>{" "}
+              (kids, teens and adults) and{" "}
+              <Link href="https://maps.app.goo.gl/dyyS8K2JAoVcZcwr5">
+                Kelvin Hall
+              </Link>{" "}
+              (adults).
             </p>
-
             {/* Adults Schedule */}
             <div className="mb-6 rounded-lg bg-white p-6">
               <h4 className="mb-4 text-xl font-bold text-gray-900">Adults:</h4>
               <ul className="space-y-2 text-gray-700">
                 <li>
-                  • <strong>Wednesdays:</strong> 7-8.30 pm – Firhill Sports
-                  Complex
+                  • <strong>Wednesdays:</strong> 7-8.30 pm –{" "}
+                  <Link href="https://maps.app.goo.gl/fsp7TmioZ25shdn97">
+                    Firhill Sports Complex
+                  </Link>
                 </li>
                 <li>
-                  • <strong>Thursdays:</strong> 6-7 pm – Glasgow Club Kelvin
-                  Hall
+                  • <strong>Thursdays:</strong> 6-7 pm –{" "}
+                  <Link href="https://maps.app.goo.gl/dyyS8K2JAoVcZcwr5">
+                    Glasgow Club Kelvin Hall
+                  </Link>
                 </li>
                 <li>
-                  • <strong>Saturdays:</strong> 10-11.30 am – Firhill Sports
-                  Complex
+                  • <strong>Saturdays:</strong> 10-11.30 am –{" "}
+                  <Link href="https://maps.app.goo.gl/fsp7TmioZ25shdn97">
+                    Firhill Sports Complex
+                  </Link>
                 </li>
               </ul>
               <p className="mt-4 text-gray-700">
-                Would you prefer a beginners&apos; block? Have a look
+                Would you prefer a beginners&apos; block? Have a look{" "}
                 <Link
                   href="/beginners"
                   className="font-semibold text-blue-600 hover:text-blue-800"
@@ -113,7 +136,6 @@ export default function TrialPage() {
                 adult.
               </p>
             </div>
-
             {/* Kids Schedule */}
             <div className="mb-6 rounded-lg bg-white p-6">
               <h4 className="mb-4 text-xl font-bold text-gray-900">
@@ -125,8 +147,7 @@ export default function TrialPage() {
                 </li>
               </ul>
             </div>
-
-            {/* Ages 8-12 Schedule */}
+            {/* Ages 8-12 Schedule
             <div className="mb-6 rounded-lg bg-white p-6">
               <h4 className="mb-4 text-xl font-bold text-gray-900">
                 Ages 8-12:
@@ -137,15 +158,14 @@ export default function TrialPage() {
                   Academy
                 </li>
               </ul>
-            </div>
-
+            </div> */}
             {/* Beginners Courses */}
             <div className="rounded-lg bg-white p-6">
               <h4 className="mb-4 text-xl font-bold text-gray-900">
                 Women Only and Mixed Adult Beginners Courses:
               </h4>
               <p className="text-gray-700">
-                Check out our beginners&apos; courses
+                Check out our beginners&apos; courses{" "}
                 <Link
                   href="/beginners"
                   className="font-semibold text-blue-600 hover:text-blue-800"
@@ -177,19 +197,26 @@ export default function TrialPage() {
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <p className="text-gray-700">
-                  <strong>Phone:</strong> 07512027411
+                  <strong>Phone:</strong>{" "}
+                  <Link href="tel:07512027411">07512027411</Link>
                 </p>
               </div>
               <div>
                 <p className="text-gray-700">
-                  <strong>Email:</strong> info@scotkravmaga.co.uk
+                  <strong>Email:</strong>{" "}
+                  <Link href="mailto:info@scotkravmaga.co.uk">
+                    info@scotkravmaga.co.uk
+                  </Link>
                 </p>
               </div>
             </div>
-            <p className="mt-4 text-gray-700">
-              You can also call us on – 07512027411, or email us at
-              info@scotkravmaga.co.uk
-            </p>
+            {/* <p className="mt-4 text-gray-700">
+              You can also call us on –{" "}
+              <Link href="tel:07512027411">07512027411</Link>, or email us at{" "}
+              <Link href="mailto:info@scotkravmaga.co.uk">
+                info@scotkravmaga.co.uk
+              </Link>
+            </p> */}
           </div>
 
           {/* Student Testimonials */}
