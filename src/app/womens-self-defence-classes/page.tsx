@@ -11,7 +11,7 @@ export default function WomensSelfDefenceClassesPage() {
         title="Women Only Self Defence"
         subtitle="Glasgow Club Kelvinhall"
         description="Low cardio, beginners focused, fun and effective!"
-        link="/trial"
+        link="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-self-defence-beginners-course-autumn-2025"
         linkText="Book now"
       />
 
@@ -62,7 +62,7 @@ export default function WomensSelfDefenceClassesPage() {
                 </p>
 
                 <Link
-                  href="/trial"
+                  href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-self-defence-beginners-course-autumn-2025"
                   className="inline-block rounded-lg bg-[#1C67B1] px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-[#1C67B1]/80"
                 >
                   Book now
