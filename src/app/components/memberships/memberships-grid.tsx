@@ -13,7 +13,7 @@ export default function MembershipsGrid() {
       <div className="mt-10 grid grid-cols-1 gap-4 justify-self-center px-4 max-sm:px-4 md:grid-cols-2 lg:grid-cols-3">
         <MembershipTile
           title="Kelvinhall Only"
-          schedule="Monday 6:30pm - 7:30pm"
+          schedule="Thursdays 6:00pm - 7:00pm"
           price="£40 per month"
           benefits={[
             "Unlimited Training at all SKMS classes",

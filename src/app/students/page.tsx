@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { womensSelfDefenceClasses } from "../womens-self-defence-classes/utils";
 
 export default function StudentsPage() {
   return (
@@ -40,12 +41,14 @@ export default function StudentsPage() {
           {/* Course Highlight Section */}
           <div className="mb-8 rounded-lg border border-red-200 bg-gradient-to-r from-red-50 to-orange-50 p-8">
             <h2 className="mb-4 text-3xl font-bold text-red-900">
-              4-Week Krav Maga Beginners course - starting on the 27th of March,
-              only £30!
+              4-Week Krav Maga Beginners course - starting on the{" "}
+              {womensSelfDefenceClasses.startDate}, only{" "}
+              {womensSelfDefenceClasses.studentsPrice}!
             </h2>
             <p className="mb-6 text-lg text-gray-700">
-              Self-defence beginners classes at the Kelvin Hall! Only £30! Open
-              to all age groups over 18 and to all fitness levels.
+              Self-defence beginners classes at the Kelvin Hall! Only{" "}
+              {womensSelfDefenceClasses.studentsPrice}! Open to all age groups
+              over 18 and to all fitness levels.
             </p>
 
             <div className="text-center">
@@ -53,7 +56,8 @@ export default function StudentsPage() {
                 href="/trial"
                 className="rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
               >
-                Self Defence beginners course for only £30! Book now!
+                Self Defence beginners course for only{" "}
+                {womensSelfDefenceClasses.studentsPrice}! Book now!
               </Link>
             </div>
           </div>
@@ -67,15 +71,21 @@ export default function StudentsPage() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="font-medium">Schedule:</span>
-                <span className="text-gray-600">Thursdays, 6-7 pm</span>
+                <span className="text-gray-600">
+                  {womensSelfDefenceClasses.dayAndTime}
+                </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-medium">Start Date:</span>
-                <span className="text-gray-600">27th of March, 2025</span>
+                <span className="text-gray-600">
+                  {womensSelfDefenceClasses.startDate}
+                </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-medium">Price:</span>
-                <span className="text-gray-600">£30</span>
+                <span className="text-gray-600">
+                  {womensSelfDefenceClasses.studentsPrice}
+                </span>
               </div>
             </div>
           </div>
@@ -85,23 +95,24 @@ export default function StudentsPage() {
             <p className="leading-relaxed text-gray-700">
               These induction courses are designed to give you the basic skills
               required to gain a fundamental understanding of the basics of
-              self-defence. It&apos;ll give you a great workout, teach you several
-              techniques and you&apos;ll meet like-minded others. Places are limited
-              – Book now!
+              self-defence. It&apos;ll give you a great workout, teach you
+              several techniques and you&apos;ll meet like-minded others. Places
+              are limited – Book now!
             </p>
           </div>
 
           {/* Location Information */}
           <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
             <h3 className="mb-4 text-xl font-bold text-gray-900">
-              Glasgow Club Kelvinhall
+              {womensSelfDefenceClasses.location}
             </h3>
             <p className="mb-4 text-gray-700">
-              Message us if you can&apos;t find us or ask reception for Self Defence!
+              Message us if you can&apos;t find us or ask reception for Self
+              Defence!
             </p>
             <p className="text-gray-700">
               Got a question? You can reach us on WhatsApp (07512027411) or via
-              info@steadfastselfdefence.co.uk!
+              info@scotkravmaga.co.uk!
             </p>
           </div>
 
@@ -113,12 +124,16 @@ export default function StudentsPage() {
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <p className="text-gray-700">
-                  <strong>WhatsApp:</strong> 07512027411
+                  <strong>WhatsApp:</strong>{" "}
+                  <Link href="tel:07512027411">07512027411</Link>
                 </p>
               </div>
               <div>
                 <p className="text-gray-700">
-                  <strong>Email:</strong> info@steadfastselfdefence.co.uk
+                  <strong>Email:</strong>{" "}
+                  <Link href="mailto:info@scotkravmaga.co.uk">
+                    info@scotkravmaga.co.uk
+                  </Link>
                 </p>
               </div>
             </div>
@@ -192,14 +207,15 @@ export default function StudentsPage() {
               Ready to Start Your Self-Defence Journey?
             </h2>
             <p className="mx-auto mb-6 max-w-2xl text-lg text-gray-700">
-              Join our 4-week beginners course and learn essential self-defence
-              skills in a supportive environment.
+              Join our {womensSelfDefenceClasses.duration} beginners course and
+              learn essential self-defence skills in a supportive environment.
             </p>
             <Link
               href="/trial"
               className="rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
             >
-              Book Your Course Now - Only £30!
+              Book Your Course Now - Only{" "}
+              {womensSelfDefenceClasses.studentsPrice}!
             </Link>
           </div>
 

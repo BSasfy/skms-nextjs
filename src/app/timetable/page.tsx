@@ -1,5 +1,10 @@
 import Link from "next/link";
 import Header from "../components/header/header";
+import {
+  mixedAdultSelfDefenceClasses,
+  womensSelfDefenceClasses,
+  womensSeminar,
+} from "../womens-self-defence-classes/utils";
 
 export default function TimetablePage() {
   return (
@@ -24,7 +29,7 @@ export default function TimetablePage() {
           <h2 className="mb-1 text-2xl font-bold">Beginners Courses:</h2>
           <ul className="list-disc pl-7">
             <li className="mb-2">
-              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/mixed-adult-krav-maga-beginners-autumn-2025">
+              <Link href={mixedAdultSelfDefenceClasses.ticketLink}>
                 Mixed Adult Course{" "}
                 <span className="ml-2 rounded-md bg-[#1C67B1] px-2 py-1 text-sm text-white">
                   Book Here
@@ -32,7 +37,7 @@ export default function TimetablePage() {
               </Link>
             </li>
             <li className="mb-2">
-              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-self-defence-beginners-course-autumn-2025">
+              <Link href={womensSelfDefenceClasses.ticketLink}>
                 Women Only Course{" "}
                 <span className="ml-2 rounded-md bg-[#1C67B1] px-2 py-1 text-sm text-white">
                   Book Here
@@ -43,8 +48,11 @@ export default function TimetablePage() {
 
           <div>
             Both courses will be running on Thursdays, 6-7pm at Glasgow Club
-            Kelvinhall for 4 weeks from the 25th of September. The 4 weeks are
-            only £40 and there’s even a student discount! Limited places,{" "}
+            Kelvinhall for {womensSelfDefenceClasses.duration} from the{" "}
+            {womensSelfDefenceClasses.startDate}. The{" "}
+            {womensSelfDefenceClasses.duration} are only{" "}
+            {womensSelfDefenceClasses.price} and there’s even a student
+            discount! Limited places,{" "}
             <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/category/beginners-course">
               book now!
             </Link>

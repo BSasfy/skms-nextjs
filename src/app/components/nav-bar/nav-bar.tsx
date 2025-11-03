@@ -109,7 +109,7 @@ export default function NavBar() {
                     href="/classes/glasgow-west-end-kelvin-hall/"
                     onClick={() => setIsLocationsOpen(false)}
                   >
-                    Mixed Adult - Kelvinhall
+                    Mixed Adult
                   </Link>
                 </li>
                 <li className="hover:text-blue-800">
@@ -117,7 +117,7 @@ export default function NavBar() {
                     href="/womens-self-defence-classes/"
                     onClick={() => setIsLocationsOpen(false)}
                   >
-                    Women Only - Kelvinhall
+                    Women Only
                   </Link>
                 </li>
                 <li className="hover:text-blue-800">
@@ -146,7 +146,7 @@ export default function NavBar() {
                     href="/womens-self-defence-classes/"
                     onClick={() => setIsEventsOpen(false)}
                   >
-                    Women Only Course - Kelvinhall
+                    Women Only Events
                   </Link>
                 </li>
                 <li className="hover:text-blue-800">
@@ -154,7 +154,7 @@ export default function NavBar() {
                     href="/timetable/"
                     onClick={() => setIsEventsOpen(false)}
                   >
-                    Beginners Course March 2025
+                    Beginners Course January 2026
                   </Link>
                 </li>
                 {/* <li className="hover:text-blue-800">

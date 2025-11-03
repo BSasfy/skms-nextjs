@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HeaderBanner from "../components/header/header";
 import WomenOnlyTestimonials from "../components/testimonials/women-only-testimonals";
+import { womensSelfDefenceClasses, womensSeminar } from "./utils";
 
 export default function WomensSelfDefenceClassesPage() {
   return (
@@ -9,86 +10,210 @@ export default function WomensSelfDefenceClassesPage() {
       <HeaderBanner
         img="/banners/helmet.jpg"
         title="Women Only Self Defence"
-        subtitle="Glasgow Club Kelvinhall"
+        subtitle="Kelvinhall and Firhill"
         description="Low cardio, beginners focused, fun and effective!"
-        link="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-self-defence-beginners-course-autumn-2025"
+        link="https://scottish-krav-maga-systems-ltd.sumupstore.com/category/beginners-course"
         linkText="Book now"
       />
 
-      {/* Course Details Section */}
-      <section className="border-b border-gray-500 bg-gray-50 pt-16 pb-8">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl">
-            <h1 className="mb-8 text-center text-3xl font-extrabold">
-              Women Only Beginners Course – Autumn 2025
-            </h1>
+      <div className="mx-4 mt-8 flex gap-4 self-center text-center md:hidden">
+        <Link
+          href="#nonphysical"
+          className="flex-1 border-5 border-[#12467b] p-2"
+        >
+          <div className="text-xl font-bold">Non-Physical Seminar</div>
+          <div>7-9pm, 25/11</div>
+          <div className="mt-2 flex items-center justify-center text-sm">
+            <span className="material-symbols-outlined">
+              keyboard_double_arrow_down
+            </span>
+            Jump To Section{" "}
+            <span className="material-symbols-outlined">
+              keyboard_double_arrow_down
+            </span>
+          </div>
+        </Link>
+        <Link
+          href="#beginnersCourse"
+          className="flex-1 border-5 border-[#12467b] p-2"
+        >
+          <div className="text-xl font-bold">Beginners Course</div>
+          <div>Starting {womensSelfDefenceClasses.startDateShort}</div>
 
-            <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
-              <h3 className="mb-4 text-2xl font-bold text-[#12467b]">
-                4-weeks for just £40!
-              </h3>
-              <p className="mb-6 text-lg">
-                Come along and learn the basics of Krav Maga – with only women
-                participants. It&apos;s a safe space and a time just for you.
-              </p>
+          <div className="mt-2 flex items-center justify-center text-sm">
+            <span className="material-symbols-outlined">
+              keyboard_double_arrow_down
+            </span>
+            Jump To Section{" "}
+            <span className="material-symbols-outlined">
+              keyboard_double_arrow_down
+            </span>
+          </div>
+        </Link>
+      </div>
+      <div className="flex flex-col md:flex-row">
+        {/* Non-Physical Seminar Section */}
+        <section
+          id="nonphysical"
+          className="border-b border-gray-500 bg-gray-50 pt-12 pb-8"
+        >
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl">
+              <h1 className="mb-4 h-20 content-center text-center text-3xl font-extrabold">
+                Non-Physical Seminar <br />
+                7-9pm Tuesday, 25/11
+              </h1>
 
-              <div className="mb-6 rounded-lg border border-gray-100 bg-gray-50 p-6">
-                <h4 className="mb-4 text-xl font-bold text-[#12467b]">
-                  Class details:
-                </h4>
-                <ul className="list-disc space-y-3 text-gray-800 sm:pl-7">
-                  <li className="flex items-start">
-                    <span className="font-semibold">Thursdays, 6-7pm</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="font-semibold">
-                      4-weeks from 25th of September, 2025
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="font-semibold">
-                      Glasgow Club Kelvinhall
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="space-y-4 text-center">
-                <p className="text-xl font-bold text-[#12467b]">
-                  £40 for the 4 weeks – all 4 classes!
+              <div className="mb-8 rounded-lg border-t-2 border-gray-100 bg-white p-8 shadow-lg/30">
+                <h3 className="mb-4 justify-self-center text-2xl font-bold text-[#12467b]">
+                  2-hour seminar for £30!
+                </h3>
+                <p className="mb-6 text-lg">
+                  This seminar will teach essential self-defence strategies,
+                  attacker psychology and tips on staying safe.
                 </p>
-                <p className="text-lg text-gray-800">
-                  Are you a student? Then it&apos;s only £30!
-                </p>
 
-                <Link
-                  href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-self-defence-beginners-course-autumn-2025"
-                  className="inline-block rounded-lg bg-[#1C67B1] px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-[#1C67B1]/80"
-                >
-                  Book now
-                </Link>
+                <div className="mb-6 rounded-lg border border-gray-100 bg-gray-50 p-6">
+                  <h4 className="mb-4 text-xl font-bold text-[#12467b]">
+                    Class details:
+                  </h4>
+                  <ul className="list-disc space-y-3 text-gray-800 sm:pl-7">
+                    <li className="flex items-start">
+                      <span className="font-semibold">Tuesday, 7-9pm</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="font-semibold">
+                        The 25th of November, 2025
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="font-semibold">
+                        Firhill Sports Complex
+                      </span>
+                    </li>
+                  </ul>
+                </div>
 
-                <p className="text-gray-600">
-                  Our Self-Defence courses are suitable for women of all ages
-                  and abilities; no previous martial arts or self-defence
-                  training is necessary.
-                </p>
-                <p className="text-gray-600">
-                  The classes are aimed at 18+ but teens 14 and above are
-                  welcome with a participating adult.
-                </p>
+                <div className="space-y-4 text-center">
+                  <p className="text-xl font-bold text-[#12467b]">
+                    £30 for a 2-hour seminar, learning about psychology, legal
+                    aspect of self-defence and tips on staying safe.
+                  </p>
+                  <p className="text-lg text-gray-800">
+                    Are you a student? Then it&apos;s only £25!
+                  </p>
+
+                  <Link
+                    href={womensSeminar.ticketLink}
+                    className="inline-block rounded-lg bg-[#1C67B1] px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-[#1C67B1]/80"
+                  >
+                    Book now
+                  </Link>
+
+                  <p className="text-gray-600">
+                    This seminar is a talk and Q&A, in a consultation room with
+                    chairs and tea/coffee. Max group size is 15 people.
+                    Instructors will demonstrate some techniques.
+                  </p>
+                  <p className="text-gray-600">
+                    If you'd like to learn the basics before trying a class,
+                    this is the perfect sesison for you. All participants will
+                    be offered an optional and free trial class at our physical
+                    classes.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Course Details Section */}
+        <section
+          id="beginnersCourse"
+          className="border-b border-gray-500 bg-gray-50 pt-12 pb-8"
+        >
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl">
+              <h1 className="mb-4 h-20 content-center text-center text-3xl font-extrabold">
+                Women Only Beginners Course –{" "}
+                {womensSelfDefenceClasses.monthAndYear}
+              </h1>
+
+              <div className="mb-8 rounded-lg border-t-2 border-gray-100 bg-white p-8 shadow-lg/30">
+                <h3 className="mb-4 justify-self-center text-2xl font-bold text-[#12467b]">
+                  4-weeks for just {womensSelfDefenceClasses.price}!
+                </h3>
+                <p className="mb-6 text-lg">
+                  Come along and learn the basics of Krav Maga – with only women
+                  participants. It&apos;s a safe space and a time just for you.
+                </p>
+
+                <div className="mb-6 rounded-lg border border-gray-100 bg-gray-50 p-6">
+                  <h4 className="mb-4 text-xl font-bold text-[#12467b]">
+                    Course details:
+                  </h4>
+                  <ul className="list-disc space-y-3 text-gray-800 sm:pl-7">
+                    <li className="flex items-start">
+                      <span className="font-semibold">
+                        {womensSelfDefenceClasses.dayAndTime}
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="font-semibold">
+                        {womensSelfDefenceClasses.duration} from the{" "}
+                        {womensSelfDefenceClasses.startDate}
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="font-semibold">
+                        {womensSelfDefenceClasses.location}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4 text-center">
+                  <p className="text-xl font-bold text-[#12467b]">
+                    {womensSelfDefenceClasses.price} for the{" "}
+                    {womensSelfDefenceClasses.duration} – all{" "}
+                    {womensSelfDefenceClasses.numberOfClasses} classes!
+                  </p>
+                  <p className="text-lg text-gray-800">
+                    Are you a student? Then it&apos;s only{" "}
+                    {womensSelfDefenceClasses.studentsPrice}!
+                  </p>
+
+                  <Link
+                    href={womensSelfDefenceClasses.ticketLink}
+                    className="inline-block rounded-lg bg-[#1C67B1] px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-[#1C67B1]/80"
+                  >
+                    Book now
+                  </Link>
+
+                  <p className="text-gray-600">
+                    Our Self-Defence courses are suitable for women of all ages
+                    and abilities; no previous martial arts or self-defence
+                    training is necessary. You do what you can or want to. You
+                    can even request to cover specific question or scenarios
+                    you'd like to learn!
+                  </p>
+                  <p className="text-gray-600">
+                    The classes are aimed at 18+ but teens 14 and above are
+                    welcome with a participating adult.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* Program Information Section */}
       <section className="border-b border-gray-500 pt-16 pb-8">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-8 text-center text-3xl font-bold text-[#12467b]">
-              About the Course
+              About the Course and Seminar
             </h2>
             <p className="mb-8 text-lg">
               Our courses have been designed to deal with the unique threats
@@ -101,7 +226,12 @@ export default function WomensSelfDefenceClassesPage() {
               about attacker psychology, deescalation, avoidance, and how to
               mark your boundaries with strangers and those you know.
             </p>
-
+            <div className="my-8">
+              <p className="text-center text-xl font-semibold text-blue-900">
+                Our objective is simple: to ensure that as many women as
+                possible attend these courses and stay safe.
+              </p>
+            </div>
             <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
               <p className="text-6xl font-bold">&quot;</p>
               <p className="mb-6 text-lg">
@@ -120,7 +250,7 @@ export default function WomensSelfDefenceClassesPage() {
 
             <div className="rounded-lg bg-blue-50 p-8">
               <h3 className="mb-6 text-2xl font-bold text-blue-900">
-                Participants on the courses will learn how to:
+                Participants on the beginners courses will learn how to:
               </h3>
               <ul className="mx-auto max-w-2xl space-y-3 text-left">
                 <li className="flex items-start">
@@ -152,14 +282,7 @@ export default function WomensSelfDefenceClassesPage() {
               </ul>
             </div>
 
-            <div className="my-8">
-              <p className="text-center text-xl font-semibold text-blue-900">
-                Our objective is simple: to ensure that as many women as
-                possible attend these courses and stay safe.
-              </p>
-            </div>
-
-            <p className="mb-8 text-lg">
+            <p className="my-8 text-lg">
               The course will focus on teaching awareness, prevention, building
               self-confidence, and recognising and utilising your natural
               instincts to stay safe and grow stronger both mentally,
@@ -183,12 +306,18 @@ export default function WomensSelfDefenceClassesPage() {
                 info@scotkravmaga.co.uk
               </a>
             </p>
-            <div className="text-center">
+            <div className="flex gap-20 text-center">
               <Link
-                href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-self-defence-beginners-course-autumn-2025"
-                className="inline-block rounded-lg bg-[#1C67B1] px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-[#1C67B1]/80"
+                href={womensSeminar.ticketLink}
+                className="inline-block flex-1 rounded-lg bg-[#1C67B1] px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-[#1C67B1]/80"
               >
-                Book now!
+                Book the Seminar!
+              </Link>
+              <Link
+                href={womensSelfDefenceClasses.ticketLink}
+                className="inline-block flex-1 rounded-lg bg-[#1C67B1] px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-[#1C67B1]/80"
+              >
+                Book the Beginners Course!
               </Link>
             </div>
           </div>

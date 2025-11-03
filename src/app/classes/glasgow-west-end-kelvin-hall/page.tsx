@@ -1,4 +1,5 @@
 import HeaderBanner from "@/app/components/header/header";
+import { womensSelfDefenceClasses } from "@/app/womens-self-defence-classes/utils";
 import Link from "next/link";
 
 export default function GlasgowWestEndKelvinHallPage() {
@@ -73,12 +74,15 @@ export default function GlasgowWestEndKelvinHallPage() {
           {/* Beginners Course Section */}
           <div className="mb-8 rounded-lg border border-red-200 bg-gradient-to-r from-red-50 to-orange-50 p-8">
             <h3 className="mb-4 text-2xl font-bold text-red-900">
-              New beginners courses starting on the 25th of September, 2025!
+              New beginners courses starting on the{" "}
+              {womensSelfDefenceClasses.startDate}!
             </h3>
             <p className="mb-6 text-gray-700">
-              For 4 weeks, this venue will be running a Women Only and a Mixed
-              Adult beginners course simultaneously – taught by two different
-              instructors. Only £40 for the 4 weeks or £30 for students!
+              For {womensSelfDefenceClasses.duration}, this venue will be
+              running a Women Only and a Mixed Adult beginners course
+              simultaneously – taught by two different instructors. Only{" "}
+              {womensSelfDefenceClasses.price} for the 4 weeks or{" "}
+              {womensSelfDefenceClasses.studentsPrice} for students!
             </p>
 
             <div className="mb-6 rounded-lg bg-white p-6">
@@ -86,10 +90,13 @@ export default function GlasgowWestEndKelvinHallPage() {
                 Course details:
               </h4>
               <ul className="space-y-2 text-gray-700">
-                <li>• Thursdays, 6-7pm.</li>
-                <li>• Glasgow Club Kelvinhall</li>
-                <li>• For 4 weeks, from the 25th of September</li>
-                <li>• Only £40!</li>
+                <li>• {womensSelfDefenceClasses.dayAndTime}.</li>
+                <li>• {womensSelfDefenceClasses.location}</li>
+                <li>
+                  • For {womensSelfDefenceClasses.duration}, from the{" "}
+                  {womensSelfDefenceClasses.startDate}
+                </li>
+                <li>• Only {womensSelfDefenceClasses.price}!</li>
               </ul>
             </div>
 
@@ -123,18 +130,26 @@ export default function GlasgowWestEndKelvinHallPage() {
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <p className="text-gray-700">
-                  <strong>Email:</strong> info@scotkravmaga.co.uk
+                  <strong>Email:</strong>{" "}
+                  <Link href="mailto:info@scotkravmaga.co.uk">
+                    info@scotkravmaga.co.uk
+                  </Link>
                 </p>
               </div>
               <div>
                 <p className="text-gray-700">
-                  <strong>Phone:</strong> Barbara on 07849114110
+                  <strong>Phone:</strong>{" "}
+                  <Link href="tel:07849114110">07849114110</Link>
                 </p>
               </div>
             </div>
             <p className="mt-4 text-gray-700">
-              If you have any questions, email us at info@scotkravmaga.co.uk or
-              call Barbara on 07849114110.
+              If you have any questions, email us at{" "}
+              <Link href="mailto:info@scotkravmaga.co.uk">
+                info@scotkravmaga.co.uk
+              </Link>{" "}
+              or call Barbara on <Link href="tel:07849114110">07849114110</Link>
+              .
             </p>
           </div>
 
