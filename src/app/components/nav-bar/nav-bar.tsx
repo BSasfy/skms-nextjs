@@ -109,7 +109,7 @@ export default function NavBar() {
                     href="/classes/glasgow-west-end-kelvin-hall/"
                     onClick={() => setIsLocationsOpen(false)}
                   >
-                    Mixed Adult
+                    Mixed Adult - Kelvinhall
                   </Link>
                 </li>
                 <li className="hover:text-blue-800">
