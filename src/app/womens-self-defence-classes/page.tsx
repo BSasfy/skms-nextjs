@@ -116,10 +116,10 @@ export default function WomensSelfDefenceClassesPage() {
                     Instructors will demonstrate some techniques.
                   </p>
                   <p className="text-gray-600">
-                    If you'd like to learn the basics before trying a class,
-                    this is the perfect sesison for you. All participants will
-                    be offered an optional and free trial class at our physical
-                    classes.
+                    If you&apos;d like to learn the basics before trying a
+                    class, this is the perfect sesison for you. All participants
+                    will be offered an optional and free trial class at our
+                    physical classes.
                   </p>
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function WomensSelfDefenceClassesPage() {
                     and abilities; no previous martial arts or self-defence
                     training is necessary. You do what you can or want to. You
                     can even request to cover specific question or scenarios
-                    you'd like to learn!
+                    you&apos;d like to learn!
                   </p>
                   <p className="text-gray-600">
                     The classes are aimed at 18+ but teens 14 and above are
