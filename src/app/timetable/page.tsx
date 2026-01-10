@@ -3,7 +3,6 @@ import Header from "../components/header/header";
 import {
   mixedAdultSelfDefenceClasses,
   womensSelfDefenceClasses,
-  womensSeminar,
 } from "../womens-self-defence-classes/utils";
 
 export default function TimetablePage() {
