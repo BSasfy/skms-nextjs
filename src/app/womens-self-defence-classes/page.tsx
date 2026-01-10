@@ -1,7 +1,48 @@
 import Link from "next/link";
+import { type Metadata } from "next";
 import HeaderBanner from "../components/header/header";
 import WomenOnlyTestimonials from "../components/testimonials/women-only-testimonals";
 import { womensSelfDefenceClasses } from "./utils";
+
+export const metadata: Metadata = {
+  title: "Women Only Self Defence Classes | SKMS Krav Maga Glasgow",
+  description: `Join our Women Only Self Defence Beginners Course in Glasgow. ${womensSelfDefenceClasses.duration} course for just ${womensSelfDefenceClasses.price} starting ${womensSelfDefenceClasses.startDate}. Learn Krav Maga in a safe, supportive environment at ${womensSelfDefenceClasses.location}. Suitable for all ages and abilities.`,
+  keywords: [
+    "women only self defence",
+    "women self defence classes Glasgow",
+    "Krav Maga women",
+    "self defence course Glasgow",
+    "women only Krav Maga",
+    "self defence training Glasgow",
+    "Kelvinhall self defence",
+    "women beginners self defence",
+  ],
+  openGraph: {
+    title: "Women Only Self Defence Classes | SKMS Krav Maga Glasgow",
+    description: `Join our ${womensSelfDefenceClasses.duration} Women Only Self Defence Beginners Course for just ${womensSelfDefenceClasses.price}. Starting ${womensSelfDefenceClasses.startDate} at ${womensSelfDefenceClasses.location}.`,
+    url: "https://scotkravmaga.co.uk/womens-self-defence-classes",
+    siteName: "SKMS Krav Maga",
+    images: [
+      {
+        url: "/banners/helmet.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Women Only Self Defence Classes at SKMS Krav Maga",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Women Only Self Defence Classes | SKMS Krav Maga",
+    description: `Join our ${womensSelfDefenceClasses.duration} Women Only Self Defence Beginners Course for just ${womensSelfDefenceClasses.price}.`,
+    images: ["/banners/helmet.jpg"],
+  },
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk/womens-self-defence-classes",
+  },
+};
 
 export default function WomensSelfDefenceClassesPage() {
   return (
@@ -10,8 +51,8 @@ export default function WomensSelfDefenceClassesPage() {
       <HeaderBanner
         img="/banners/helmet.jpg"
         title="Women Only Self Defence"
-        subtitle="Kelvinhall and Firhill"
-        description="Low cardio, beginners focused, fun and effective!"
+        subtitle="Glasgow Club Kelvinhall - Glasgow West End"
+        description="Learn practical self defence skills in a safe, supportive environment."
         link={womensSelfDefenceClasses.ticketLink}
         linkText="Book now"
       />
@@ -24,10 +65,10 @@ export default function WomensSelfDefenceClassesPage() {
         >
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
-              <h1 className="mb-4 h-20 content-center text-center text-3xl font-extrabold">
+              <h2 className="mb-4 h-20 content-center text-center text-3xl font-extrabold">
                 Women Only Beginners Course –{" "}
                 {womensSelfDefenceClasses.monthAndYear}
-              </h1>
+              </h2>
 
               <div className="mb-8 rounded-lg border-t-2 border-gray-100 bg-white p-8 shadow-lg/30">
                 <h3 className="mb-4 justify-self-center text-2xl font-bold text-[#12467b]">
@@ -234,6 +275,71 @@ export default function WomensSelfDefenceClassesPage() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            name: "Women Only Self Defence Beginners Course",
+            description:
+              "A 4-week beginners course in Krav Maga self-defence designed specifically for women. Learn effective self-defence techniques in a safe, supportive environment.",
+            provider: {
+              "@type": "Organization",
+              name: "SKMS Krav Maga",
+              url: "https://scotkravmaga.co.uk",
+              telephone: "+447512027411",
+              email: "info@scotkravmaga.co.uk",
+              streetAddress: "Glasgow Club Kelvinhall",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Glasgow",
+                addressCountry: "GB",
+              },
+            },
+            courseCode: "WO-BEGINNERS",
+            educationalCredentialAwarded: "Certificate of Completion",
+            teaches: [
+              "Self-defence techniques",
+              "Krav Maga basics",
+              "Attacker psychology",
+              "De-escalation techniques",
+              "Boundary setting",
+              "Knife threat defense",
+              "Body language",
+            ],
+            coursePrerequisites: "No previous experience required",
+            offers: {
+              "@type": "Offer",
+              price: womensSelfDefenceClasses.price,
+              priceCurrency: "GBP",
+              availability: "https://schema.org/InStock",
+              url: womensSelfDefenceClasses.ticketLink,
+              validFrom: new Date().toISOString(),
+            },
+            location: {
+              "@type": "Place",
+              name: womensSelfDefenceClasses.location,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Glasgow",
+                addressCountry: "GB",
+              },
+            },
+            startDate: womensSelfDefenceClasses.startDate,
+            duration: womensSelfDefenceClasses.duration,
+            schedule: womensSelfDefenceClasses.dayAndTime,
+            audience: {
+              "@type": "Audience",
+              audienceType: "Women 18+",
+              gender: "Female",
+            },
+            image: "https://scotkravmaga.co.uk/banners/helmet.jpg",
+          }),
+        }}
+      />
     </main>
   );
 }
