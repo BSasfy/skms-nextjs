@@ -11,7 +11,7 @@ export default function KidsKravMagaPage() {
         title="Kids and Teens Krav Maga"
         subtitle="Weekly classes all year round for £35/month!"
         description="Saturdays, 9-10am, Firhill Sports Complex"
-        link="/https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class"
+        link="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class"
         linkText="Book a Trial Class"
       />
 
