@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { useEffect } from "react";
 
 declare global {
@@ -10,10 +9,8 @@ declare global {
 
 export default function WomenOnlyPageViews() {
   useEffect(() => {
-    console.log("WomenOnlyPageViews");
-    // Add Facebook Pixel script
     type Fbq = ((...args: unknown[]) => void) & {
-      callMethod?: unknown;
+      callMethod?: (...a: unknown[]) => void;
       queue: unknown[];
       push?: unknown;
       loaded?: boolean;
@@ -29,17 +26,16 @@ export default function WomenOnlyPageViews() {
       s?: Element,
     ) {
       if (f.fbq) return;
-      const stub: Fbq = function () {
-        (stub as Fbq).callMethod
-          ? ((stub as Fbq).callMethod as (...a: unknown[]) => void).apply(
-              stub,
-              Array.from(arguments),
-            )
-          : (stub as Fbq).queue.push(arguments);
+      const stub = function (...args: unknown[]) {
+        if (stub.callMethod) {
+          (stub.callMethod as (...a: unknown[]) => void).call(stub, ...args);
+        } else {
+          stub.queue.push(args);
+        }
       } as Fbq;
-      (stub as Fbq).queue = [];
+      stub.queue = [];
       n = f.fbq = stub;
-      if (!f._fbq) f._fbq = n;
+      f._fbq ??= n;
       n.push = n;
       n.loaded = !0;
       n.version = "2.0";
@@ -54,16 +50,19 @@ export default function WomenOnlyPageViews() {
       "script",
       "https://connect.facebook.net/en_US/fbevents.js",
     );
-    window.fbq && window.fbq("init", "1546687536439784");
-    window.fbq && window.fbq("track", "PageView");
-    console.log("WomenOnlyPageViews - finished");
+    if (window.fbq) {
+      window.fbq("init", "1546687536439784");
+      window.fbq("track", "PageView");
+    }
   }, []);
   return (
     <>
       <noscript>
+        {/* eslint-disable-next-line @next/next/no-img-element -- 1x1 tracking pixel fallback when JS is disabled */}
         <img
           height="1"
           width="1"
+          alt=""
           src="https://www.facebook.com/tr?id=1546687536439784&ev=PageView
     &noscript=1"
         />
