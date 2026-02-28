@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 
 declare global {
@@ -55,18 +57,17 @@ export default function WomenOnlyPageViews() {
       window.fbq("track", "PageView");
     }
   }, []);
-  return (
-    <>
-      <noscript>
-        {/* eslint-disable-next-line @next/next/no-img-element -- 1x1 tracking pixel fallback when JS is disabled */}
-        <img
-          height="1"
-          width="1"
-          alt=""
-          src="https://www.facebook.com/tr?id=1546687536439784&ev=PageView
-    &noscript=1"
-        />
-      </noscript>
-    </>
-  );
+  return null;
+  // <>
+  //   <noscript>
+  //     {/* eslint-disable-next-line @next/next/no-img-element -- 1x1 tracking pixel fallback when JS is disabled */}
+  //     <img
+  //       height="1"
+  //       width="1"
+  //       alt=""
+  //       src="https://www.facebook.com/tr?id=1546687536439784&ev=PageView
+  // &noscript=1"
+  //     />
+  //   </noscript>
+  // </>
 }
