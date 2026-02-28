@@ -3,6 +3,7 @@ import { type Metadata } from "next";
 import HeaderBanner from "../components/header/header";
 import WomenOnlyTestimonials from "../components/testimonials/women-only-testimonals";
 import { womensSelfDefenceClasses } from "./utils";
+import WomenOnlyPageViews from "../components/tracking/meta/women-only-page-views";
 
 export const metadata: Metadata = {
   title: "Women Only Self Defence Classes | SKMS Krav Maga Glasgow",
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
 export default function WomensSelfDefenceClassesPage() {
   return (
     <main className="min-h-screen bg-white">
+      <WomenOnlyPageViews />
       {/* Hero Section */}
       <HeaderBanner
         img="/banners/helmet.jpg"
