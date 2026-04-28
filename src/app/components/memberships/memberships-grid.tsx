@@ -1,3 +1,4 @@
+import { PRICES } from "@/app/constants/prices";
 import MembershipTile from "./membership-tile";
 
 export default function MembershipsGrid() {
@@ -14,7 +15,7 @@ export default function MembershipsGrid() {
         <MembershipTile
           title="Kelvinhall Only"
           schedule="Thursdays 6:00pm - 7:00pm"
-          price="£40 per month"
+          price={`£${PRICES.wo_course_adult} per month`}
           benefits={[
             "Unlimited Training at all SKMS classes",
             "Classes three times a week",
@@ -27,7 +28,7 @@ export default function MembershipsGrid() {
         <MembershipTile
           title="Adult unlimited training"
           schedule="Wednesdays, Thursdays, Saturdays"
-          price="£55 per month"
+          price={`£${PRICES.adult_unlimited} per month`}
           benefits={[
             "Unlimited Training at all SKMS classes",
             "Classes three times a week",
@@ -39,7 +40,7 @@ export default function MembershipsGrid() {
         <MembershipTile
           title="Premium membership"
           schedule="All classes, plus extras"
-          price="£110 per month"
+          price={`£${PRICES.premium_membership} per month`}
           benefits={[
             "Everything from the unlimited training plan",
             "One private lesson per month",
@@ -49,7 +50,7 @@ export default function MembershipsGrid() {
         />
         <MembershipTile
           title="Student unlimited training"
-          price="£45 per month"
+          price={`£${PRICES.student_unlimited} per month`}
           benefits={[
             "Unlimited Training at all SKMS classes",
             "Classes three times a week",
@@ -60,7 +61,7 @@ export default function MembershipsGrid() {
         />
         <MembershipTile
           title="Private tuition"
-          price="£70 per hour"
+          price={`£${PRICES.private_lesson} per hour`}
           benefits={[
             "Senior instructor with 40+ years of experience and multiple Martial Arts background",
             "Optional female assistant instructor for female members",
@@ -70,7 +71,7 @@ export default function MembershipsGrid() {
         />
         <MembershipTile
           title="Corporate bookings"
-          price="From £800"
+          price={`From £${PRICES.corporate_booking}`}
           benefits={[
             "Any amount of participants",
             "We come to you or we can recommend venues",

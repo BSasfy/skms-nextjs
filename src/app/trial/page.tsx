@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PRICES } from "../constants/prices";
 
 export default function TrialPage() {
   return (
@@ -55,7 +56,9 @@ export default function TrialPage() {
                 {" "}
                 <div className="rounded-lg border border-gray-200 p-6 text-center">
                   <h4 className="mb-2 text-lg font-bold">Adult Trial Class</h4>
-                  <p className="text-3xl font-bold text-blue-600">£12.00</p>
+                  <p className="text-3xl font-bold text-blue-600">
+                    £{PRICES.adult_trial}.toFixed(2)
+                  </p>
                   <p className="text-sm text-gray-600">GBP</p>
                 </div>
               </Link>
@@ -66,7 +69,9 @@ export default function TrialPage() {
                   <h4 className="mb-2 text-lg font-bold">
                     Kids and Junior Trial
                   </h4>
-                  <p className="text-3xl font-bold text-blue-600">£8.00</p>
+                  <p className="text-3xl font-bold text-blue-600">
+                    £{PRICES.kids_trial}.toFixed(2)
+                  </p>
                   <p className="text-sm text-gray-600">GBP</p>
                 </div>
               </Link>
@@ -75,7 +80,9 @@ export default function TrialPage() {
                 {" "}
                 <div className="rounded-lg border border-gray-200 p-6 text-center">
                   <h4 className="mb-2 text-lg font-bold">Adult Concession</h4>
-                  <p className="text-3xl font-bold text-blue-600">£10.00</p>
+                  <p className="text-3xl font-bold text-blue-600">
+                    £{PRICES.concession_trial}.toFixed(2)
+                  </p>
                   <p className="text-sm text-gray-600">GBP</p>
                 </div>
               </Link>

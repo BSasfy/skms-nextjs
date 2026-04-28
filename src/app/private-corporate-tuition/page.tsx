@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeaderBanner from "../components/header/header";
+import { PRICES } from "../constants/prices";
 
 export default function PrivateCorporateTuitionPage() {
   return (
@@ -39,14 +40,17 @@ export default function PrivateCorporateTuitionPage() {
                     <span className="font-semibold text-indigo-800">
                       For 1 person:
                     </span>
-                    <span className="ml-2 text-gray-700">£70/hour</span>
+                    <span className="ml-2 text-gray-700">
+                      £{PRICES.private_lesson}/hour
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="font-semibold text-indigo-800">
                       For 2 people:
                     </span>
                     <span className="ml-2 text-gray-700">
-                      £120/hour (£60/person)
+                      £{PRICES.private_lesson_2}/hour (£
+                      {PRICES.private_lesson_2 / 2}/person)
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -54,7 +58,8 @@ export default function PrivateCorporateTuitionPage() {
                       For 3 people:
                     </span>
                     <span className="ml-2 text-gray-700">
-                      £150/hour (£50/person)
+                      £{PRICES.private_lesson_3}/hour (£
+                      {PRICES.private_lesson_3 / 3}/person)
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -62,13 +67,15 @@ export default function PrivateCorporateTuitionPage() {
                       For 4 people:
                     </span>
                     <span className="ml-2 text-gray-700">
-                      £160/hour (£40/person)
+                      £{PRICES.private_lesson_4}/hour (£
+                      {PRICES.private_lesson_4 / 4}/person)
                     </span>
                   </li>
                 </ul>
                 <div className="mt-4 rounded bg-yellow-50 p-3">
                   <p className="font-semibold text-indigo-900">
-                    Discount available for booking 10 sessions at once for £650.
+                    Discount available for booking 10 sessions at once for £
+                    {PRICES.private_lesson_10}.
                   </p>
                 </div>
               </div>
@@ -148,9 +155,11 @@ export default function PrivateCorporateTuitionPage() {
 
             <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
               <p className="mb-6 text-lg">
-                Prices from £800 for a 2.5-hour session and a 30 minute QnA for
-                up to 20 people. Charities can access the session with a
-                discount, starting from £400. Please message us for details.
+                Prices from £{PRICES.corporate_booking} for a 2.5-hour session
+                and a 30 minute QnA for up to 20 people. Charities can access
+                the session with a discount, starting from £
+                {PRICES.corporate_booking_charity}. Please message us for
+                details.
               </p>
               <p className="mb-6 text-lg">
                 Session length, number of participants, content and price are
@@ -317,7 +326,7 @@ export default function PrivateCorporateTuitionPage() {
                 <ul className="space-y-2 text-gray-700">
                   <li>• Cost includes the use of the car and full insurance</li>
                   <li>• Available for a maximum of 4 persons per session</li>
-                  <li>• £1000 for 3 hours</li>
+                  <li>• £{PRICES.car_rage_seminar} for 3 hours</li>
                   <li>
                     • We will bring the car to you, so it is ideal to organise
                     it at your corporate venue

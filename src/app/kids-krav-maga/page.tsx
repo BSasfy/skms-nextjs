@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HeaderBanner from "../components/header/header";
 import ContactBanner from "../components/contact-banner/contact-banner";
+import { PRICES } from "../constants/prices";
 
 export default function KidsKravMagaPage() {
   return (
@@ -9,7 +10,7 @@ export default function KidsKravMagaPage() {
       <HeaderBanner
         img="/banners/kids-banner.jpg"
         title="Kids and Teens Krav Maga"
-        subtitle="Weekly classes all year round for £35/month!"
+        subtitle={`Weekly classes all year round for £${PRICES.kids}/month!`}
         description="Saturdays, 9-10am, Firhill Sports Complex"
         link="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class"
         linkText="Book a Trial Class"
@@ -131,7 +132,8 @@ export default function KidsKravMagaPage() {
             <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
               <div className="space-y-4 text-center">
                 <p className="text-xl font-bold text-blue-900">
-                  The trial class is £8, monthly kids membership is £35.
+                  The trial class is £{PRICES.kids_trial}, monthly kids
+                  membership is £{PRICES.kids}.
                 </p>
                 <p className="text-lg text-gray-700">
                   We always have spaces, no need to message us, just book and
@@ -140,7 +142,8 @@ export default function KidsKravMagaPage() {
                 <div className="rounded-lg bg-yellow-50 p-4">
                   <p className="font-semibold text-gray-700">
                     We don&apos;t stop the classes for school holidays, but we
-                    do stop for two weeks over Christmas and New Years!
+                    do stop for September weekend, one weekend in August, and
+                    two weeks over Christmas and New Years!
                   </p>
                 </div>
               </div>

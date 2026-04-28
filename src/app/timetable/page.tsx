@@ -4,6 +4,7 @@ import {
   mixedAdultSelfDefenceClasses,
   womensSelfDefenceClasses,
 } from "../womens-self-defence-classes/utils";
+import { PRICES } from "../constants/prices";
 
 export default function TimetablePage() {
   return (
@@ -96,8 +97,10 @@ export default function TimetablePage() {
           <div>
             We welcome beginners to every venue, every class, all year round! If
             you’d like to book a trial class, click Book a Trial and send us a
-            message! No experience required to join any of our classes! £12
-            online, £17 at the class. Kids trial is £8.
+            message! No experience required to join any of our classes! £
+            {PRICES.adult_trial}
+            online, £{PRICES.adult_trial + 5} at the class. Kids trial is £
+            {PRICES.kids_trial}.
           </div>{" "}
           If you’d like to sign up to the mailing list, send us a message at
           info@scotkravmaga.co.uk or via WhatsApp (07512027411). We run

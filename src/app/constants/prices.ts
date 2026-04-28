@@ -1,0 +1,22 @@
+export const PRICES = {
+  // when changing prices, make sure to update them in goCardless too.
+  private_lesson: 100,
+  private_lesson_2: 150,
+  private_lesson_3: 180,
+  private_lesson_4: 200,
+  premium_membership: 140,
+  kids: 35,
+  private_lesson_10: 900,
+  student_unlimited: 45,
+  corporate_booking: 800,
+  corporate_booking_charity: 400,
+  wo_course_adult: 40,
+  wo_course_student: 30,
+  adult_unlimited: 55,
+  kh_adult: 40,
+  kh_student: 30,
+  adult_trial: 12,
+  kids_trial: 8,
+  concession_trial: 10,
+  car_rage_seminar: 1000,
+};

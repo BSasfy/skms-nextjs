@@ -1,3 +1,4 @@
+import { PRICES } from "@/app/constants/prices";
 import Link from "next/link";
 
 export default function KravMagaGlasgowWestEndPage() {
@@ -127,17 +128,23 @@ export default function KravMagaGlasgowWestEndPage() {
             <div className="mb-6 grid gap-4 md:grid-cols-3">
               <div className="rounded-lg border border-gray-200 p-4 text-center">
                 <h4 className="mb-2 text-lg font-bold">Adult Trial Class</h4>
-                <p className="text-2xl font-bold text-blue-600">£12.00</p>
+                <p className="text-2xl font-bold text-blue-600">
+                  £{PRICES.adult_trial}.toFixed(2)
+                </p>
                 <p className="text-sm text-gray-600">GBP</p>
               </div>
               <div className="rounded-lg border border-gray-200 p-4 text-center">
                 <h4 className="mb-2 text-lg font-bold">Kids & Junior Trial</h4>
-                <p className="text-2xl font-bold text-blue-600">£8.00</p>
+                <p className="text-2xl font-bold text-blue-600">
+                  £{PRICES.kids_trial}.toFixed(2)
+                </p>
                 <p className="text-sm text-gray-600">GBP</p>
               </div>
               <div className="rounded-lg border border-gray-200 p-4 text-center">
                 <h4 className="mb-2 text-lg font-bold">Adult Concession</h4>
-                <p className="text-2xl font-bold text-blue-600">£10.00</p>
+                <p className="text-2xl font-bold text-blue-600">
+                  £{PRICES.concession_trial}.toFixed(2)
+                </p>
                 <p className="text-sm text-gray-600">GBP</p>
               </div>
             </div>
