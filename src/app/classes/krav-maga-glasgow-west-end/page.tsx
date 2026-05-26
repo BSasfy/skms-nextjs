@@ -129,21 +129,21 @@ export default function KravMagaGlasgowWestEndPage() {
               <div className="rounded-lg border border-gray-200 p-4 text-center">
                 <h4 className="mb-2 text-lg font-bold">Adult Trial Class</h4>
                 <p className="text-2xl font-bold text-blue-600">
-                  £{PRICES.adult_trial}.toFixed(2)
+                  £{PRICES.adult_trial}
                 </p>
                 <p className="text-sm text-gray-600">GBP</p>
               </div>
               <div className="rounded-lg border border-gray-200 p-4 text-center">
                 <h4 className="mb-2 text-lg font-bold">Kids & Junior Trial</h4>
                 <p className="text-2xl font-bold text-blue-600">
-                  £{PRICES.kids_trial}.toFixed(2)
+                  £{PRICES.kids_trial}
                 </p>
                 <p className="text-sm text-gray-600">GBP</p>
               </div>
               <div className="rounded-lg border border-gray-200 p-4 text-center">
                 <h4 className="mb-2 text-lg font-bold">Adult Concession</h4>
                 <p className="text-2xl font-bold text-blue-600">
-                  £{PRICES.concession_trial}.toFixed(2)
+                  £{PRICES.concession_trial}
                 </p>
                 <p className="text-sm text-gray-600">GBP</p>
               </div>
