@@ -5,3 +5,20 @@
     var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+@keyframes trial-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.trial-marquee {
+  animation: trial-marquee 40s linear infinite;
+}
+
+.trial-marquee:hover {
+  animation-play-state: paused;
+}

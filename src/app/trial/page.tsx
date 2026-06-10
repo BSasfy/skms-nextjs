@@ -1,401 +1,390 @@
 import Link from "next/link";
+import HeaderBanner from "../components/header/header";
 import { PRICES } from "../constants/prices";
+import ImageCarousel from "./components/image-carousel";
+import TestimonialMarquee from "./components/testimonial-marquee";
+
+const pricingOptions = [
+  {
+    title: "Adult Trial Class",
+    price: PRICES.adult_trial,
+    href: "https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class",
+    tag: "Most Popular",
+  },
+  {
+    title: "Kids & Junior Trial",
+    price: PRICES.kids_trial,
+    href: "https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class",
+    tag: "Ages 5–16",
+  },
+  {
+    title: "Adult Concession",
+    price: PRICES.concession_trial,
+    href: "https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class-student-discount",
+    tag: "Student Discount",
+  },
+];
+
+const stats = [
+  { value: "100%", label: "Beginner Friendly" },
+  { value: "Real", label: "Self-Defence Skills" },
+  { value: "All", label: "Ages & Abilities" },
+  { value: "Zero", label: "Excuses Needed" },
+];
 
 export default function TrialPage() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 py-16 text-white">
-        <div className="container mx-auto px-4">
-          <nav className="mb-8">
-            <ul className="flex flex-wrap gap-4 text-sm">
-              <li>
-                <Link href="/" className="hover:text-blue-200">
-                  Home
-                </Link>
-              </li>
-              <li className="text-blue-200">Book a Trial Now</li>
-            </ul>
-          </nav>
+    <main className="min-h-screen bg-zinc-950">
+      <HeaderBanner
+        img="/banners/punching-bag-banner.jpg"
+        title="Book Your Trial"
+        subtitle="Step On The Mat. Own Your Power."
+        description="One class is all it takes to discover what you're capable of. No experience needed — just show up ready to train."
+        link="#book-trial"
+        linkText={`Book Now — From £${PRICES.adult_trial}`}
+      />
 
-          <div className="text-center">
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              Book a Trial Now
-            </h1>
-            <p className="mb-8 text-xl">
-              Start Training with SKMS! Book a trial class below or send us a
-              message!
-            </p>
+      {/* Stats strip */}
+      <section className="border-y border-red-600/30 bg-black">
+        <div className="container mx-auto grid grid-cols-2 gap-px md:grid-cols-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="flex flex-col items-center justify-center px-4 py-8 text-center"
+            >
+              <span className="text-3xl font-black text-red-500 md:text-4xl">
+                {stat.value}
+              </span>
+              <span className="mt-1 text-xs font-bold tracking-widest text-zinc-400 uppercase">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Intro + Image Carousel */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+            <div>
+              <p className="mb-3 text-sm font-bold tracking-[0.3em] text-red-500 uppercase">
+                Your First Fight Is With Fear
+              </p>
+              <h2 className="mb-6 text-4xl leading-tight font-black text-white uppercase md:text-5xl">
+                Walk In Unsure.
+                <br />
+                <span className="text-red-500">Walk Out Unstoppable.</span>
+              </h2>
+              <p className="mb-6 text-lg leading-relaxed text-zinc-400">
+                Our trial class gives you a real taste of Krav Maga — practical
+                self-defence, a serious workout, and a community that has your
+                back. Meet our instructors, push your limits, and find out why
+                Glasgow&apos;s fighters choose SKMS.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="#book-trial"
+                  className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-8 py-4 text-lg font-black tracking-wide text-white uppercase transition-all hover:bg-red-500 hover:shadow-[0_0_30px_rgba(220,38,38,0.4)]"
+                >
+                  Book a Trial
+                  <span className="material-symbols-outlined text-xl">
+                    arrow_forward
+                  </span>
+                </Link>
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center gap-2 rounded-lg border border-zinc-600 px-8 py-4 text-lg font-bold text-zinc-300 transition-colors hover:border-zinc-400 hover:text-white"
+                >
+                  Ask a Question
+                </Link>
+              </div>
+            </div>
+
+            <ImageCarousel />
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="mx-auto max-w-6xl">
-          {/* Introduction Section */}
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">
-              Book a trial class to come along this week or fill in our form,
-              and we will contact you as soon as we can!
+      {/* Image placeholder grid */}
+      <section className="border-t border-zinc-800 bg-zinc-900/50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-10 text-center">
+            <p className="mb-2 text-sm font-bold tracking-[0.3em] text-red-500 uppercase">
+              Train With Purpose
+            </p>
+            <h2 className="text-3xl font-black text-white uppercase md:text-4xl">
+              This Is What You&apos;re Signing Up For
             </h2>
-            <p className="mx-auto max-w-3xl text-lg text-gray-700">
-              Our trial class will give you an introduction to what Krav Maga is
-              all about. You&apos;ll meet our friendly instructors, get to meet
-              some new friends all while getting a great workout and having fun!
+          </div>
+
+          <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: "front_hand", label: "Strike & Defend" },
+              { icon: "fitness_center", label: "Get Combat Fit" },
+              { icon: "groups", label: "Train Together" },
+              { icon: "shield", label: "Stay Safe" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-800 transition-all hover:border-red-500/50 hover:shadow-[0_0_40px_rgba(220,38,38,0.1)]"
+              >
+                <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.02)_10px,rgba(255,255,255,0.02)_20px)]" />
+                <span className="material-symbols-outlined relative mb-3 text-5xl text-red-500 transition-transform group-hover:scale-110">
+                  {item.icon}
+                </span>
+                <p className="relative text-sm font-black tracking-widest text-zinc-300 uppercase">
+                  {item.label}
+                </p>
+                <p className="relative mt-1 text-xs text-zinc-600">Photo soon</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="book-trial" className="scroll-mt-24 py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <p className="mb-2 text-sm font-bold tracking-[0.3em] text-red-500 uppercase">
+              Pick Your Class
+            </p>
+            <h2 className="text-3xl font-black text-white uppercase md:text-4xl">
+              Book a Trial Class
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-zinc-400">
+              Choose your class type below. There are always spaces — no waiting
+              lists, no gatekeeping.
             </p>
           </div>
 
-          {/* Trial Class Pricing */}
-          <div className="mb-12 rounded-lg border border-gray-200 bg-white p-8">
-            <h3 className="mb-6 text-center text-2xl font-bold text-gray-900">
-              Book a trial class
-            </h3>
-            <div className="grid gap-6 md:grid-cols-3">
-              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class">
-                {" "}
-                <div className="rounded-lg border border-gray-200 p-6 text-center">
-                  <h4 className="mb-2 text-lg font-bold">Adult Trial Class</h4>
-                  <p className="text-3xl font-bold text-blue-600">
-                    £{PRICES.adult_trial}
-                  </p>
-                  <p className="text-sm text-gray-600">GBP</p>
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+            {pricingOptions.map((option) => (
+              <Link
+                key={option.title}
+                href={option.href}
+                className="group relative overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-900 p-8 text-center transition-all hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_40px_rgba(220,38,38,0.15)]"
+              >
+                <span className="mb-4 inline-block rounded-full bg-red-600/20 px-3 py-1 text-xs font-bold tracking-wider text-red-400 uppercase">
+                  {option.tag}
+                </span>
+                <h3 className="mb-4 text-xl font-black text-white">
+                  {option.title}
+                </h3>
+                <p className="text-5xl font-black text-red-500">
+                  £{option.price}
+                </p>
+                <p className="mt-1 text-sm text-zinc-500">GBP</p>
+                <div className="mt-6 flex items-center justify-center gap-2 text-sm font-bold tracking-wide text-zinc-400 uppercase transition-colors group-hover:text-red-400">
+                  Book Now
+                  <span className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">
+                    arrow_forward
+                  </span>
                 </div>
               </Link>
-
-              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class">
-                {" "}
-                <div className="rounded-lg border border-gray-200 p-6 text-center">
-                  <h4 className="mb-2 text-lg font-bold">
-                    Kids and Junior Trial
-                  </h4>
-                  <p className="text-3xl font-bold text-blue-600">
-                    £{PRICES.kids_trial}
-                  </p>
-                  <p className="text-sm text-gray-600">GBP</p>
-                </div>
-              </Link>
-
-              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class-student-discount">
-                {" "}
-                <div className="rounded-lg border border-gray-200 p-6 text-center">
-                  <h4 className="mb-2 text-lg font-bold">Adult Concession</h4>
-                  <p className="text-3xl font-bold text-blue-600">
-                    £{PRICES.concession_trial}
-                  </p>
-                  <p className="text-sm text-gray-600">GBP</p>
-                </div>
-              </Link>
-            </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Class Timetable */}
-          <div className="mb-12 border-l-4 border-blue-500 bg-blue-50 p-8">
-            <h3 className="mb-6 text-2xl font-bold text-blue-900">
-              Class timetable:
-            </h3>
-            <p className="mb-6 text-gray-700">
-              <strong>Class locations:</strong>{" "}
-              <Link href="https://maps.app.goo.gl/fsp7TmioZ25shdn97">
+      {/* Timetable */}
+      <section className="border-t border-zinc-800 bg-zinc-900/50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-10 flex items-center gap-4">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-red-600/50" />
+              <h2 className="text-2xl font-black tracking-wide text-white uppercase md:text-3xl">
+                Class Timetable
+              </h2>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-red-600/50" />
+            </div>
+
+            <p className="mb-8 text-center text-zinc-400">
+              <strong className="text-zinc-200">Locations:</strong>{" "}
+              <Link
+                href="https://maps.app.goo.gl/fsp7TmioZ25shdn97"
+                className="text-red-400 hover:text-red-300"
+              >
                 Firhill Sports Complex
               </Link>{" "}
-              (kids, teens and adults) and{" "}
-              <Link href="https://maps.app.goo.gl/dyyS8K2JAoVcZcwr5">
+              (kids, teens & adults) ·{" "}
+              <Link
+                href="https://maps.app.goo.gl/dyyS8K2JAoVcZcwr5"
+                className="text-red-400 hover:text-red-300"
+              >
                 Kelvin Hall
               </Link>{" "}
-              (adults).
+              (adults)
             </p>
-            {/* Adults Schedule */}
-            <div className="mb-6 rounded-lg bg-white p-6">
-              <h4 className="mb-4 text-xl font-bold text-gray-900">Adults:</h4>
-              <ul className="space-y-2 text-gray-700">
-                <li>
-                  • <strong>Wednesdays:</strong> 7-8.30 pm –{" "}
-                  <Link href="https://maps.app.goo.gl/fsp7TmioZ25shdn97">
-                    Firhill Sports Complex
+
+            <div className="space-y-4">
+              <div className="rounded-xl border border-zinc-700 bg-zinc-900 p-6">
+                <h3 className="mb-4 flex items-center gap-2 text-lg font-black text-red-500 uppercase">
+                  <span className="material-symbols-outlined">person</span>
+                  Adults
+                </h3>
+                <ul className="space-y-3 text-zinc-300">
+                  <li className="flex flex-wrap gap-x-2">
+                    <strong className="text-white">Wednesdays</strong>
+                    <span className="text-zinc-500">·</span>
+                    <span>7–8.30 pm</span>
+                    <span className="text-zinc-500">·</span>
+                    <Link
+                      href="https://maps.app.goo.gl/fsp7TmioZ25shdn97"
+                      className="text-red-400 hover:text-red-300"
+                    >
+                      Firhill
+                    </Link>
+                  </li>
+                  <li className="flex flex-wrap gap-x-2">
+                    <strong className="text-white">Thursdays</strong>
+                    <span className="text-zinc-500">·</span>
+                    <span>6–7 pm</span>
+                    <span className="text-zinc-500">·</span>
+                    <Link
+                      href="https://maps.app.goo.gl/dyyS8K2JAoVcZcwr5"
+                      className="text-red-400 hover:text-red-300"
+                    >
+                      Kelvin Hall
+                    </Link>
+                  </li>
+                  <li className="flex flex-wrap gap-x-2">
+                    <strong className="text-white">Saturdays</strong>
+                    <span className="text-zinc-500">·</span>
+                    <span>10–11.30 am</span>
+                    <span className="text-zinc-500">·</span>
+                    <Link
+                      href="https://maps.app.goo.gl/fsp7TmioZ25shdn97"
+                      className="text-red-400 hover:text-red-300"
+                    >
+                      Firhill
+                    </Link>
+                  </li>
+                </ul>
+                <p className="mt-4 text-sm text-zinc-500">
+                  Prefer a beginners&apos; block?{" "}
+                  <Link
+                    href="/beginners"
+                    className="font-bold text-red-400 hover:text-red-300"
+                  >
+                    Check here →
                   </Link>
-                </li>
-                <li>
-                  • <strong>Thursdays:</strong> 6-7 pm –{" "}
-                  <Link href="https://maps.app.goo.gl/dyyS8K2JAoVcZcwr5">
-                    Glasgow Club Kelvin Hall
+                </p>
+                <p className="mt-2 text-xs text-zinc-600">
+                  Teens 14+ welcome with an accompanying adult. Ages 17+ welcome
+                  solo.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-zinc-700 bg-zinc-900 p-6">
+                <h3 className="mb-4 flex items-center gap-2 text-lg font-black text-red-500 uppercase">
+                  <span className="material-symbols-outlined">child_care</span>
+                  Minis (5–11) & Teens (12–16)
+                </h3>
+                <ul className="text-zinc-300">
+                  <li className="flex flex-wrap gap-x-2">
+                    <strong className="text-white">Saturdays</strong>
+                    <span className="text-zinc-500">·</span>
+                    <span>9–10 am</span>
+                    <span className="text-zinc-500">·</span>
+                    <span>Firhill Sports Complex</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="rounded-xl border border-zinc-700 bg-zinc-900 p-6">
+                <h3 className="mb-4 flex items-center gap-2 text-lg font-black text-red-500 uppercase">
+                  <span className="material-symbols-outlined">school</span>
+                  Beginners Courses
+                </h3>
+                <p className="text-zinc-300">
+                  Women Only and Mixed Adult Beginners Courses —{" "}
+                  <Link
+                    href="/beginners"
+                    className="font-bold text-red-400 hover:text-red-300"
+                  >
+                    View courses →
                   </Link>
-                </li>
-                <li>
-                  • <strong>Saturdays:</strong> 10-11.30 am –{" "}
-                  <Link href="https://maps.app.goo.gl/fsp7TmioZ25shdn97">
-                    Firhill Sports Complex
-                  </Link>
-                </li>
-              </ul>
-              <p className="mt-4 text-gray-700">
-                Would you prefer a beginners&apos; block? Have a look{" "}
-                <Link
-                  href="/beginners"
-                  className="font-semibold text-blue-600 hover:text-blue-800"
-                >
-                  HERE!
-                </Link>
-              </p>
-              <p className="mt-2 text-sm text-gray-600">
-                Teens aged 14+ are welcome to an adult class with an
-                accompanying adult. Ages 17+ are welcome without an accompanying
-                adult.
-              </p>
-            </div>
-            {/* Kids Schedule */}
-            <div className="mb-6 rounded-lg bg-white p-6">
-              <h4 className="mb-4 text-xl font-bold text-gray-900">
-                Minis – ages 5-11 and Teens – 12-16:
-              </h4>
-              <ul className="space-y-2 text-gray-700">
-                <li>
-                  • <strong>Saturdays:</strong> 9-10 am – Firhill Sports Complex
-                </li>
-              </ul>
-            </div>
-            {/* Ages 8-12 Schedule
-            <div className="mb-6 rounded-lg bg-white p-6">
-              <h4 className="mb-4 text-xl font-bold text-gray-900">
-                Ages 8-12:
-              </h4>
-              <ul className="space-y-2 text-gray-700">
-                <li>
-                  • <strong>Fridays:</strong> 6.30-7.30 pm – Mearns Castle Golf
-                  Academy
-                </li>
-              </ul>
-            </div> */}
-            {/* Beginners Courses */}
-            <div className="rounded-lg bg-white p-6">
-              <h4 className="mb-4 text-xl font-bold text-gray-900">
-                Women Only and Mixed Adult Beginners Courses:
-              </h4>
-              <p className="text-gray-700">
-                Check out our beginners&apos; courses{" "}
-                <Link
-                  href="/beginners"
-                  className="font-semibold text-blue-600 hover:text-blue-800"
-                >
-                  HERE!
-                </Link>
-              </p>
+                </p>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Call to Action */}
-          <div className="mb-12 py-8 text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">
-              Book a trial class now – there are always spaces!
-            </h2>
+      <TestimonialMarquee />
+
+      {/* CTA */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-red-700 via-red-600 to-red-800 py-20">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(-45deg,transparent,transparent_20px,rgba(0,0,0,0.05)_20px,rgba(0,0,0,0.05)_40px)]" />
+        <div className="relative container mx-auto px-4 text-center">
+          <h2 className="mb-4 text-4xl font-black text-white uppercase md:text-5xl">
+            Ready to Hit Back?
+          </h2>
+          <p className="mx-auto mb-8 max-w-xl text-lg text-red-100">
+            Book your trial now — there are always spaces. Or drop us a message
+            and we&apos;ll get you sorted.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="#book-trial"
+              className="inline-block rounded-lg bg-black px-10 py-4 text-lg font-black tracking-wide text-white uppercase transition-all hover:bg-zinc-900 hover:shadow-xl"
+            >
+              Book a Trial Class
+            </Link>
             <Link
               href="/contact-us"
-              className="inline-block rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
+              className="inline-block rounded-lg border-2 border-white px-10 py-4 text-lg font-black tracking-wide text-white uppercase transition-all hover:bg-white/10"
             >
-              Send us a message!
+              Send Us a Message
             </Link>
           </div>
+        </div>
+      </section>
 
-          {/* Contact Information */}
-          <div className="mb-12 rounded-lg bg-gray-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
-              Contact Information
-            </h3>
-            <div className="grid gap-4 md:grid-cols-2">
-              <div>
-                <p className="text-gray-700">
-                  <strong>Phone:</strong>{" "}
-                  <Link href="tel:07512027411">07512027411</Link>
-                </p>
-              </div>
-              <div>
-                <p className="text-gray-700">
-                  <strong>Email:</strong>{" "}
-                  <Link href="mailto:info@scotkravmaga.co.uk">
-                    info@scotkravmaga.co.uk
-                  </Link>
-                </p>
-              </div>
+      {/* Contact */}
+      <section className="border-t border-zinc-800 py-12">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 text-center sm:flex-row sm:justify-center sm:gap-12 sm:text-left">
+            <div>
+              <p className="text-xs font-bold tracking-widest text-zinc-500 uppercase">
+                Phone
+              </p>
+              <Link
+                href="tel:07512027411"
+                className="text-lg font-bold text-white hover:text-red-400"
+              >
+                07512027411
+              </Link>
             </div>
-            {/* <p className="mt-4 text-gray-700">
-              You can also call us on –{" "}
-              <Link href="tel:07512027411">07512027411</Link>, or email us at{" "}
-              <Link href="mailto:info@scotkravmaga.co.uk">
+            <div className="hidden h-8 w-px bg-zinc-700 sm:block" />
+            <div>
+              <p className="text-xs font-bold tracking-widest text-zinc-500 uppercase">
+                Email
+              </p>
+              <Link
+                href="mailto:info@scotkravmaga.co.uk"
+                className="text-lg font-bold text-white hover:text-red-400"
+              >
                 info@scotkravmaga.co.uk
               </Link>
-            </p> */}
-          </div>
-
-          {/* Student Testimonials */}
-          <div className="mb-12">
-            <h3 className="mb-6 text-center text-2xl font-bold text-gray-900">
-              What Our Students Say
-            </h3>
-            <div className="grid gap-8 md:grid-cols-2">
-              {/* Deirdre Craddock */}
-              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
-                    DC
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-bold text-gray-900">
-                      Deirdre Craddock
-                    </h4>
-                  </div>
-                </div>
-                <blockquote className="text-sm text-gray-700 italic">
-                  &quot;Training KM was the best decision I have ever made for
-                  my health as well as my safety. Without a doubt I am safer,
-                  feel braver but best of all it helps control my Fibromyalgia
-                  so now I have less pain. It helped restore my strength after
-                  major surgery too, stopping me feeling so vulnerable after
-                  being sick. I encourage everyone to treat Krav Maga as an
-                  important life skill that will benefit you for the rest of
-                  your life. Seize any opportunity with open arms to train with
-                  the excellent, welcoming and encouraging teachers at SKMS.
-                  Don&apos;t be timid! The company is great too- very sociable
-                  and warm hearted, you&apos;ll have so many laughs as they
-                  teach that you&apos;ll be amazed what you can do and how fast
-                  you learn skills. every single time you go, that could save
-                  your life. No one is competitive, age, height etc.
-                  doesn&apos;t matter because everyone helps each other,
-                  there&apos;s nothing I haven&apos;t liked about going to SKMS.
-                  I feel very lucky they crossed my path. 🙂&quot;
-                </blockquote>
-              </div>
-
-              {/* Mitch */}
-              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
-                    M
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-bold text-gray-900">Mitch</h4>
-                  </div>
-                </div>
-                <blockquote className="text-sm text-gray-700 italic">
-                  &quot;My son and I started Krav Maga with SKMS just over two
-                  years ago. He wanted to do something more varied and practical
-                  than traditional martial arts and I went to keep him company.
-                  Since then we have both really enjoyed it, made friends, got
-                  fitter and traded bruises in a friendly atmosphere. The
-                  instructors are great and will encourage you to achieve your
-                  best and are always ready to help with advice. I&apos;m
-                  heading to Israel next year to train with the Global
-                  Instructors Team which is a reflection of how much I have got
-                  from Robert and his top team.&quot;
-                </blockquote>
-              </div>
-
-              {/* Solange Pompl */}
-              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
-                    SP
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-bold text-gray-900">
-                      Solange Pompl
-                    </h4>
-                  </div>
-                </div>
-                <blockquote className="text-sm text-gray-700 italic">
-                  &quot;I took the women&apos;s self defense class whilst living
-                  in Scotland for a year, as I wanted to learn to protect myself
-                  better. I liked it so much that I started the regular course
-                  until I left Scotland. Now, two years later, I&apos;ve started
-                  taking up classes in The Netherlands again. It may sound
-                  cliché, but there&apos;s a &quot;krav vibe that is connected
-                  to the sports itself, and you can find it in any country. Krav
-                  Maga has made me fitter, stronger and more self-confident. I
-                  feel like they should make it a mandatory subject in all
-                  schools. But until that has become a reality, taking classes
-                  with Robert at SKMS is a great alternative&quot;
-                </blockquote>
-              </div>
-
-              {/* Gracie Moffat */}
-              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
-                    GM
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-bold text-gray-900">
-                      Gracie Moffat
-                    </h4>
-                  </div>
-                </div>
-                <blockquote className="text-sm text-gray-700 italic">
-                  &quot;Learning Krav Maga has allowed me to feel confident in
-                  my ability to defend myself and others, whether it&apos;s on a
-                  night out or travelling alone in a new country. Best decision
-                  I&apos;ve made for my self confidence!&quot;
-                </blockquote>
-              </div>
-
-              {/* Manoj Bagha */}
-              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
-                    MB
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-bold text-gray-900">
-                      Manoj Bagha
-                    </h4>
-                  </div>
-                </div>
-                <blockquote className="text-sm text-gray-700 italic">
-                  &quot;Private lessons helped me develop my Krav skills very
-                  quickly. The one on one lessons are fantastic they were at a
-                  time that suited me. We trained outside in potentially real
-                  life situation. It was easy for Robert to pin point and fix
-                  mistakes that might not get picked up in a class full of
-                  students. All in all, I would highly recommend SKMS private
-                  lessons.&quot;
-                </blockquote>
-              </div>
             </div>
           </div>
-
-          {/* Motto */}
-          <div className="py-8 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">
-              Stay Safe, Get Fit, Hit Hard!
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-700">
-              <strong>SKMS Krav Maga</strong> will bring out the best in you. We
-              make Krav Maga accessible, affordable and fun.
-            </p>
-          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 py-8 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">
-            Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
-          </p>
-          <div className="mt-4 space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-blue-300">
-              Privacy Policy
-            </Link>
-            <Link href="/disclaimer" className="hover:text-blue-300">
-              Website Disclaimer
-            </Link>
-            <Link href="/accessibility" className="hover:text-blue-300">
-              Accessibility Policy
-            </Link>
-            <Link href="/sitemap" className="hover:text-blue-300">
-              Sitemap
-            </Link>
-          </div>
-        </div>
-      </footer>
+      {/* Motto */}
+      <section className="border-t border-zinc-800 py-16 text-center">
+        <h2 className="text-4xl font-black tracking-wide text-white uppercase md:text-5xl">
+          Stay Safe.{" "}
+          <span className="text-red-500">Get Fit.</span> Hit Hard.
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl text-zinc-400">
+          <strong className="text-zinc-200">SKMS Krav Maga</strong> will bring
+          out the best in you. Accessible, affordable, and seriously fun.
+        </p>
+      </section>
     </main>
   );
 }
