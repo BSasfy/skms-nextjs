@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function GlasgowWestEndKelvinHallPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="skms-page">
       {/* Header Section */}
       <HeaderBanner
         img="/banners/punching-bag-banner.jpg"
@@ -21,38 +21,38 @@ export default function GlasgowWestEndKelvinHallPage() {
           {/* Location Info */}
 
           {/* Regular Classes */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          <div className="mb-8 skms-card">
+            <h3 className="mb-4 text-xl font-bold text-white">
               Regular class – running all year round after the beginners
               courses:
             </h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="font-medium">Class times:</span>
-                <span className="text-gray-600">
+                <span className="text-zinc-500">
                   Thursdays, 6-7 pm – all year round!
                 </span>
               </div>
-              <p className="text-gray-700">
+              <p className="text-zinc-400">
                 Beginners are always welcome. These classes are the most
                 suitable for complete beginners! All ages and fitness levels are
                 welcome!
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-zinc-500">
                 Ages 15-17 are welcome but should be accompanied by an adult.
               </p>
             </div>
             <div className="mt-6 text-center">
               <Link
                 href="https://scottish-krav-maga-systems-ltd.sumupstore.com/category/trial-class"
-                className="rounded-lg bg-[#005EB8] px-6 py-2 font-semibold text-white transition-colors hover:bg-[#0059b8cf]"
+                className="rounded-lg bg-red-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-[#0059b8cf]"
               >
                 Book a trial class!
               </Link>
             </div>
           </div>
-          <div className="mb-8 border-l-4 border-blue-500 bg-blue-50 p-6">
-            <h2 className="mb-4 text-2xl font-bold text-blue-900">
+          <div className="mb-8 border-l-4 border-red-500 bg-zinc-900/50 p-6">
+            <h2 className="mb-4 text-2xl font-bold text-red-400">
               Glasgow Club Kelvin Hall
             </h2>
             <iframe
@@ -63,7 +63,7 @@ export default function GlasgowWestEndKelvinHallPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-            <p className="mb-4 text-lg text-gray-700">
+            <p className="mb-4 text-lg text-zinc-400">
               <strong>
                 Mixed Adult class for all levels, trialists welcome all year
                 round!
@@ -77,7 +77,7 @@ export default function GlasgowWestEndKelvinHallPage() {
               New beginners courses starting on the{" "}
               {womensSelfDefenceClasses.startDate}!
             </h3>
-            <p className="mb-6 text-gray-700">
+            <p className="mb-6 text-zinc-400">
               For {womensSelfDefenceClasses.duration}, this venue will be
               running a Women Only and a Mixed Adult beginners course
               simultaneously – taught by two different instructors. Only{" "}
@@ -85,11 +85,11 @@ export default function GlasgowWestEndKelvinHallPage() {
               {womensSelfDefenceClasses.studentsPrice} for students!
             </p>
 
-            <div className="mb-6 rounded-lg bg-white p-6">
-              <h4 className="mb-4 text-xl font-bold text-gray-900">
+            <div className="mb-6 skms-card">
+              <h4 className="mb-4 text-xl font-bold text-white">
                 Course details:
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-zinc-400">
                 <li>• {womensSelfDefenceClasses.dayAndTime}.</li>
                 <li>• {womensSelfDefenceClasses.location}</li>
                 <li>
@@ -111,8 +111,8 @@ export default function GlasgowWestEndKelvinHallPage() {
           </div>
 
           {/* Course Description */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-            <p className="leading-relaxed text-gray-700">
+          <div className="mb-8 skms-card">
+            <p className="leading-relaxed text-zinc-400">
               The courses focus on teaching awareness, prevention, building
               self-confidence, recognising and utilising your natural instincts
               to stay safe and grow stronger mentally and physically. We&apos;ll
@@ -123,13 +123,13 @@ export default function GlasgowWestEndKelvinHallPage() {
           </div>
 
           {/* Contact Information */}
-          <div className="mb-8 rounded-lg bg-gray-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          <div className="mb-8 rounded-lg bg-zinc-900/50 p-6">
+            <h3 className="mb-4 text-xl font-bold text-white">
               Contact Information
             </h3>
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <p className="text-gray-700">
+                <p className="text-zinc-400">
                   <strong>Email:</strong>{" "}
                   <Link href="mailto:info@scotkravmaga.co.uk">
                     info@scotkravmaga.co.uk
@@ -137,13 +137,13 @@ export default function GlasgowWestEndKelvinHallPage() {
                 </p>
               </div>
               <div>
-                <p className="text-gray-700">
+                <p className="text-zinc-400">
                   <strong>Phone:</strong>{" "}
                   <Link href="tel:07849114110">07849114110</Link>
                 </p>
               </div>
             </div>
-            <p className="mt-4 text-gray-700">
+            <p className="mt-4 text-zinc-400">
               If you have any questions, email us at{" "}
               <Link href="mailto:info@scotkravmaga.co.uk">
                 info@scotkravmaga.co.uk
@@ -154,8 +154,8 @@ export default function GlasgowWestEndKelvinHallPage() {
           </div>
 
           {/* Contact Form */}
-          {/* <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          {/* <div className="mb-8 skms-card">
+            <h3 className="mb-4 text-xl font-bold text-white">
               Send us a message!
             </h3>
             <form className="space-y-4">
@@ -163,22 +163,22 @@ export default function GlasgowWestEndKelvinHallPage() {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-red-500"
                 />
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-red-500"
                 />
               </div>
               <textarea
                 placeholder="Your Message"
                 rows={4}
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-red-500"
               ></textarea>
               <button
                 type="submit"
-                className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
+                className="rounded-lg bg-red-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-red-500"
               >
                 Send Message
               </button>

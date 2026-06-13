@@ -1,9 +1,14 @@
 @import "tailwindcss";
 @import "material-symbols";
+
 @theme {
   --font-sans:
     var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-skms-accent: #dc2626;
+  --color-skms-accent-hover: #ef4444;
+  --color-skms-surface: #18181b;
+  --color-skms-surface-raised: #27272a;
 }
 
 @keyframes trial-marquee {
@@ -21,4 +26,46 @@
 
 .trial-marquee:hover {
   animation-play-state: paused;
+}
+
+@layer components {
+  .skms-page {
+    @apply min-h-screen bg-zinc-950 text-zinc-300;
+  }
+
+  .skms-content-box {
+    @apply rounded-xl border border-red-600/30 bg-zinc-900/50 p-4 lg:p-10;
+  }
+
+  .skms-card {
+    @apply rounded-xl border border-zinc-700 bg-zinc-900 p-6;
+  }
+
+  .skms-btn {
+    @apply inline-flex items-center gap-2 rounded-lg bg-red-600 px-8 py-3 font-bold tracking-wide text-white uppercase transition-all hover:bg-red-500 hover:shadow-[0_0_30px_rgba(220,38,38,0.3)];
+  }
+
+  .skms-btn-outline {
+    @apply inline-flex items-center gap-2 rounded-lg border border-zinc-600 px-8 py-3 font-bold text-zinc-300 transition-colors hover:border-zinc-400 hover:text-white;
+  }
+
+  .skms-link {
+    @apply font-semibold text-red-400 hover:text-red-300;
+  }
+
+  .skms-section-heading {
+    @apply text-center text-3xl font-black text-white uppercase md:text-4xl;
+  }
+
+  .skms-section-label {
+    @apply mb-2 text-sm font-bold tracking-[0.3em] text-red-500 uppercase;
+  }
+
+  .skms-cta-section {
+    @apply relative overflow-hidden bg-gradient-to-br from-red-700 via-red-600 to-red-800 py-16 text-white;
+  }
+
+  .skms-input {
+    @apply w-full rounded-lg border border-zinc-600 bg-zinc-800 px-4 py-2 text-white placeholder-zinc-500 focus:border-transparent focus:ring-2 focus:ring-red-500;
+  }
 }

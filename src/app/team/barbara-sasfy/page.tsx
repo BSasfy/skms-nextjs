@@ -2,23 +2,23 @@ import Link from "next/link";
 
 export default function BarbaraSasfyPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="skms-page">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 py-16 text-white">
+      <div className="bg-gradient-to-r from-zinc-950 to-red-900 py-16 text-white">
         <div className="container mx-auto px-4">
           <nav className="mb-8">
             <ul className="flex flex-wrap gap-4 text-sm">
               <li>
-                <Link href="/" className="hover:text-blue-200">
+                <Link href="/" className="hover:text-red-200">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/instructors" className="hover:text-blue-200">
+                <Link href="/instructors" className="hover:text-red-200">
                   SKMS Main Instructors
                 </Link>
               </li>
-              <li className="text-blue-200">Barbara Sasfy</li>
+              <li className="text-red-200">Barbara Sasfy</li>
             </ul>
           </nav>
 
@@ -35,34 +35,34 @@ export default function BarbaraSasfyPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-4xl">
           {/* Instructor Profile */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-8">
+          <div className="mb-8 skms-card p-8">
             <div className="mb-8 text-center">
-              <h2 className="mb-2 text-3xl font-bold text-gray-900">
+              <h2 className="mb-2 text-3xl font-bold text-white">
                 Barbara Sasfy
               </h2>
               <div className="space-y-2">
-                <p className="text-lg font-semibold text-blue-600">
+                <p className="text-lg font-semibold skms-link">
                   IKMF Civilian Krav Maga Instructor
                 </p>
-                <p className="text-lg font-semibold text-blue-600">
+                <p className="text-lg font-semibold skms-link">
                   Kids and Teens Instructor
                 </p>
-                <p className="text-lg font-semibold text-blue-600">
+                <p className="text-lg font-semibold skms-link">
                   Women Only Krav Maga Instructor
                 </p>
               </div>
             </div>
 
             {/* Qualifications and Teaching */}
-            <div className="mb-8 border-l-4 border-blue-500 bg-blue-50 p-6">
-              <h3 className="mb-4 text-xl font-bold text-blue-900">
+            <div className="mb-8 border-l-4 border-red-500 bg-zinc-900/50 p-6">
+              <h3 className="mb-4 text-xl font-bold text-red-400">
                 Lead Instructor in Civilian Krav Maga
               </h3>
-              <p className="mb-4 text-gray-700">
+              <p className="mb-4 text-zinc-400">
                 Barbara has completed Civilian, Kids and Women&apos;s instruction
                 courses. She is teaching:
               </p>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-zinc-400">
                 <li>• Mixed Adult classes</li>
                 <li>• Kids classes</li>
                 <li>• Women&apos;s Beginners courses</li>
@@ -71,50 +71,50 @@ export default function BarbaraSasfyPage() {
           </div>
 
           {/* Community Work */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          <div className="mb-8 skms-card">
+            <h3 className="mb-4 text-xl font-bold text-white">
               Community Work and Seminars
             </h3>
-            <p className="mb-4 text-gray-700">
+            <p className="mb-4 text-zinc-400">
               Barbara has carried out Women&apos;s self-defence Seminars and classes
               for:
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-3">
-                <div className="rounded-lg bg-gray-50 p-4">
-                  <h4 className="font-bold text-gray-900">
+                <div className="rounded-lg bg-zinc-900/50 p-4">
+                  <h4 className="font-bold text-white">
                     Young Farmers Club East Kilbride
                   </h4>
                 </div>
-                <div className="rounded-lg bg-gray-50 p-4">
-                  <h4 className="font-bold text-gray-900">
+                <div className="rounded-lg bg-zinc-900/50 p-4">
+                  <h4 className="font-bold text-white">
                     Garnethill Neighbourhood Watch
                   </h4>
                 </div>
-                <div className="rounded-lg bg-gray-50 p-4">
-                  <h4 className="font-bold text-gray-900">
+                <div className="rounded-lg bg-zinc-900/50 p-4">
+                  <h4 className="font-bold text-white">
                     Woodlands Community
                   </h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 text-sm text-zinc-500">
                     After the devastating death of Esther Brown
                   </p>
                 </div>
               </div>
               <div className="space-y-3">
-                <div className="rounded-lg bg-gray-50 p-4">
-                  <h4 className="font-bold text-gray-900">LuluLemon</h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                <div className="rounded-lg bg-zinc-900/50 p-4">
+                  <h4 className="font-bold text-white">LuluLemon</h4>
+                  <p className="mt-1 text-sm text-zinc-500">
                     Corporate training and Sunday Community Classes
                   </p>
                 </div>
-                <div className="rounded-lg bg-gray-50 p-4">
-                  <h4 className="font-bold text-gray-900">
+                <div className="rounded-lg bg-zinc-900/50 p-4">
+                  <h4 className="font-bold text-white">
                     Dumbarton Community
                   </h4>
                 </div>
-                <div className="rounded-lg bg-gray-50 p-4">
-                  <h4 className="font-bold text-gray-900">Mearns Primary</h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                <div className="rounded-lg bg-zinc-900/50 p-4">
+                  <h4 className="font-bold text-white">Mearns Primary</h4>
+                  <p className="mt-1 text-sm text-zinc-500">
                     Sports day activities
                   </p>
                 </div>
@@ -123,11 +123,11 @@ export default function BarbaraSasfyPage() {
           </div>
 
           {/* Personal Background */}
-          <div className="mb-8 rounded-lg bg-gray-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          <div className="mb-8 rounded-lg bg-zinc-900/50 p-6">
+            <h3 className="mb-4 text-xl font-bold text-white">
               About Barbara
             </h3>
-            <div className="space-y-4 text-gray-700">
+            <div className="space-y-4 text-zinc-400">
               <p>
                 In her day job, Barbara is a software developer and in her spare
                 time, she enjoys indoor climbing, spending time with friends,
@@ -137,11 +137,11 @@ export default function BarbaraSasfyPage() {
           </div>
 
           {/* SKMS Branding */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          <div className="mb-8 skms-card">
+            <h3 className="mb-4 text-xl font-bold text-white">
               SKMS - Krav Maga
             </h3>
-            <p className="text-gray-700">
+            <p className="text-zinc-400">
               Barbara is part of the SKMS team, dedicated to making Krav Maga
               accessible, affordable and fun for everyone.
             </p>
@@ -149,7 +149,7 @@ export default function BarbaraSasfyPage() {
 
           {/* Call to Action */}
           <div className="py-8 text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">
+            <h2 className="mb-4 text-2xl font-bold text-white">
               Interested in booking a beginners course or 1-2-1 tuition?
             </h2>
             <Link
@@ -161,20 +161,20 @@ export default function BarbaraSasfyPage() {
           </div>
 
           {/* Newsletter Subscription */}
-          <div className="mb-8 rounded-lg bg-blue-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-blue-900">
+          <div className="mb-8 rounded-lg bg-zinc-900/50 p-6">
+            <h3 className="mb-4 text-xl font-bold text-red-400">
               Want to keep up-to-date with SKMS?
             </h3>
-            <p className="mb-4 text-blue-800">Subscribe our newsletter</p>
+            <p className="mb-4 text-red-300">Subscribe our newsletter</p>
             <form className="flex flex-col gap-4 sm:flex-row">
               <input
                 type="email"
                 placeholder="Your Email Address"
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
+                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-red-500"
               />
               <button
                 type="submit"
-                className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
+                className="rounded-lg bg-red-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-red-500"
               >
                 Subscribe
               </button>
@@ -182,28 +182,28 @@ export default function BarbaraSasfyPage() {
           </div>
 
           {/* Instructor Specializations */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          <div className="mb-8 skms-card">
+            <h3 className="mb-4 text-xl font-bold text-white">
               Barbara&apos;s Specializations
             </h3>
             <div className="grid gap-6 md:grid-cols-3">
-              <div className="rounded-lg border border-gray-200 p-4 text-center">
-                <h4 className="mb-2 font-bold text-gray-900">
+              <div className="rounded-lg border border-zinc-700 p-4 text-center">
+                <h4 className="mb-2 font-bold text-white">
                   Civilian Krav Maga
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-zinc-500">
                   Professional instruction in civilian self-defense techniques
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 p-4 text-center">
-                <h4 className="mb-2 font-bold text-gray-900">Kids & Teens</h4>
-                <p className="text-sm text-gray-600">
+              <div className="rounded-lg border border-zinc-700 p-4 text-center">
+                <h4 className="mb-2 font-bold text-white">Kids & Teens</h4>
+                <p className="text-sm text-zinc-500">
                   Age-appropriate training for young students
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 p-4 text-center">
-                <h4 className="mb-2 font-bold text-gray-900">Women Only</h4>
-                <p className="text-sm text-gray-600">
+              <div className="rounded-lg border border-zinc-700 p-4 text-center">
+                <h4 className="mb-2 font-bold text-white">Women Only</h4>
+                <p className="text-sm text-zinc-500">
                   Specialized women&apos;s self-defense courses
                 </p>
               </div>
@@ -212,10 +212,10 @@ export default function BarbaraSasfyPage() {
 
           {/* Motto */}
           <div className="py-8 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">
+            <h2 className="mb-4 text-3xl font-bold text-white">
               Stay Safe, Get Fit, Hit Hard!
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-700">
+            <p className="mx-auto max-w-2xl text-lg text-zinc-400">
               <strong>SKMS Krav Maga</strong> will bring out the best in you. We
               make Krav Maga accessible, affordable and fun.
             </p>
@@ -230,16 +230,16 @@ export default function BarbaraSasfyPage() {
             Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
           </p>
           <div className="mt-4 space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-blue-300">
+            <Link href="/privacy" className="hover:text-red-300">
               Privacy Policy
             </Link>
-            <Link href="/disclaimer" className="hover:text-blue-300">
+            <Link href="/disclaimer" className="hover:text-red-300">
               Website Disclaimer
             </Link>
-            <Link href="/accessibility" className="hover:text-blue-300">
+            <Link href="/accessibility" className="hover:text-red-300">
               Accessibility Policy
             </Link>
-            <Link href="/sitemap" className="hover:text-blue-300">
+            <Link href="/sitemap" className="hover:text-red-300">
               Sitemap
             </Link>
           </div>

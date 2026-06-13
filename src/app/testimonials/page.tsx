@@ -2,18 +2,18 @@ import Link from "next/link";
 
 export default function TestimonialsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="skms-page">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 py-16 text-white">
+      <div className="bg-gradient-to-r from-zinc-950 to-red-900 py-16 text-white">
         <div className="container mx-auto px-4">
           <nav className="mb-8">
             <ul className="flex flex-wrap gap-4 text-sm">
               <li>
-                <Link href="/" className="hover:text-blue-200">
+                <Link href="/" className="hover:text-red-200">
                   Home
                 </Link>
               </li>
-              <li className="text-blue-200">Testimonials</li>
+              <li className="text-red-200">Testimonials</li>
             </ul>
           </nav>
 
@@ -34,18 +34,18 @@ export default function TestimonialsPage() {
           {/* Testimonials Grid */}
           <div className="mb-12 grid gap-8 md:grid-cols-2">
             {/* Deirdre Craddock */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   DC
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-white">
                     Deirdre Craddock
                   </h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;Training KM was the best decision I have ever made for my
                 health as well as my safety. Without a doubt I am safer, feel
                 braver but best of all it helps control my Fibromyalgia so now I
@@ -67,18 +67,18 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Steven Clark */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   SC
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-white">
                     Steven Clark
                   </h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;I can thoroughly recommend the SKMS classes and tutors. I
                 had some base in other martial arts but had none in Krav Maga.
                 Finding a martial art which I could practice and work around a
@@ -96,16 +96,16 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Mitch */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   M
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">Mitch</h3>
+                  <h3 className="text-lg font-bold text-white">Mitch</h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;My son and I started Krav Maga with SKMS just over two
                 years ago. He wanted to do something more varied and practical
                 than traditional martial arts and I went to keep him company.
@@ -120,18 +120,18 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Solange Pompl */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   SP
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-white">
                     Solange Pompl
                   </h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;I took the women&apos;s self defense class whilst living
                 in Scotland for a year, as I wanted to learn to protect myself
                 better. I liked it so much that I started the regular course
@@ -147,18 +147,18 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Gracie Moffat */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   GM
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-white">
                     Gracie Moffat
                   </h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;Learning Krav Maga has allowed me to feel confident in my
                 ability to defend myself and others, whether it&apos;s on a
                 night out or travelling alone in a new country. Best decision
@@ -167,18 +167,18 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Manoj Bagha */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   MB
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-white">
                     Manoj Bagha
                   </h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;Private lessons helped me develop my Krav skills very
                 quickly. The one on one lessons are fantastic they were at a
                 time that suited me. We trained outside in potentially real life
@@ -189,18 +189,18 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Camilla Damlund */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   CD
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-white">
                     Camilla Damlund
                   </h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;Learning Krav Maga with SKMS is a true confidence builder.
                 Robert and the other trainers are dedicated to making training
                 fun and epic while maintaining a safe environment for all.
@@ -210,18 +210,18 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Alyna Karim */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   AK
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-white">
                     Alyna Karim
                   </h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;I began Krav Maga in 2016, with the pro-active intention
                 to learn some basic self-defence as I started university. The
                 classes are fun, energetic and informative. They have greatly
@@ -232,18 +232,18 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Finlay Matheson */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   FM
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-white">
                     Finlay Matheson
                   </h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;Krav classes have had a positive effect on both my
                 confidence and my fitness levels. A very welcoming community and
                 keen instructors. Would recommend for anyone looking for
@@ -252,16 +252,16 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Ronnie */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="skms-card shadow-sm">
               <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
                   R
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">Ronnie</h3>
+                  <h3 className="text-lg font-bold text-white">Ronnie</h3>
                 </div>
               </div>
-              <blockquote className="text-gray-700 italic">
+              <blockquote className="text-zinc-400 italic">
                 &quot;Both my daughters attend and I&apos;ve watched their
                 confidence blossom around other kids AND adults since day
                 one.&quot;
@@ -271,12 +271,12 @@ export default function TestimonialsPage() {
 
           {/* Pagination */}
           <div className="mb-8 flex items-center justify-center space-x-4">
-            <span className="text-gray-600">Posts navigation</span>
+            <span className="text-zinc-500">Posts navigation</span>
             <div className="flex space-x-2">
-              <button className="rounded bg-blue-600 px-3 py-1 text-white hover:bg-blue-700">
+              <button className="rounded bg-red-600 px-3 py-1 text-white hover:bg-red-500">
                 1
               </button>
-              <button className="rounded bg-gray-200 px-3 py-1 text-gray-700 hover:bg-gray-300">
+              <button className="rounded bg-gray-200 px-3 py-1 text-zinc-400 hover:bg-gray-300">
                 2
               </button>
             </div>
@@ -284,10 +284,10 @@ export default function TestimonialsPage() {
 
           {/* Call to Action */}
           <div className="py-8 text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">
+            <h2 className="mb-4 text-2xl font-bold text-white">
               Ready to Join Our Community?
             </h2>
-            <p className="mx-auto mb-6 max-w-2xl text-lg text-gray-700">
+            <p className="mx-auto mb-6 max-w-2xl text-lg text-zinc-400">
               Experience the same confidence, fitness, and community that our
               students rave about. Start your Krav Maga journey today!
             </p>
@@ -300,20 +300,20 @@ export default function TestimonialsPage() {
           </div>
 
           {/* Newsletter Subscription */}
-          <div className="mb-8 rounded-lg bg-blue-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-blue-900">
+          <div className="mb-8 rounded-lg bg-zinc-900/50 p-6">
+            <h3 className="mb-4 text-xl font-bold text-red-400">
               Want to keep up-to-date with SKMS?
             </h3>
-            <p className="mb-4 text-blue-800">Subscribe our newsletter</p>
+            <p className="mb-4 text-red-300">Subscribe our newsletter</p>
             <form className="flex flex-col gap-4 sm:flex-row">
               <input
                 type="email"
                 placeholder="Your Email Address"
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
+                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-red-500"
               />
               <button
                 type="submit"
-                className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
+                className="rounded-lg bg-red-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-red-500"
               >
                 Subscribe
               </button>
@@ -322,10 +322,10 @@ export default function TestimonialsPage() {
 
           {/* Motto */}
           <div className="py-8 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">
+            <h2 className="mb-4 text-3xl font-bold text-white">
               Stay Safe, Get Fit, Hit Hard!
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-700">
+            <p className="mx-auto max-w-2xl text-lg text-zinc-400">
               <strong>SKMS Krav Maga</strong> will bring out the best in you. We
               make Krav Maga accessible, affordable and fun.
             </p>
@@ -340,16 +340,16 @@ export default function TestimonialsPage() {
             Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
           </p>
           <div className="mt-4 space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-blue-300">
+            <Link href="/privacy" className="hover:text-red-300">
               Privacy Policy
             </Link>
-            <Link href="/disclaimer" className="hover:text-blue-300">
+            <Link href="/disclaimer" className="hover:text-red-300">
               Website Disclaimer
             </Link>
-            <Link href="/accessibility" className="hover:text-blue-300">
+            <Link href="/accessibility" className="hover:text-red-300">
               Accessibility Policy
             </Link>
-            <Link href="/sitemap" className="hover:text-blue-300">
+            <Link href="/sitemap" className="hover:text-red-300">
               Sitemap
             </Link>
           </div>

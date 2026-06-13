@@ -3,23 +3,23 @@ import Link from "next/link";
 
 export default function KravMagaGlasgowWestEndPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="skms-page">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 py-16 text-white">
+      <div className="bg-gradient-to-r from-zinc-950 to-red-900 py-16 text-white">
         <div className="container mx-auto px-4">
           <nav className="mb-8">
             <ul className="flex flex-wrap gap-4 text-sm">
               <li>
-                <Link href="/" className="hover:text-blue-200">
+                <Link href="/" className="hover:text-red-200">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/classes" className="hover:text-blue-200">
+                <Link href="/classes" className="hover:text-red-200">
                   Classes
                 </Link>
               </li>
-              <li className="text-blue-200">Krav Maga Glasgow West End</li>
+              <li className="text-red-200">Krav Maga Glasgow West End</li>
             </ul>
           </nav>
 
@@ -44,14 +44,14 @@ export default function KravMagaGlasgowWestEndPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-4xl">
           {/* Location Info */}
-          <div className="mb-8 border-l-4 border-blue-500 bg-blue-50 p-6">
-            <h2 className="mb-4 text-2xl font-bold text-blue-900">
+          <div className="mb-8 border-l-4 border-red-500 bg-zinc-900/50 p-6">
+            <h2 className="mb-4 text-2xl font-bold text-red-400">
               Glasgow West End Location
             </h2>
-            <p className="mb-4 text-lg text-gray-700">
+            <p className="mb-4 text-lg text-zinc-400">
               <strong>The club is open to new members!</strong>
             </p>
-            <p className="text-gray-700">
+            <p className="text-zinc-400">
               Join us by simply booking your class here! Beginners are welcome
               anytime!
             </p>
@@ -60,41 +60,41 @@ export default function KravMagaGlasgowWestEndPage() {
           {/* Class Schedules */}
           <div className="mb-12 grid gap-8 md:grid-cols-2">
             {/* Adult Classes */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-4 text-xl font-bold text-gray-900">
+            <div className="skms-card shadow-sm">
+              <h3 className="mb-4 text-xl font-bold text-white">
                 Adult Classes – All Levels
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="font-medium">Wednesdays</span>
-                  <span className="text-gray-600">7:00 PM - 8:30 PM</span>
+                  <span className="text-zinc-500">7:00 PM - 8:30 PM</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="font-medium">Saturdays</span>
-                  <span className="text-gray-600">10:00 AM - 11:30 AM</span>
+                  <span className="text-zinc-500">10:00 AM - 11:30 AM</span>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-gray-600">
+              <p className="mt-4 text-sm text-zinc-500">
                 Suitable for all fitness levels and experience
               </p>
             </div>
 
             {/* Kids Classes */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-4 text-xl font-bold text-gray-900">
+            <div className="skms-card shadow-sm">
+              <h3 className="mb-4 text-xl font-bold text-white">
                 Kids Classes
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="font-medium">Ages 5-10</span>
-                  <span className="text-gray-600">9:00 AM - 10:00 AM</span>
+                  <span className="text-zinc-500">9:00 AM - 10:00 AM</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="font-medium">Ages 11+</span>
-                  <span className="text-gray-600">9:00 AM - 10:00 AM</span>
+                  <span className="text-zinc-500">9:00 AM - 10:00 AM</span>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-gray-600">
+              <p className="mt-4 text-sm text-zinc-500">
                 Ages 15+ may attend Adult Classes following assessment. 17+
                 welcome without assessment.
               </p>
@@ -102,18 +102,18 @@ export default function KravMagaGlasgowWestEndPage() {
           </div>
 
           {/* Contact Information */}
-          <div className="mb-8 rounded-lg bg-gray-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          <div className="mb-8 rounded-lg bg-zinc-900/50 p-6">
+            <h3 className="mb-4 text-xl font-bold text-white">
               Contact Information
             </h3>
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <p className="text-gray-700">
+                <p className="text-zinc-400">
                   <strong>Phone:</strong> 07512027411
                 </p>
               </div>
               <div>
-                <p className="text-gray-700">
+                <p className="text-zinc-400">
                   <strong>Email:</strong> info@scotkravmaga.co.uk
                 </p>
               </div>
@@ -121,31 +121,31 @@ export default function KravMagaGlasgowWestEndPage() {
           </div>
 
           {/* Trial Class Booking */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          <div className="mb-8 skms-card">
+            <h3 className="mb-4 text-xl font-bold text-white">
               Book a Trial Class
             </h3>
             <div className="mb-6 grid gap-4 md:grid-cols-3">
-              <div className="rounded-lg border border-gray-200 p-4 text-center">
+              <div className="rounded-lg border border-zinc-700 p-4 text-center">
                 <h4 className="mb-2 text-lg font-bold">Adult Trial Class</h4>
-                <p className="text-2xl font-bold text-blue-600">
+                <p className="text-2xl font-bold skms-link">
                   £{PRICES.adult_trial}
                 </p>
-                <p className="text-sm text-gray-600">GBP</p>
+                <p className="text-sm text-zinc-500">GBP</p>
               </div>
-              <div className="rounded-lg border border-gray-200 p-4 text-center">
+              <div className="rounded-lg border border-zinc-700 p-4 text-center">
                 <h4 className="mb-2 text-lg font-bold">Kids & Junior Trial</h4>
-                <p className="text-2xl font-bold text-blue-600">
+                <p className="text-2xl font-bold skms-link">
                   £{PRICES.kids_trial}
                 </p>
-                <p className="text-sm text-gray-600">GBP</p>
+                <p className="text-sm text-zinc-500">GBP</p>
               </div>
-              <div className="rounded-lg border border-gray-200 p-4 text-center">
+              <div className="rounded-lg border border-zinc-700 p-4 text-center">
                 <h4 className="mb-2 text-lg font-bold">Adult Concession</h4>
-                <p className="text-2xl font-bold text-blue-600">
+                <p className="text-2xl font-bold skms-link">
                   £{PRICES.concession_trial}
                 </p>
-                <p className="text-sm text-gray-600">GBP</p>
+                <p className="text-sm text-zinc-500">GBP</p>
               </div>
             </div>
             <div className="text-center">
@@ -159,8 +159,8 @@ export default function KravMagaGlasgowWestEndPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
+          <div className="mb-8 skms-card">
+            <h3 className="mb-4 text-xl font-bold text-white">
               Send us a message!
             </h3>
             <form className="space-y-4">
@@ -168,22 +168,22 @@ export default function KravMagaGlasgowWestEndPage() {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-red-500"
                 />
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-red-500"
                 />
               </div>
               <textarea
                 placeholder="Your Message"
                 rows={4}
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-red-500"
               ></textarea>
               <button
                 type="submit"
-                className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
+                className="rounded-lg bg-red-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-red-500"
               >
                 Send Message
               </button>
@@ -192,10 +192,10 @@ export default function KravMagaGlasgowWestEndPage() {
 
           {/* Motto */}
           <div className="py-8 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">
+            <h2 className="mb-4 text-3xl font-bold text-white">
               Stay Safe, Get Fit, Hit Hard!
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-700">
+            <p className="mx-auto max-w-2xl text-lg text-zinc-400">
               <strong>SKMS Krav Maga</strong> will bring out the best in you. We
               make Krav Maga accessible, affordable and fun.
             </p>
@@ -210,16 +210,16 @@ export default function KravMagaGlasgowWestEndPage() {
             Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
           </p>
           <div className="mt-4 space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-blue-300">
+            <Link href="/privacy" className="hover:text-red-300">
               Privacy Policy
             </Link>
-            <Link href="/disclaimer" className="hover:text-blue-300">
+            <Link href="/disclaimer" className="hover:text-red-300">
               Website Disclaimer
             </Link>
-            <Link href="/accessibility" className="hover:text-blue-300">
+            <Link href="/accessibility" className="hover:text-red-300">
               Accessibility Policy
             </Link>
-            <Link href="/sitemap" className="hover:text-blue-300">
+            <Link href="/sitemap" className="hover:text-red-300">
               Sitemap
             </Link>
           </div>

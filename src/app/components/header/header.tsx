@@ -23,30 +23,26 @@ export default function HeaderBanner({
     <section
       className="relative h-50 content-center bg-cover bg-center bg-no-repeat text-gray-50 lg:h-80"
       style={{
-        backgroundColor: "rgba(75, 75, 75, 0.7)",
-        backgroundImage: `linear-gradient(rgba(6,46,95,0.7), rgba(6,46,95,0.7)), url(${img})`,
+        backgroundColor: "rgba(9, 9, 11, 0.9)",
+        backgroundImage: `linear-gradient(rgba(9,9,11,0.75), rgba(127,29,29,0.55)), url(${img})`,
       }}
     >
       <div className="container mx-auto px-4 text-center">
-        <h1 className="mb-6 text-4xl font-bold lg:text-6xl">{title}</h1>
-        <h2 className="mb-6 text-2xl font-bold max-lg:hidden lg:text-3xl">
+        <h1 className="mb-4 text-4xl font-black tracking-wide uppercase lg:mb-6 lg:text-6xl">
+          {title}
+        </h1>
+        <h2 className="mb-4 text-xl font-bold text-red-200 max-lg:hidden lg:mb-6 lg:text-2xl">
           {subtitle}
         </h2>
-        <p className="mx-auto mb-8 max-w-2xl text-xl max-lg:hidden">
+        <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-300 max-lg:hidden lg:text-xl">
           {description}
         </p>
-        <div className="flex justify-center gap-10">
-          <Link
-            href={link}
-            className="rounded-lg bg-[#1C67B1] px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-blue-900"
-          >
+        <div className="flex flex-wrap justify-center gap-4 lg:gap-10">
+          <Link href={link} className="skms-btn">
             {linkText}
           </Link>
           {link2 && (
-            <Link
-              href={link2}
-              className="rounded-lg bg-[#1C67B1] px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-blue-900"
-            >
+            <Link href={link2} className="skms-btn-outline border-white/30 text-white hover:border-white hover:bg-white/10">
               {link2Text}
             </Link>
           )}

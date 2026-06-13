@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t-[1px] border-gray-300 bg-[#181818]">
+    <footer className="border-t border-red-600/20 bg-zinc-950">
       {/* Desktop Footer */}
       <div
         id="desktop-footer"

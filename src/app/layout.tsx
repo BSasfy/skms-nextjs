@@ -8,7 +8,6 @@ import Footer from "./components/footer/footer";
 export const metadata: Metadata = {
   title: "SKMS Krav Maga",
   description: "Krav Maga in Glasgow",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 const geist = Geist({
@@ -21,9 +20,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body className="bg-white">
+      <body className="bg-zinc-950 text-zinc-300">
         <NavBar />
-        {children}
+        <div className="relative z-0">{children}</div>
         <Footer />
       </body>
     </html>

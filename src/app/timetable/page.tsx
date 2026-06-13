@@ -8,7 +8,7 @@ import { PRICES } from "../constants/prices";
 
 export default function TimetablePage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="skms-page">
       <Header
         img="/banners/punching-bag-banner.jpg"
         title="Timetable"
@@ -18,7 +18,7 @@ export default function TimetablePage() {
         linkText="Book a Beginners Course"
       />
       <div className="container mx-auto lg:px-9">
-        <div className="mx-4 my-10 border-10 border-[#1C67B1] p-4">
+        <div className="mx-4 my-10 rounded-xl border border-red-600/30 bg-zinc-900/50 p-4">
           <h1 className="mb-4 text-center text-3xl font-extrabold">
             Welcome to SKMS Krav Maga!
           </h1>
@@ -31,7 +31,7 @@ export default function TimetablePage() {
             <li className="mb-2">
               <Link href={mixedAdultSelfDefenceClasses.ticketLink}>
                 Mixed Adult Course{" "}
-                <span className="ml-2 rounded-md bg-[#1C67B1] px-2 py-1 text-sm text-white">
+                <span className="ml-2 rounded-md bg-red-600 px-2 py-1 text-sm text-white">
                   Book Here
                 </span>
               </Link>
@@ -39,7 +39,7 @@ export default function TimetablePage() {
             <li className="mb-2">
               <Link href={womensSelfDefenceClasses.ticketLink}>
                 Women Only Course{" "}
-                <span className="ml-2 rounded-md bg-[#1C67B1] px-2 py-1 text-sm text-white">
+                <span className="ml-2 rounded-md bg-red-600 px-2 py-1 text-sm text-white">
                   Book Here
                 </span>
               </Link>

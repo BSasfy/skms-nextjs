@@ -3,15 +3,16 @@ import MembershipTile from "./membership-tile";
 
 export default function MembershipsGrid() {
   return (
-    <>
-      <div className="text-center text-4xl font-extrabold text-[#005EB8] uppercase">
+    <section className="py-10">
+      <p className="skms-section-label text-center">Train With Purpose</p>
+      <div className="text-center text-4xl font-black text-white uppercase">
         SKMS Membership Options
       </div>
-      <div className="text-center text-4xl font-extrabold uppercase">
-        Training plans
+      <div className="text-center text-2xl font-black text-zinc-500 uppercase">
+        Training Plans
       </div>
-      <div className="mt-6 mb-9 w-20 justify-self-center border-2 border-[#005EB8]"></div>
-      <div className="mt-10 grid grid-cols-1 gap-4 justify-self-center px-4 max-sm:px-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto mt-6 mb-9 h-0.5 w-20 bg-red-500" />
+      <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-6 justify-self-center px-4 md:grid-cols-2 lg:grid-cols-3">
         <MembershipTile
           title="Kelvinhall Only"
           schedule="Thursdays 6:00pm - 7:00pm"
@@ -82,6 +83,6 @@ export default function MembershipsGrid() {
           linkText="Inquire now"
         />
       </div>
-    </>
+    </section>
   );
 }

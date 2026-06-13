@@ -4,7 +4,7 @@ import { PRICES } from "../constants/prices";
 
 export default function PrivateCorporateTuitionPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="skms-page">
       {/* Hero Section */}
       <HeaderBanner
         title="Start Training with SKMS!"
@@ -15,14 +15,14 @@ export default function PrivateCorporateTuitionPage() {
       />
 
       {/* Private Tuition Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-zinc-900/50 py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-8 text-center text-3xl font-bold">
               Private Tuition
             </h2>
 
-            <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
+            <div className="mb-8 skms-card p-8">
               <p className="mb-6 text-xl font-semibold text-indigo-900">
                 Private tuition is available anywhere in Glasgow!
               </p>
@@ -40,7 +40,7 @@ export default function PrivateCorporateTuitionPage() {
                     <span className="font-semibold text-indigo-800">
                       For 1 person:
                     </span>
-                    <span className="ml-2 text-gray-700">
+                    <span className="ml-2 text-zinc-400">
                       £{PRICES.private_lesson}/hour
                     </span>
                   </li>
@@ -48,7 +48,7 @@ export default function PrivateCorporateTuitionPage() {
                     <span className="font-semibold text-indigo-800">
                       For 2 people:
                     </span>
-                    <span className="ml-2 text-gray-700">
+                    <span className="ml-2 text-zinc-400">
                       £{PRICES.private_lesson_2}/hour (£
                       {PRICES.private_lesson_2 / 2}/person)
                     </span>
@@ -57,7 +57,7 @@ export default function PrivateCorporateTuitionPage() {
                     <span className="font-semibold text-indigo-800">
                       For 3 people:
                     </span>
-                    <span className="ml-2 text-gray-700">
+                    <span className="ml-2 text-zinc-400">
                       £{PRICES.private_lesson_3}/hour (£
                       {PRICES.private_lesson_3 / 3}/person)
                     </span>
@@ -66,7 +66,7 @@ export default function PrivateCorporateTuitionPage() {
                     <span className="font-semibold text-indigo-800">
                       For 4 people:
                     </span>
-                    <span className="ml-2 text-gray-700">
+                    <span className="ml-2 text-zinc-400">
                       £{PRICES.private_lesson_4}/hour (£
                       {PRICES.private_lesson_4 / 4}/person)
                     </span>
@@ -81,11 +81,11 @@ export default function PrivateCorporateTuitionPage() {
               </div>
 
               <div className="grid gap-6 md:grid-cols-2">
-                <div className="rounded-lg bg-gray-50 p-6">
+                <div className="rounded-lg bg-zinc-900/50 p-6">
                   <h4 className="mb-3 text-lg font-bold text-indigo-900">
                     Location:
                   </h4>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-zinc-400">
                     <li>
                       • Outdoor: Anywhere in Glasgow – at a park near you or in
                       your garden.
@@ -97,11 +97,11 @@ export default function PrivateCorporateTuitionPage() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg bg-gray-50 p-6">
+                <div className="rounded-lg bg-zinc-900/50 p-6">
                   <h4 className="mb-3 text-lg font-bold text-indigo-900">
                     Time and day:
                   </h4>
-                  <p className="text-gray-700">
+                  <p className="text-zinc-400">
                     To be agreed between you and your chosen instructor.
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export default function PrivateCorporateTuitionPage() {
             </div>
 
             {/* Instructors Section */}
-            <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
+            <div className="mb-8 skms-card p-8">
               <h3 className="mb-6 text-2xl font-bold text-indigo-900">
                 Instructors:
               </h3>
@@ -119,7 +119,7 @@ export default function PrivateCorporateTuitionPage() {
                     Robert Bennett -{" "}
                     <Link href="tel:07849114110">07849114110</Link>
                   </h4>
-                  <p className="text-gray-700">
+                  <p className="text-zinc-400">
                     Head instructor and club owner, 15 years of Krav Maga
                     experience, 30+ years of Karate experience.
                   </p>
@@ -129,14 +129,14 @@ export default function PrivateCorporateTuitionPage() {
                     Barbara Sasfy -{" "}
                     <Link href="tel:07512027411">07512027411</Link>
                   </h4>
-                  <p className="text-gray-700">
+                  <p className="text-zinc-400">
                     Women Only, Kids and Adult Krav Maga instructor, 10 years of
                     experience.
                   </p>
                 </div>
               </div>
               <div className="mt-6 rounded-lg bg-pink-50 p-4">
-                <p className="text-gray-700">
+                <p className="text-zinc-400">
                   If you&apos;re a female looking to book a 1-2-1 session with
                   Robert, you can request Barbara to be there at the class as
                   well for no extra charge.
@@ -153,7 +153,7 @@ export default function PrivateCorporateTuitionPage() {
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-8 text-center text-3xl font-bold">Corporate</h2>
 
-            <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
+            <div className="mb-8 skms-card p-8">
               <p className="mb-6 text-lg">
                 Prices from £{PRICES.corporate_booking} for a 2.5-hour session
                 and a 30 minute QnA for up to 20 people. Charities can access
@@ -170,7 +170,7 @@ export default function PrivateCorporateTuitionPage() {
                 <h3 className="mb-4 text-xl font-bold text-indigo-900">
                   What we offer:
                 </h3>
-                <ul className="space-y-3 text-gray-700">
+                <ul className="space-y-3 text-zinc-400">
                   <li>
                     • We can take any amount of people, there&apos;s no upper
                     limit
@@ -212,7 +212,7 @@ export default function PrivateCorporateTuitionPage() {
                 </p>
                 <Link
                   href="tel:07849114110"
-                  className="rounded-lg bg-blue-600 px-6 py-3 font-bold text-white transition-colors duration-200 hover:bg-blue-700"
+                  className="rounded-lg bg-red-600 px-6 py-3 font-bold text-white transition-colors duration-200 hover:bg-red-500"
                 >
                   Contact Us
                 </Link>
@@ -223,7 +223,7 @@ export default function PrivateCorporateTuitionPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-zinc-900/50 py-16">
         <div className="container mx-auto px-4">
           <h2 className="mb-12 text-center text-3xl font-bold">
             What Our Students Say
@@ -231,16 +231,16 @@ export default function PrivateCorporateTuitionPage() {
 
           <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
             {/* Steven Clark */}
-            <div className="rounded-lg bg-white p-6 shadow-md">
+            <div className="skms-card">
               <div className="mb-4 flex items-center">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-600 font-bold text-white">
                   SC
                 </div>
                 <div className="ml-3">
-                  <h4 className="font-semibold text-gray-800">Steven Clark</h4>
+                  <h4 className="font-semibold text-zinc-300">Steven Clark</h4>
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-gray-600">
+              <p className="text-sm leading-relaxed text-zinc-500">
                 I can thoroughly recommend the SKMS classes and tutors. I had
                 some base in other martial arts but had none in Krav Maga.
                 Finding a martial art which I could practice and work around a
@@ -250,16 +250,16 @@ export default function PrivateCorporateTuitionPage() {
             </div>
 
             {/* Manoj Bagha */}
-            <div className="rounded-lg bg-white p-6 shadow-md">
+            <div className="skms-card">
               <div className="mb-4 flex items-center">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-600 font-bold text-white">
                   MB
                 </div>
                 <div className="ml-3">
-                  <h4 className="font-semibold text-gray-800">Manoj Bagha</h4>
+                  <h4 className="font-semibold text-zinc-300">Manoj Bagha</h4>
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-gray-600">
+              <p className="text-sm leading-relaxed text-zinc-500">
                 Private lessons helped me develop my Krav skills very quickly.
                 The one on one lessons are fantastic they were at a time that
                 suited me. We trained outside in potentially real life
@@ -298,7 +298,7 @@ export default function PrivateCorporateTuitionPage() {
       </section>
 
       {/* Car Rage Seminar Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-zinc-900/50 py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-8 text-center text-3xl font-bold">
@@ -309,7 +309,7 @@ export default function PrivateCorporateTuitionPage() {
               Building!
             </p>
 
-            <div className="rounded-lg bg-white p-8 shadow-lg">
+            <div className="skms-card p-8">
               <p className="mb-6 text-lg">
                 Have you ever wondered how you&apos;d cope with being attacked
                 in a car either as a driver or as a passenger from the side,
@@ -323,7 +323,7 @@ export default function PrivateCorporateTuitionPage() {
                 <h3 className="mb-4 text-xl font-bold text-red-900">
                   Seminar Details:
                 </h3>
-                <ul className="space-y-2 text-gray-700">
+                <ul className="space-y-2 text-zinc-400">
                   <li>• Cost includes the use of the car and full insurance</li>
                   <li>• Available for a maximum of 4 persons per session</li>
                   <li>• £{PRICES.car_rage_seminar} for 3 hours</li>
@@ -350,10 +350,10 @@ export default function PrivateCorporateTuitionPage() {
 
             {/* Car Rage Seminar Image Placeholder */}
             <div className="mt-8 rounded-lg bg-gray-200 p-8 text-center">
-              <h3 className="mb-4 text-xl font-bold text-gray-700">
+              <h3 className="mb-4 text-xl font-bold text-zinc-400">
                 Car Rage Seminar Krav Maga Glasgow Touareg
               </h3>
-              <p className="text-gray-600">
+              <p className="text-zinc-500">
                 [Image placeholder - Car Rage Seminar]
               </p>
             </div>
