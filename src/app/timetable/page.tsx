@@ -1,10 +1,33 @@
 import Link from "next/link";
+import { type Metadata } from "next";
 import Header from "../components/header/header";
 import {
+  mixedAdultCourseDescription,
   mixedAdultSelfDefenceClasses,
   womensSelfDefenceClasses,
 } from "../womens-self-defence-classes/utils";
 import { PRICES } from "../constants/prices";
+
+export const metadata: Metadata = {
+  title: "Timetable & Beginners Courses | SKMS Krav Maga Glasgow",
+  description: mixedAdultCourseDescription,
+  openGraph: {
+    title: "Timetable & Beginners Courses | SKMS Krav Maga Glasgow",
+    description: mixedAdultCourseDescription,
+    url: "https://scotkravmaga.co.uk/timetable",
+    siteName: "SKMS Krav Maga",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Timetable & Beginners Courses | SKMS Krav Maga Glasgow",
+    description: mixedAdultCourseDescription,
+  },
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk/timetable",
+  },
+};
 
 export default function TimetablePage() {
   return (

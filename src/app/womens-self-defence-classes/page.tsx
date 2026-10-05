@@ -2,12 +2,15 @@ import Link from "next/link";
 import { type Metadata } from "next";
 import HeaderBanner from "../components/header/header";
 import WomenOnlyTestimonials from "../components/testimonials/women-only-testimonals";
-import { womensSelfDefenceClasses } from "./utils";
+import {
+  womenCourseDescription,
+  womensSelfDefenceClasses,
+} from "./utils";
 import WomenOnlyPageViews from "../components/tracking/meta/women-only-page-views";
 
 export const metadata: Metadata = {
   title: "Women Only Self Defence Classes | SKMS Krav Maga Glasgow",
-  description: `Join our Women Only Self Defence Beginners Course in Glasgow. ${womensSelfDefenceClasses.duration} course for just ${womensSelfDefenceClasses.price} starting ${womensSelfDefenceClasses.startDate}. Learn Krav Maga in a safe, supportive environment at ${womensSelfDefenceClasses.location}. Suitable for all ages and abilities.`,
+  description: womenCourseDescription,
   keywords: [
     "women only self defence",
     "women self defence classes Glasgow",
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Women Only Self Defence Classes | SKMS Krav Maga Glasgow",
-    description: `Join our ${womensSelfDefenceClasses.duration} Women Only Self Defence Beginners Course for just ${womensSelfDefenceClasses.price}. Starting ${womensSelfDefenceClasses.startDate} at ${womensSelfDefenceClasses.location}.`,
+    description: womenCourseDescription,
     url: "https://scotkravmaga.co.uk/womens-self-defence-classes",
     siteName: "SKMS Krav Maga",
     images: [
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Women Only Self Defence Classes | SKMS Krav Maga",
-    description: `Join our ${womensSelfDefenceClasses.duration} Women Only Self Defence Beginners Course for just ${womensSelfDefenceClasses.price}.`,
+    description: womenCourseDescription,
     images: ["/banners/helmet.jpg"],
   },
   alternates: {
@@ -286,8 +289,7 @@ export default function WomensSelfDefenceClassesPage() {
             "@context": "https://schema.org",
             "@type": "Course",
             name: "Women Only Self Defence Beginners Course",
-            description:
-              "A 4-week beginners course in Krav Maga self-defence designed specifically for women. Learn effective self-defence techniques in a safe, supportive environment.",
+            description: womenCourseDescription,
             provider: {
               "@type": "Organization",
               name: "SKMS Krav Maga",
