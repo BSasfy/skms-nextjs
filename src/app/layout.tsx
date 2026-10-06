@@ -8,7 +8,6 @@ import Footer from "./components/footer/footer";
 export const metadata: Metadata = {
   title: "SKMS Krav Maga",
   description: "Krav Maga in Glasgow",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 const geist = Geist({
