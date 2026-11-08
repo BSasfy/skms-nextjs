@@ -73,37 +73,46 @@ export default function TrialPage() {
               Book a trial class
             </h3>
             <div className="grid gap-6 md:grid-cols-3">
-              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class">
-                {" "}
-                <div className="rounded-lg border border-gray-200 p-6 text-center">
-                  <h4 className="mb-2 text-lg font-bold">Adult Trial Class</h4>
-                  <p className="text-3xl font-bold text-blue-600">
-                    £{PRICES.adult_trial}
-                  </p>
-                  <p className="text-sm text-gray-600">GBP</p>
-                </div>
+              <Link
+                href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class"
+                className="block rounded-lg border border-gray-200 p-6 text-center transition-colors hover:border-blue-400 hover:bg-blue-50"
+              >
+                <h4 className="mb-2 text-lg font-bold">Adult Trial Class</h4>
+                <p className="text-3xl font-bold text-blue-600">
+                  £{PRICES.adult_trial}
+                </p>
+                <p className="mb-4 text-sm text-gray-600">GBP</p>
+                <span className="inline-block rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-bold text-white">
+                  Book now
+                </span>
               </Link>
 
-              <Link href={BOOKING_LINKS.teensTrial}>
-                {" "}
-                <div className="rounded-lg border border-gray-200 p-6 text-center">
-                  <h4 className="mb-2 text-lg font-bold">Teens Trial</h4>
-                  <p className="text-3xl font-bold text-blue-600">
-                    £{PRICES.teens_trial}
-                  </p>
-                  <p className="text-sm text-gray-600">GBP</p>
-                </div>
+              <Link
+                href={BOOKING_LINKS.teensTrial}
+                className="block rounded-lg border border-gray-200 p-6 text-center transition-colors hover:border-blue-400 hover:bg-blue-50"
+              >
+                <h4 className="mb-2 text-lg font-bold">Teens Trial</h4>
+                <p className="text-3xl font-bold text-blue-600">
+                  £{PRICES.teens_trial}
+                </p>
+                <p className="mb-4 text-sm text-gray-600">GBP</p>
+                <span className="inline-block rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-bold text-white">
+                  Book now
+                </span>
               </Link>
 
-              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class-student-discount">
-                {" "}
-                <div className="rounded-lg border border-gray-200 p-6 text-center">
-                  <h4 className="mb-2 text-lg font-bold">Adult Concession</h4>
-                  <p className="text-3xl font-bold text-blue-600">
-                    £{PRICES.concession_trial}
-                  </p>
-                  <p className="text-sm text-gray-600">GBP</p>
-                </div>
+              <Link
+                href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class-student-discount"
+                className="block rounded-lg border border-gray-200 p-6 text-center transition-colors hover:border-blue-400 hover:bg-blue-50"
+              >
+                <h4 className="mb-2 text-lg font-bold">Adult Concession</h4>
+                <p className="text-3xl font-bold text-blue-600">
+                  £{PRICES.concession_trial}
+                </p>
+                <p className="mb-4 text-sm text-gray-600">GBP</p>
+                <span className="inline-block rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-bold text-white">
+                  Book now
+                </span>
               </Link>
             </div>
           </div>
