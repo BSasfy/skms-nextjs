@@ -1,17 +1,33 @@
 import Link from "next/link";
+import { type Metadata } from "next";
 import Header from "./components/header/header";
 import Image from "next/image";
 import MembershipsGrid from "./components/memberships/memberships-grid";
 import Testimonials from "./components/testimonials/testimonials";
+
+export const metadata: Metadata = {
+  title: "Krav Maga Glasgow | Self Defence Classes",
+  description:
+    "Krav Maga Glasgow with SKMS — self defence classes for adults and teens at Firhill and Kelvinhall. Women-only beginners courses, trials from £10.",
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk",
+  },
+  openGraph: {
+    title: "Krav Maga Glasgow | SKMS Self Defence Classes",
+    description:
+      "Beginners-friendly Krav Maga and self defence classes in Glasgow’s West End. Women-only, teen and adult classes.",
+    url: "https://scotkravmaga.co.uk",
+  },
+};
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
       <Header
         img="/banners/punching-bag-banner.jpg"
-        title="Welcome to SKMS"
-        subtitle="Krav Maga in Glasgow for all ages and abilities"
-        description="Learn life changing skills, gain confidence and get in shape all at the same time!"
+        title="SKMS Krav Maga Glasgow"
+        subtitle="Self defence classes for all ages"
+        description="Learn practical self defence, gain confidence and get fit — beginners welcome at our Glasgow classes."
         link="/trial"
         linkText="Book a Trial Class"
       />
@@ -23,13 +39,13 @@ export default function HomePage() {
               <Image
                 src="/Women-only-classes.jpg"
                 fill
-                alt="a woman hitting another woman in the jaw with her palm"
+                alt="Women-only self defence class training Krav Maga in Glasgow"
                 className="object-cover"
                 priority={true}
               />
               <Link href="/womens-self-defence-classes" className="relative">
                 <div className="p-4 text-4xl font-bold drop-shadow-2xl">
-                  Women Only Classes
+                  Women Only Self Defence
                 </div>
                 <div className="w-1/3 justify-self-center border-2"></div>
                 <div className="text-xl font-normal">View More</div>
@@ -39,13 +55,13 @@ export default function HomePage() {
               <Image
                 src="/adult-krav-maga.jpg"
                 fill
-                alt="man punching a pad that another man is holding"
+                alt="Adult beginners Krav Maga class in Glasgow West End"
                 className="object-cover"
                 priority={true}
               />
               <Link href="/adults-krav-maga" className="relative">
                 <div className="p-4 text-4xl font-bold drop-shadow-2xl">
-                  Adults Krav Maga
+                  Adult Krav Maga Classes
                 </div>
                 <div className="w-1/3 justify-self-center border-2"></div>
                 <div className="text-xl font-normal">View More</div>
@@ -55,13 +71,13 @@ export default function HomePage() {
               <Image
                 src="/kids-teens-krav-maga.jpg"
                 fill
-                alt="young kids facing the camera with their fists up"
+                alt="Teens Krav Maga self defence class in Glasgow"
                 className="object-cover"
                 priority={true}
               />
               <Link href="/kids-krav-maga" className="relative">
                 <div className="p-4 text-4xl font-bold drop-shadow-2xl">
-                  Kids Krav Maga
+                  Teens Krav Maga
                 </div>
                 <div className="w-1/3 justify-self-center border-2"></div>
                 <div className="text-xl font-normal">View More</div>
@@ -95,14 +111,14 @@ export default function HomePage() {
             <div className="mt-5 mb-9 w-1/4 justify-self-center border-2 border-[#005EB8]"></div>
             <div className="mb-14 flex flex-col gap-4 text-center text-lg">
               <div>
-                <strong>Krav Maga</strong> is the most effective self-defence
-                system in the world. Krav Maga was first used by the military
-                but has evolved into a system that can be used by civilians in
-                their everyday lives.{" "}
+                <strong>Krav Maga</strong> is the most effective self defence
+                system in the world. First used by the military, it has evolved
+                into training civilians can use in everyday life — taught in
+                Glasgow at SKMS.{" "}
               </div>
               <div>
-                Krav Maga contains no sporting elements; its based on real life
-                situations. <strong>It works!</strong>
+                Krav Maga contains no sporting elements; it&apos;s based on real
+                life situations. <strong>It works!</strong>
               </div>
 
               <Link

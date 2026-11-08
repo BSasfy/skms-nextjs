@@ -1,6 +1,29 @@
 import Link from "next/link";
+import { type Metadata } from "next";
 import Header from "../components/header/header";
 import Testimonials from "../components/testimonials/testimonials";
+
+export const metadata: Metadata = {
+  title: "Adult Krav Maga Classes Glasgow | Beginners Welcome",
+  description:
+    "Adult Krav Maga classes in Glasgow — beginners welcome. Wed & Sat at Firhill, Thu at Kelvinhall. Trial £12. Practical self defence with SKMS.",
+  keywords: [
+    "adult Krav Maga classes Glasgow",
+    "beginners Krav Maga Glasgow",
+    "Krav Maga Kelvinhall",
+    "Krav Maga Firhill",
+    "self defence classes West End Glasgow",
+  ],
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk/adults-krav-maga",
+  },
+  openGraph: {
+    title: "Adult Krav Maga Classes Glasgow | SKMS",
+    description:
+      "Beginners Krav Maga in Glasgow’s West End. Three weekly adult classes at Firhill and Kelvinhall.",
+    url: "https://scotkravmaga.co.uk/adults-krav-maga",
+  },
+};
 
 export default function AdultsKravMagaPage() {
   return (
@@ -8,8 +31,9 @@ export default function AdultsKravMagaPage() {
       {/* Hero Section */}
       <Header
         img="/banners/adult-gloves.jpg"
-        title="Start Training with SKMS!"
-        subtitle="Beginners welcome at any of our classes!"
+        title="Adult Krav Maga Classes Glasgow"
+        subtitle="Beginners Krav Maga at Firhill & Kelvinhall"
+        description="All levels welcome — start with a trial class any week. Stay Safe, Get Fit, Hit Hard."
         link="/trial"
         linkText="Book a Trial Class!"
       />
@@ -17,9 +41,9 @@ export default function AdultsKravMagaPage() {
       {/* Class Timetable Section */}
       <div className="container mx-auto px-4">
         <div className="mx-4 my-10 border-10 border-[#1C67B1] p-4 lg:p-10">
-          <h1 className="mb-4 text-center text-3xl font-extrabold">
-            Class Timetable
-          </h1>
+          <h2 className="mb-4 text-center text-3xl font-extrabold">
+            Adult Class Timetable
+          </h2>
 
           <div className="grid gap-8 md:grid-cols-2">
             {/* Firhill Sports Complex */}
@@ -71,7 +95,7 @@ export default function AdultsKravMagaPage() {
 
           <div className="mt-8 text-center">
             <p className="mb-8 text-gray-600">
-              Kids ages 14+ are welcome to the Adult class with an accompanying
+              Teens aged 14+ are welcome to the Adult class with an accompanying
               adult. Ages 17+ are welcome without an accompanying adult.
             </p>
             <Link

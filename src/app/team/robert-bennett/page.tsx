@@ -149,7 +149,7 @@ export default function RobertBennettPage() {
               <p className="text-gray-700">
                 To see our rates, visit
                 <Link
-                  href="/prices"
+                  href="/join"
                   className="font-semibold text-blue-600 hover:text-blue-800"
                 >
                   THIS page
@@ -286,16 +286,16 @@ export default function RobertBennettPage() {
             Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
           </p>
           <div className="mt-4 space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Privacy Policy
             </Link>
-            <Link href="/disclaimer" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Website Disclaimer
             </Link>
-            <Link href="/accessibility" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Accessibility Policy
             </Link>
-            <Link href="/sitemap" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Sitemap
             </Link>
           </div>

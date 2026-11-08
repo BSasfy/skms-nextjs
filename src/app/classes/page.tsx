@@ -1,16 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
+import { type Metadata } from "next";
 import Header from "../components/header/header";
 import Testimonials from "../components/testimonials/testimonials";
+
+export const metadata: Metadata = {
+  title: "Krav Maga Classes Glasgow",
+  description:
+    "Browse SKMS Krav Maga classes in Glasgow — women-only self defence, adult beginners classes, teens, and private tuition.",
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk/classes",
+  },
+};
 
 export default function ClassesPage() {
   return (
     <main className="min-h-screen bg-white">
       <Header
         img="/banners/punching-bag-banner.jpg"
-        title="Welcome to SKMS"
-        subtitle="Krav Maga in Glasgow for all ages and abilities"
-        description="Learn life changing skills, gain confidence and get in shape all at the same time!"
+        title="Krav Maga Classes Glasgow"
+        subtitle="Self defence for adults and teens"
+        description="Women-only courses, adult Krav Maga, and teens — beginners welcome at Firhill and Kelvinhall."
         link="/trial"
         linkText="Book a Trial Class"
       />
@@ -22,13 +32,13 @@ export default function ClassesPage() {
               <Image
                 src="/Women-only-classes.jpg"
                 fill
-                alt="a woman hitting another woman in the jaw with her palm"
+                alt="Women-only self defence class training Krav Maga in Glasgow"
                 className="object-cover"
                 priority={true}
               />
               <Link href="/womens-self-defence-classes" className="relative">
                 <div className="p-4 text-4xl font-bold drop-shadow-2xl">
-                  Women Only Classes
+                  Women Only Self Defence
                 </div>
                 <div className="w-1/3 justify-self-center border-2"></div>
                 <div className="text-xl font-normal">View More</div>
@@ -38,13 +48,13 @@ export default function ClassesPage() {
               <Image
                 src="/adult-krav-maga.jpg"
                 fill
-                alt="man punching a pad that another man is holding"
+                alt="Adult beginners Krav Maga class in Glasgow West End"
                 className="object-cover"
                 priority={true}
               />
               <Link href="/adults-krav-maga" className="relative">
                 <div className="p-4 text-4xl font-bold drop-shadow-2xl">
-                  Adults Krav Maga
+                  Adult Krav Maga Classes
                 </div>
                 <div className="w-1/3 justify-self-center border-2"></div>
                 <div className="text-xl font-normal">View More</div>
@@ -54,13 +64,13 @@ export default function ClassesPage() {
               <Image
                 src="/kids-teens-krav-maga.jpg"
                 fill
-                alt="young kids facing the camera with their fists up"
+                alt="Teens Krav Maga self defence class in Glasgow"
                 className="object-cover"
                 priority={true}
               />
               <Link href="/kids-krav-maga" className="relative">
                 <div className="p-4 text-4xl font-bold drop-shadow-2xl">
-                  Kids Krav Maga
+                  Teens Krav Maga
                 </div>
                 <div className="w-1/3 justify-self-center border-2"></div>
                 <div className="text-xl font-normal">View More</div>

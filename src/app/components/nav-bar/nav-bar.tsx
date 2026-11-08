@@ -2,15 +2,96 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import MobileNavBar from "./mobile-nav-bar";
 import { usePathname } from "next/navigation";
+
+type DropdownItem = {
+  href: string;
+  label: ReactNode;
+};
+
+function DesktopDropdown({
+  open,
+  items,
+  onNavigate,
+}: {
+  open: boolean;
+  items: DropdownItem[];
+  onNavigate: () => void;
+}) {
+  return (
+    <div
+      className={`absolute top-full left-1/2 z-50 min-w-52 -translate-x-1/2 pt-0 transition-opacity duration-150 ease-out ${
+        open
+          ? "pointer-events-auto opacity-100"
+          : "pointer-events-none opacity-0"
+      }`}
+    >
+      <ul className="border-b border-white/10 bg-gray-950 py-1.5">
+        {items.map((item) => (
+          <li key={item.href}>
+            <Link
+              href={item.href}
+              onClick={onNavigate}
+              className="block px-4 py-2.5 text-sm font-semibold whitespace-nowrap text-gray-100 transition-colors hover:bg-gray-900 hover:text-white"
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function DesktopMenuItem({
+  label,
+  href,
+  open,
+  onOpen,
+  onClose,
+  items,
+}: {
+  label: string;
+  href?: string;
+  open: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  items: DropdownItem[];
+}) {
+  const triggerClass = `inline-flex items-center gap-1 border-b-2 py-6 transition-colors hover:text-blue-200 ${
+    open ? "border-blue-500 text-blue-200" : "border-transparent"
+  }`;
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={onOpen}
+      onMouseLeave={onClose}
+      onFocus={onOpen}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) onClose();
+      }}
+    >
+      {href ? (
+        <Link href={href} className={triggerClass}>
+          {label}
+        </Link>
+      ) : (
+        <button type="button" className={triggerClass}>
+          {label}
+        </button>
+      )}
+      <DesktopDropdown open={open} items={items} onNavigate={onClose} />
+    </div>
+  );
+}
 
 export default function NavBar() {
   const [isClassesOpen, setIsClassesOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
-  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [isTrialOpen, setIsTrialOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -19,242 +100,129 @@ export default function NavBar() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathName]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const html = document.documentElement;
+    const { body } = document;
+    const previousHtmlOverflow = html.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+
+    return () => {
+      html.style.overflow = previousHtmlOverflow;
+      body.style.overflow = previousBodyOverflow;
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <div className="min-h-20 content-center justify-between bg-gray-950/90 px-8 text-sm font-bold text-white">
+    <div className="relative z-50 min-h-20 content-center justify-between bg-gray-950 px-8 text-sm font-bold text-white">
       <div className="mx-auto flex max-w-[1400px] gap-10 lg:gap-20 xl:gap-42">
         <Link href={"/"}>
           <Image src="/Logo.png" alt="SKMS Logo" width={100} height={100} />
         </Link>
 
-        <div className="flex w-full items-center justify-between overflow-hidden max-[900px]:hidden">
-          <Link href="/">HOME</Link>
-          <div
-            onMouseOver={() => setIsClassesOpen(true)}
-            onMouseLeave={() => setIsClassesOpen(false)}
-          >
-            <Link href="/classes">CLASSES</Link>
-            <ul
-              className={`${isClassesOpen ? "block" : "hidden"} text-md absolute z-50 rounded-md p-7 text-gray-100 xl:text-lg`}
-            >
-              <div className="-ml-15 bg-gray-900 p-4">
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/timetable/"
-                    onClick={() => setIsClassesOpen(false)}
-                  >
-                    Beginners Krav Maga
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/adults-krav-maga/"
-                    onClick={() => setIsClassesOpen(false)}
-                  >
-                    Adults Krav Maga
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/womens-self-defence-classes/"
-                    onClick={() => setIsClassesOpen(false)}
-                  >
-                    Women&apos;s Self Defence Glasgow
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/kids-krav-maga/"
-                    onClick={() => setIsClassesOpen(false)}
-                  >
-                    Kids & Teens
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/private-corporate-tuition/"
-                    onClick={() => setIsClassesOpen(false)}
-                  >
-                    Private & Corporate Tuition
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link href="/join/" onClick={() => setIsClassesOpen(false)}>
-                    Membership Prices
-                  </Link>
-                </li>
-              </div>
-            </ul>
-          </div>
-
-          <Link href="/join">PRICES</Link>
-          <div
-            onMouseOver={() => setIsLocationsOpen(true)}
-            onMouseLeave={() => setIsLocationsOpen(false)}
-          >
-            <div className="cursor-pointer">LOCATIONS</div>
-            <ul
-              className={`${isLocationsOpen ? "block" : "hidden"} text-md absolute z-50 rounded-md p-7 text-gray-100 xl:text-lg`}
-            >
-              <div className="-ml-15 bg-gray-950 p-4">
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/classes/krav-maga-glasgow-west-end/"
-                    onClick={() => setIsLocationsOpen(false)}
-                  >
-                    Mixed Adult - Firhill
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/classes/glasgow-west-end-kelvin-hall/"
-                    onClick={() => setIsLocationsOpen(false)}
-                  >
-                    Mixed Adult - Kelvinhall
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/womens-self-defence-classes/"
-                    onClick={() => setIsLocationsOpen(false)}
-                  >
-                    Women Only
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/kids-krav-maga/"
-                    onClick={() => setIsLocationsOpen(false)}
-                  >
-                    Kids & Teens
-                  </Link>
-                </li>
-              </div>
-            </ul>
-          </div>
-          <div
-            onMouseOver={() => setIsEventsOpen(true)}
-            onMouseLeave={() => setIsEventsOpen(false)}
-          >
-            <div className="cursor-pointer">EVENTS</div>
-
-            <ul
-              className={`${isEventsOpen ? "block" : "hidden"} text-md absolute z-50 rounded-md p-7 text-gray-100 xl:text-lg`}
-            >
-              <div className="-ml-15 bg-gray-950 p-4">
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/womens-self-defence-classes/"
-                    onClick={() => setIsEventsOpen(false)}
-                  >
-                    Women Only Events
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/timetable/"
-                    onClick={() => setIsEventsOpen(false)}
-                  >
-                    Beginners Course January 2026
-                  </Link>
-                </li>
-                {/* <li className="hover:text-blue-800">
-          <Link href="/students/" onClick={() => setIsEventsOpen(false)}>
-            UoG Student Classes
+        <div className="flex w-full items-center justify-between max-[900px]:hidden">
+          <Link href="/" className="py-6 transition-colors hover:text-blue-200">
+            HOME
           </Link>
-        </li> */}
-              </div>
-            </ul>
-          </div>
-          {/* <div
-            onMouseOver={() => setIsAboutUsOpen(true)}
-            onMouseLeave={() => setIsAboutUsOpen(false)}
-          >
-            <Link
-              href="/about-krav-maga/"
-              onClick={() => setIsAboutUsOpen(false)}
-            >
-              ABOUT US
-            </Link>
-            <ul
-              className={`${isAboutUsOpen ? "block" : "hidden"} text-md absolute z-50 rounded-md p-7 text-gray-100 xl:text-lg`}
-            >
-              <div className="-ml-15 bg-gray-950 p-4">
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/about-krav-maga/"
-                    onClick={() => setIsAboutUsOpen(false)}
-                  >
-                    About Krav Maga & SKMS
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/instructors/"
-                    onClick={() => setIsAboutUsOpen(false)}
-                  >
-                    SKMS Instructors
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/testimonials/"
-                    onClick={() => setIsAboutUsOpen(false)}
-                  >
-                    Student Testimonials
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/gallery/"
-                    onClick={() => setIsAboutUsOpen(false)}
-                  >
-                    Gallery
-                  </Link>
-                </li>
-              </div>
-            </ul>
-          </div> */}
-          <div
-            onMouseOver={() => setIsTrialOpen(true)}
-            onMouseLeave={() => setIsTrialOpen(false)}
-          >
-            <Link href="/trial">BOOK A TRIAL CLASS</Link>
-            <ul
-              className={`${isTrialOpen ? "block" : "hidden"} text-md absolute z-50 rounded-md p-7 text-gray-100 xl:text-lg`}
-            >
-              <div className="-ml-15 bg-gray-950 p-4">
-                <li className="hover:text-blue-800">
-                  <Link href="/trial/" onClick={() => setIsTrialOpen(false)}>
-                    Book a Trial Class
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/timetable/"
-                    onClick={() => setIsTrialOpen(false)}
-                  >
-                    Timeable and Beginners Courses
-                  </Link>
-                </li>
-                <li className="hover:text-blue-800">
-                  <Link href="/join/" onClick={() => setIsTrialOpen(false)}>
-                    Membership Prices & Join
-                  </Link>
-                </li>
 
-                <li className="hover:text-blue-800">
-                  <Link
-                    href="/contact-us/"
-                    onClick={() => setIsTrialOpen(false)}
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-              </div>
-            </ul>
-          </div>
-          <Link href="/shop">SHOP</Link>
+          <DesktopMenuItem
+            label="CLASSES"
+            href="/classes"
+            open={isClassesOpen}
+            onOpen={() => setIsClassesOpen(true)}
+            onClose={() => setIsClassesOpen(false)}
+            items={[
+              { href: "/timetable/", label: "Beginners Krav Maga" },
+              { href: "/adults-krav-maga/", label: "Adults Krav Maga" },
+              {
+                href: "/womens-self-defence-classes/",
+                label: "Women's Self Defence",
+              },
+              { href: "/kids-krav-maga/", label: "Teens Krav Maga" },
+              {
+                href: "/private-corporate-tuition/",
+                label: "Private & Corporate Tuition",
+              },
+              { href: "/join/", label: "Membership Prices" },
+            ]}
+          />
+
+          <Link
+            href="/join"
+            className="py-6 transition-colors hover:text-blue-200"
+          >
+            PRICES
+          </Link>
+
+          <DesktopMenuItem
+            label="LOCATIONS"
+            open={isLocationsOpen}
+            onOpen={() => setIsLocationsOpen(true)}
+            onClose={() => setIsLocationsOpen(false)}
+            items={[
+              {
+                href: "/classes/krav-maga-glasgow-west-end/",
+                label: "Mixed Adult - Firhill",
+              },
+              {
+                href: "/classes/glasgow-west-end-kelvin-hall/",
+                label: "Mixed Adult - Kelvinhall",
+              },
+              {
+                href: "/womens-self-defence-classes/",
+                label: "Women Only",
+              },
+              { href: "/kids-krav-maga/", label: "Teens Krav Maga" },
+            ]}
+          />
+
+          <DesktopMenuItem
+            label="EVENTS"
+            open={isEventsOpen}
+            onOpen={() => setIsEventsOpen(true)}
+            onClose={() => setIsEventsOpen(false)}
+            items={[
+              {
+                href: "/womens-self-defence-classes/",
+                label: "Women Only Events",
+              },
+              {
+                href: "/timetable/",
+                label: "Beginners Course January 2027",
+              },
+            ]}
+          />
+
+          <DesktopMenuItem
+            label="BOOK A TRIAL CLASS"
+            href="/trial"
+            open={isTrialOpen}
+            onOpen={() => setIsTrialOpen(true)}
+            onClose={() => setIsTrialOpen(false)}
+            items={[
+              { href: "/trial/", label: "Book a Trial Class" },
+              {
+                href: "/timetable/",
+                label: "Timetable and Beginners Courses",
+              },
+              { href: "/join/", label: "Membership Prices & Join" },
+              { href: "/contact-us/", label: "Contact Us" },
+            ]}
+          />
+
+          <Link
+            href="/shop"
+            className="py-6 transition-colors hover:text-blue-200"
+          >
+            SHOP
+          </Link>
         </div>
+
         {/* mobile nav bar */}
         <div className="w-full content-center min-[901px]:hidden">
           <div

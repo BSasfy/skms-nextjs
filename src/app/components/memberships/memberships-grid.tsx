@@ -1,4 +1,4 @@
-import { PRICES } from "@/app/constants/prices";
+import { BOOKING_LINKS, PRICES } from "@/app/constants/prices";
 import MembershipTile from "./membership-tile";
 
 export default function MembershipsGrid() {
@@ -12,6 +12,18 @@ export default function MembershipsGrid() {
       </div>
       <div className="mt-6 mb-9 w-20 justify-self-center border-2 border-[#005EB8]"></div>
       <div className="mt-10 grid grid-cols-1 gap-4 justify-self-center px-4 max-sm:px-4 md:grid-cols-2 lg:grid-cols-3">
+        <MembershipTile
+          title="Teens membership"
+          schedule="Saturdays 9:00am - 10:00am · Ages 11–15"
+          price={`£${PRICES.teens} per month`}
+          benefits={[
+            "Weekly teens Krav Maga class at Firhill",
+            "Confidence, boundaries and practical self defence",
+            "Friendly, age-appropriate training",
+            "Trial class available before joining",
+          ]}
+          link={BOOKING_LINKS.teensMembership}
+        />
         <MembershipTile
           title="Kelvinhall Only"
           schedule="Thursdays 6:00pm - 7:00pm"

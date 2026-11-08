@@ -1,6 +1,23 @@
 import HeaderBanner from "@/app/components/header/header";
 import { womensSelfDefenceClasses } from "@/app/womens-self-defence-classes/utils";
 import Link from "next/link";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Krav Maga Kelvinhall | Glasgow West End",
+  description:
+    "Krav Maga at Glasgow Club Kelvinhall — Thursday beginners-friendly adult class plus January self defence courses. Trial £12 with SKMS.",
+  keywords: [
+    "Krav Maga Kelvinhall",
+    "Krav Maga Glasgow West End",
+    "beginners Krav Maga Glasgow",
+    "self defence Kelvin Hall",
+  ],
+  alternates: {
+    canonical:
+      "https://scotkravmaga.co.uk/classes/glasgow-west-end-kelvin-hall",
+  },
+};
 
 export default function GlasgowWestEndKelvinHallPage() {
   return (
@@ -8,9 +25,9 @@ export default function GlasgowWestEndKelvinHallPage() {
       {/* Header Section */}
       <HeaderBanner
         img="/banners/punching-bag-banner.jpg"
-        title="Join SKMS"
-        subtitle="Sign Up to a Monthly Membership"
-        description="Join Glasgow's only IKMF affiliated Krav Maga club."
+        title="Krav Maga Kelvinhall"
+        subtitle="Beginners-friendly classes · Glasgow West End"
+        description="Thursday Krav Maga at Glasgow Club Kelvinhall — practical self defence for all levels. Beginners welcome."
         link="https://scottish-krav-maga-systems-ltd.sumupstore.com/category/trial-class"
         linkText="Join a Trial Class"
       />
@@ -100,12 +117,24 @@ export default function GlasgowWestEndKelvinHallPage() {
               </ul>
             </div>
 
-            <div className="text-center">
+            <div className="flex flex-wrap justify-center gap-3">
               <Link
-                href="https://scottish-krav-maga-systems-ltd.sumupstore.com/category/beginners-course"
-                className="rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
+                href={womensSelfDefenceClasses.ticketLink}
+                className="rounded-lg bg-red-600 px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
               >
-                BOOK NOW!
+                Women — {womensSelfDefenceClasses.price}
+              </Link>
+              <Link
+                href={womensSelfDefenceClasses.studentTicketLink}
+                className="rounded-lg border-2 border-red-600 px-6 py-3 text-lg font-semibold text-red-700 transition-colors hover:bg-red-50"
+              >
+                Student — {womensSelfDefenceClasses.studentsPrice}
+              </Link>
+              <Link
+                href="/timetable"
+                className="rounded-lg bg-gray-800 px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-gray-700"
+              >
+                Mixed adult course
               </Link>
             </div>
           </div>

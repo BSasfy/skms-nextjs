@@ -1,7 +1,7 @@
-import { PRICES } from "../constants/prices";
+import { BOOKING_LINKS, PRICES } from "../constants/prices";
 
 export const womenCourseDescription =
-  "Empower yourself with our 4-week Women’s Beginners Self Defence Course in Glasgow. Fun, safe, and suitable for all fitness levels. Book your spot today!";
+  "Women-only beginners self defence course in Glasgow. 4 weeks of Krav Maga at Kelvinhall from 7 January — safe, practical, all fitness levels. £40 / £30 students. Book today!";
 
 export const womensSelfDefenceClasses = {
   monthAndYear: "January 2027",
@@ -12,14 +12,14 @@ export const womensSelfDefenceClasses = {
   numberOfClasses: 4,
   price: `£${PRICES.wo_course_adult}`,
   studentsPrice: `£${PRICES.wo_course_student}`,
-  ticketLink:
-    "https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027",
+  ticketLink: BOOKING_LINKS.womenCourseAdult,
+  studentTicketLink: BOOKING_LINKS.womenCourseStudent,
   location: "Glasgow Club Kelvinhall",
   googleLink: "https://maps.app.goo.gl/rExwC7cBVm6yZpb57",
 };
 
 export const mixedAdultCourseDescription =
-  "Join our 4-week Beginners Krav Maga Course at Glasgow Club Kelvinhall. Open to all ages and abilities with no experience needed. Limited spots available!";
+  "Beginners Krav Maga course in Glasgow — 4 weeks at Kelvinhall. Mixed adult class, no experience needed. Limited spots for our January beginners self defence course.";
 
 export const mixedAdultSelfDefenceClasses = {
   ticketLink:

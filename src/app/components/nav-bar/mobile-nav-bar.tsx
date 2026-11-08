@@ -64,7 +64,7 @@ export default function MobileNavBar() {
             href="/kids-krav-maga"
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
-            Kids Classes
+            Teens Krav Maga
             <span className="material-symbols-outlined pl-2">
               arrow_forward
             </span>

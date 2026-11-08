@@ -45,7 +45,7 @@ export default function BarbaraSasfyPage() {
                   IKMF Civilian Krav Maga Instructor
                 </p>
                 <p className="text-lg font-semibold text-blue-600">
-                  Kids and Teens Instructor
+                  Teens Instructor
                 </p>
                 <p className="text-lg font-semibold text-blue-600">
                   Women Only Krav Maga Instructor
@@ -64,7 +64,7 @@ export default function BarbaraSasfyPage() {
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li>• Mixed Adult classes</li>
-                <li>• Kids classes</li>
+                <li>• Teens classes</li>
                 <li>• Women&apos;s Beginners courses</li>
               </ul>
             </div>
@@ -196,7 +196,7 @@ export default function BarbaraSasfyPage() {
                 </p>
               </div>
               <div className="rounded-lg border border-gray-200 p-4 text-center">
-                <h4 className="mb-2 font-bold text-gray-900">Kids & Teens</h4>
+                <h4 className="mb-2 font-bold text-gray-900">Teens Krav Maga</h4>
                 <p className="text-sm text-gray-600">
                   Age-appropriate training for young students
                 </p>
@@ -230,16 +230,16 @@ export default function BarbaraSasfyPage() {
             Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
           </p>
           <div className="mt-4 space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Privacy Policy
             </Link>
-            <Link href="/disclaimer" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Website Disclaimer
             </Link>
-            <Link href="/accessibility" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Accessibility Policy
             </Link>
-            <Link href="/sitemap" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Sitemap
             </Link>
           </div>

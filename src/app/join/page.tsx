@@ -10,7 +10,7 @@ export default function JoinPage() {
         img="/banners/punching-bag-banner.jpg"
         title="Join SKMS"
         subtitle="Sign Up to a Monthly Membership"
-        description="Join Glasgow's only IKMF affiliated Krav Maga club."
+        description="Join SKMS — Krav Maga and self defence classes in Glasgow. Beginners welcome."
         link="/trial"
         linkText="Join a Trial Class"
       />

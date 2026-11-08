@@ -1,5 +1,26 @@
 import Link from "next/link";
-import { PRICES } from "../constants/prices";
+import { type Metadata } from "next";
+import { BOOKING_LINKS, PRICES } from "../constants/prices";
+
+export const metadata: Metadata = {
+  title: "Krav Maga Trial Class Glasgow",
+  description:
+    `Book a Krav Maga trial class in Glasgow. Adult trial £${PRICES.adult_trial} (£${PRICES.concession_trial} students), teens trial £${PRICES.teens_trial}. Beginners welcome at Firhill and Kelvinhall with SKMS.`,
+  keywords: [
+    "Krav Maga trial class Glasgow",
+    "beginners Krav Maga Glasgow",
+    "self defence trial Glasgow",
+  ],
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk/trial",
+  },
+  openGraph: {
+    title: "Krav Maga Trial Class Glasgow | SKMS",
+    description:
+      `Try Krav Maga in Glasgow — adult trial £${PRICES.adult_trial}, teens £${PRICES.teens_trial}. Beginners welcome.`,
+    url: "https://scotkravmaga.co.uk/trial",
+  },
+};
 
 export default function TrialPage() {
   return (
@@ -20,11 +41,11 @@ export default function TrialPage() {
 
           <div className="text-center">
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              Book a Trial Now
+              Krav Maga Trial Class Glasgow
             </h1>
             <p className="mb-8 text-xl">
-              Start Training with SKMS! Book a trial class below or send us a
-              message!
+              Beginners welcome — book an adult, student or teens trial below,
+              or send us a message.
             </p>
           </div>
         </div>
@@ -63,14 +84,12 @@ export default function TrialPage() {
                 </div>
               </Link>
 
-              <Link href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class">
+              <Link href={BOOKING_LINKS.teensTrial}>
                 {" "}
                 <div className="rounded-lg border border-gray-200 p-6 text-center">
-                  <h4 className="mb-2 text-lg font-bold">
-                    Kids and Junior Trial
-                  </h4>
+                  <h4 className="mb-2 text-lg font-bold">Teens Trial</h4>
                   <p className="text-3xl font-bold text-blue-600">
-                    £{PRICES.kids_trial}
+                    £{PRICES.teens_trial}
                   </p>
                   <p className="text-sm text-gray-600">GBP</p>
                 </div>
@@ -99,7 +118,7 @@ export default function TrialPage() {
               <Link href="https://maps.app.goo.gl/fsp7TmioZ25shdn97">
                 Firhill Sports Complex
               </Link>{" "}
-              (kids, teens and adults) and{" "}
+              (teens and adults) and{" "}
               <Link href="https://maps.app.goo.gl/dyyS8K2JAoVcZcwr5">
                 Kelvin Hall
               </Link>{" "}
@@ -131,7 +150,7 @@ export default function TrialPage() {
               <p className="mt-4 text-gray-700">
                 Would you prefer a beginners&apos; block? Have a look{" "}
                 <Link
-                  href="/beginners"
+                  href="/timetable"
                   className="font-semibold text-blue-600 hover:text-blue-800"
                 >
                   HERE!
@@ -143,14 +162,14 @@ export default function TrialPage() {
                 adult.
               </p>
             </div>
-            {/* Kids Schedule */}
+            {/* Teens Schedule */}
             <div className="mb-6 rounded-lg bg-white p-6">
               <h4 className="mb-4 text-xl font-bold text-gray-900">
-                Minis – ages 5-11 and Teens – 12-16:
+                Teens – ages 11–15:
               </h4>
               <ul className="space-y-2 text-gray-700">
                 <li>
-                  • <strong>Saturdays:</strong> 9-10 am – Firhill Sports Complex
+                  • <strong>Saturdays:</strong> 9–10 am – Firhill Sports Complex
                 </li>
               </ul>
             </div>
@@ -174,7 +193,7 @@ export default function TrialPage() {
               <p className="text-gray-700">
                 Check out our beginners&apos; courses{" "}
                 <Link
-                  href="/beginners"
+                  href="/timetable"
                   className="font-semibold text-blue-600 hover:text-blue-800"
                 >
                   HERE!
@@ -381,16 +400,16 @@ export default function TrialPage() {
             Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
           </p>
           <div className="mt-4 space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Privacy Policy
             </Link>
-            <Link href="/disclaimer" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Website Disclaimer
             </Link>
-            <Link href="/accessibility" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Accessibility Policy
             </Link>
-            <Link href="/sitemap" className="hover:text-blue-300">
+            <Link href="/contact-us" className="hover:text-blue-300">
               Sitemap
             </Link>
           </div>
