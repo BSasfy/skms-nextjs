@@ -223,8 +223,11 @@ export default function NavBar() {
           </Link>
         </div>
 
-        {/* mobile nav bar */}
-        <div className="w-full content-center min-[901px]:hidden">
+        {/* mobile nav bar — flex + justify-end so the hamburger stays right on iOS Safari */}
+        <div
+          data-testid="mobile-nav-controls"
+          className="flex w-full items-center justify-end min-[901px]:hidden"
+        >
           <div
             data-mobilenavbar={isMobileMenuOpen}
             className="h-87vh absolute bottom-0 z-10 w-full p-0 data-[mobilenavbar=false]:hidden"
@@ -232,10 +235,13 @@ export default function NavBar() {
             <MobileNavBar />
           </div>
           <button
+            type="button"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
             onClick={() => {
               setIsMobileMenuOpen(!isMobileMenuOpen);
             }}
-            className="flex flex-col items-center justify-center justify-self-end p-4"
+            className="ml-auto flex flex-col items-center justify-center p-4"
           >
             <span
               className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${

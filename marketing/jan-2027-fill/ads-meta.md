@@ -20,44 +20,32 @@ Append UTMs to every destination URL.
 **Alt (site for persuasion / pixel):**  
 `https://scotkravmaga.co.uk/womens-self-defence-classes?utm_source=meta&utm_medium=paid&utm_campaign=wo_jan2027`
 
-### Ad A — Safe space
+Meta text limits: primary **125** (add up to **5** options on one ad), headline **255** (not always shown), description often short in feed but can be a bit longer — useful when it shows.
 
-**Primary text:**  
-Women only. 4 weeks. Starts Thursday 7 January.
+### Women ad (launch now) — 1 ad, 5 primary texts
 
-Learn the basics of Krav Maga in a safe space — just for you. Thursdays 6–7pm at Glasgow Club Kelvinhall. £40 (£30 students). All fitness levels welcome.
+**CTA:** Book Now  
+**URL:** https://pay.sumup.com/b2c/QHL6GMDI  
+**Headline:** Women-Only Self Defence Glasgow — Starts 7 January  
+**Description:** 4-week beginners course for women at Glasgow Club Kelvinhall. Thursdays 6–7pm from 7 January. £40 adults, £30 students. Safe space, all fitness levels.
 
-Book your spot: scotkravmaga.co.uk/womens-self-defence-classes
+**Primary text options (125 max each):**
 
-**Headline:** Women-Only Self Defence — 7 Jan  
-**Description:** 4 weeks · Kelvinhall · £40 / £30 students  
-**CTA button:** Book Now / Learn More
+1. Women-only self defence, Glasgow. 4 wks from 7 Jan, Thu 6–7pm Kelvinhall. £40 (£30 students). Beginners welcome.
 
-### Ad B — Social proof
+2. “Best decision for my self confidence!” Women-only self defence at Kelvinhall. Starts 7 Jan. £40 / £30 students.
 
-**Primary text:**  
-“Best decision I’ve made for my self confidence!” — Gracie Moffat
+3. Safe space for women: beginners self defence at Glasgow Club Kelvinhall. Thu 6–7pm from 7 Jan. 4 weeks. £40.
 
-Our January women-only beginners course starts 7 January, Thursdays 6–7pm at Kelvinhall. Fun, practical, suitable for all fitness levels. Limited places.
+4. New to self defence? Women-only Krav Maga course, Kelvinhall. Starts Thu 7 Jan. £40 (£30 students). Book now.
 
-£40 adults · £30 students. Book now.
+5. 4-week women-only self defence in Glasgow’s West End. Kelvinhall, from 7 Jan. All fitness levels. £40 / £30.
 
-**Headline:** 4-Week Women’s Course, Glasgow  
-**Description:** Starts 7 Jan · Thu 6–7pm · Kelvinhall  
-**CTA button:** Book Now
+### Urgency primary texts (swap in Weeks 5–8)
 
-### Ad C — Urgency (use Weeks 5–8)
+1. Spots filling: women-only self defence, Kelvinhall. Starts Thu 7 Jan, 4 weeks. £40 (£30 students). Book today.
 
-**Primary text:**  
-Spots filling for our January women-only beginners course.
-
-Starts Thursday 7 January · 4 classes · Glasgow Club Kelvinhall · £40 (£30 students).
-
-Don’t wait until it’s full — book today.
-
-**Headline:** Starts 7 Jan — Book Your Spot  
-**Description:** Women only · 4 weeks · Kelvinhall  
-**CTA button:** Book Now
+2. Last chance to join: women-only beginners self defence from 7 Jan at Kelvinhall. £40 / £30 students.
 
 ---
 

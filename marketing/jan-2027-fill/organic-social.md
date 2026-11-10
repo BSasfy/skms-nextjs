@@ -1,5 +1,7 @@
 # Organic social — IG + FB caption bank
 
+**Voice:** We don’t baby people. We go in, teach with maximum efficiency, empower people, go hard, and get out. Short opener → Come along → efficient/practical training + challenge/empower (effort, not soft) → logistics + links. Motto OK. No hype questions (“Want X?”), no babying. (See `.cursor/rules/skms-marketing-voice.mdc`.)
+
 **Cadence:** 3–4 feed posts/week + Stories most training days  
 **Accounts:** Instagram @skmskravmaga · Facebook scottishkravmaga  
 **Cross-post:** Same caption on both; pin the women course post on Facebook Dec–Jan  
@@ -13,25 +15,32 @@ Reuse this 4-week bank on a loop; swap in urgency lines from Week 5 onward.
 
 ### Post 1 — Women kickoff (pin on FB)
 
-Women only. 4 weeks. Starts Thursday 7 January.
+Women-only beginners self defence — January.
 
-Come along and learn the basics of Krav Maga — with only women participants. It’s a safe space and a time just for you.
+Come along. Four weeks of efficient, practical training: awareness, boundaries, and skills that work. You’ll challenge yourself and leave more empowered.
 
-Thursdays 6–7pm · Glasgow Club Kelvinhall · £40 (£30 students)
+Thursday 7 January onwards · 6–7pm · Glasgow Club Kelvinhall  
+£40 · Students £30 · No experience needed
 
-Book: https://scotkravmaga.co.uk/womens-self-defence-classes
+Book: https://pay.sumup.com/b2c/QHL6GMDI  
+Students: https://pay.sumup.com/b2c/QDOGQMPQ  
+More info: https://scotkravmaga.co.uk/womens-self-defence-classes
+
+Stay Safe, Get Fit, Hit Hard.
+
+(On Facebook: share/attach the Event with this post.)
 
 ### Post 2 — Teens
 
 Teens Krav Maga (11–15) — Saturdays 9–10am at Firhill.
 
-Preparing for the real world: standing up for themselves, marking boundaries, and making friends while they train.
+Real skills: stand up for yourself, mark your boundaries, defend yourself. Fitness and focus included.
 
 Trial £10 · then £40/month. Message Barbara on 07512 027 411 or book: https://scotkravmaga.co.uk/kids-krav-maga
 
-### Post 3 — Adults beginners welcome
+### Post 3 — Adults
 
-Beginners welcome at any of our adult classes.
+Adult Krav Maga — beginners welcome, we train hard.
 
 Wed 7–8:30pm Firhill · Thu 6–7pm Kelvinhall · Sat 10–11:30am Firhill
 
@@ -41,21 +50,23 @@ Stay Safe, Get Fit, Hit Hard.
 
 ### Stories (Week 1)
 
-- Poll: “Ever wanted to try Krav Maga?” Yes / Tell me more → link sticker to /trial or women page
-- Countdown sticker to 7 Jan (women)
-- Quick clip or still from class + “DM us to book”
+- Still or clip from class + women course dates + pay link
+- Countdown to 7 Jan
+- Trial CTA → /trial
 
 ---
 
 ## Week 2
 
-### Post 4 — Women social proof
+### Post 4 — Women
 
-“Best decision I’ve made for my self confidence!” — Gracie Moffat
+Our women-only beginners self defence course starts Thursday 7 January.
 
-January women-only beginners course · starts 7 Jan · Kelvinhall · 4 weeks
+Women-only beginners course: Kelvinhall, Thursdays 6–7pm from 7 January. Four weeks. Efficient training, real scenarios, you put the work in and get stronger for it.
 
-Link in bio / https://scotkravmaga.co.uk/womens-self-defence-classes
+£40 · Students £30  
+https://pay.sumup.com/b2c/QHL6GMDI  
+Students: https://pay.sumup.com/b2c/QDOGQMPQ
 
 ### Post 5 — Parent testimonial (teens)
 
@@ -65,39 +76,39 @@ Teens Krav Maga at Firhill, Saturdays 9–10am. Trial £10.
 
 https://scotkravmaga.co.uk/kids-krav-maga
 
-### Post 6 — Adult timetable reminder
+### Post 6 — Adult timetable
 
-Which class suits you?
+Three sessions a week — pick your slot and get stuck in.
 
 - Wednesday 7–8:30pm — Firhill
-- Thursday 6–7pm — Kelvinhall (great for beginners)
+- Thursday 6–7pm — Kelvinhall
 - Saturday 10–11:30am — Firhill
 
-Book a trial: https://scotkravmaga.co.uk/trial
+Trial £12: https://scotkravmaga.co.uk/trial
 
 ### Stories
 
-- “Spots open for January women course” + book link
-- Behind-the-scenes pad work
-- “Ask us anything” box
+- Women course + book link
+- Pad work / class still
+- “Questions? DM us”
 
 ---
 
 ## Week 3
 
-### Post 7 — Women skills angle
+### Post 7 — Women
 
-Awareness. Boundaries. Confidence. Practical skills for real life.
+Women-only beginners self defence course — four Thursdays from 7 January, 6–7pm at Kelvinhall.
 
-Our women-only beginners course starts 7 January at Kelvinhall — Thursdays 6–7pm for 4 weeks. All fitness levels welcome.
+Awareness, boundaries, practical self defence. Come along.
 
-£40 / £30 students. Book now.
+£40 (£30 students) · https://pay.sumup.com/b2c/QHL6GMDI
 
-### Post 8 — Trust / beginners (adults)
+### Post 8 — Adults
 
-Accessible, affordable, fun — and beginners are always welcome.
+Krav Maga in Glasgow. We keep it practical, efficient, and hard enough to matter.
 
-Adult Krav Maga in Glasgow at Firhill and Kelvinhall. Trial £12.
+Firhill + Kelvinhall. Trial £12.
 
 https://scotkravmaga.co.uk/adults-krav-maga
 
@@ -105,67 +116,70 @@ https://scotkravmaga.co.uk/adults-krav-maga
 
 Tomorrow / Today: Teens 9–10am at Firhill.
 
-New faces welcome — trial £10. Parents, message us to join this week.
+Trial £10 — message Barbara to join this week.
 
 ### Stories
 
-- Map sticker: Firhill / Kelvinhall
-- Testimonial screenshot (Camilla / Alyna)
-- Reminder: “Women course = 4 Thursdays from 7 Jan”
+- Map: Firhill / Kelvinhall
+- Short testimonial (Camilla / Alyna) if it fits the hard-empower tone
+- Women course: 4 Thursdays from 7 Jan
 
 ---
 
 ## Week 4
 
-### Post 10 — Camilla quote (women + general)
+### Post 10 — Camilla quote
 
 “Learning Krav Maga with SKMS is a true confidence builder.” — Camilla Damlund
 
-Ready to start? Women-only course in January, or an adult / teens trial any week.
+Women-only course in January, or an adult / teens trial any week. Come train.
 
-Women: https://scotkravmaga.co.uk/womens-self-defence-classes  
+Women: https://pay.sumup.com/b2c/QHL6GMDI  
 Trials: https://scotkravmaga.co.uk/trial
 
-### Post 11 — Student price callout
+### Post 11 — Student price
 
-Students: women-only beginners course is £30 (4 weeks). Adult trials from £10.
+Students: women-only beginners course £30 for 4 weeks. Adult trials from £10.
 
-Kelvinhall Thursdays + Firhill Wed/Sat. Details: https://scotkravmaga.co.uk/timetable
+Kelvinhall Thursdays + Firhill Wed/Sat. https://scotkravmaga.co.uk/timetable
 
-### Post 12 — Community / soft CTA
+### Post 12 — Direct CTA
 
-We make Krav Maga accessible, affordable and fun.
+Stay Safe, Get Fit, Hit Hard.
 
-Bring a friend this month — ask us about trials for teens and adults, or share the January women-only course with someone who needs a safe place to start.
+Women-only course from 7 Jan · Adult and teens trials running now.
 
+Women £40 / £30 students: https://pay.sumup.com/b2c/QHL6GMDI  
+Trials: https://scotkravmaga.co.uk/trial  
 WhatsApp 07512 027 411
 
 ### Stories
 
-- Referral reminder (“tag a friend”)
-- Before/after energy: “first class nerves → first high-five”
-- Link: SumUp women product
+- Class intensity still / clip
+- Women pay link
+- Trial link
 
 ---
 
 ## Weeks 5–8 urgency swaps (replace any post)
 
 **Women:**  
-Places left for our women-only beginners course starting Thursday 7 January. 4 weeks · Kelvinhall · £40 / £30 students. Book before it’s full.
+Places left — women-only self defence from Thursday 7 January. 4 weeks · Kelvinhall · £40 / £30 students. Book if you’re in.
 
 **Teens (school holidays):**  
 School break / New Year — useful skill for your teen. Saturdays 9–10am Firhill. Trial £10. https://scotkravmaga.co.uk/kids-krav-maga
 
 **Adults (New Year):**  
-New Year habit that builds confidence and fitness. Adult trial £12. Three classes a week. https://scotkravmaga.co.uk/trial
+New Year: train something that builds fitness and real capability. Adult trial £12. Three classes a week. https://scotkravmaga.co.uk/trial
 
-**Daily Stories late Dec–6 Jan:** remaining spots (if known), countdown, DM replies, “booked today — thank you” without sharing personal data.
+**Daily Stories late Dec–6 Jan:** remaining spots (if known), countdown, DM replies.
 
 ---
 
 ## Engagement rules
 
 - Reply to every comment and DM within 24 hours (same day in final two weeks).
-- Point women inquiries to SumUp product or WhatsApp payment help.
+- Point women inquiries to pay links or WhatsApp.
 - Point parents to teens trial SumUp + Barbara’s number.
 - Do not invent scarcity; only say “limited” / “filling” when true.
+- Keep the tone: empower, efficient, go hard — never soft or babysitting.

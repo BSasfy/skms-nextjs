@@ -24,31 +24,33 @@ Post the same core copy on Facebook Events, Eventbrite (free), local What’s On
 
 4-week women-only Krav Maga beginners course in Glasgow. Thursdays 6–7pm at Kelvinhall from 7 January. Safe space, all fitness levels. £40 / £30 students. Book online.
 
-### Full description
+### Full description (Facebook Event / Eventbrite)
 
-Empower yourself with SKMS’s 4-week Women’s Beginners Self Defence Course in Glasgow.
+**Title:** 4-week Women Only Beginners Self Defence Course
 
-Come along and learn the basics of Krav Maga — with only women participants. It’s a safe space and a time just for you. Fun, practical, and suitable for all fitness levels.
+We're delighted to announce our Beginners Self Defence Course — women only, so it's a safe space just for you.
 
-**When:** Thursdays, 6–7pm · 4 weeks starting Thursday 7 January 2027  
-**Where:** Glasgow Club Kelvinhall  
-**Price:** £40 adults · £30 students  
-**Who:** Women 18+ (teens 14+ welcome with a participating adult)
+The course will be running at Glasgow Club Kelvinhall for 4 weeks from 6–7pm Thursday, 7th of January 2027.
 
-You’ll build awareness, confidence, boundaries, and practical skills for real-life situations — taught by experienced instructors in a friendly, beginners-friendly club.
+No experience necessary! All you need is comfortable gym-type clothing, including trainers and a bottle of water. We'll take care of the rest!
 
-Book your spot:  
-Book (£40): https://pay.sumup.com/b2c/QHL6GMDI  
-Students (£30): https://pay.sumup.com/b2c/QDOGQMPQ  
+The course will be low cardio and suitable for all ages and abilities. The venue is opposite Kelvingrove Art Gallery, close to Glasgow Uni, and can be accessed by subway or bus.
 
-More info: https://scotkravmaga.co.uk/womens-self-defence-classes  
-Questions: info@scotkravmaga.co.uk or WhatsApp 07512 027 411
+This is a serious subject, but will be delivered in a fun and engaging way. We'll look at several scenarios, and you'll work with other participants; no need to sign up with a friend — we'll make sure everyone will have a partner/group to work with! The course will empower you and help you stay safe and be more aware of your surroundings.
+
+**Price:** £40 · Students £30  
+**Who:** Women 18+ (teens 14+ welcome with a participating adult)  
+**Book (£40):** https://pay.sumup.com/b2c/QHL6GMDI  
+**Students (£30):** https://pay.sumup.com/b2c/QDOGQMPQ  
+**More info:** https://scotkravmaga.co.uk/womens-self-defence-classes  
+
+Any questions, just let us know — WhatsApp/call Barbara on 07512 027 411 or email info@scotkravmaga.co.uk. Places are limited.
 
 ### Facebook Event settings
 
 - Create as public event  
 - Add cover: women training / SKMS branded still  
-- Ticket URL = SumUp product  
+- Ticket URL = https://pay.sumup.com/b2c/QHL6GMDI (£40); mention student link in description  
 - Invite past women students + interested friends list once
 
 ---
