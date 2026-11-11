@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function MobileNavBar() {
   return (
-    <div className="fixed top-[80px] left-0 flex h-[90vh] w-full items-center border-t border-red-600/20 bg-zinc-950">
-      <ul className="flex w-full flex-col text-center font-medium">
+    <div className="flex h-full w-full items-center overflow-y-auto border-t border-red-600/20 bg-zinc-950">
+      <ul className="flex w-full flex-col py-6 text-center font-medium">
         <li className="content-center">
           <Link
             href="/"

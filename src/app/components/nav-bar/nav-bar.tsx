@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
 import MobileNavBar from "./mobile-nav-bar";
 import { usePathname } from "next/navigation";
 
@@ -27,71 +26,51 @@ function NavDropdown({
   onOpen: () => void;
   onClose: () => void;
 }) {
-  const triggerRef = useRef<HTMLDivElement>(null);
-  const [menuPos, setMenuPos] = useState({ top: 0, left: 0 });
-  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const updatePosition = () => {
-    if (!triggerRef.current) return;
-    const rect = triggerRef.current.getBoundingClientRect();
-    setMenuPos({ top: rect.bottom + 4, left: rect.left });
-  };
-
-  useEffect(() => {
-    if (!isOpen) return;
-    updatePosition();
-    window.addEventListener("scroll", updatePosition, true);
-    window.addEventListener("resize", updatePosition);
-    return () => {
-      window.removeEventListener("scroll", updatePosition, true);
-      window.removeEventListener("resize", updatePosition);
-    };
-  }, [isOpen]);
-
-  const handleEnter = () => {
-    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
-    updatePosition();
-    onOpen();
-  };
-
-  const handleLeave = () => {
-    closeTimerRef.current = setTimeout(onClose, 120);
-  };
-
-  const menu =
-    isOpen &&
-    typeof document !== "undefined" &&
-    createPortal(
-      <ul
-        className="fixed z-[9999] min-w-56 rounded-md border border-zinc-700 bg-zinc-900 p-4 shadow-2xl"
-        style={{ top: menuPos.top, left: menuPos.left }}
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
-      >
-        {items.map((item) => (
-          <li key={item.href} className="py-1 hover:text-red-500">
-            <Link href={item.href} onClick={onClose}>
-              {item.label}
-            </Link>
-          </li>
-        ))}
-      </ul>,
-      document.body,
-    );
+  const triggerClass = `inline-flex items-center border-b-2 py-7 transition-colors hover:text-red-400 ${
+    isOpen ? "border-red-500 text-red-400" : "border-transparent"
+  }`;
 
   return (
     <div
-      ref={triggerRef}
       className="relative"
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
+      onMouseEnter={onOpen}
+      onMouseLeave={onClose}
+      onFocus={onOpen}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) onClose();
+      }}
     >
       {href ? (
-        <Link href={href}>{label}</Link>
+        <Link href={href} className={triggerClass}>
+          {label}
+        </Link>
       ) : (
-        <span className="cursor-pointer">{label}</span>
+        <button type="button" className={triggerClass}>
+          {label}
+        </button>
       )}
-      {menu}
+
+      <div
+        className={`absolute top-full left-1/2 z-50 min-w-56 -translate-x-1/2 transition-opacity duration-150 ease-out ${
+          isOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        }`}
+      >
+        <ul className="border-b border-red-600/20 bg-zinc-950 py-1.5">
+          {items.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                onClick={onClose}
+                className="block px-4 py-2.5 text-sm font-bold whitespace-nowrap text-white transition-colors hover:bg-zinc-900 hover:text-red-400"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
@@ -141,6 +120,8 @@ export default function NavBar() {
     "classes" | "locations" | "events" | "trial" | null
   >(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(100);
+  const headerRef = useRef<HTMLElement>(null);
 
   const pathName = usePathname();
 
@@ -150,107 +131,152 @@ export default function NavBar() {
   }, [pathName]);
 
   useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const updateHeight = () => setHeaderHeight(header.offsetHeight);
+    updateHeight();
+
+    if (typeof ResizeObserver === "undefined") return;
+
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (!isMobileMenuOpen) return;
 
-    const html = document.documentElement;
-    const { body } = document;
-    const previousHtmlOverflow = html.style.overflow;
-    const previousBodyOverflow = body.style.overflow;
+    const scrollY = window.scrollY;
 
-    html.style.overflow = "hidden";
-    body.style.overflow = "hidden";
+    // Freeze scroll in place. Avoid body position:fixed — that pulls a sticky
+    // header off-screen. Avoid overflow:hidden alone — that jumps iOS to top.
+    const preventScroll = (event: TouchEvent | WheelEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (target?.closest("[data-mobile-menu-panel]")) return;
+      event.preventDefault();
+    };
+
+    document.addEventListener("touchmove", preventScroll, { passive: false });
+    document.addEventListener("wheel", preventScroll, { passive: false });
 
     return () => {
-      html.style.overflow = previousHtmlOverflow;
-      body.style.overflow = previousBodyOverflow;
+      document.removeEventListener("touchmove", preventScroll);
+      document.removeEventListener("wheel", preventScroll);
+      window.scrollTo(0, scrollY);
     };
   }, [isMobileMenuOpen]);
 
+  const linkClass =
+    "inline-flex items-center border-b-2 border-transparent py-7 transition-colors hover:text-red-400";
+
   return (
-    <header className="sticky top-0 z-[100] overflow-visible border-b border-red-600/20 bg-zinc-950 px-8 text-sm font-bold text-white">
-      <div className="mx-auto flex min-h-20 max-w-[1400px] items-center gap-10 overflow-visible lg:gap-20 xl:gap-42">
-        <Link href="/">
-          <Image src="/Logo.png" alt="SKMS Logo" width={100} height={100} />
-        </Link>
+    <>
+      <header
+        ref={headerRef}
+        className="sticky top-0 z-[100] overflow-visible border-b border-red-600/20 bg-zinc-950 px-8 text-sm font-bold text-white"
+      >
+        <div className="mx-auto flex min-h-20 max-w-[1400px] items-center gap-10 overflow-visible lg:gap-20 xl:gap-42">
+          <Link href="/">
+            <Image src="/Logo.png" alt="SKMS Logo" width={100} height={100} />
+          </Link>
 
-        <nav className="flex w-full items-center justify-between overflow-visible max-[900px]:hidden">
-          <Link href="/">HOME</Link>
+          <nav className="flex w-full items-center justify-between overflow-visible max-[900px]:hidden">
+            <Link href="/" className={linkClass}>
+              HOME
+            </Link>
 
-          <NavDropdown
-            label="CLASSES"
-            href="/classes"
-            items={classesItems}
-            isOpen={openMenu === "classes"}
-            onOpen={() => setOpenMenu("classes")}
-            onClose={() => setOpenMenu(null)}
-          />
+            <NavDropdown
+              label="CLASSES"
+              href="/classes"
+              items={classesItems}
+              isOpen={openMenu === "classes"}
+              onOpen={() => setOpenMenu("classes")}
+              onClose={() => setOpenMenu(null)}
+            />
 
-          <Link href="/join">PRICES</Link>
+            <Link href="/join" className={linkClass}>
+              PRICES
+            </Link>
 
-          <NavDropdown
-            label="LOCATIONS"
-            items={locationsItems}
-            isOpen={openMenu === "locations"}
-            onOpen={() => setOpenMenu("locations")}
-            onClose={() => setOpenMenu(null)}
-          />
+            <NavDropdown
+              label="LOCATIONS"
+              items={locationsItems}
+              isOpen={openMenu === "locations"}
+              onOpen={() => setOpenMenu("locations")}
+              onClose={() => setOpenMenu(null)}
+            />
 
-          <NavDropdown
-            label="EVENTS"
-            items={eventsItems}
-            isOpen={openMenu === "events"}
-            onOpen={() => setOpenMenu("events")}
-            onClose={() => setOpenMenu(null)}
-          />
+            <NavDropdown
+              label="EVENTS"
+              items={eventsItems}
+              isOpen={openMenu === "events"}
+              onOpen={() => setOpenMenu("events")}
+              onClose={() => setOpenMenu(null)}
+            />
 
-          <NavDropdown
-            label="BOOK A TRIAL CLASS"
-            href="/trial"
-            items={trialItems}
-            isOpen={openMenu === "trial"}
-            onOpen={() => setOpenMenu("trial")}
-            onClose={() => setOpenMenu(null)}
-          />
+            <NavDropdown
+              label="BOOK A TRIAL CLASS"
+              href="/trial"
+              items={trialItems}
+              isOpen={openMenu === "trial"}
+              onOpen={() => setOpenMenu("trial")}
+              onClose={() => setOpenMenu(null)}
+            />
 
-          <Link href="/shop">SHOP</Link>
-        </nav>
+            <Link href="/shop" className={linkClass}>
+              SHOP
+            </Link>
+          </nav>
 
-        <div className="relative w-full content-center min-[901px]:hidden">
+          {/* flex + justify-end so the hamburger stays right on iOS Safari */}
           <div
-            data-mobilenavbar={isMobileMenuOpen}
-            className="fixed inset-x-0 top-20 z-[9999] h-[calc(100vh-5rem)] data-[mobilenavbar=false]:hidden"
+            data-testid="mobile-nav-controls"
+            className="flex w-full items-center justify-end min-[901px]:hidden"
           >
-            <MobileNavBar />
+            <button
+              type="button"
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="ml-auto flex flex-col items-center justify-center p-4"
+            >
+              <span
+                className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
+                  isMobileMenuOpen
+                    ? "translate-y-1 rotate-45"
+                    : "-translate-y-0.5"
+                }`}
+              />
+              <span
+                className={`my-0.5 block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
+                  isMobileMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
+                  isMobileMenuOpen
+                    ? "-translate-y-1 -rotate-45"
+                    : "translate-y-0.5"
+                }`}
+              />
+            </button>
           </div>
-          <button
-            type="button"
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileMenuOpen}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="flex flex-col items-center justify-center justify-self-end p-4"
-          >
-            <span
-              className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
-                isMobileMenuOpen
-                  ? "translate-y-1 rotate-45"
-                  : "-translate-y-0.5"
-              }`}
-            />
-            <span
-              className={`my-0.5 block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
-                isMobileMenuOpen ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
-                isMobileMenuOpen
-                  ? "-translate-y-1 -rotate-45"
-                  : "translate-y-0.5"
-              }`}
-            />
-          </button>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {isMobileMenuOpen && (
+        <div
+          data-mobile-menu-panel
+          className="fixed inset-x-0 bottom-0 z-[90] bg-zinc-950 min-[901px]:hidden"
+          style={{ top: headerHeight }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+        >
+          <MobileNavBar />
+        </div>
+      )}
+    </>
   );
 }

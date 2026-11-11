@@ -26,7 +26,7 @@ export default function MembershipTile({
 
       <div className="mb-6 text-4xl font-black text-red-500">{price}</div>
 
-      <ul className="mb-10 flex flex-col gap-2.5 pl-4 text-left">
+      <ul className="mb-10 flex flex-1 flex-col gap-2.5 pl-4 text-left">
         {benefits.map((benefit, index) => (
           <li key={index} className="flex flex-row gap-2 text-zinc-400">
             <span className="material-symbols-outlined text-red-500">check</span>
@@ -34,7 +34,7 @@ export default function MembershipTile({
           </li>
         ))}
       </ul>
-      <Link href={link} className="skms-btn self-center text-sm">
+      <Link href={link} className="skms-btn mt-auto self-center text-sm">
         {linkText}
         <span className="material-symbols-outlined text-base">arrow_forward</span>
       </Link>
