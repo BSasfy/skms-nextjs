@@ -30,6 +30,7 @@ export default function HomePage() {
         description="Learn practical self defence, gain confidence and get fit — beginners welcome at our Glasgow classes."
         link="/trial"
         linkText="Book a Trial Class"
+        messageUsText="Message Us"
       />
       {/* <div>Banner with WO, Adults, Kids, clickable</div> */}
       <div className="container mx-auto lg:px-9">

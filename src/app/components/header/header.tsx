@@ -1,4 +1,11 @@
 import Link from "next/link";
+import ContactTrigger from "../contact-modal/contact-trigger";
+
+const bannerButtonClassName =
+  "rounded-lg bg-[#1C67B1] px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-blue-900";
+
+const messageUsButtonClassName =
+  "rounded-lg border-2 border-white bg-white/25 px-8 py-4 text-lg font-bold text-white shadow-[inset_0_0_0_1px_rgba(0,0,0,0.35),inset_0_1px_8px_rgba(0,0,0,0.3)] [text-shadow:0_1px_3px_rgba(0,0,0,0.55)] transition-colors duration-200 hover:bg-white hover:text-[#062E5F] hover:shadow-none hover:[text-shadow:none]";
 
 export default function HeaderBanner({
   title,
@@ -8,6 +15,7 @@ export default function HeaderBanner({
   link2,
   linkText,
   link2Text,
+  messageUsText,
   img,
 }: {
   title: string;
@@ -17,6 +25,7 @@ export default function HeaderBanner({
   link2?: string;
   linkText: string;
   link2Text?: string;
+  messageUsText?: string;
   img?: string;
 }) {
   return (
@@ -35,18 +44,17 @@ export default function HeaderBanner({
         <p className="mx-auto mb-8 max-w-2xl text-xl max-lg:hidden">
           {description}
         </p>
-        <div className="flex justify-center gap-10">
-          <Link
-            href={link}
-            className="rounded-lg bg-[#1C67B1] px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-blue-900"
-          >
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-10">
+          <Link href={link} className={bannerButtonClassName}>
             {linkText}
           </Link>
+          {messageUsText && (
+            <ContactTrigger className={messageUsButtonClassName}>
+              {messageUsText}
+            </ContactTrigger>
+          )}
           {link2 && (
-            <Link
-              href={link2}
-              className="rounded-lg bg-[#1C67B1] px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-blue-900"
-            >
+            <Link href={link2} className={bannerButtonClassName}>
               {link2Text}
             </Link>
           )}
