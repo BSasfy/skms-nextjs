@@ -45,7 +45,7 @@ export default function BarbaraSasfyPage() {
                   IKMF Civilian Krav Maga Instructor
                 </p>
                 <p className="text-lg font-semibold skms-link">
-                  Kids and Teens Instructor
+                  Teens Instructor
                 </p>
                 <p className="text-lg font-semibold skms-link">
                   Women Only Krav Maga Instructor
@@ -64,7 +64,7 @@ export default function BarbaraSasfyPage() {
               </p>
               <ul className="space-y-2 text-zinc-400">
                 <li>• Mixed Adult classes</li>
-                <li>• Kids classes</li>
+                <li>• Teens classes</li>
                 <li>• Women&apos;s Beginners courses</li>
               </ul>
             </div>
@@ -196,7 +196,7 @@ export default function BarbaraSasfyPage() {
                 </p>
               </div>
               <div className="rounded-lg border border-zinc-700 p-4 text-center">
-                <h4 className="mb-2 font-bold text-white">Kids & Teens</h4>
+                <h4 className="mb-2 font-bold text-white">Teens Krav Maga</h4>
                 <p className="text-sm text-zinc-500">
                   Age-appropriate training for young students
                 </p>

@@ -2,25 +2,27 @@ import Link from "next/link";
 import { type Metadata } from "next";
 import HeaderBanner from "../components/header/header";
 import WomenOnlyTestimonials from "../components/testimonials/women-only-testimonals";
-import { womensSelfDefenceClasses } from "./utils";
+import {
+  womenCourseDescription,
+  womensSelfDefenceClasses,
+} from "./utils";
 import WomenOnlyPageViews from "../components/tracking/meta/women-only-page-views";
 
 export const metadata: Metadata = {
-  title: "Women Only Self Defence Classes | SKMS Krav Maga Glasgow",
-  description: `Join our Women Only Self Defence Beginners Course in Glasgow. ${womensSelfDefenceClasses.duration} course for just ${womensSelfDefenceClasses.price} starting ${womensSelfDefenceClasses.startDate}. Learn Krav Maga in a safe, supportive environment at ${womensSelfDefenceClasses.location}. Suitable for all ages and abilities.`,
+  title: "Women Only Self Defence Glasgow | Beginners Course",
+  description: womenCourseDescription,
   keywords: [
-    "women only self defence",
-    "women self defence classes Glasgow",
-    "Krav Maga women",
-    "self defence course Glasgow",
-    "women only Krav Maga",
-    "self defence training Glasgow",
-    "Kelvinhall self defence",
-    "women beginners self defence",
+    "women only self defence Glasgow",
+    "women's self defence course Glasgow",
+    "women only Krav Maga Glasgow",
+    "beginners self defence course Glasgow",
+    "women's self defence Kelvinhall",
+    "self defence classes for women Glasgow",
+    "4 week self defence course Glasgow",
   ],
   openGraph: {
-    title: "Women Only Self Defence Classes | SKMS Krav Maga Glasgow",
-    description: `Join our ${womensSelfDefenceClasses.duration} Women Only Self Defence Beginners Course for just ${womensSelfDefenceClasses.price}. Starting ${womensSelfDefenceClasses.startDate} at ${womensSelfDefenceClasses.location}.`,
+    title: "Women Only Self Defence Course Glasgow | SKMS",
+    description: womenCourseDescription,
     url: "https://scotkravmaga.co.uk/womens-self-defence-classes",
     siteName: "SKMS Krav Maga",
     images: [
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
         url: "/banners/helmet.jpg",
         width: 1200,
         height: 630,
-        alt: "Women Only Self Defence Classes at SKMS Krav Maga",
+        alt: "Women-only beginners self defence course at Kelvinhall, Glasgow",
       },
     ],
     locale: "en_GB",
@@ -36,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Women Only Self Defence Classes | SKMS Krav Maga",
-    description: `Join our ${womensSelfDefenceClasses.duration} Women Only Self Defence Beginners Course for just ${womensSelfDefenceClasses.price}.`,
+    title: "Women Only Self Defence Glasgow | SKMS",
+    description: womenCourseDescription,
     images: ["/banners/helmet.jpg"],
   },
   alternates: {
@@ -52,9 +54,9 @@ export default function WomensSelfDefenceClassesPage() {
       {/* Hero Section */}
       <HeaderBanner
         img="/banners/helmet.jpg"
-        title="Women Only Self Defence"
-        subtitle="Glasgow Club Kelvinhall - Glasgow West End"
-        description="Learn practical self defence skills in a safe, supportive environment."
+        title="Women Only Self Defence Glasgow"
+        subtitle="Beginners course at Kelvinhall · Glasgow West End"
+        description="4-week women-only Krav Maga beginners course — a safe space to learn practical self defence. All fitness levels welcome."
         link={womensSelfDefenceClasses.ticketLink}
         linkText="Book now"
       />
@@ -116,12 +118,20 @@ export default function WomensSelfDefenceClassesPage() {
                     {womensSelfDefenceClasses.studentsPrice}!
                   </p>
 
-                  <Link
-                    href={womensSelfDefenceClasses.ticketLink}
-                    className="inline-block rounded-lg bg-red-600 px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-red-600/80"
-                  >
-                    Book now
-                  </Link>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <Link
+                      href={womensSelfDefenceClasses.ticketLink}
+                      className="inline-block rounded-lg bg-red-600 px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-red-600/80"
+                    >
+                      Book now — {womensSelfDefenceClasses.price}
+                    </Link>
+                    <Link
+                      href={womensSelfDefenceClasses.studentTicketLink}
+                      className="inline-block rounded-lg border-2 border-red-600 px-6 py-3 font-bold text-red-500 transition-colors duration-200 hover:bg-red-600/10"
+                    >
+                      Student — {womensSelfDefenceClasses.studentsPrice}
+                    </Link>
+                  </div>
 
                   <p className="text-zinc-500">
                     Our Self-Defence courses are suitable for women of all ages
@@ -239,12 +249,18 @@ export default function WomensSelfDefenceClassesPage() {
                 info@scotkravmaga.co.uk
               </a>
             </p>
-            <div className="text-center">
+            <div className="flex flex-wrap justify-center gap-3">
               <Link
                 href={womensSelfDefenceClasses.ticketLink}
-                className="inline-block flex-1 rounded-lg bg-red-600 px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-red-600/80"
+                className="inline-block rounded-lg bg-red-600 px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-red-600/80"
               >
-                Book Now!
+                Book Now — {womensSelfDefenceClasses.price}
+              </Link>
+              <Link
+                href={womensSelfDefenceClasses.studentTicketLink}
+                className="inline-block rounded-lg border-2 border-red-600 px-6 py-3 font-bold text-red-500 transition-colors duration-200 hover:bg-red-600/10"
+              >
+                Student — {womensSelfDefenceClasses.studentsPrice}
               </Link>
             </div>
           </div>
@@ -286,8 +302,7 @@ export default function WomensSelfDefenceClassesPage() {
             "@context": "https://schema.org",
             "@type": "Course",
             name: "Women Only Self Defence Beginners Course",
-            description:
-              "A 4-week beginners course in Krav Maga self-defence designed specifically for women. Learn effective self-defence techniques in a safe, supportive environment.",
+            description: womenCourseDescription,
             provider: {
               "@type": "Organization",
               name: "SKMS Krav Maga",

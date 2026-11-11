@@ -1,26 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
+import { type Metadata } from "next";
 import Header from "../components/header/header";
 import Testimonials from "../components/testimonials/testimonials";
+
+export const metadata: Metadata = {
+  title: "Krav Maga Classes Glasgow",
+  description:
+    "Browse SKMS Krav Maga classes in Glasgow — women-only self defence, adult beginners classes, teens, and private tuition.",
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk/classes",
+  },
+};
 
 const classTiles = [
   {
     href: "/womens-self-defence-classes",
     src: "/Women-only-classes.jpg",
-    alt: "a woman hitting another woman in the jaw with her palm",
-    title: "Women Only Classes",
+    alt: "Women-only self defence class training Krav Maga in Glasgow",
+    title: "Women Only Self Defence",
   },
   {
     href: "/adults-krav-maga",
     src: "/adult-krav-maga.jpg",
-    alt: "man punching a pad that another man is holding",
-    title: "Adults Krav Maga",
+    alt: "Adult beginners Krav Maga class in Glasgow West End",
+    title: "Adult Krav Maga Classes",
   },
   {
     href: "/kids-krav-maga",
     src: "/kids-teens-krav-maga.jpg",
-    alt: "young kids facing the camera with their fists up",
-    title: "Kids Krav Maga",
+    alt: "Teens Krav Maga self defence class in Glasgow",
+    title: "Teens Krav Maga",
   },
   {
     href: "/private-corporate-tuition",
@@ -35,9 +45,9 @@ export default function ClassesPage() {
     <main className="skms-page">
       <Header
         img="/banners/punching-bag-banner.jpg"
-        title="Welcome to SKMS"
-        subtitle="Krav Maga in Glasgow for all ages and abilities"
-        description="Learn life changing skills, gain confidence and get in shape all at the same time!"
+        title="Krav Maga Classes Glasgow"
+        subtitle="Self defence for adults and teens"
+        description="Women-only courses, adult Krav Maga, and teens — beginners welcome at Firhill and Kelvinhall."
         link="/trial"
         linkText="Book a Trial Class"
       />

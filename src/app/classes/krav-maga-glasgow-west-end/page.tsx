@@ -1,5 +1,21 @@
 import { PRICES } from "@/app/constants/prices";
 import Link from "next/link";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Krav Maga Glasgow West End | Firhill Classes",
+  description:
+    "Krav Maga in Glasgow’s West End at Firhill Sports Complex. Adult classes Wed & Sat, teens Saturdays. Self defence for all levels with SKMS.",
+  keywords: [
+    "Krav Maga Glasgow West End",
+    "Krav Maga Firhill",
+    "self defence classes West End Glasgow",
+  ],
+  alternates: {
+    canonical:
+      "https://scotkravmaga.co.uk/classes/krav-maga-glasgow-west-end",
+  },
+};
 
 export default function KravMagaGlasgowWestEndPage() {
   return (
@@ -28,7 +44,7 @@ export default function KravMagaGlasgowWestEndPage() {
               Krav Maga Glasgow West End
             </h1>
             <p className="mb-8 text-xl">
-              Professional self-defense training in Glasgow&apos;s West End
+              Self defence classes at Firhill — adults and teens
             </p>
             <Link
               href="/trial"
@@ -79,24 +95,20 @@ export default function KravMagaGlasgowWestEndPage() {
               </p>
             </div>
 
-            {/* Kids Classes */}
+            {/* Teens Class */}
             <div className="skms-card shadow-sm">
               <h3 className="mb-4 text-xl font-bold text-white">
-                Kids Classes
+                Teens Krav Maga
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-medium">Ages 5-10</span>
-                  <span className="text-zinc-500">9:00 AM - 10:00 AM</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Ages 11+</span>
-                  <span className="text-zinc-500">9:00 AM - 10:00 AM</span>
+                  <span className="font-medium">Ages 11–15</span>
+                  <span className="text-zinc-500">Sat 9:00–10:00 AM</span>
                 </div>
               </div>
               <p className="mt-4 text-sm text-zinc-500">
-                Ages 15+ may attend Adult Classes following assessment. 17+
-                welcome without assessment.
+                Ages 14–16 may join adult classes with an accompanying adult.
+                Ages 17+ welcome to adult classes.
               </p>
             </div>
           </div>
@@ -134,9 +146,9 @@ export default function KravMagaGlasgowWestEndPage() {
                 <p className="text-sm text-zinc-500">GBP</p>
               </div>
               <div className="rounded-lg border border-zinc-700 p-4 text-center">
-                <h4 className="mb-2 text-lg font-bold">Kids & Junior Trial</h4>
+                <h4 className="mb-2 text-lg font-bold">Teens Trial</h4>
                 <p className="text-2xl font-bold skms-link">
-                  £{PRICES.kids_trial}
+                  £{PRICES.teens_trial}
                 </p>
                 <p className="text-sm text-zinc-500">GBP</p>
               </div>

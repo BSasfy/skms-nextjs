@@ -26,7 +26,7 @@ export default function StudentsPage() {
             </h1>
             <p className="mb-8 text-xl">Not just for students!</p>
             <Link
-              href="/trial"
+              href={womensSelfDefenceClasses.studentTicketLink}
               className="rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
             >
               Book a beginners course!
@@ -53,7 +53,7 @@ export default function StudentsPage() {
 
             <div className="text-center">
               <Link
-                href="/trial"
+                href={womensSelfDefenceClasses.studentTicketLink}
                 className="rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
               >
                 Self Defence beginners course for only{" "}
@@ -211,7 +211,7 @@ export default function StudentsPage() {
               learn essential self-defence skills in a supportive environment.
             </p>
             <Link
-              href="/trial"
+              href={womensSelfDefenceClasses.studentTicketLink}
               className="rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
             >
               Book Your Course Now - Only{" "}

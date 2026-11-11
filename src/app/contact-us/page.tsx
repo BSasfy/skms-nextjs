@@ -157,8 +157,9 @@ export default function ContactUsPage() {
                 <ul className="space-y-1 text-sm">
                   <li><Link href="/trial" className="skms-link">Book a Trial Class</Link></li>
                   <li><Link href="/classes" className="skms-link">View All Classes</Link></li>
-                  <li><Link href="/beginners" className="skms-link">Beginners Courses</Link></li>
+                  <li><Link href="/timetable" className="skms-link">Beginners Courses</Link></li>
                   <li><Link href="/private-corporate-tuition" className="skms-link">Private Lessons</Link></li>
+
                 </ul>
               </div>
               <div>
@@ -168,6 +169,7 @@ export default function ContactUsPage() {
                   <li><Link href="/timetable" className="skms-link">Class Timetable</Link></li>
                   <li><Link href="/instructors" className="skms-link">Meet Our Instructors</Link></li>
                   <li><Link href="/testimonials" className="skms-link">Student Testimonials</Link></li>
+
                 </ul>
               </div>
             </div>

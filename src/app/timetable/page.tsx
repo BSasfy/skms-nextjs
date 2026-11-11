@@ -1,32 +1,63 @@
 import Link from "next/link";
+import { type Metadata } from "next";
 import Header from "../components/header/header";
 import {
+  mixedAdultCourseDescription,
   mixedAdultSelfDefenceClasses,
   womensSelfDefenceClasses,
 } from "../womens-self-defence-classes/utils";
 import { PRICES } from "../constants/prices";
+
+export const metadata: Metadata = {
+  title: "Beginners Self Defence Course & Class Timetable",
+  description: `${mixedAdultCourseDescription} Also women-only self defence and regular Krav Maga classes in Glasgow.`,
+  keywords: [
+    "beginners self defence course Glasgow",
+    "beginners Krav Maga Glasgow",
+    "Krav Maga timetable Glasgow",
+    "women only self defence Glasgow",
+  ],
+  openGraph: {
+    title: "Beginners Courses & Krav Maga Timetable Glasgow | SKMS",
+    description: mixedAdultCourseDescription,
+    url: "https://scotkravmaga.co.uk/timetable",
+    siteName: "SKMS Krav Maga",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Beginners Courses & Krav Maga Timetable Glasgow",
+    description: mixedAdultCourseDescription,
+  },
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk/timetable",
+  },
+};
 
 export default function TimetablePage() {
   return (
     <main className="skms-page">
       <Header
         img="/banners/punching-bag-banner.jpg"
-        title="Timetable"
-        subtitle="Beginners Courses and Regular Classes"
-        description="Beginners welcome at any of our classes!"
+        title="Krav Maga Timetable Glasgow"
+        subtitle="Beginners self defence courses & regular classes"
+        description="Book a January beginners course at Kelvinhall, or join any regular class — beginners welcome."
         link="https://scottish-krav-maga-systems-ltd.sumupstore.com/category/beginners-course"
         linkText="Book a Beginners Course"
       />
       <div className="container mx-auto lg:px-9">
         <div className="mx-4 my-10 rounded-xl border border-red-600/30 bg-zinc-900/50 p-4">
-          <h1 className="mb-4 text-center text-3xl font-extrabold">
-            Welcome to SKMS Krav Maga!
-          </h1>
+          <h2 className="mb-4 text-center text-3xl font-extrabold">
+            Beginners Krav Maga & Weekly Classes
+          </h2>
           <div className="mb-4 font-semibold">
-            Beginners are welcome to any of our classes!
+            Beginners are welcome to any of our Krav Maga classes in Glasgow!
           </div>
 
-          <h2 className="mb-1 text-2xl font-bold">Beginners Courses:</h2>
+          <h3 className="mb-1 text-2xl font-bold">
+            Beginners Self Defence Courses:
+          </h3>
           <ul className="list-disc pl-7">
             <li className="mb-2">
               <Link href={mixedAdultSelfDefenceClasses.ticketLink}>
@@ -99,8 +130,8 @@ export default function TimetablePage() {
             you’d like to book a trial class, click Book a Trial and send us a
             message! No experience required to join any of our classes! £
             {PRICES.adult_trial}
-            online, £{PRICES.adult_trial + 5} at the class. Kids trial is £
-            {PRICES.kids_trial}.
+            online, £{PRICES.adult_trial + 5} at the class. Teens trial is £
+            {PRICES.teens_trial}.
           </div>{" "}
           If you’d like to sign up to the mailing list, send us a message at
           info@scotkravmaga.co.uk or via WhatsApp (07512027411). We run

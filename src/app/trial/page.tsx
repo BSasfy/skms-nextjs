@@ -1,8 +1,29 @@
 import Link from "next/link";
+import { type Metadata } from "next";
 import HeaderBanner from "../components/header/header";
-import { PRICES } from "../constants/prices";
+import { BOOKING_LINKS, PRICES } from "../constants/prices";
 import ImageCarousel from "./components/image-carousel";
 import TestimonialMarquee from "./components/testimonial-marquee";
+
+export const metadata: Metadata = {
+  title: "Krav Maga Trial Class Glasgow",
+  description:
+    `Book a Krav Maga trial class in Glasgow. Adult trial £${PRICES.adult_trial} (£${PRICES.concession_trial} students), teens trial £${PRICES.teens_trial}. Beginners welcome at Firhill and Kelvinhall with SKMS.`,
+  keywords: [
+    "Krav Maga trial class Glasgow",
+    "beginners Krav Maga Glasgow",
+    "self defence trial Glasgow",
+  ],
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk/trial",
+  },
+  openGraph: {
+    title: "Krav Maga Trial Class Glasgow | SKMS",
+    description:
+      `Try Krav Maga in Glasgow — adult trial £${PRICES.adult_trial}, teens £${PRICES.teens_trial}. Beginners welcome.`,
+    url: "https://scotkravmaga.co.uk/trial",
+  },
+};
 
 const pricingOptions = [
   {
@@ -12,10 +33,10 @@ const pricingOptions = [
     tag: "Most Popular",
   },
   {
-    title: "Kids & Junior Trial",
-    price: PRICES.kids_trial,
-    href: "https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class",
-    tag: "Ages 5–16",
+    title: "Teens Trial",
+    price: PRICES.teens_trial,
+    href: BOOKING_LINKS.teensTrial,
+    tag: "Ages 11–15",
   },
   {
     title: "Adult Concession",
@@ -208,7 +229,7 @@ export default function TrialPage() {
               >
                 Firhill Sports Complex
               </Link>{" "}
-              (kids, teens & adults) ·{" "}
+              (teens and adults) ·{" "}
               <Link
                 href="https://maps.app.goo.gl/dyyS8K2JAoVcZcwr5"
                 className="text-red-400 hover:text-red-300"
@@ -280,7 +301,7 @@ export default function TrialPage() {
               <div className="rounded-xl border border-zinc-700 bg-zinc-900 p-6">
                 <h3 className="mb-4 flex items-center gap-2 text-lg font-black text-red-500 uppercase">
                   <span className="material-symbols-outlined">child_care</span>
-                  Minis (5–11) & Teens (12–16)
+                  Teens (11–15)
                 </h3>
                 <ul className="text-zinc-300">
                   <li className="flex flex-wrap gap-x-2">

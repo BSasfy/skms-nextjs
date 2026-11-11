@@ -101,9 +101,9 @@ const classesItems: NavDropdownItem[] = [
   { href: "/adults-krav-maga/", label: "Adults Krav Maga" },
   {
     href: "/womens-self-defence-classes/",
-    label: "Women's Self Defence Glasgow",
+    label: "Women's Self Defence",
   },
-  { href: "/kids-krav-maga/", label: "Kids & Teens" },
+  { href: "/kids-krav-maga/", label: "Teens Krav Maga" },
   {
     href: "/private-corporate-tuition/",
     label: "Private & Corporate Tuition",
@@ -121,12 +121,12 @@ const locationsItems: NavDropdownItem[] = [
     label: "Mixed Adult - Kelvinhall",
   },
   { href: "/womens-self-defence-classes/", label: "Women Only" },
-  { href: "/kids-krav-maga/", label: "Kids & Teens" },
+  { href: "/kids-krav-maga/", label: "Teens Krav Maga" },
 ];
 
 const eventsItems: NavDropdownItem[] = [
   { href: "/womens-self-defence-classes/", label: "Women Only Events" },
-  { href: "/timetable/", label: "Beginners Course January 2026" },
+  { href: "/timetable/", label: "Beginners Course January 2027" },
 ];
 
 const trialItems: NavDropdownItem[] = [
@@ -148,6 +148,23 @@ export default function NavBar() {
     setIsMobileMenuOpen(false);
     setOpenMenu(null);
   }, [pathName]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const html = document.documentElement;
+    const { body } = document;
+    const previousHtmlOverflow = html.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+
+    return () => {
+      html.style.overflow = previousHtmlOverflow;
+      body.style.overflow = previousBodyOverflow;
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header className="sticky top-0 z-[100] overflow-visible border-b border-red-600/20 bg-zinc-950 px-8 text-sm font-bold text-white">
@@ -207,8 +224,9 @@ export default function NavBar() {
           </div>
           <button
             type="button"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
             className="flex flex-col items-center justify-center justify-self-end p-4"
           >
             <span

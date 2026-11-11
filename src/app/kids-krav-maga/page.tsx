@@ -1,7 +1,29 @@
 import Link from "next/link";
+import { type Metadata } from "next";
 import HeaderBanner from "../components/header/header";
 import ContactBanner from "../components/contact-banner/contact-banner";
-import { PRICES } from "../constants/prices";
+import { BOOKING_LINKS, PRICES } from "../constants/prices";
+
+export const metadata: Metadata = {
+  title: "Teens Krav Maga Glasgow",
+  description:
+    `Teens Krav Maga Glasgow (11–15) at Firhill Sports Complex. Saturdays 9–10am. Trial £${PRICES.teens_trial}, then £${PRICES.teens}/month. Confidence, boundaries and practical self defence.`,
+  keywords: [
+    "teens Krav Maga Glasgow",
+    "self defence for teenagers Glasgow",
+    "Krav Maga for teens Firhill",
+    "teens self defence classes Glasgow",
+  ],
+  alternates: {
+    canonical: "https://scotkravmaga.co.uk/kids-krav-maga",
+  },
+  openGraph: {
+    title: "Teens Krav Maga Glasgow | SKMS",
+    description:
+      `Teens Krav Maga (11–15) at Firhill Sports Complex. Saturdays 9–10am. Trial £${PRICES.teens_trial}.`,
+    url: "https://scotkravmaga.co.uk/kids-krav-maga",
+  },
+};
 
 export default function KidsKravMagaPage() {
   return (
@@ -9,10 +31,10 @@ export default function KidsKravMagaPage() {
       {/* Hero Section */}
       <HeaderBanner
         img="/banners/kids-banner.jpg"
-        title="Kids and Teens Krav Maga"
-        subtitle={`Weekly classes all year round for £${PRICES.kids}/month!`}
-        description="Saturdays, 9-10am, Firhill Sports Complex"
-        link="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class"
+        title="Teens Krav Maga Glasgow"
+        subtitle={`Self defence for ages 11–15 · £${PRICES.teens}/month`}
+        description={`Saturdays 9–10am at Firhill Sports Complex. Trial £${PRICES.teens_trial}.`}
+        link={BOOKING_LINKS.teensTrial}
         linkText="Book a Trial Class"
       />
 
@@ -22,48 +44,30 @@ export default function KidsKravMagaPage() {
           <div className="mx-2 my-10 skms-content-box p-8 lg:mx-12">
             <section className="py-8">
               <h2 className="mb-8 text-center text-3xl font-bold">
-                Regular classes all year round:
+                Regular teens class all year round
               </h2>
-              <div className="mb-8 grid gap-10 px-4 md:grid-cols-2 lg:gap-20">
+              <div className="mx-auto mb-8 max-w-2xl px-4">
                 <Link
-                  href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class"
-                  className="skms-card text-center shadow-md"
-                >
-                  <h3 className="mb-1 text-xl font-bold text-red-400">
-                    Kids Krav Maga (5-10yo)
-                  </h3>
-
-                  <h4 className="text-md mb-4 font-semibold">
-                    Saturdays, 9-10am
-                  </h4>
-                  <p className="text-zinc-500">
-                    Age-appropriate self-defense and confidence building for
-                    children, learning through games. Focusing on learning the
-                    rules of society, how to use their voice, how to be
-                    assertive and how to be safe.
-                  </p>
-                </Link>
-                <Link
-                  href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class"
-                  className="skms-card text-center shadow-md"
+                  href={BOOKING_LINKS.teensTrial}
+                  className="skms-card block text-center shadow-md"
                 >
                   <h3 className="mb-4 text-xl font-bold text-red-400">
-                    Teens Krav Maga (11-15yo)
+                    Teens Krav Maga (11–15yo)
                   </h3>
                   <h4 className="text-md mb-4 font-semibold">
-                    Saturdays, 9-10am
+                    Saturdays, 9–10am · Firhill Sports Complex
                   </h4>
                   <p className="text-zinc-500">
-                    Preparing for the real world, learning how to stand up for
-                    themselves, how to mark their boundaries and how to
-                    physically defend themselves, while making friends and
-                    improving social skills.
+                    Preparing for the real world — learning how to stand up for
+                    themselves, mark their boundaries and physically defend
+                    themselves, while making friends and improving social
+                    skills.
                   </p>
                 </Link>
               </div>
 
               <Link
-                href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/kids-and-teens-trial-class"
+                href={BOOKING_LINKS.teensTrial}
                 className="mx-auto block w-fit rounded-lg bg-red-700 px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-red-600"
               >
                 Book Now!
@@ -71,28 +75,27 @@ export default function KidsKravMagaPage() {
             </section>
 
             <p className="mb-6 px-4 text-lg">
-              The classes focus on health, exercise, self-confidence and of
-              course, a whole range of anti-bullying and self-defence techniques
-              taught in a fun and engaging format. In addition to the above,
-              there&apos;s also a focus on personal and group interactive social
-              skills.
+              The class focuses on health, exercise, self-confidence and a whole
+              range of anti-bullying and self-defence techniques taught in a fun
+              and engaging format. There&apos;s also a focus on personal and
+              group interactive social skills.
             </p>
             <p className="mb-6 px-4 text-lg">
-              All kids and teens classes are taught through games and activities
-              and are designed to be inclusive to all.
+              Sessions are designed to be inclusive to all fitness levels and
+              experience.
             </p>
 
             <div className="mb-8 border border-red-600/30 bg-zinc-900/50 p-8 shadow-md">
               <p className="mb-6 text-lg">
-                Our trial class will give your Kids and Teens an introduction to
-                what Krav Maga is all about. We don&apos;t break for the summer,
-                so feel free to book in for a trial, no need to message ahead!
-                But if you&apos;d like to, you can reach Barbara on 07512027411.
+                Our trial class will give your teen an introduction to what Krav
+                Maga is all about. We don&apos;t break for the summer, so feel
+                free to book in for a trial — no need to message ahead! But if
+                you&apos;d like to, you can reach Barbara on 07512027411.
               </p>
               <p className="text-lg">
                 They&apos;ll meet our friendly instructors, and get to meet some
-                new friends all while learning some valuable life skills and
-                having fun!
+                new friends all while learning valuable life skills and having
+                fun!
               </p>
             </div>
 
@@ -109,10 +112,10 @@ export default function KidsKravMagaPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="font-semibold text-red-300">
-                      Saturdays 9-10 am
+                      Saturdays 9–10 am
                     </span>
                     <span className="ml-2 text-zinc-500">
-                      – ages 5-10 and 11+ in separate groups.
+                      – Teens Krav Maga, ages 11–15
                     </span>
                   </li>
                 </ul>
@@ -120,7 +123,7 @@ export default function KidsKravMagaPage() {
 
               <div className="mt-6 rounded-lg bg-zinc-900/50 p-4">
                 <p className="text-zinc-400">
-                  Ages 14-16 are welcome to join the adult class with an
+                  Ages 14–16 are welcome to join the adult class with an
                   accompanying adult or can stay in the teens&apos; class. Ages
                   17+ are welcome to the adult class without an accompanying
                   adult. Adult membership prices will apply.
@@ -132,9 +135,23 @@ export default function KidsKravMagaPage() {
             <div className="mb-8 skms-card p-8">
               <div className="space-y-4 text-center">
                 <p className="text-xl font-bold text-red-400">
-                  The trial class is £{PRICES.kids_trial}, monthly kids
-                  membership is £{PRICES.kids}.
+                  The trial class is £{PRICES.teens_trial}, monthly teens
+                  membership is £{PRICES.teens}.
                 </p>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <Link
+                    href={BOOKING_LINKS.teensTrial}
+                    className="rounded-lg bg-red-700 px-6 py-3 font-bold text-white transition-colors hover:bg-red-600"
+                  >
+                    Book a trial
+                  </Link>
+                  <Link
+                    href={BOOKING_LINKS.teensMembership}
+                    className="rounded-lg border-2 border-red-600 px-6 py-3 font-bold text-red-500 transition-colors hover:bg-red-600/10"
+                  >
+                    Join monthly membership
+                  </Link>
+                </div>
                 <p className="text-lg text-zinc-400">
                   We always have spaces, no need to message us, just book and
                   turn up!

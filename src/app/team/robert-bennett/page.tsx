@@ -149,7 +149,7 @@ export default function RobertBennettPage() {
               <p className="text-zinc-400">
                 To see our rates, visit
                 <Link
-                  href="/prices"
+                  href="/join"
                   className="font-semibold skms-link hover:text-red-300"
                 >
                   THIS page
