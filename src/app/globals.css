@@ -11,6 +11,18 @@
   --color-skms-surface-raised: #27272a;
 }
 
+/* Scroll works; scrollbar is hidden site-wide */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 @keyframes trial-marquee {
   from {
     transform: translateX(0);

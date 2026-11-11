@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import MobileNavBar from "./mobile-nav-bar";
 import { usePathname } from "next/navigation";
 
@@ -115,54 +116,112 @@ const trialItems: NavDropdownItem[] = [
   { href: "/contact-us/", label: "Contact Us" },
 ];
 
+function HamburgerIcon({ open }: { open: boolean }) {
+  return (
+    <>
+      <span
+        className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
+          open ? "translate-y-1 rotate-45" : "-translate-y-0.5"
+        }`}
+      />
+      <span
+        className={`my-0.5 block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
+          open ? "opacity-0" : "opacity-100"
+        }`}
+      />
+      <span
+        className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
+          open ? "-translate-y-1 -rotate-45" : "translate-y-0.5"
+        }`}
+      />
+    </>
+  );
+}
+
 export default function NavBar() {
   const [openMenu, setOpenMenu] = useState<
     "classes" | "locations" | "events" | "trial" | null
   >(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState(100);
-  const headerRef = useRef<HTMLElement>(null);
+  const [portalReady, setPortalReady] = useState(false);
+  const [isNavHidden, setIsNavHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   const pathName = usePathname();
 
   useEffect(() => {
+    setPortalReady(true);
+  }, []);
+
+  useEffect(() => {
     setIsMobileMenuOpen(false);
     setOpenMenu(null);
+    setIsNavHidden(false);
   }, [pathName]);
 
   useEffect(() => {
-    const header = headerRef.current;
-    if (!header) return;
+    lastScrollY.current = window.scrollY;
 
-    const updateHeight = () => setHeaderHeight(header.offsetHeight);
-    updateHeight();
+    const onScroll = () => {
+      const current = window.scrollY;
+      const delta = current - lastScrollY.current;
+      lastScrollY.current = current;
 
-    if (typeof ResizeObserver === "undefined") return;
+      if (isMobileMenuOpen) {
+        setIsNavHidden(false);
+        return;
+      }
 
-    const observer = new ResizeObserver(updateHeight);
-    observer.observe(header);
-    return () => observer.disconnect();
-  }, []);
+      // Always show near the top; ignore tiny jitter
+      if (current < 16) {
+        setIsNavHidden(false);
+        return;
+      }
+
+      if (delta > 6) {
+        setIsNavHidden(true);
+        setOpenMenu(null);
+      } else if (delta < -6) {
+        setIsNavHidden(false);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
 
     const scrollY = window.scrollY;
+    const html = document.documentElement;
+    const { body } = document;
+    const scrollbarGap = window.innerWidth - html.clientWidth;
 
-    // Freeze scroll in place. Avoid body position:fixed — that pulls a sticky
-    // header off-screen. Avoid overflow:hidden alone — that jumps iOS to top.
-    const preventScroll = (event: TouchEvent | WheelEvent) => {
-      const target = event.target as HTMLElement | null;
-      if (target?.closest("[data-mobile-menu-panel]")) return;
-      event.preventDefault();
+    const previous = {
+      htmlOverflow: html.style.overflow,
+      bodyOverflow: body.style.overflow,
+      bodyPaddingRight: body.style.paddingRight,
+      bodyTouchAction: body.style.touchAction,
     };
 
-    document.addEventListener("touchmove", preventScroll, { passive: false });
-    document.addEventListener("wheel", preventScroll, { passive: false });
+    // Lock scroll without position:fixed — that was yanking the sticky header
+    // off-screen at deep scroll positions and leaving the page frozen.
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    body.style.touchAction = "none";
+    if (scrollbarGap > 0) {
+      body.style.paddingRight = `${scrollbarGap}px`;
+    }
+
+    // Some browsers nudge scroll when overflow changes — put it back.
+    window.scrollTo(0, scrollY);
 
     return () => {
-      document.removeEventListener("touchmove", preventScroll);
-      document.removeEventListener("wheel", preventScroll);
+      html.style.overflow = previous.htmlOverflow;
+      body.style.overflow = previous.bodyOverflow;
+      body.style.paddingRight = previous.bodyPaddingRight;
+      body.style.touchAction = previous.bodyTouchAction;
       window.scrollTo(0, scrollY);
     };
   }, [isMobileMenuOpen]);
@@ -170,11 +229,44 @@ export default function NavBar() {
   const linkClass =
     "inline-flex items-center border-b-2 border-transparent py-7 transition-colors hover:text-red-400";
 
+  const mobileOverlay =
+    portalReady &&
+    isMobileMenuOpen &&
+    createPortal(
+      <div
+        className="fixed inset-0 z-[9999] flex flex-col bg-zinc-950 min-[901px]:hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+      >
+        <div className="flex min-h-20 shrink-0 items-center justify-between border-b border-red-600/20 px-8">
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+            <Image src="/Logo.png" alt="SKMS Logo" width={100} height={100} />
+          </Link>
+          <button
+            type="button"
+            aria-label="Close menu"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex flex-col items-center justify-center p-4"
+          >
+            <HamburgerIcon open />
+          </button>
+        </div>
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+          <MobileNavBar />
+        </div>
+      </div>,
+      document.body,
+    );
+
   return (
     <>
       <header
-        ref={headerRef}
-        className="sticky top-0 z-[100] overflow-visible border-b border-red-600/20 bg-zinc-950 px-8 text-sm font-bold text-white"
+        className={`sticky top-0 z-[100] overflow-visible border-b border-red-600/20 bg-zinc-950 px-8 text-sm font-bold text-white transition-transform duration-300 ease-out ${
+          isNavHidden && !isMobileMenuOpen
+            ? "-translate-y-full"
+            : "translate-y-0"
+        }`}
       >
         <div className="mx-auto flex min-h-20 max-w-[1400px] items-center gap-10 overflow-visible lg:gap-20 xl:gap-42">
           <Link href="/">
@@ -241,42 +333,13 @@ export default function NavBar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="ml-auto flex flex-col items-center justify-center p-4"
             >
-              <span
-                className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
-                  isMobileMenuOpen
-                    ? "translate-y-1 rotate-45"
-                    : "-translate-y-0.5"
-                }`}
-              />
-              <span
-                className={`my-0.5 block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
-                  isMobileMenuOpen ? "opacity-0" : "opacity-100"
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-out ${
-                  isMobileMenuOpen
-                    ? "-translate-y-1 -rotate-45"
-                    : "translate-y-0.5"
-                }`}
-              />
+              <HamburgerIcon open={isMobileMenuOpen} />
             </button>
           </div>
         </div>
       </header>
 
-      {isMobileMenuOpen && (
-        <div
-          data-mobile-menu-panel
-          className="fixed inset-x-0 bottom-0 z-[90] bg-zinc-950 min-[901px]:hidden"
-          style={{ top: headerHeight }}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation"
-        >
-          <MobileNavBar />
-        </div>
-      )}
+      {mobileOverlay}
     </>
   );
 }

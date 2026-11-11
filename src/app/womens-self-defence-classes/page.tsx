@@ -121,13 +121,13 @@ export default function WomensSelfDefenceClassesPage() {
                   <div className="flex flex-wrap justify-center gap-3">
                     <Link
                       href={womensSelfDefenceClasses.ticketLink}
-                      className="inline-block rounded-lg bg-red-600 px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-red-600/80"
+                      className="inline-flex items-center justify-center rounded-lg border-2 border-red-700 bg-red-700 px-6 py-3 font-bold leading-none text-white transition-colors duration-200 hover:border-red-600 hover:bg-red-600"
                     >
                       Book now — {womensSelfDefenceClasses.price}
                     </Link>
                     <Link
                       href={womensSelfDefenceClasses.studentTicketLink}
-                      className="inline-block rounded-lg border-2 border-red-600 px-6 py-3 font-bold text-red-500 transition-colors duration-200 hover:bg-red-600/10"
+                      className="inline-flex items-center justify-center rounded-lg border-2 border-red-600 px-6 py-3 font-bold leading-none text-red-500 transition-colors duration-200 hover:bg-red-600/10"
                     >
                       Student — {womensSelfDefenceClasses.studentsPrice}
                     </Link>
@@ -252,13 +252,13 @@ export default function WomensSelfDefenceClassesPage() {
             <div className="flex flex-wrap justify-center gap-3">
               <Link
                 href={womensSelfDefenceClasses.ticketLink}
-                className="inline-block rounded-lg bg-red-600 px-6 py-3 font-bold text-gray-50 transition-colors duration-200 hover:bg-red-600/80"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-red-700 bg-red-700 px-6 py-3 font-bold leading-none text-white transition-colors duration-200 hover:border-red-600 hover:bg-red-600"
               >
                 Book Now — {womensSelfDefenceClasses.price}
               </Link>
               <Link
                 href={womensSelfDefenceClasses.studentTicketLink}
-                className="inline-block rounded-lg border-2 border-red-600 px-6 py-3 font-bold text-red-500 transition-colors duration-200 hover:bg-red-600/10"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-red-600 px-6 py-3 font-bold leading-none text-red-500 transition-colors duration-200 hover:bg-red-600/10"
               >
                 Student — {womensSelfDefenceClasses.studentsPrice}
               </Link>
