@@ -236,22 +236,8 @@ export default function StudentsPage() {
       <footer className="bg-gray-900 py-8 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
-            Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
+            Scot Krav Maga Ltd - Copyright © 2011-{new Date().getFullYear()}. All Rights Reserved.
           </p>
-          <div className="mt-4 space-x-4 text-sm">
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Privacy Policy
-            </Link>
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Website Disclaimer
-            </Link>
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Accessibility Policy
-            </Link>
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Sitemap
-            </Link>
-          </div>
         </div>
       </footer>
     </main>

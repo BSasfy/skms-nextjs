@@ -97,9 +97,23 @@ export default function NavBar() {
 
   const pathName = usePathname();
 
+  const closeDesktopMenus = () => {
+    setIsClassesOpen(false);
+    setIsLocationsOpen(false);
+    setIsEventsOpen(false);
+    setIsTrialOpen(false);
+  };
+
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    closeDesktopMenus();
   }, [pathName]);
+
+  useEffect(() => {
+    const onScroll = () => closeDesktopMenus();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;

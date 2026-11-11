@@ -8,10 +8,19 @@ const inputClass =
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
-export default function ContactForm() {
+export default function ContactForm({
+  idPrefix = "",
+  messageRows = 6,
+  onSuccess,
+}: {
+  idPrefix?: string;
+  messageRows?: number;
+  onSuccess?: () => void;
+}) {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const fieldId = (name: string) => `${idPrefix}${name}`;
 
   const sendMessage = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,6 +46,9 @@ export default function ContactForm() {
       });
       setStatus("success");
       formRef.current.reset();
+      if (onSuccess) {
+        window.setTimeout(onSuccess, 1200);
+      }
     } catch (error) {
       console.error("EmailJS error:", error);
       setStatus("error");
@@ -51,14 +63,14 @@ export default function ContactForm() {
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label
-            htmlFor="firstName"
+            htmlFor={fieldId("firstName")}
             className="mb-2 block text-sm font-medium text-gray-700"
           >
             First Name *
           </label>
           <input
             type="text"
-            id="firstName"
+            id={fieldId("firstName")}
             name="firstName"
             required
             className={inputClass}
@@ -67,16 +79,15 @@ export default function ContactForm() {
         </div>
         <div>
           <label
-            htmlFor="lastName"
+            htmlFor={fieldId("lastName")}
             className="mb-2 block text-sm font-medium text-gray-700"
           >
-            Last Name *
+            Last Name
           </label>
           <input
             type="text"
-            id="lastName"
+            id={fieldId("lastName")}
             name="lastName"
-            required
             className={inputClass}
             placeholder="Your last name"
           />
@@ -86,14 +97,14 @@ export default function ContactForm() {
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label
-            htmlFor="email"
+            htmlFor={fieldId("email")}
             className="mb-2 block text-sm font-medium text-gray-700"
           >
             Email Address *
           </label>
           <input
             type="email"
-            id="email"
+            id={fieldId("email")}
             name="email"
             required
             className={inputClass}
@@ -102,14 +113,14 @@ export default function ContactForm() {
         </div>
         <div>
           <label
-            htmlFor="phone"
+            htmlFor={fieldId("phone")}
             className="mb-2 block text-sm font-medium text-gray-700"
           >
             Phone Number
           </label>
           <input
             type="tel"
-            id="phone"
+            id={fieldId("phone")}
             name="phone"
             className={inputClass}
             placeholder="Your phone number"
@@ -119,21 +130,18 @@ export default function ContactForm() {
 
       <div>
         <label
-          htmlFor="subject"
+          htmlFor={fieldId("subject")}
           className="mb-2 block text-sm font-medium text-gray-700"
         >
           Subject *
         </label>
         <select
-          id="subject"
+          id={fieldId("subject")}
           name="subject"
           required
           className={inputClass}
-          defaultValue=""
+          defaultValue="general-inquiry"
         >
-          <option value="" disabled>
-            Select a subject
-          </option>
           <option value="trial-class">Book a Trial Class</option>
           <option value="beginners-course">Beginners Course Information</option>
           <option value="private-lessons">Private Lessons</option>
@@ -145,16 +153,16 @@ export default function ContactForm() {
 
       <div>
         <label
-          htmlFor="message"
+          htmlFor={fieldId("message")}
           className="mb-2 block text-sm font-medium text-gray-700"
         >
           Message *
         </label>
         <textarea
-          id="message"
+          id={fieldId("message")}
           name="message"
           required
-          rows={6}
+          rows={messageRows}
           className={inputClass}
           placeholder="Tell us more about what you're looking for..."
         />
@@ -163,13 +171,13 @@ export default function ContactForm() {
       <div className="flex items-center">
         <input
           type="checkbox"
-          id="newsletter"
+          id={fieldId("newsletter")}
           name="newsletter"
           value="yes"
           className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
         />
         <label
-          htmlFor="newsletter"
+          htmlFor={fieldId("newsletter")}
           className="ml-2 block text-sm text-gray-700"
         >
           I would like to receive updates about SKMS classes and events
