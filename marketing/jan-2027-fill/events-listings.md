@@ -39,18 +39,18 @@ The course will be low cardio and suitable for all ages and abilities. The venue
 This is a serious subject, but will be delivered in a fun and engaging way. We'll look at several scenarios, and you'll work with other participants; no need to sign up with a friend — we'll make sure everyone will have a partner/group to work with! The course will empower you and help you stay safe and be more aware of your surroundings.
 
 **Price:** £40 · Students £30  
-**Who:** Women 18+ (teens 14+ welcome with a participating adult)  
+**Who:** Women 18+ (teens 13+ welcome with a participating adult)  
 **Book (£40):** https://pay.sumup.com/b2c/QHL6GMDI  
 **Students (£30):** https://pay.sumup.com/b2c/QDOGQMPQ  
-**More info:** https://scotkravmaga.co.uk/womens-self-defence-classes  
+**More info:** https://scotkravmaga.co.uk/womens-self-defence-classes
 
 Any questions, just let us know — WhatsApp/call Barbara on 07512 027 411 or email info@scotkravmaga.co.uk. Places are limited.
 
 ### Facebook Event settings
 
-- Create as public event  
-- Add cover: women training / SKMS branded still  
-- Ticket URL = https://pay.sumup.com/b2c/QHL6GMDI (£40); mention student link in description  
+- Create as public event
+- Add cover: women training / SKMS branded still
+- Ticket URL = https://pay.sumup.com/b2c/QHL6GMDI (£40); mention student link in description
 - Invite past women students + interested friends list once
 
 ---
@@ -73,6 +73,7 @@ Try Krav Maga in Glasgow — beginners welcome. Adult trial £12. Classes Wed & 
 Start training with SKMS Krav Maga — beginners welcome at any class.
 
 **Adult class times:**
+
 - Wednesdays 7–8:30pm — Firhill Sports Complex
 - Thursdays 6–7pm — Glasgow Club Kelvinhall
 - Saturdays 10–11:30am — Firhill Sports Complex
@@ -110,7 +111,7 @@ Ages 11–15 learn how to stand up for themselves, mark their boundaries, and ph
 **When:** Saturdays 9–10am  
 **Where:** Firhill Sports Complex  
 **Trial:** £10 · ongoing membership £40/month  
-**Membership:** https://pay.gocardless.com/BRT01M6Y9TH7QS64SVVB58FT2GEKS  
+**Membership:** https://pay.gocardless.com/BRT01M6Y9TH7QS64SVVB58FT2GEKS
 
 **Instructor contact:** Barbara — 07512 027 411
 

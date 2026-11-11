@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { type Metadata } from "next";
 import HeaderBanner from "../components/header/header";
 import { BOOKING_LINKS, PRICES } from "../constants/prices";
@@ -7,8 +8,7 @@ import TestimonialMarquee from "./components/testimonial-marquee";
 
 export const metadata: Metadata = {
   title: "Krav Maga Trial Class Glasgow",
-  description:
-    `Book a Krav Maga trial class in Glasgow. Adult trial £${PRICES.adult_trial} (£${PRICES.concession_trial} students), teens trial £${PRICES.teens_trial}. Beginners welcome at Firhill and Kelvinhall with SKMS.`,
+  description: `Book a Krav Maga trial class in Glasgow. Adult trial £${PRICES.adult_trial} (£${PRICES.concession_trial} students), teens trial £${PRICES.teens_trial}. Beginners welcome at Firhill and Kelvinhall with SKMS.`,
   keywords: [
     "Krav Maga trial class Glasgow",
     "beginners Krav Maga Glasgow",
@@ -19,8 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Krav Maga Trial Class Glasgow | SKMS",
-    description:
-      `Try Krav Maga in Glasgow — adult trial £${PRICES.adult_trial}, teens £${PRICES.teens_trial}. Beginners welcome.`,
+    description: `Try Krav Maga in Glasgow — adult trial £${PRICES.adult_trial}, teens £${PRICES.teens_trial}. Beginners welcome.`,
     url: "https://scotkravmaga.co.uk/trial",
   },
 };
@@ -127,7 +126,6 @@ export default function TrialPage() {
         </div>
       </section>
 
-      {/* Image placeholder grid */}
       <section className="border-t border-zinc-800 bg-zinc-900/50 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
@@ -141,23 +139,42 @@ export default function TrialPage() {
 
           <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: "front_hand", label: "Strike & Defend" },
-              { icon: "fitness_center", label: "Get Combat Fit" },
-              { icon: "groups", label: "Train Together" },
-              { icon: "shield", label: "Stay Safe" },
+              {
+                src: "/pads.jpg",
+                alt: "Krav Maga pad striking drill",
+                label: "Strike & Defend",
+              },
+              {
+                src: "/pushups.jpg",
+                alt: "Combat fitness push-ups in class",
+                label: "Get Combat Fit",
+              },
+              {
+                src: "/thumbs.jpg",
+                alt: "Training partners celebrating together",
+                label: "Train Together",
+              },
+              {
+                src: "/padpunch.jpeg",
+                alt: "Pad punch self defence training",
+                label: "Stay Safe",
+              },
             ].map((item) => (
               <div
                 key={item.label}
-                className="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-800 transition-all hover:border-red-500/50 hover:shadow-[0_0_40px_rgba(220,38,38,0.1)]"
+                className="group relative aspect-square overflow-hidden rounded-xl border border-zinc-700 transition-all hover:border-red-500/50 hover:shadow-[0_0_40px_rgba(220,38,38,0.1)]"
               >
-                <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.02)_10px,rgba(255,255,255,0.02)_20px)]" />
-                <span className="material-symbols-outlined relative mb-3 text-5xl text-red-500 transition-transform group-hover:scale-110">
-                  {item.icon}
-                </span>
-                <p className="relative text-sm font-black tracking-widest text-zinc-300 uppercase">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                <p className="absolute right-0 bottom-0 left-0 p-4 text-sm font-black tracking-widest text-white uppercase">
                   {item.label}
                 </p>
-                <p className="relative mt-1 text-xs text-zinc-600">Photo soon</p>
               </div>
             ))}
           </div>
@@ -255,7 +272,7 @@ export default function TrialPage() {
                       href="https://maps.app.goo.gl/fsp7TmioZ25shdn97"
                       className="text-red-400 hover:text-red-300"
                     >
-                      Firhill
+                      Firhill Complex
                     </Link>
                   </li>
                   <li className="flex flex-wrap gap-x-2">
@@ -279,21 +296,21 @@ export default function TrialPage() {
                       href="https://maps.app.goo.gl/fsp7TmioZ25shdn97"
                       className="text-red-400 hover:text-red-300"
                     >
-                      Firhill
+                      Firhill Complex
                     </Link>
                   </li>
                 </ul>
                 <p className="mt-4 text-sm text-zinc-500">
-                  Prefer a beginners&apos; block?{" "}
+                  Prefer a beginners&apos; block?
                   <Link
                     href="/beginners"
-                    className="font-bold text-red-400 hover:text-red-300"
+                    className="ml-2 font-bold text-red-400 hover:text-red-300"
                   >
                     Check here →
                   </Link>
                 </p>
                 <p className="mt-2 text-xs text-zinc-600">
-                  Teens 14+ welcome with an accompanying adult. Ages 17+ welcome
+                  Teens 13+ welcome with an accompanying adult. Ages 17+ welcome
                   solo.
                 </p>
               </div>
@@ -398,8 +415,7 @@ export default function TrialPage() {
       {/* Motto */}
       <section className="border-t border-zinc-800 py-16 text-center">
         <h2 className="text-4xl font-black tracking-wide text-white uppercase md:text-5xl">
-          Stay Safe.{" "}
-          <span className="text-red-500">Get Fit.</span> Hit Hard.
+          Stay Safe. <span className="text-red-500">Get Fit.</span> Hit Hard.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-zinc-400">
           <strong className="text-zinc-200">SKMS Krav Maga</strong> will bring

@@ -5,40 +5,46 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "/adult-krav-maga.jpg",
-    alt: "Adult Krav Maga pad work",
+    src: "/adult-class-group.jpg",
+    alt: "Adult Krav Maga class group at SKMS Glasgow",
     label: "Adult Training",
     placeholder: false,
   },
   {
-    src: "/Women-only-classes.jpg",
+    src: "/women-only-class.jpg",
     alt: "Women only self defence class",
     label: "Women Only",
     placeholder: false,
   },
   {
-    src: "/banners/adult-gloves.jpg",
-    alt: "Close-up of training gloves",
+    src: "/equipment.jpg",
+    alt: "Krav Maga training equipment",
     label: "Hit Hard",
     placeholder: false,
   },
   {
-    src: null,
-    alt: "Training action placeholder",
+    src: "/adult-krav-maga.jpg",
+    alt: "Adult Krav Maga pad work",
     label: "Your First Strike",
-    placeholder: true,
+    placeholder: false,
   },
   {
-    src: "/kids-teens-krav-maga.jpg",
-    alt: "Kids and teens Krav Maga",
+    src: "/teens.jpg",
+    alt: "Teens Krav Maga class",
     label: "All Ages Welcome",
     placeholder: false,
   },
   {
-    src: null,
-    alt: "Sparring placeholder",
+    src: "/stance.jpg",
+    alt: "Krav Maga fighting stance",
     label: "Real Skills. Real Confidence.",
-    placeholder: true,
+    placeholder: false,
+  },
+  {
+    src: "/kick-fly.jpg",
+    alt: "Krav Maga flying kick training",
+    label: "Serious but Fun",
+    placeholder: false,
   },
 ];
 
