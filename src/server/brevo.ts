@@ -1,7 +1,7 @@
 import { env } from "@/env";
 
 type BrevoResult =
-  | { ok: true; alreadySubscribed?: boolean }
+  | { ok: true }
   | { ok: false; status: number; error: string };
 
 async function brevoFetch(path: string, init: RequestInit) {
@@ -34,17 +34,18 @@ function contactAttributes({
   return attributes;
 }
 
-/** Create/update a Brevo contact (no list) so {{ contact.FIRSTNAME }} works in templates. */
+/**
+ * Create/update a Brevo contact (no list) so {{ contact.FIRSTNAME }} works in templates.
+ * Does not clear marketing blacklist — use subscribeToNewsletter for opt-in.
+ */
 export async function upsertBrevoContact({
   email,
   firstName,
   lastName,
-  clearEmailBlacklist = false,
 }: {
   email: string;
   firstName?: string;
   lastName?: string;
-  clearEmailBlacklist?: boolean;
 }): Promise<void> {
   const attributes = contactAttributes({ firstName, lastName });
 
@@ -53,7 +54,6 @@ export async function upsertBrevoContact({
     body: JSON.stringify({
       email: email.toLowerCase(),
       updateEnabled: true,
-      ...(clearEmailBlacklist ? { emailBlacklist: false } : {}),
       ...(Object.keys(attributes).length > 0 ? { attributes } : {}),
     }),
   });
@@ -100,12 +100,8 @@ export async function sendContactAutoreply({
     return;
   }
 
-  // Ensure contact.FIRSTNAME is set, and newsletter unsubscribe doesn't block this
-  await upsertBrevoContact({
-    email,
-    firstName,
-    clearEmailBlacklist: true,
-  });
+  // Set FIRSTNAME for the template; unblock transactional only (not marketing list)
+  await upsertBrevoContact({ email, firstName });
   await unblockTransactionalContact(email);
 
   const response = await brevoFetch("/smtp/email", {
@@ -165,13 +161,8 @@ export async function subscribeToNewsletter({
     }),
   });
 
-  if (response.status === 201) {
+  if (response.status === 201 || response.status === 204 || response.ok) {
     return { ok: true };
-  }
-
-  // updateEnabled: true returns 204 when the contact already existed
-  if (response.status === 204 || response.ok) {
-    return { ok: true, alreadySubscribed: true };
   }
 
   const data = (await response.json().catch(() => null)) as {
@@ -184,7 +175,7 @@ export async function subscribeToNewsletter({
     (data?.code === "duplicate_parameter" ||
       data?.message?.toLowerCase().includes("already"))
   ) {
-    return { ok: true, alreadySubscribed: true };
+    return { ok: true };
   }
 
   console.error("Brevo add-to-list error:", response.status, data);

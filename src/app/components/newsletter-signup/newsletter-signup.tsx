@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useId, useRef, useState, type FormEvent } from "react";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -12,9 +12,16 @@ export default function NewsletterSignup({
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
+  const formStartedAtRef = useRef(Date.now());
+  const companyFieldId = useId();
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const companyValue = formData.get("company");
+    const company = typeof companyValue === "string" ? companyValue : "";
+
     setStatus("sending");
     setMessage("");
 
@@ -22,11 +29,14 @@ export default function NewsletterSignup({
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          company,
+          formStartedAt: formStartedAtRef.current,
+        }),
       });
       const data = (await response.json().catch(() => null)) as {
         error?: string;
-        alreadySubscribed?: boolean;
       } | null;
 
       if (!response.ok) {
@@ -36,12 +46,9 @@ export default function NewsletterSignup({
       }
 
       setStatus("success");
-      setMessage(
-        data?.alreadySubscribed
-          ? "You're already on the list."
-          : "You're subscribed — thanks!",
-      );
+      setMessage("You're on the list — thanks!");
       setEmail("");
+      formStartedAtRef.current = Date.now();
     } catch {
       setStatus("error");
       setMessage("Could not subscribe. Please try again.");
@@ -55,6 +62,20 @@ export default function NewsletterSignup({
       </h3>
       <p className="mb-4 text-blue-800">Subscribe to our newsletter</p>
       <form onSubmit={onSubmit} className="flex flex-col gap-4 sm:flex-row">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+        >
+          <label htmlFor={companyFieldId}>Company</label>
+          <input
+            type="text"
+            id={companyFieldId}
+            name="company"
+            tabIndex={-1}
+            autoComplete="off"
+            defaultValue=""
+          />
+        </div>
         <input
           type="email"
           name="email"

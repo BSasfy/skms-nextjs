@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 
 const inputClass =
   "w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500";
@@ -23,6 +23,7 @@ export default function ContactForm({
 }) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const formStartedAtRef = useRef(Date.now());
   const fieldId = (name: string) => `${idPrefix}${name}`;
 
   const sendMessage = async (event: FormEvent<HTMLFormElement>) => {
@@ -46,6 +47,8 @@ export default function ContactForm({
           subject: formString(formData, "subject", "general-inquiry"),
           message: formString(formData, "message"),
           newsletter: formData.get("newsletter") === "yes",
+          company: formString(formData, "company"),
+          formStartedAt: formStartedAtRef.current,
         }),
       });
 
@@ -64,6 +67,7 @@ export default function ContactForm({
 
       setStatus("success");
       form.reset();
+      formStartedAtRef.current = Date.now();
       if (onSuccess) {
         window.setTimeout(onSuccess, 3500);
       }
@@ -78,6 +82,22 @@ export default function ContactForm({
 
   return (
     <form onSubmit={sendMessage} className="space-y-6">
+      {/* Honeypot — leave empty */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+      >
+        <label htmlFor={fieldId("company")}>Company</label>
+        <input
+          type="text"
+          id={fieldId("company")}
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          defaultValue=""
+        />
+      </div>
+
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label

@@ -5,6 +5,12 @@ import {
   sendContactAutoreply,
   subscribeToNewsletter,
 } from "@/server/brevo";
+import {
+  checkRateLimit,
+  failsAntiSpam,
+  getClientIp,
+  isTrustedBrowserOrigin,
+} from "@/server/form-guard";
 
 const SUBJECT_LABELS: Record<string, string> = {
   "trial-class": "Book a Trial Class",
@@ -30,6 +36,8 @@ const bodySchema = z.object({
   ]),
   message: z.string().trim().min(1).max(5000),
   newsletter: z.boolean().optional().default(false),
+  company: z.string().max(200).optional().default(""),
+  formStartedAt: z.number().optional(),
 });
 
 function escapeHtml(value: string) {
@@ -53,6 +61,25 @@ export async function POST(request: Request) {
     );
   }
 
+  if (!isTrustedBrowserOrigin(request)) {
+    return NextResponse.json({ error: "Invalid request." }, { status: 403 });
+  }
+
+  const ip = getClientIp(request);
+  const ipLimit = checkRateLimit(`contact:ip:${ip}`, {
+    limit: 5,
+    windowMs: 15 * 60 * 1000,
+  });
+  if (!ipLimit.ok) {
+    return NextResponse.json(
+      { error: "Too many messages. Please try again later." },
+      {
+        status: 429,
+        headers: { "Retry-After": String(ipLimit.retryAfterSec) },
+      },
+    );
+  }
+
   let json: unknown;
   try {
     json = await request.json();
@@ -69,6 +96,33 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
+
+  // Soft success for bots — don't tip them off
+  if (
+    failsAntiSpam({
+      company: data.company,
+      formStartedAt: data.formStartedAt,
+      minFillMs: 2500,
+    })
+  ) {
+    return NextResponse.json({ ok: true });
+  }
+
+  const emailKey = data.email.toLowerCase();
+  const emailLimit = checkRateLimit(`contact:email:${emailKey}`, {
+    limit: 3,
+    windowMs: 60 * 60 * 1000,
+  });
+  if (!emailLimit.ok) {
+    return NextResponse.json(
+      { error: "Too many messages from this email. Please try again later." },
+      {
+        status: 429,
+        headers: { "Retry-After": String(emailLimit.retryAfterSec) },
+      },
+    );
+  }
+
   const subjectLabel = SUBJECT_LABELS[data.subject] ?? data.subject;
   const fullName = [data.firstName, data.lastName].filter(Boolean).join(" ");
 
