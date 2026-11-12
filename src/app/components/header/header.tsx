@@ -15,7 +15,7 @@ export default function HeaderBanner({
   link2,
   linkText,
   link2Text,
-  messageUsText,
+  messageUsText = "Message Us",
   img,
 }: {
   title: string;
