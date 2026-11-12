@@ -87,10 +87,14 @@ export default function ContactModal() {
       const dialog = dialogRef.current;
       if (!dialog) return;
 
-      const firstField = dialog.querySelector<HTMLElement>(
-        "input:not([type='hidden']), select, textarea",
-      );
+      // Prefer the first real form control (skip close button / honeypot).
       const focusable = getFocusableElements(dialog);
+      const firstField = focusable.find(
+        (element) =>
+          element instanceof HTMLInputElement ||
+          element instanceof HTMLTextAreaElement ||
+          element instanceof HTMLSelectElement,
+      );
       (firstField ?? focusable[0] ?? dialog).focus();
     });
 
