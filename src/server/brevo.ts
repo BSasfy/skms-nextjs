@@ -59,7 +59,7 @@ export async function upsertBrevoContact({
   });
 
   if (!response.ok && response.status !== 204) {
-    const data = await response.json().catch(() => null);
+    const data = (await response.json().catch(() => null)) as unknown;
     console.error("Brevo upsert contact error:", response.status, data);
   }
 }
@@ -76,7 +76,7 @@ async function unblockTransactionalContact(email: string): Promise<void> {
 
   // 404 = not blocked — fine
   if (!response.ok && response.status !== 404) {
-    const data = await response.json().catch(() => null);
+    const data = (await response.json().catch(() => null)) as unknown;
     console.error(
       "Brevo unblock transactional contact error:",
       response.status,
@@ -126,7 +126,7 @@ export async function sendContactAutoreply({
   });
 
   if (!response.ok) {
-    const data = await response.json().catch(() => null);
+    const data = (await response.json().catch(() => null)) as unknown;
     console.error("Brevo contact auto-reply error:", response.status, data);
   }
 }

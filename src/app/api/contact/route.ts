@@ -121,7 +121,7 @@ export async function POST(request: Request) {
     });
 
     if (!response.ok) {
-      const errorBody = await response.json().catch(() => null);
+      const errorBody = (await response.json().catch(() => null)) as unknown;
       console.error("Brevo contact email error:", response.status, errorBody);
       return NextResponse.json(
         {

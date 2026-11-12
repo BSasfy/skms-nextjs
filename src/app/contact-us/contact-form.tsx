@@ -7,6 +7,11 @@ const inputClass =
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
+function formString(formData: FormData, key: string, fallback = "") {
+  const value = formData.get(key);
+  return typeof value === "string" ? value : fallback;
+}
+
 export default function ContactForm({
   idPrefix = "",
   messageRows = 6,
@@ -34,12 +39,12 @@ export default function ContactForm({
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
-          firstName: String(formData.get("firstName") ?? ""),
-          lastName: String(formData.get("lastName") ?? ""),
-          email: String(formData.get("email") ?? ""),
-          phone: String(formData.get("phone") ?? ""),
-          subject: String(formData.get("subject") ?? "general-inquiry"),
-          message: String(formData.get("message") ?? ""),
+          firstName: formString(formData, "firstName"),
+          lastName: formString(formData, "lastName"),
+          email: formString(formData, "email"),
+          phone: formString(formData, "phone"),
+          subject: formString(formData, "subject", "general-inquiry"),
+          message: formString(formData, "message"),
           newsletter: formData.get("newsletter") === "yes",
         }),
       });
