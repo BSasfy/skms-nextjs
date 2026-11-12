@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterSignup from "../components/newsletter-signup/newsletter-signup";
 import ContactForm from "./contact-form";
 
 export default function ContactUsPage() {
@@ -39,6 +40,14 @@ export default function ContactUsPage() {
               about Krav Maga, please fill out the form and we&apos;ll be in
               touch soon.
             </p>
+          </div>
+
+          {/* Contact Form */}
+          <div className="mb-12 rounded-lg border border-gray-200 bg-white p-8">
+            <h3 className="mb-6 text-center text-2xl font-bold text-gray-900">
+              Send us a message!
+            </h3>
+            <ContactForm />
           </div>
 
           {/* Contact Information */}
@@ -100,53 +109,7 @@ export default function ContactUsPage() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="mb-12 rounded-lg border border-gray-200 bg-white p-8">
-            <h3 className="mb-6 text-center text-2xl font-bold text-gray-900">
-              Send us a message!
-            </h3>
-            <ContactForm />
-          </div>
-
-          {/* Additional Information */}
-          <div className="mb-12 border-l-4 border-blue-500 bg-blue-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-blue-900">
-              What to Expect
-            </h3>
-            <div className="space-y-3 text-gray-700">
-              <p>• We typically respond to all inquiries within 24 hours</p>
-              <p>• For urgent matters, please call us directly</p>
-              <p>
-                • We&apos;re happy to answer any questions about our classes,
-                pricing, or Krav Maga in general
-              </p>
-              <p>
-                • Feel free to ask about trial classes, beginners courses, or
-                private lessons
-              </p>
-            </div>
-          </div>
-
-          {/* Newsletter Subscription */}
-          <div className="mb-12 rounded-lg bg-blue-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-blue-900">
-              Want to keep up-to-date with SKMS?
-            </h3>
-            <p className="mb-4 text-blue-800">Subscribe our newsletter</p>
-            <form className="flex flex-col gap-4 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                type="submit"
-                className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+          <NewsletterSignup />
 
           {/* Quick Links */}
           <div className="mb-12 rounded-lg border border-gray-200 bg-white p-6">

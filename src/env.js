@@ -8,6 +8,8 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
+    BREVO_API_KEY: z.string().min(1).optional(),
+    BREVO_NEWSLETTER_LIST_ID: z.coerce.number().int().positive().optional(),
   },
 
   /**
@@ -27,6 +29,8 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    BREVO_API_KEY: process.env.BREVO_API_KEY,
+    BREVO_NEWSLETTER_LIST_ID: process.env.BREVO_NEWSLETTER_LIST_ID,
     NEXT_PUBLIC_EMAILJS_SERVICE_ID:
       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
     NEXT_PUBLIC_EMAILJS_TEMPLATE_ID:

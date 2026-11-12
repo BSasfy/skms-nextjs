@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ContactTrigger from "../../components/contact-modal/contact-trigger";
+import NewsletterSignup from "../../components/newsletter-signup/newsletter-signup";
 
 export default function RobertBennettPage() {
   return (
@@ -214,26 +215,7 @@ export default function RobertBennettPage() {
             </div>
           </div>
 
-          {/* Newsletter Subscription */}
-          <div className="mb-8 rounded-lg bg-blue-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-blue-900">
-              Want to keep up-to-date with SKMS?
-            </h3>
-            <p className="mb-4 text-blue-800">Subscribe our newsletter</p>
-            <form className="flex flex-col gap-4 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                type="submit"
-                className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+          <NewsletterSignup className="mb-8 rounded-lg bg-blue-50 p-6" />
 
           {/* Instructor Achievements */}
           <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">

@@ -47,7 +47,7 @@ export default function ContactForm({
       setStatus("success");
       formRef.current.reset();
       if (onSuccess) {
-        window.setTimeout(onSuccess, 1200);
+        window.setTimeout(onSuccess, 3500);
       }
     } catch (error) {
       console.error("EmailJS error:", error);
@@ -185,12 +185,19 @@ export default function ContactForm({
       </div>
 
       {status === "success" && (
-        <p className="rounded-lg bg-green-50 px-4 py-3 text-center text-sm font-medium text-green-800">
+        <p
+          role="status"
+          aria-live="polite"
+          className="rounded-lg bg-green-50 px-4 py-3 text-center text-sm font-medium text-green-800"
+        >
           Message sent — we&apos;ll get back to you soon.
         </p>
       )}
       {status === "error" && (
-        <p className="rounded-lg bg-red-50 px-4 py-3 text-center text-sm font-medium text-red-800">
+        <p
+          role="alert"
+          className="rounded-lg bg-red-50 px-4 py-3 text-center text-sm font-medium text-red-800"
+        >
           {errorMessage}
         </p>
       )}
