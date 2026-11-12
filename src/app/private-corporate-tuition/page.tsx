@@ -293,19 +293,15 @@ export default function PrivateCorporateTuitionPage() {
         </div>
       </section>
 
-      {/* Footer Section */}
+      {/* Motto */}
       <section className="bg-gray-800 py-8 text-white">
         <div className="container mx-auto px-4 text-center">
           <h3 className="mb-4 text-2xl font-bold">
             Stay Safe, Get Fit, Hit Hard!
           </h3>
-          <p className="mb-4 text-lg">
+          <p className="text-lg">
             <strong>SKMS Krav Maga</strong> will bring out the best in you. We
             make Krav Maga accessible, affordable and fun.
-          </p>
-          <p className="text-sm text-gray-400">
-            Scot Krav Maga Systems Ltd - Copyright © 2011-
-            {new Date().getFullYear()}. All Rights Reserved.
           </p>
         </div>
       </section>

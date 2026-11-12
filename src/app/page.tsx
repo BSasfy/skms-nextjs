@@ -70,7 +70,7 @@ export default function HomePage() {
             </div>
             <div className="relative content-center text-center text-[#FFFBF2]">
               <Image
-                src="/kids-teens-krav-maga.jpg"
+                src="/Teens.jpg"
                 fill
                 alt="Teens Krav Maga self defence class in Glasgow"
                 className="object-cover"
