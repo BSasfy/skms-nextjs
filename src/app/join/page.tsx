@@ -91,7 +91,7 @@ export default function JoinPage() {
             make Krav Maga accessible, affordable and fun.
           </p>
           <p className="text-sm text-gray-400">
-            Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
+            Scot Krav Maga Ltd - Copyright © 2011-{new Date().getFullYear()}. All Rights Reserved.
           </p>
         </div>
       </section>

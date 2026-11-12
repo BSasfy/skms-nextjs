@@ -4,6 +4,8 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import NavBar from "./components/nav-bar/nav-bar";
 import Footer from "./components/footer/footer";
+import { ContactModalProvider } from "./components/contact-modal/contact-modal-context";
+import ContactModal from "./components/contact-modal/contact-modal";
 
 export const metadata: Metadata = {
   title: {
@@ -37,9 +39,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body className="bg-white">
-        <NavBar />
-        {children}
-        <Footer />
+        <ContactModalProvider>
+          <NavBar />
+          {children}
+          <Footer />
+          <ContactModal />
+        </ContactModalProvider>
       </body>
     </html>
   );

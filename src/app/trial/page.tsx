@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { type Metadata } from "next";
 import { BOOKING_LINKS, PRICES } from "../constants/prices";
+import ContactTrigger from "../components/contact-modal/contact-trigger";
 
 export const metadata: Metadata = {
   title: "Krav Maga Trial Class Glasgow",
@@ -25,27 +26,21 @@ export const metadata: Metadata = {
 export default function TrialPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 py-16 text-white">
-        <div className="container mx-auto px-4">
-          <nav className="mb-8">
-            <ul className="flex flex-wrap gap-4 text-sm">
-              <li>
-                <Link href="/" className="hover:text-blue-200">
-                  Home
-                </Link>
-              </li>
-              <li className="text-blue-200">Book a Trial Now</li>
-            </ul>
-          </nav>
-
-          <div className="text-center">
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+      {/* Introduction + trial heading */}
+      <div className="border-b border-gray-300 bg-gray-100">
+        <div className="container mx-auto px-4 py-12">
+          <div className="mx-auto max-w-6xl text-center">
+            <h1 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               Krav Maga Trial Class Glasgow
             </h1>
-            <p className="mb-8 text-xl">
+            <p className="mx-auto mb-4 max-w-3xl text-lg text-gray-700">
               Beginners welcome — book an adult, student or teens trial below,
               or send us a message.
+            </p>
+            <p className="mx-auto max-w-3xl text-lg text-gray-700">
+              Our trial class will give you an introduction to what Krav Maga is
+              all about. You&apos;ll meet our friendly instructors, get to meet
+              some new friends all while getting a great workout and having fun!
             </p>
           </div>
         </div>
@@ -54,24 +49,11 @@ export default function TrialPage() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-6xl">
-          {/* Introduction Section */}
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">
-              Book a trial class to come along this week or fill in our form,
-              and we will contact you as soon as we can!
-            </h2>
-            <p className="mx-auto max-w-3xl text-lg text-gray-700">
-              Our trial class will give you an introduction to what Krav Maga is
-              all about. You&apos;ll meet our friendly instructors, get to meet
-              some new friends all while getting a great workout and having fun!
-            </p>
-          </div>
-
           {/* Trial Class Pricing */}
-          <div className="mb-12 rounded-lg border border-gray-200 bg-white p-8">
-            <h3 className="mb-6 text-center text-2xl font-bold text-gray-900">
+          <div className="mb-12">
+            <h2 className="mb-8 text-center text-2xl font-bold text-gray-900">
               Book a trial class
-            </h3>
+            </h2>
             <div className="grid gap-6 md:grid-cols-3">
               <Link
                 href="https://scottish-krav-maga-systems-ltd.sumupstore.com/product/adult-trial-class"
@@ -216,12 +198,9 @@ export default function TrialPage() {
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
               Book a trial class now – there are always spaces!
             </h2>
-            <Link
-              href="/contact-us"
-              className="inline-block rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
-            >
+            <ContactTrigger className="inline-block rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700">
               Send us a message!
-            </Link>
+            </ContactTrigger>
           </div>
 
           {/* Contact Information */}
@@ -406,22 +385,8 @@ export default function TrialPage() {
       <footer className="bg-gray-900 py-8 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
-            Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
+            Scot Krav Maga Ltd - Copyright © 2011-{new Date().getFullYear()}. All Rights Reserved.
           </p>
-          <div className="mt-4 space-x-4 text-sm">
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Privacy Policy
-            </Link>
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Website Disclaimer
-            </Link>
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Accessibility Policy
-            </Link>
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Sitemap
-            </Link>
-          </div>
         </div>
       </footer>
     </main>

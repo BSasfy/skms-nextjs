@@ -1,4 +1,6 @@
 import Link from "next/link";
+import ContactTrigger from "../../components/contact-modal/contact-trigger";
+import NewsletterSignup from "../../components/newsletter-signup/newsletter-signup";
 
 export default function RobertBennettPage() {
   return (
@@ -189,12 +191,9 @@ export default function RobertBennettPage() {
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
               Ready to try a class or book a 1-2-1 session?
             </h2>
-            <Link
-              href="/contact-us"
-              className="inline-block rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
-            >
+            <ContactTrigger className="inline-block rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700">
               SEND US A MESSAGE!
-            </Link>
+            </ContactTrigger>
           </div>
 
           {/* Contact Information */}
@@ -216,26 +215,7 @@ export default function RobertBennettPage() {
             </div>
           </div>
 
-          {/* Newsletter Subscription */}
-          <div className="mb-8 rounded-lg bg-blue-50 p-6">
-            <h3 className="mb-4 text-xl font-bold text-blue-900">
-              Want to keep up-to-date with SKMS?
-            </h3>
-            <p className="mb-4 text-blue-800">Subscribe our newsletter</p>
-            <form className="flex flex-col gap-4 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                type="submit"
-                className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+          <NewsletterSignup className="mb-8 rounded-lg bg-blue-50 p-6" />
 
           {/* Instructor Achievements */}
           <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
@@ -283,22 +263,8 @@ export default function RobertBennettPage() {
       <footer className="bg-gray-900 py-8 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
-            Scot Krav Maga Ltd - Copyright © 2011-2024. All Rights Reserved.
+            Scot Krav Maga Ltd - Copyright © 2011-{new Date().getFullYear()}. All Rights Reserved.
           </p>
-          <div className="mt-4 space-x-4 text-sm">
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Privacy Policy
-            </Link>
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Website Disclaimer
-            </Link>
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Accessibility Policy
-            </Link>
-            <Link href="/contact-us" className="hover:text-blue-300">
-              Sitemap
-            </Link>
-          </div>
         </div>
       </footer>
     </main>

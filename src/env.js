@@ -8,6 +8,15 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
+    BREVO_API_KEY: z.string().min(1).optional(),
+    BREVO_NEWSLETTER_LIST_ID: z.coerce.number().int().positive().optional(),
+    BREVO_CONTACT_AUTOREPLY_TEMPLATE_ID: z.coerce
+      .number()
+      .int()
+      .positive()
+      .optional(),
+    BREVO_SENDER_EMAIL: z.string().email().optional(),
+    BREVO_CONTACT_TO_EMAIL: z.string().email().optional(),
   },
 
   /**
@@ -15,11 +24,7 @@ export const env = createEnv({
    * isn't built with invalid env vars. To expose them to the client, prefix them with
    * `NEXT_PUBLIC_`.
    */
-  client: {
-    NEXT_PUBLIC_EMAILJS_SERVICE_ID: z.string().min(1).optional(),
-    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: z.string().min(1).optional(),
-    NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: z.string().min(1).optional(),
-  },
+  client: {},
 
   /**
    * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
@@ -27,12 +32,12 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-    NEXT_PUBLIC_EMAILJS_SERVICE_ID:
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID:
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-    NEXT_PUBLIC_EMAILJS_PUBLIC_KEY:
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+    BREVO_API_KEY: process.env.BREVO_API_KEY,
+    BREVO_NEWSLETTER_LIST_ID: process.env.BREVO_NEWSLETTER_LIST_ID,
+    BREVO_CONTACT_AUTOREPLY_TEMPLATE_ID:
+      process.env.BREVO_CONTACT_AUTOREPLY_TEMPLATE_ID,
+    BREVO_SENDER_EMAIL: process.env.BREVO_SENDER_EMAIL,
+    BREVO_CONTACT_TO_EMAIL: process.env.BREVO_CONTACT_TO_EMAIL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

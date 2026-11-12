@@ -83,6 +83,17 @@ export default function MobileNavBar() {
         </li>
         <li className="content-center">
           <Link
+            href="/contact-us"
+            className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
+          >
+            Contact Us
+            <span className="material-symbols-outlined pl-2">
+              arrow_forward
+            </span>
+          </Link>
+        </li>
+        <li className="content-center">
+          <Link
             href="/shop"
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
