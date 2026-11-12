@@ -24,10 +24,10 @@ export default function CookieBanner() {
 
   return (
     <div
-      role="dialog"
+      role="region"
       aria-label="Cookie choices"
       aria-live="polite"
-      className="fixed inset-x-0 bottom-0 z-[10000] border-t border-gray-700 bg-[#181818] text-[#FFFBF2] shadow-[0_-8px_30px_rgba(0,0,0,0.35)]"
+      className="fixed inset-x-0 bottom-0 z-[9990] border-t border-gray-700 bg-[#181818] text-[#FFFBF2] shadow-[0_-8px_30px_rgba(0,0,0,0.35)]"
     >
       <div className="mx-auto flex max-w-screen-xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
         <p className="max-w-2xl text-sm leading-relaxed text-[#FFFBF2]/90">

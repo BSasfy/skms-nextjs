@@ -314,12 +314,14 @@ export default function PrivacyPolicyPage() {
               cookies may affect ad measurement.
             </p>
             <p>
-              To change a previous choice on this device, clear site data for
-              scotkravmaga.co.uk (or local storage key{" "}
+              To change a previous choice on this device, clear site data and
+              cookies for scotkravmaga.co.uk in your browser, then reload. Clearing
+              only the{" "}
               <code className="rounded bg-gray-100 px-1.5 py-0.5 text-sm">
                 skms-cookie-consent
-              </code>
-              ) and reload the page.
+              </code>{" "}
+              local storage key resets the banner, but ad cookies from a prior
+              Accept may remain until full site data is cleared.
             </p>
           </Section>
 
