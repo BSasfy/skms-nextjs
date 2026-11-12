@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import { useState, type FormEvent } from "react";
 
 const inputClass =
   "w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500";
@@ -17,40 +16,54 @@ export default function ContactForm({
   messageRows?: number;
   onSuccess?: () => void;
 }) {
-  const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const fieldId = (name: string) => `${idPrefix}${name}`;
 
-  const sendMessage = async (event: React.FormEvent<HTMLFormElement>) => {
+  const sendMessage = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey || !formRef.current) {
-      setStatus("error");
-      setErrorMessage(
-        "Email is not configured yet. Please email info@scotkravmaga.co.uk instead.",
-      );
-      return;
-    }
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
     setStatus("sending");
     setErrorMessage("");
 
     try {
-      await emailjs.sendForm(serviceId, templateId, formRef.current, {
-        publicKey,
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          firstName: String(formData.get("firstName") ?? ""),
+          lastName: String(formData.get("lastName") ?? ""),
+          email: String(formData.get("email") ?? ""),
+          phone: String(formData.get("phone") ?? ""),
+          subject: String(formData.get("subject") ?? "general-inquiry"),
+          message: String(formData.get("message") ?? ""),
+          newsletter: formData.get("newsletter") === "yes",
+        }),
       });
+
+      const data = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+
+      if (!response.ok) {
+        setStatus("error");
+        setErrorMessage(
+          data?.error ??
+            "Something went wrong sending your message. Please try again or email info@scotkravmaga.co.uk.",
+        );
+        return;
+      }
+
       setStatus("success");
-      formRef.current.reset();
+      form.reset();
       if (onSuccess) {
         window.setTimeout(onSuccess, 3500);
       }
     } catch (error) {
-      console.error("EmailJS error:", error);
+      console.error("Contact form error:", error);
       setStatus("error");
       setErrorMessage(
         "Something went wrong sending your message. Please try again or email info@scotkravmaga.co.uk.",
@@ -59,7 +72,7 @@ export default function ContactForm({
   };
 
   return (
-    <form ref={formRef} onSubmit={sendMessage} className="space-y-6">
+    <form onSubmit={sendMessage} className="space-y-6">
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label
@@ -168,20 +181,25 @@ export default function ContactForm({
         />
       </div>
 
-      <div className="flex items-center">
-        <input
-          type="checkbox"
-          id={fieldId("newsletter")}
-          name="newsletter"
-          value="yes"
-          className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-        />
-        <label
-          htmlFor={fieldId("newsletter")}
-          className="ml-2 block text-sm text-gray-700"
-        >
-          I would like to receive updates about SKMS classes and events
-        </label>
+      <div className="rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+        <div className="flex items-start gap-3">
+          <input
+            type="checkbox"
+            id={fieldId("newsletter")}
+            name="newsletter"
+            value="yes"
+            className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+          />
+          <label htmlFor={fieldId("newsletter")} className="block text-sm">
+            <span className="font-semibold text-blue-900">
+              Subscribe to the SKMS newsletter
+            </span>
+            <span className="mt-0.5 block text-blue-800">
+              Optional. Class news, beginners courses, and events — unsubscribe
+              anytime.
+            </span>
+          </label>
+        </div>
       </div>
 
       {status === "success" && (

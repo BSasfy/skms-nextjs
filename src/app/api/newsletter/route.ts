@@ -1,16 +1,14 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { env } from "@/env";
+import { subscribeToNewsletter } from "@/server/brevo";
 
 const bodySchema = z.object({
   email: z.string().trim().email(),
 });
 
 export async function POST(request: Request) {
-  const apiKey = env.BREVO_API_KEY;
-  const listId = env.BREVO_NEWSLETTER_LIST_ID;
-
-  if (!apiKey || !listId) {
+  if (!env.BREVO_API_KEY || !env.BREVO_NEWSLETTER_LIST_ID) {
     return NextResponse.json(
       { error: "Newsletter signup is not configured yet." },
       { status: 503 },
@@ -32,45 +30,22 @@ export async function POST(request: Request) {
     );
   }
 
-  const email = parsed.data.email.toLowerCase();
-
   try {
-    const response = await fetch("https://api.brevo.com/v3/contacts", {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-        "api-key": apiKey,
-      },
-      body: JSON.stringify({
-        email,
-        listIds: [listId],
-        updateEnabled: true,
-      }),
+    const result = await subscribeToNewsletter({
+      email: parsed.data.email,
     });
 
-    if (response.ok || response.status === 204) {
-      return NextResponse.json({ ok: true });
+    if (!result.ok) {
+      return NextResponse.json(
+        { error: result.error },
+        { status: result.status },
+      );
     }
 
-    const data = (await response.json().catch(() => null)) as {
-      code?: string;
-      message?: string;
-    } | null;
-
-    if (
-      response.status === 400 &&
-      (data?.code === "duplicate_parameter" ||
-        data?.message?.toLowerCase().includes("already"))
-    ) {
-      return NextResponse.json({ ok: true, alreadySubscribed: true });
-    }
-
-    console.error("Brevo newsletter error:", response.status, data);
-    return NextResponse.json(
-      { error: "Could not subscribe right now. Please try again." },
-      { status: 502 },
-    );
+    return NextResponse.json({
+      ok: true,
+      alreadySubscribed: result.alreadySubscribed === true,
+    });
   } catch (error) {
     console.error("Brevo newsletter request failed:", error);
     return NextResponse.json(
