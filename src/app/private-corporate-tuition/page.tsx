@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ContactTrigger from "../components/contact-modal/contact-trigger";
 import HeaderBanner from "../components/header/header";
 import { PRICES } from "../constants/prices";
 
@@ -7,10 +8,10 @@ export default function PrivateCorporateTuitionPage() {
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <HeaderBanner
-        title="Start Training with SKMS!"
-        subtitle="Fill in our form, and we will contact you as soon as we can!"
-        description="Fill in our form, and we will contact you as soon as we can!"
-        messageUsText="Inquire now!"
+        title="Private & corporate tuition"
+        subtitle="1-2-1 with Barbara · Corporate sessions with Robert"
+        description="Practical training, outdoor or indoor around Glasgow. Rates below — inquire to book."
+        messageUsText="Inquire now"
         contactSubject="private-corporate"
         img="/banners/Lulul.jpg"
         imgPosition="27%"
@@ -192,15 +193,14 @@ export default function PrivateCorporateTuitionPage() {
 
               <div className="mt-6 text-center">
                 <p className="mb-4 text-lg">
-                  To book, call Robert on 07849114110 or send us an email at
-                  info@scotkravmaga.co.uk!
+                  To book, call Robert on 07849114110 or message us.
                 </p>
-                <Link
-                  href="tel:07849114110"
+                <ContactTrigger
+                  subject="private-corporate"
                   className="rounded-lg bg-blue-600 px-6 py-3 font-bold text-white transition-colors duration-200 hover:bg-blue-700"
                 >
                   Contact Us
-                </Link>
+                </ContactTrigger>
               </div>
             </div>
           </div>
@@ -259,15 +259,15 @@ export default function PrivateCorporateTuitionPage() {
       {/* Call to Action Section */}
       <section className="bg-indigo-900 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold">Inquire now!</h2>
+          <h2 className="mb-6 text-3xl font-bold">Inquire now</h2>
 
           <div className="space-y-4">
-            <Link
-              href="mailto:info@scotkravmaga.co.uk"
+            <ContactTrigger
+              subject="private-corporate"
               className="inline-block rounded-lg bg-orange-600 px-8 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-orange-700"
             >
-              Send us a message!
-            </Link>
+              Send us a message
+            </ContactTrigger>
 
             <div className="mt-8 space-y-4">
               <div>

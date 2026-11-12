@@ -4,7 +4,7 @@ import ContactTrigger from "../contact-modal/contact-trigger";
 import type { ContactSubject } from "../contact-modal/contact-subjects";
 
 const ctaClassName =
-  "r flex w-fit gap-2 self-center rounded-sm bg-[#005EB8] px-8 py-3 text-sm font-bold text-white uppercase";
+  "flex w-fit gap-2 self-center rounded-sm bg-[#005EB8] px-8 py-3 text-sm font-bold text-white uppercase";
 
 export default function MembershipTile({
   title,

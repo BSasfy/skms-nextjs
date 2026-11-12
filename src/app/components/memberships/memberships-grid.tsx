@@ -97,7 +97,7 @@ export default function MembershipsGrid() {
             "Minimum 2 instructors, a male and a female",
             "Low cardio, no gym clothes required",
           ]}
-          link="mailto:info@scotkravmaga.co.uk"
+          contactSubject="private-corporate"
           linkText="Inquire now"
         />
       </div>
