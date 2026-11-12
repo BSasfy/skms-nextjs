@@ -1,4 +1,10 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
+import ContactTrigger from "../contact-modal/contact-trigger";
+import type { ContactSubject } from "../contact-modal/contact-subjects";
+
+const ctaClassName =
+  "flex w-fit gap-2 self-center rounded-sm bg-[#005EB8] px-8 py-3 text-sm font-bold text-white uppercase";
 
 export default function MembershipTile({
   title,
@@ -7,16 +13,18 @@ export default function MembershipTile({
   benefits,
   link,
   linkText = "Sign up",
+  contactSubject,
 }: {
   title: string;
-  schedule?: string;
+  schedule?: ReactNode;
   price: string;
   benefits: string[];
-  link: string;
+  link?: string;
   linkText?: string;
+  contactSubject?: ContactSubject;
 }) {
   return (
-    <div className="flex max-w-[408px] min-w-[307px] flex-1 flex-col bg-gray-100 px-8 py-12 text-center">
+    <div className="flex h-full max-w-[408px] min-w-[307px] flex-1 flex-col bg-gray-100 px-8 py-12 text-center">
       <div className="mb-3 flex flex-col text-lg">
         <div className="font-extrabold uppercase">{title}</div>
         {schedule && (
@@ -34,13 +42,20 @@ export default function MembershipTile({
           </li>
         ))}
       </ul>
-      <Link
-        href={link}
-        className="r flex w-fit gap-2 self-center rounded-sm bg-[#005EB8] px-8 py-3 text-sm font-bold text-white uppercase"
-      >
-        <div className="content-center">{linkText}</div>
-        <span className="material-symbols-outlined">arrow_forward</span>
-      </Link>
+      {contactSubject ? (
+        <ContactTrigger
+          className={`${ctaClassName} mt-auto`}
+          subject={contactSubject}
+        >
+          <div className="content-center">{linkText}</div>
+          <span className="material-symbols-outlined">arrow_forward</span>
+        </ContactTrigger>
+      ) : (
+        <Link href={link!} className={`${ctaClassName} mt-auto`}>
+          <div className="content-center">{linkText}</div>
+          <span className="material-symbols-outlined">arrow_forward</span>
+        </Link>
+      )}
     </div>
   );
 }

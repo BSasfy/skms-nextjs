@@ -8,10 +8,12 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import type { ContactSubject } from "./contact-subjects";
 
 type ContactModalContextValue = {
   isOpen: boolean;
-  openContactModal: () => void;
+  defaultSubject: ContactSubject;
+  openContactModal: (subject?: ContactSubject) => void;
   closeContactModal: () => void;
 };
 
@@ -21,13 +23,19 @@ const ContactModalContext = createContext<ContactModalContextValue | null>(
 
 export function ContactModalProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [defaultSubject, setDefaultSubject] =
+    useState<ContactSubject>("general-inquiry");
 
-  const openContactModal = useCallback(() => setIsOpen(true), []);
+  const openContactModal = useCallback((subject?: ContactSubject) => {
+    setDefaultSubject(subject ?? "general-inquiry");
+    setIsOpen(true);
+  }, []);
+
   const closeContactModal = useCallback(() => setIsOpen(false), []);
 
   const value = useMemo(
-    () => ({ isOpen, openContactModal, closeContactModal }),
-    [isOpen, openContactModal, closeContactModal],
+    () => ({ isOpen, defaultSubject, openContactModal, closeContactModal }),
+    [isOpen, defaultSubject, openContactModal, closeContactModal],
   );
 
   return (

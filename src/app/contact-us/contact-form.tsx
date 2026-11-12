@@ -2,6 +2,12 @@
 
 import Link from "next/link";
 import { useRef, useState, type FormEvent } from "react";
+import {
+  CONTACT_SUBJECT_LABELS,
+  CONTACT_SUBJECTS,
+  isContactSubject,
+  type ContactSubject,
+} from "@/app/components/contact-modal/contact-subjects";
 
 const inputClass =
   "w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500";
@@ -16,10 +22,12 @@ function formString(formData: FormData, key: string, fallback = "") {
 export default function ContactForm({
   idPrefix = "",
   messageRows = 6,
+  defaultSubject = "general-inquiry",
   onSuccess,
 }: {
   idPrefix?: string;
   messageRows?: number;
+  defaultSubject?: ContactSubject;
   onSuccess?: () => void;
 }) {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -179,14 +187,17 @@ export default function ContactForm({
           name="subject"
           required
           className={inputClass}
-          defaultValue="general-inquiry"
+          defaultValue={
+            isContactSubject(defaultSubject)
+              ? defaultSubject
+              : "general-inquiry"
+          }
         >
-          <option value="trial-class">Book a Trial Class</option>
-          <option value="beginners-course">Beginners Course Information</option>
-          <option value="private-lessons">Private Lessons</option>
-          <option value="membership">Membership Information</option>
-          <option value="general-inquiry">General Inquiry</option>
-          <option value="other">Other</option>
+          {CONTACT_SUBJECTS.map((value) => (
+            <option key={value} value={value}>
+              {CONTACT_SUBJECT_LABELS[value]}
+            </option>
+          ))}
         </select>
       </div>
 

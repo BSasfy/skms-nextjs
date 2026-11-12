@@ -18,7 +18,6 @@ export const PRICES = {
   adult_trial: 12,
   teens_trial: 10,
   concession_trial: 10,
-  car_rage_seminar: 1000,
 };
 
 export const BOOKING_LINKS = {

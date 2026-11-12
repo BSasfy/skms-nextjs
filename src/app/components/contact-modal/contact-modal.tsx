@@ -26,7 +26,7 @@ function getFocusableElements(container: HTMLElement) {
 }
 
 export default function ContactModal() {
-  const { isOpen, closeContactModal } = useContactModal();
+  const { isOpen, closeContactModal, defaultSubject } = useContactModal();
   const dialogRef = useRef<HTMLDivElement>(null);
   const previouslyFocusedRef = useRef<HTMLElement | null>(null);
   const titleId = useId();
@@ -154,8 +154,10 @@ export default function ContactModal() {
 
           <div className="min-h-0 flex-1 overflow-y-auto px-6 py-5 sm:px-8">
             <ContactForm
+              key={defaultSubject}
               idPrefix="modal-"
               messageRows={4}
+              defaultSubject={defaultSubject}
               onSuccess={closeContactModal}
             />
           </div>

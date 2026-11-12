@@ -11,10 +11,16 @@ export default function MembershipsGrid() {
         Training plans
       </div>
       <div className="mt-6 mb-9 w-20 justify-self-center border-2 border-[#005EB8]"></div>
-      <div className="mt-10 grid grid-cols-1 gap-4 justify-self-center px-4 max-sm:px-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 items-stretch gap-4 justify-self-center px-4 max-sm:px-4 md:grid-cols-2 lg:grid-cols-3">
         <MembershipTile
           title="Teens membership"
-          schedule="Saturdays 9:00am - 10:00am · Ages 11–15"
+          schedule={
+            <>
+              Saturdays 9:00am - 10:00am
+              <br />
+              Ages 11–15
+            </>
+          }
           price={`£${PRICES.teens} per month`}
           benefits={[
             "Weekly teens Krav Maga class at Firhill",
@@ -75,11 +81,12 @@ export default function MembershipsGrid() {
           title="Private tuition"
           price={`£${PRICES.private_lesson} per hour`}
           benefits={[
-            "Senior instructor with 40+ years of experience and multiple Martial Arts background",
-            "Optional female assistant instructor for female members",
+            "Taught by Barbara Sasfy — women-only, kids and adult Krav Maga instructor",
             "Fit around your schedule",
+            "Outdoor or indoor options around Glasgow",
           ]}
-          link="https://www.sumupbookings.com/scottish-krav-maga-systems-ltd"
+          contactSubject="private-corporate"
+          linkText="Inquire now"
         />
         <MembershipTile
           title="Corporate bookings"
@@ -90,7 +97,7 @@ export default function MembershipsGrid() {
             "Minimum 2 instructors, a male and a female",
             "Low cardio, no gym clothes required",
           ]}
-          link="mailto:info@scotkravmaga.co.uk"
+          contactSubject="private-corporate"
           linkText="Inquire now"
         />
       </div>
