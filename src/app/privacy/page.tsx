@@ -308,9 +308,18 @@ export default function PrivacyPolicyPage() {
             <p>
               The site needs basic technical storage to function. Non-essential
               tools (such as Meta advertising pixels on selected pages) may use
-              cookies or similar technologies. You can control cookies through
-              your browser settings. Blocking some cookies may affect site or ad
-              features.
+              cookies or similar technologies. We ask for your choice via a
+              cookie banner before loading optional tracking. You can also
+              control cookies through your browser settings. Blocking some
+              cookies may affect ad measurement.
+            </p>
+            <p>
+              To change a previous choice on this device, clear site data for
+              scotkravmaga.co.uk (or local storage key{" "}
+              <code className="rounded bg-gray-100 px-1.5 py-0.5 text-sm">
+                skms-cookie-consent
+              </code>
+              ) and reload the page.
             </p>
           </Section>
 
