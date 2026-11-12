@@ -385,7 +385,7 @@ export default function TrialPage() {
       <footer className="bg-gray-900 py-8 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
-            Scot Krav Maga Ltd - Copyright © 2011-{new Date().getFullYear()}. All Rights Reserved.
+            Scot Krav Maga Systems Ltd - Copyright © 2011-{new Date().getFullYear()}. All Rights Reserved.
           </p>
         </div>
       </footer>

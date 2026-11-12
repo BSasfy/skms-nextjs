@@ -1,6 +1,6 @@
 # January 2027 class fill — strategy
 
-**Brand:** SKMS Krav Maga (Scot Krav Maga Ltd)  
+**Brand:** SKMS Krav Maga (Scot Krav Maga Systems Ltd)  
 **Site:** https://scotkravmaga.co.uk  
 **Campaign window:** ~8 Nov 2026 → 7 Jan 2027 (women hard stop); teens/adults continue through January  
 **Meta budget:** £30 per audience (£90 total)

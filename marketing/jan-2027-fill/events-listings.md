@@ -2,7 +2,7 @@
 
 Post the same core copy on Facebook Events, Eventbrite (free), local What’s On / Glasgow directories, uni society boards, and Nextdoor if available. Update “spots” language only when you know remaining capacity.
 
-**Organiser:** SKMS Krav Maga / Scot Krav Maga Ltd  
+**Organiser:** SKMS Krav Maga / Scot Krav Maga Systems Ltd  
 **Contact:** info@scotkravmaga.co.uk · 07512 027 411  
 **Site:** https://scotkravmaga.co.uk
 
