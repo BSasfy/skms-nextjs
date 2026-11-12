@@ -11,29 +11,17 @@ import {
   getClientIp,
   isTrustedBrowserOrigin,
 } from "@/server/form-guard";
-
-const SUBJECT_LABELS: Record<string, string> = {
-  "trial-class": "Book a Trial Class",
-  "beginners-course": "Beginners Course Information",
-  "private-lessons": "Private Lessons",
-  membership: "Membership Information",
-  "general-inquiry": "General Inquiry",
-  other: "Other",
-};
+import {
+  CONTACT_SUBJECT_LABELS,
+  CONTACT_SUBJECTS,
+} from "@/app/components/contact-modal/contact-subjects";
 
 const bodySchema = z.object({
   firstName: z.string().trim().min(1).max(100),
   lastName: z.string().trim().max(100).optional().default(""),
   email: z.string().trim().email().max(254),
   phone: z.string().trim().max(40).optional().default(""),
-  subject: z.enum([
-    "trial-class",
-    "beginners-course",
-    "private-lessons",
-    "membership",
-    "general-inquiry",
-    "other",
-  ]),
+  subject: z.enum(CONTACT_SUBJECTS),
   message: z.string().trim().min(1).max(5000),
   newsletter: z.boolean().optional().default(false),
   company: z.string().max(200).optional().default(""),
@@ -123,7 +111,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const subjectLabel = SUBJECT_LABELS[data.subject] ?? data.subject;
+  const subjectLabel = CONTACT_SUBJECT_LABELS[data.subject] ?? data.subject;
   const fullName = [data.firstName, data.lastName].filter(Boolean).join(" ");
 
   const textLines = [

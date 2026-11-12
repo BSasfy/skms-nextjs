@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ContactTrigger from "../contact-modal/contact-trigger";
+import type { ContactSubject } from "../contact-modal/contact-subjects";
 
 const bannerButtonClassName =
   "inline-flex h-12 items-center justify-center rounded-lg border-2 border-transparent bg-[#1C67B1] px-5 text-base leading-none font-bold text-white transition-colors duration-200 hover:bg-blue-900 sm:h-14 sm:px-8 sm:text-lg";
@@ -16,24 +17,45 @@ export default function HeaderBanner({
   linkText,
   link2Text,
   messageUsText = "Message Us",
+  contactSubject,
   img,
+  imgPosition = "center",
 }: {
   title: string;
   subtitle: string;
   description?: string;
-  link: string;
+  link?: string;
   link2?: string;
-  linkText: string;
+  linkText?: string;
   link2Text?: string;
   messageUsText?: string;
+  /** Overrides path-based subject when Message Us opens the form. */
+  contactSubject?: ContactSubject;
   img?: string;
+  /** Vertical focus: keyword or percent from top (e.g. "20%"). */
+  imgPosition?: "center" | "top" | "bottom" | `${number}%`;
 }) {
+  const backgroundPosition =
+    imgPosition === "top"
+      ? "center top"
+      : imgPosition === "bottom"
+        ? "center bottom"
+        : imgPosition === "center"
+          ? "center center"
+          : `center ${imgPosition}`;
+  const showBookLink = Boolean(link && linkText);
+  // Solo inquire CTA uses the solid primary style.
+  const contactButtonClassName = showBookLink
+    ? messageUsButtonClassName
+    : bannerButtonClassName;
+
   return (
     <section
-      className="relative flex h-auto flex-col bg-cover bg-center bg-no-repeat text-gray-50 lg:h-80"
+      className="relative flex h-auto flex-col bg-cover bg-no-repeat text-gray-50 lg:h-80"
       style={{
         backgroundColor: "rgba(75, 75, 75, 0.7)",
         backgroundImage: `linear-gradient(rgba(6,46,95,0.7), rgba(6,46,95,0.7)), url(${img})`,
+        backgroundPosition,
       }}
     >
       {/* Desktop: leftover height above title. Mobile: tight top space */}
@@ -56,11 +78,16 @@ export default function HeaderBanner({
         <div className="h-6 w-full sm:h-8" aria-hidden="true" />
 
         <div className="flex flex-nowrap justify-center gap-3 sm:gap-10">
-          <Link href={link} className={bannerButtonClassName}>
-            {linkText}
-          </Link>
+          {showBookLink && (
+            <Link href={link!} className={bannerButtonClassName}>
+              {linkText}
+            </Link>
+          )}
           {messageUsText && (
-            <ContactTrigger className={messageUsButtonClassName}>
+            <ContactTrigger
+              className={contactButtonClassName}
+              subject={contactSubject}
+            >
               {messageUsText}
             </ContactTrigger>
           )}

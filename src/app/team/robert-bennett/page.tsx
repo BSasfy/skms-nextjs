@@ -134,33 +134,33 @@ export default function RobertBennettPage() {
             </div>
           </div>
 
-          {/* Private Tuition */}
+          {/* Corporate */}
           <div className="mb-8 rounded-lg bg-gray-50 p-6">
             <h3 className="mb-4 text-xl font-bold text-gray-900">
-              1-2-1 Tuition
+              Corporate sessions
             </h3>
             <p className="mb-4 text-gray-700">
-              Robert offers 1-2-1 tuition anywhere in Glasgow:
+              Robert leads corporate and group self defence sessions — we can
+              come to your venue or recommend one in Glasgow.
             </p>
-            <ul className="mb-4 space-y-2 text-gray-700">
-              <li>• At your garden</li>
-              <li>• Nearby park</li>
-              <li>• David Lloyd Anniesland venue</li>
-            </ul>
             <div className="space-y-2">
               <p className="text-gray-700">
-                To see our rates, visit
+                Details and rates are on our{" "}
                 <Link
-                  href="/join"
+                  href="/private-corporate-tuition"
                   className="font-semibold text-blue-600 hover:text-blue-800"
                 >
-                  THIS page
+                  private &amp; corporate page
                 </Link>
                 .
               </p>
               <p className="text-gray-700">
-                To book in, just drop us a message at info@scotkravmaga.co.uk or
-                give Robert a call on 07849114110.
+                Private 1-2-1 tuition is with Barbara — see that same page, or
+                message us to inquire.
+              </p>
+              <p className="text-gray-700">
+                To book a corporate session, email info@scotkravmaga.co.uk or
+                call Robert on 07849114110.
               </p>
             </div>
           </div>
@@ -189,9 +189,12 @@ export default function RobertBennettPage() {
           {/* Call to Action */}
           <div className="py-8 text-center">
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
-              Ready to try a class or book a 1-2-1 session?
+              Ready to try a class or book a corporate session?
             </h2>
-            <ContactTrigger className="inline-block rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700">
+            <ContactTrigger
+              className="inline-block rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700"
+              subject="private-corporate"
+            >
               SEND US A MESSAGE!
             </ContactTrigger>
           </div>
