@@ -6,6 +6,7 @@ import NavBar from "./components/nav-bar/nav-bar";
 import Footer from "./components/footer/footer";
 import { ContactModalProvider } from "./components/contact-modal/contact-modal-context";
 import ContactModal from "./components/contact-modal/contact-modal";
+import CookieBanner from "./components/cookies/cookie-banner";
 
 export const metadata: Metadata = {
   title: {
@@ -44,6 +45,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ContactModal />
+          <CookieBanner />
         </ContactModalProvider>
       </body>
     </html>

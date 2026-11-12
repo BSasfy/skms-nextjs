@@ -22,17 +22,25 @@ export default function Footer() {
           </div>
         </span>
         <div className="w-1/3 content-center justify-items-center">
-          <div className="flex gap-4">
-            <div className="relative mt-[3px] h-6 w-6">
-              <Link href="https://www.instagram.com/skmskravmaga/">
-                <Image src="/instagram_logo.png" alt="Instagram Logo" fill />
-              </Link>
+          <div className="flex flex-col items-center gap-1">
+            <div className="flex gap-4">
+              <div className="relative mt-[3px] h-6 w-6">
+                <Link href="https://www.instagram.com/skmskravmaga/">
+                  <Image src="/instagram_logo.png" alt="Instagram Logo" fill />
+                </Link>
+              </div>
+              <div className="relative mt-[3px] h-6 w-6">
+                <Link href="https://www.facebook.com/scottishkravmaga/">
+                  <Image src="/facebook_logo.png" alt="Facebook Logo" fill />
+                </Link>
+              </div>
             </div>
-            <div className="relative mt-[3px] h-6 w-6">
-              <Link href="https://www.facebook.com/scottishkravmaga/">
-                <Image src="/facebook_logo.png" alt="Facebook Logo" fill />
-              </Link>
-            </div>
+            <Link
+              href="/privacy"
+              className="text-sm hover:text-blue-300"
+            >
+              Privacy Policy
+            </Link>
           </div>
         </div>
         <div className="w-1/3 justify-items-center max-md:text-center md:justify-items-end">
@@ -62,26 +70,23 @@ export default function Footer() {
         id="mobile-footer"
         className="mx-4 flex justify-between text-[#FFFBF2] md:hidden"
       >
-        <div className="flex items-center gap-5">
-          {/* <div className="relative">
-            <Link href="tel:+4407512027411">
-              <div className="">
-                <span className="material-symbols-outlined">call</span>
-              </div>
-            </Link>
-          </div> */}
+        <div className="flex flex-col items-start gap-1">
+          <div className="flex items-center gap-5">
+            <div className="relative h-4 w-4">
+              <Link href="https://www.facebook.com/scottishkravmaga/">
+                <Image src="/facebook_logo.png" alt="Facebook Logo" fill />
+              </Link>
+            </div>
 
-          <div className="relative h-4 w-4">
-            <Link href="https://www.facebook.com/scottishkravmaga/">
-              <Image src="/facebook_logo.png" alt="Facebook Logo" fill />
-            </Link>
+            <div className="relative h-4 w-4">
+              <Link href="https://www.instagram.com/skmskravmaga/">
+                <Image src="/instagram_logo.png" alt="Instagram Logo" fill />
+              </Link>
+            </div>
           </div>
-
-          <div className="relative h-4 w-4">
-            <Link href="https://www.instagram.com/skmskravmaga/">
-              <Image src="/instagram_logo.png" alt="Instagram Logo" fill />
-            </Link>
-          </div>
+          <Link href="/privacy" className="text-xs hover:text-blue-300">
+            Privacy
+          </Link>
         </div>
 
         <div className="mx-auto flex gap-4 pt-1 pl-[10%]"></div>

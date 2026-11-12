@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useId, useRef, useState, type FormEvent } from "react";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -109,6 +110,12 @@ export default function NewsletterSignup({
           {message}
         </p>
       )}
+      <p className="mt-3 text-sm text-blue-800">
+        We use your email for the SKMS newsletter only. Unsubscribe anytime.{" "}
+        <Link href="/privacy" className="font-semibold underline hover:text-blue-950">
+          Privacy Policy
+        </Link>
+      </p>
     </div>
   );
 }

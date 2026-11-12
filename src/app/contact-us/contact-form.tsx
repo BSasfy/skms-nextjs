@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState, type FormEvent } from "react";
 
 const inputClass =
@@ -221,7 +222,14 @@ export default function ContactForm({
             </span>
             <span className="mt-0.5 block text-blue-800">
               Optional. Class news, beginners courses, and events — unsubscribe
-              anytime.
+              anytime. See our{" "}
+              <Link
+                href="/privacy"
+                className="font-semibold underline hover:text-blue-950"
+              >
+                Privacy Policy
+              </Link>
+              .
             </span>
           </label>
         </div>
