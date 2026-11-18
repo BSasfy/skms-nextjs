@@ -55,21 +55,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request." }, { status: 403 });
   }
 
-  const ip = getClientIp(request);
-  const ipLimit = checkRateLimit(`contact:ip:${ip}`, {
-    limit: 5,
-    windowMs: 15 * 60 * 1000,
-  });
-  if (!ipLimit.ok) {
-    return NextResponse.json(
-      { error: "Too many messages. Please try again later." },
-      {
-        status: 429,
-        headers: { "Retry-After": String(ipLimit.retryAfterSec) },
-      },
-    );
-  }
-
   let json: unknown;
   try {
     json = await request.json();
@@ -86,10 +71,28 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
+  const ip = getClientIp(request);
 
   const turnstile = await verifyTurnstileToken(data.turnstileToken, ip);
   if (!turnstile.ok) {
-    return NextResponse.json({ error: turnstile.error }, { status: 400 });
+    return NextResponse.json(
+      { error: turnstile.error },
+      { status: turnstile.status },
+    );
+  }
+
+  const ipLimit = checkRateLimit(`contact:ip:${ip}`, {
+    limit: 5,
+    windowMs: 15 * 60 * 1000,
+  });
+  if (!ipLimit.ok) {
+    return NextResponse.json(
+      { error: "Too many messages. Please try again later." },
+      {
+        status: 429,
+        headers: { "Retry-After": String(ipLimit.retryAfterSec) },
+      },
+    );
   }
 
   // Soft success for bots — don't tip them off

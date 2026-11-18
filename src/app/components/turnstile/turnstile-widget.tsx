@@ -5,6 +5,7 @@ import { env } from "@/env";
 
 const SCRIPT_SRC =
   "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+const SCRIPT_LOAD_TIMEOUT_MS = 12_000;
 
 type TurnstileApi = {
   render: (
@@ -42,14 +43,66 @@ function loadTurnstileScript(): Promise<void> {
   }
 
   scriptPromise = new Promise((resolve, reject) => {
+    let settled = false;
+
+    const finishOk = () => {
+      if (settled) return;
+      settled = true;
+      if (window.turnstile) {
+        resolve();
+        return;
+      }
+      scriptPromise = null;
+      reject(new Error("Turnstile loaded without API"));
+    };
+
+    const finishErr = () => {
+      if (settled) return;
+      settled = true;
+      scriptPromise = null;
+      reject(new Error("Failed to load Turnstile"));
+    };
+
     const existing = document.querySelector<HTMLScriptElement>(
       `script[src="${SCRIPT_SRC}"]`,
     );
+
     if (existing) {
-      existing.addEventListener("load", () => resolve(), { once: true });
+      if (window.turnstile) {
+        finishOk();
+        return;
+      }
+      // load may already have fired — don't hang forever waiting for it
+      if (
+        existing.dataset.loaded === "true" ||
+        existing.dataset.error === "true"
+      ) {
+        if (window.turnstile) {
+          finishOk();
+        } else {
+          finishErr();
+        }
+        return;
+      }
+
+      const timeoutId = window.setTimeout(finishErr, SCRIPT_LOAD_TIMEOUT_MS);
+
+      existing.addEventListener(
+        "load",
+        () => {
+          window.clearTimeout(timeoutId);
+          existing.dataset.loaded = "true";
+          finishOk();
+        },
+        { once: true },
+      );
       existing.addEventListener(
         "error",
-        () => reject(new Error("Failed to load Turnstile")),
+        () => {
+          window.clearTimeout(timeoutId);
+          existing.dataset.error = "true";
+          finishErr();
+        },
         { once: true },
       );
       return;
@@ -59,8 +112,19 @@ function loadTurnstileScript(): Promise<void> {
     script.src = SCRIPT_SRC;
     script.async = true;
     script.defer = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error("Failed to load Turnstile"));
+
+    const timeoutId = window.setTimeout(finishErr, SCRIPT_LOAD_TIMEOUT_MS);
+
+    script.onload = () => {
+      window.clearTimeout(timeoutId);
+      script.dataset.loaded = "true";
+      finishOk();
+    };
+    script.onerror = () => {
+      window.clearTimeout(timeoutId);
+      script.dataset.error = "true";
+      finishErr();
+    };
     document.head.appendChild(script);
   });
 
