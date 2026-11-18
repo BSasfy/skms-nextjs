@@ -175,8 +175,8 @@ export default function PrivacyPolicyPage() {
                 <strong className="font-semibold text-gray-900">
                   Security and spam prevention
                 </strong>{" "}
-                — rate limits and abuse checks on forms. Legal basis: legitimate
-                interests.
+                — rate limits, abuse checks, and Cloudflare Turnstile on forms.
+                Legal basis: legitimate interests.
               </li>
               <li>
                 <strong className="font-semibold text-gray-900">
@@ -203,6 +203,12 @@ export default function PrivacyPolicyPage() {
                 website hosting.
               </li>
               <li>
+                <strong className="font-semibold text-gray-900">
+                  Cloudflare
+                </strong>{" "}
+                — Turnstile bot checks on contact and newsletter forms.
+              </li>
+              <li>
                 <strong className="font-semibold text-gray-900">SumUp</strong> —
                 online bookings and card payments (their own privacy notice
                 applies to the checkout).
@@ -227,11 +233,11 @@ export default function PrivacyPolicyPage() {
 
           <Section id="international-transfers" title="4. International transfers">
             <p>
-              Some providers (including Brevo, Vercel, Meta, SumUp, or
-              GoCardless) may process data outside the UK. Where that happens,
-              they should use appropriate safeguards (for example UK adequacy
-              regulations or standard contractual clauses). Details are in each
-              provider’s privacy notice.
+              Some providers (including Brevo, Vercel, Cloudflare, Meta, SumUp,
+              or GoCardless) may process data outside the UK. Where that
+              happens, they should use appropriate safeguards (for example UK
+              adequacy regulations or standard contractual clauses). Details are
+              in each provider’s privacy notice.
             </p>
           </Section>
 

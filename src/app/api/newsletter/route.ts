@@ -8,11 +8,13 @@ import {
   getClientIp,
   isTrustedBrowserOrigin,
 } from "@/server/form-guard";
+import { verifyTurnstileToken } from "@/server/turnstile";
 
 const bodySchema = z.object({
   email: z.string().trim().email().max(254),
   company: z.string().max(200).optional().default(""),
   formStartedAt: z.number().optional(),
+  turnstileToken: z.string().max(2048).optional(),
 });
 
 export async function POST(request: Request) {
@@ -25,21 +27,6 @@ export async function POST(request: Request) {
 
   if (!isTrustedBrowserOrigin(request)) {
     return NextResponse.json({ error: "Invalid request." }, { status: 403 });
-  }
-
-  const ip = getClientIp(request);
-  const ipLimit = checkRateLimit(`newsletter:ip:${ip}`, {
-    limit: 8,
-    windowMs: 15 * 60 * 1000,
-  });
-  if (!ipLimit.ok) {
-    return NextResponse.json(
-      { error: "Too many attempts. Please try again later." },
-      {
-        status: 429,
-        headers: { "Retry-After": String(ipLimit.retryAfterSec) },
-      },
-    );
   }
 
   let json: unknown;
@@ -58,6 +45,29 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
+  const ip = getClientIp(request);
+
+  const turnstile = await verifyTurnstileToken(data.turnstileToken, ip);
+  if (!turnstile.ok) {
+    return NextResponse.json(
+      { error: turnstile.error },
+      { status: turnstile.status },
+    );
+  }
+
+  const ipLimit = checkRateLimit(`newsletter:ip:${ip}`, {
+    limit: 8,
+    windowMs: 15 * 60 * 1000,
+  });
+  if (!ipLimit.ok) {
+    return NextResponse.json(
+      { error: "Too many attempts. Please try again later." },
+      {
+        status: 429,
+        headers: { "Retry-After": String(ipLimit.retryAfterSec) },
+      },
+    );
+  }
 
   if (
     failsAntiSpam({

@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { useId, useRef, useState, type FormEvent } from "react";
+import TurnstileWidget, {
+  isTurnstileConfigured,
+} from "@/app/components/turnstile/turnstile-widget";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -13,8 +16,11 @@ export default function NewsletterSignup({
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileReset, setTurnstileReset] = useState(0);
   const formStartedAtRef = useRef(Date.now());
   const companyFieldId = useId();
+  const turnstileEnabled = isTurnstileConfigured();
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -22,6 +28,12 @@ export default function NewsletterSignup({
     const formData = new FormData(form);
     const companyValue = formData.get("company");
     const company = typeof companyValue === "string" ? companyValue : "";
+
+    if (turnstileEnabled && !turnstileToken) {
+      setStatus("error");
+      setMessage("Please complete the security check and try again.");
+      return;
+    }
 
     setStatus("sending");
     setMessage("");
@@ -34,6 +46,7 @@ export default function NewsletterSignup({
           email,
           company,
           formStartedAt: formStartedAtRef.current,
+          turnstileToken: turnstileToken ?? undefined,
         }),
       });
       const data = (await response.json().catch(() => null)) as {
@@ -43,6 +56,7 @@ export default function NewsletterSignup({
       if (!response.ok) {
         setStatus("error");
         setMessage(data?.error ?? "Could not subscribe. Please try again.");
+        setTurnstileReset((value) => value + 1);
         return;
       }
 
@@ -50,9 +64,11 @@ export default function NewsletterSignup({
       setMessage("You're on the list — thanks!");
       setEmail("");
       formStartedAtRef.current = Date.now();
+      setTurnstileReset((value) => value + 1);
     } catch {
       setStatus("error");
       setMessage("Could not subscribe. Please try again.");
+      setTurnstileReset((value) => value + 1);
     }
   };
 
@@ -62,7 +78,7 @@ export default function NewsletterSignup({
         Want to keep up-to-date with SKMS?
       </h3>
       <p className="mb-4 text-blue-800">Subscribe to our newsletter</p>
-      <form onSubmit={onSubmit} className="flex flex-col gap-4 sm:flex-row">
+      <form onSubmit={onSubmit} className="flex flex-col gap-4">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
@@ -77,24 +93,30 @@ export default function NewsletterSignup({
             defaultValue=""
           />
         </div>
-        <input
-          type="email"
-          name="email"
-          required
-          autoComplete="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          placeholder="Your Email Address"
-          disabled={status === "sending"}
-          className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 disabled:opacity-60"
+        <div className="flex flex-col gap-4 sm:flex-row">
+          <input
+            type="email"
+            name="email"
+            required
+            autoComplete="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="Your Email Address"
+            disabled={status === "sending"}
+            className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 disabled:opacity-60"
+          />
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {status === "sending" ? "Subscribing…" : "Subscribe"}
+          </button>
+        </div>
+        <TurnstileWidget
+          onTokenChange={setTurnstileToken}
+          resetSignal={turnstileReset}
         />
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          {status === "sending" ? "Subscribing…" : "Subscribe"}
-        </button>
       </form>
       {status === "success" && (
         <p

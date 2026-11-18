@@ -22,7 +22,8 @@ function hostFromUrl(value: string | null): string | null {
   }
 }
 
-function isAllowedHost(hostname: string | null): boolean {
+/** Shared allowlist for Origin/Referer and Turnstile siteverify hostname. */
+export function isAllowedHostname(hostname: string | null): boolean {
   if (!hostname) return false;
   if (ALLOWED_HOSTS.has(hostname)) return true;
   // Local Next.js / preview deploys
@@ -44,10 +45,10 @@ export function getClientIp(request: Request): string {
 /** Reject cross-site browser posts; allow missing Origin on non-browser clients only when Referer is ok/absent in same cases we still rate-limit. */
 export function isTrustedBrowserOrigin(request: Request): boolean {
   const originHost = hostFromUrl(request.headers.get("origin"));
-  if (originHost) return isAllowedHost(originHost);
+  if (originHost) return isAllowedHostname(originHost);
 
   const refererHost = hostFromUrl(request.headers.get("referer"));
-  if (refererHost) return isAllowedHost(refererHost);
+  if (refererHost) return isAllowedHostname(refererHost);
 
   // No Origin/Referer — common for some privacy tools; still rate-limited + honeypot
   return true;
