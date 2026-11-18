@@ -90,6 +90,15 @@ export async function verifyTurnstileToken(
       },
     );
 
+    if (!response.ok) {
+      console.error("Turnstile siteverify HTTP error:", response.status);
+      return {
+        ok: false,
+        error: "Security check is temporarily unavailable. Please try again later.",
+        status: 503,
+      };
+    }
+
     const result = (await response.json()) as SiteverifyResult;
     if (!result.success) {
       console.error("Turnstile siteverify failed:", result["error-codes"]);
@@ -115,8 +124,8 @@ export async function verifyTurnstileToken(
     console.error("Turnstile siteverify request failed:", error);
     return {
       ok: false,
-      error: "Security check failed. Please try again.",
-      status: 400,
+      error: "Security check is temporarily unavailable. Please try again later.",
+      status: 503,
     };
   } finally {
     clearTimeout(timeoutId);
