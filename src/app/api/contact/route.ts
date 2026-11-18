@@ -11,6 +11,7 @@ import {
   getClientIp,
   isTrustedBrowserOrigin,
 } from "@/server/form-guard";
+import { verifyTurnstileToken } from "@/server/turnstile";
 import {
   CONTACT_SUBJECT_LABELS,
   CONTACT_SUBJECTS,
@@ -26,6 +27,7 @@ const bodySchema = z.object({
   newsletter: z.boolean().optional().default(false),
   company: z.string().max(200).optional().default(""),
   formStartedAt: z.number().optional(),
+  turnstileToken: z.string().max(2048).optional(),
 });
 
 function escapeHtml(value: string) {
@@ -84,6 +86,11 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
+
+  const turnstile = await verifyTurnstileToken(data.turnstileToken, ip);
+  if (!turnstile.ok) {
+    return NextResponse.json({ error: turnstile.error }, { status: 400 });
+  }
 
   // Soft success for bots — don't tip them off
   if (

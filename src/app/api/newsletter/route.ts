@@ -8,11 +8,13 @@ import {
   getClientIp,
   isTrustedBrowserOrigin,
 } from "@/server/form-guard";
+import { verifyTurnstileToken } from "@/server/turnstile";
 
 const bodySchema = z.object({
   email: z.string().trim().email().max(254),
   company: z.string().max(200).optional().default(""),
   formStartedAt: z.number().optional(),
+  turnstileToken: z.string().max(2048).optional(),
 });
 
 export async function POST(request: Request) {
@@ -58,6 +60,11 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
+
+  const turnstile = await verifyTurnstileToken(data.turnstileToken, ip);
+  if (!turnstile.ok) {
+    return NextResponse.json({ error: turnstile.error }, { status: 400 });
+  }
 
   if (
     failsAntiSpam({

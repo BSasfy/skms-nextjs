@@ -8,6 +8,9 @@ import {
   isContactSubject,
   type ContactSubject,
 } from "@/app/components/contact-modal/contact-subjects";
+import TurnstileWidget, {
+  isTurnstileConfigured,
+} from "@/app/components/turnstile/turnstile-widget";
 
 const inputClass =
   "w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500";
@@ -32,14 +35,23 @@ export default function ContactForm({
 }) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileReset, setTurnstileReset] = useState(0);
   const formStartedAtRef = useRef(Date.now());
   const fieldId = (name: string) => `${idPrefix}${name}`;
+  const turnstileEnabled = isTurnstileConfigured();
 
   const sendMessage = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+
+    if (turnstileEnabled && !turnstileToken) {
+      setStatus("error");
+      setErrorMessage("Please complete the security check and try again.");
+      return;
+    }
 
     setStatus("sending");
     setErrorMessage("");
@@ -58,6 +70,7 @@ export default function ContactForm({
           newsletter: formData.get("newsletter") === "yes",
           company: formString(formData, "company"),
           formStartedAt: formStartedAtRef.current,
+          turnstileToken: turnstileToken ?? undefined,
         }),
       });
 
@@ -71,12 +84,14 @@ export default function ContactForm({
           data?.error ??
             "Something went wrong sending your message. Please try again or email info@scotkravmaga.co.uk.",
         );
+        setTurnstileReset((value) => value + 1);
         return;
       }
 
       setStatus("success");
       form.reset();
       formStartedAtRef.current = Date.now();
+      setTurnstileReset((value) => value + 1);
       if (onSuccess) {
         window.setTimeout(onSuccess, 3500);
       }
@@ -86,6 +101,7 @@ export default function ContactForm({
       setErrorMessage(
         "Something went wrong sending your message. Please try again or email info@scotkravmaga.co.uk.",
       );
+      setTurnstileReset((value) => value + 1);
     }
   };
 
@@ -245,6 +261,12 @@ export default function ContactForm({
           </label>
         </div>
       </div>
+
+      <TurnstileWidget
+        className="flex justify-center"
+        onTokenChange={setTurnstileToken}
+        resetSignal={turnstileReset}
+      />
 
       {status === "success" && (
         <p

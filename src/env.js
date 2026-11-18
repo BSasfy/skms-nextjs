@@ -17,6 +17,8 @@ export const env = createEnv({
       .optional(),
     BREVO_SENDER_EMAIL: z.string().email().optional(),
     BREVO_CONTACT_TO_EMAIL: z.string().email().optional(),
+    /** Cloudflare Turnstile secret — verify contact/newsletter form tokens */
+    TURNSTILE_SECRET_KEY: z.string().min(1).optional(),
   },
 
   /**
@@ -24,7 +26,9 @@ export const env = createEnv({
    * isn't built with invalid env vars. To expose them to the client, prefix them with
    * `NEXT_PUBLIC_`.
    */
-  client: {},
+  client: {
+    NEXT_PUBLIC_TURNSTILE_SITE_KEY: z.string().min(1).optional(),
+  },
 
   /**
    * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
@@ -38,6 +42,8 @@ export const env = createEnv({
       process.env.BREVO_CONTACT_AUTOREPLY_TEMPLATE_ID,
     BREVO_SENDER_EMAIL: process.env.BREVO_SENDER_EMAIL,
     BREVO_CONTACT_TO_EMAIL: process.env.BREVO_CONTACT_TO_EMAIL,
+    TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY,
+    NEXT_PUBLIC_TURNSTILE_SITE_KEY: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
