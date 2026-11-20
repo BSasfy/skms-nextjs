@@ -15,6 +15,16 @@ const nextConfig: NextConfig = {
         destination: "https://scottish-krav-maga-systems-ltd.sumupstore.com/",
         permanent: true,
       },
+      {
+        source: "/students",
+        destination: "/timetable",
+        permanent: true,
+      },
+      {
+        source: "/students/:path*",
+        destination: "/timetable",
+        permanent: true,
+      },
     ];
   },
 };
