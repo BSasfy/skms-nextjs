@@ -2,6 +2,7 @@ import Link from "next/link";
 import { type Metadata } from "next";
 import { BOOKING_LINKS, PRICES } from "../constants/prices";
 import ContactTrigger from "../components/contact-modal/contact-trigger";
+import HashScroll from "../components/hash-scroll";
 
 export const metadata: Metadata = {
   title: "Krav Maga Trial Class Glasgow",
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 export default function TrialPage() {
   return (
     <main className="min-h-screen bg-white">
+      <HashScroll />
       {/* Introduction + trial heading */}
       <div className="border-b border-gray-300 bg-gray-100">
         <div className="container mx-auto px-4 py-12">
@@ -50,7 +52,7 @@ export default function TrialPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-6xl">
           {/* Trial Class Pricing */}
-          <div className="mb-12">
+          <div id="trial-options" className="mb-12 scroll-mt-24">
             <h2 className="mb-8 text-center text-2xl font-bold text-gray-900">
               Book a trial class
             </h2>
@@ -100,7 +102,10 @@ export default function TrialPage() {
           </div>
 
           {/* Class Timetable */}
-          <div className="mb-12 border-l-4 border-blue-500 bg-blue-50 p-8">
+          <div
+            id="timetable"
+            className="mb-12 scroll-mt-24 border-l-4 border-blue-500 bg-blue-50 p-8"
+          >
             <h3 className="mb-6 text-2xl font-bold text-blue-900">
               Class timetable:
             </h3>
@@ -191,6 +196,14 @@ export default function TrialPage() {
                 </Link>
               </p>
             </div>
+            <div className="mt-8 text-center md:hidden">
+              <a
+                href="#trial-options"
+                className="inline-block rounded-lg bg-blue-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-blue-700"
+              >
+                Book now
+              </a>
+            </div>
           </div>
 
           {/* Call to Action */}
@@ -198,9 +211,17 @@ export default function TrialPage() {
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
               Book a trial class now – there are always spaces!
             </h2>
-            <ContactTrigger className="inline-block rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700">
-              Send us a message!
-            </ContactTrigger>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="#trial-options"
+                className="inline-block rounded-lg bg-blue-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-blue-700"
+              >
+                Book
+              </a>
+              <ContactTrigger className="inline-block rounded-lg bg-red-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-red-700">
+                Message us!
+              </ContactTrigger>
+            </div>
           </div>
 
           {/* Contact Information */}

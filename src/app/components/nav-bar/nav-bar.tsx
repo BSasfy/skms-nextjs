@@ -246,7 +246,7 @@ export default function NavBar() {
             data-mobilenavbar={isMobileMenuOpen}
             className="h-87vh absolute bottom-0 z-10 w-full p-0 data-[mobilenavbar=false]:hidden"
           >
-            <MobileNavBar />
+            <MobileNavBar onNavigate={() => setIsMobileMenuOpen(false)} />
           </div>
           <button
             type="button"

@@ -1,12 +1,40 @@
-import Link from "next/link";
+"use client";
 
-export default function MobileNavBar() {
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+type MobileNavBarProps = {
+  onNavigate: () => void;
+};
+
+function isTrialPath(pathname: string) {
+  return pathname === "/trial" || pathname === "/trial/";
+}
+
+function scrollToTimetable() {
+  document
+    .getElementById("timetable")
+    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+export default function MobileNavBar({ onNavigate }: MobileNavBarProps) {
+  const pathname = usePathname();
+
+  const handleTimetableClick = () => {
+    onNavigate();
+    if (isTrialPath(pathname)) {
+      // Same route: Next won't remount, so scroll explicitly after the overlay closes.
+      requestAnimationFrame(() => scrollToTimetable());
+    }
+  };
+
   return (
     <div className="fixed top-[80px] left-0 flex h-[90vh] w-full items-center bg-[#181818]">
       <ul className="flex w-full flex-col text-center font-medium">
         <li className="content-center">
           <Link
             href="/"
+            onClick={onNavigate}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:text-blue-500 lg:text-3xl"
           >
             Home
@@ -18,6 +46,7 @@ export default function MobileNavBar() {
         <li className="content-center">
           <Link
             href="/trial"
+            onClick={onNavigate}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Book a Trial Class
@@ -28,7 +57,8 @@ export default function MobileNavBar() {
         </li>
         <li className="content-center">
           <Link
-            href="/trial"
+            href="/trial#timetable"
+            onClick={handleTimetableClick}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Timetable
@@ -40,6 +70,7 @@ export default function MobileNavBar() {
         <li className="content-center">
           <Link
             href="/timetable"
+            onClick={onNavigate}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Beginners Courses
@@ -51,6 +82,7 @@ export default function MobileNavBar() {
         <li className="content-center">
           <Link
             href="/adults-krav-maga"
+            onClick={onNavigate}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Mixed Adult
@@ -62,6 +94,7 @@ export default function MobileNavBar() {
         <li className="content-center">
           <Link
             href="/womens-self-defence-classes"
+            onClick={onNavigate}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Women Only
@@ -73,6 +106,7 @@ export default function MobileNavBar() {
         <li className="content-center">
           <Link
             href="/kids-krav-maga"
+            onClick={onNavigate}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Teens Krav Maga
@@ -84,6 +118,7 @@ export default function MobileNavBar() {
         <li className="content-center">
           <Link
             href="/join"
+            onClick={onNavigate}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Prices
@@ -95,6 +130,7 @@ export default function MobileNavBar() {
         <li className="content-center">
           <Link
             href="/contact-us"
+            onClick={onNavigate}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Contact Us
@@ -106,6 +142,7 @@ export default function MobileNavBar() {
         <li className="content-center">
           <Link
             href="/shop"
+            onClick={onNavigate}
             className="block px-3 py-2 text-3xl font-thin text-[#FFFBF2] hover:bg-transparent hover:text-blue-500 lg:text-3xl"
           >
             Shop
