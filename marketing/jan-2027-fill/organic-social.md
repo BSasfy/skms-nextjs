@@ -22,8 +22,8 @@ Come along. Four weeks of efficient, practical training: awareness, boundaries, 
 Thursday 7 January onwards · 6–7pm · Glasgow Club Kelvinhall  
 £40 · Students £30 · No experience needed
 
-Book: https://pay.sumup.com/b2c/QHL6GMDI  
-Students: https://pay.sumup.com/b2c/QDOGQMPQ  
+Book: https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price  
+Students: https://scottish-krav-maga-systems-ltd.sumupstore.com/product/student-women-only-4-week-self-defence-course-january-2027  
 More info: https://scotkravmaga.co.uk/womens-self-defence-classes
 
 Stay Safe, Get Fit, Hit Hard.
@@ -65,8 +65,8 @@ Our women-only beginners self defence course starts Thursday 7 January.
 Women-only beginners course: Kelvinhall, Thursdays 6–7pm from 7 January. Four weeks. Efficient training, real scenarios, you put the work in and get stronger for it.
 
 £40 · Students £30  
-https://pay.sumup.com/b2c/QHL6GMDI  
-Students: https://pay.sumup.com/b2c/QDOGQMPQ
+https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price  
+Students: https://scottish-krav-maga-systems-ltd.sumupstore.com/product/student-women-only-4-week-self-defence-course-january-2027
 
 ### Post 5 — Parent testimonial (teens)
 
@@ -102,7 +102,7 @@ Women-only beginners self defence course — four Thursdays from 7 January, 6–
 
 Awareness, boundaries, practical self defence. Come along.
 
-£40 (£30 students) · https://pay.sumup.com/b2c/QHL6GMDI
+£40 (£30 students) · https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price
 
 ### Post 8 — Adults
 
@@ -134,7 +134,7 @@ Trial £10 — message Barbara to join this week.
 
 Women-only course in January, or an adult / teens trial any week. Come train.
 
-Women: https://pay.sumup.com/b2c/QHL6GMDI  
+Women: https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price  
 Trials: https://scotkravmaga.co.uk/trial
 
 ### Post 11 — Student price
@@ -149,7 +149,7 @@ Stay Safe, Get Fit, Hit Hard.
 
 Women-only course from 7 Jan · Adult and teens trials running now.
 
-Women £40 / £30 students: https://pay.sumup.com/b2c/QHL6GMDI  
+Women £40 / £30 students: https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price  
 Trials: https://scotkravmaga.co.uk/trial  
 WhatsApp 07512 027 411
 

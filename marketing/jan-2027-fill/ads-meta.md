@@ -15,8 +15,8 @@ Append UTMs to every destination URL.
 **Audience:** Women, 18–55 · Glasgow + ~15 km · interests optional: self defence, women’s fitness, personal safety (keep broad if delivery is thin)  
 **Exclude:** existing purchasers if possible  
 **Destination (preferred — direct pay):**  
-`https://pay.sumup.com/b2c/QHL6GMDI` (£40 adult)  
-**Student pay link:** `https://pay.sumup.com/b2c/QDOGQMPQ` (£30)  
+`https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price` (£40 adult)  
+**Student product link:** `https://scottish-krav-maga-systems-ltd.sumupstore.com/product/student-women-only-4-week-self-defence-course-january-2027` (£30)  
 **Alt (site for persuasion / pixel):**  
 `https://scotkravmaga.co.uk/womens-self-defence-classes?utm_source=meta&utm_medium=paid&utm_campaign=wo_jan2027`
 
@@ -25,7 +25,7 @@ Meta text limits: primary **125** (add up to **5** options on one ad), headline 
 ### Women ad (launch now) — 1 ad, 5 primary texts
 
 **CTA:** Book Now  
-**URL:** https://pay.sumup.com/b2c/QHL6GMDI  
+**URL:** https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price  
 **Headline:** Women-Only Self Defence Glasgow — Starts 7 January  
 **Description:** 4-week beginners course for women at Glasgow Club Kelvinhall. Thursdays 6–7pm from 7 January. £40 adults, £30 students. Safe space, all fitness levels.
 

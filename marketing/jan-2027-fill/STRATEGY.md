@@ -54,7 +54,7 @@ Meta alone will not hit these numbers at £30. Plan assumes **ads + organic + ev
 
 | Audience | Page | Direct book |
 |---|---|---|
-| Women | https://scotkravmaga.co.uk/womens-self-defence-classes | SumUp pay links £40 / £30 student |
+| Women | https://scotkravmaga.co.uk/womens-self-defence-classes | SumUp store products £40 / £30 student |
 | Teens | https://scotkravmaga.co.uk/kids-krav-maga | SumUp teens-trial-class · GoCardless teens membership |
 | Adults | https://scotkravmaga.co.uk/trial | SumUp adult-trial-class |
 | Timetable / beginners | https://scotkravmaga.co.uk/timetable | SumUp beginners-course category |

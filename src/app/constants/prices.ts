@@ -25,6 +25,8 @@ export const BOOKING_LINKS = {
     "https://scottish-krav-maga-systems-ltd.sumupstore.com/product/teens-trial-class",
   teensMembership:
     "https://pay.gocardless.com/BRT01M6Y9TH7QS64SVVB58FT2GEKS",
-  womenCourseAdult: "https://pay.sumup.com/b2c/QHL6GMDI",
-  womenCourseStudent: "https://pay.sumup.com/b2c/QDOGQMPQ",
+  womenCourseAdult:
+    "https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price",
+  womenCourseStudent:
+    "https://scottish-krav-maga-systems-ltd.sumupstore.com/product/student-women-only-4-week-self-defence-course-january-2027",
 };

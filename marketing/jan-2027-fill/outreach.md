@@ -53,8 +53,8 @@ Thanks for getting in touch about the women-only beginners course.
 It runs for 4 weeks from **Thursday 7 January**, 6–7pm at **Glasgow Club Kelvinhall**. £40 adults / £30 students. All fitness levels welcome — it’s a women-only safe space to learn the basics of Krav Maga.
 
 You can book here:  
-Book (£40): https://pay.sumup.com/b2c/QHL6GMDI  
-Students (£30): https://pay.sumup.com/b2c/QDOGQMPQ  
+Book (£40): https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price  
+Students (£30): https://scottish-krav-maga-systems-ltd.sumupstore.com/product/student-women-only-4-week-self-defence-course-january-2027  
 
 More detail: https://scotkravmaga.co.uk/womens-self-defence-classes  
 

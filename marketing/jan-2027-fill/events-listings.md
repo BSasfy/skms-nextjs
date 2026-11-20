@@ -16,7 +16,7 @@ Post the same core copy on Facebook Events, Eventbrite (free), local What’s On
 **End (series):** Thursday 28 January 2027, 19:00 (4 weekly sessions)  
 **Venue:** Glasgow Club Kelvinhall, Glasgow G3 8AW  
 **Map:** https://maps.app.goo.gl/rExwC7cBVm6yZpb57  
-**Ticket / book:** https://pay.sumup.com/b2c/QHL6GMDI (£40) · Students https://pay.sumup.com/b2c/QDOGQMPQ (£30)  
+**Ticket / book:** https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price (£40) · Students https://scottish-krav-maga-systems-ltd.sumupstore.com/product/student-women-only-4-week-self-defence-course-january-2027 (£30)  
 **Price:** £40 adults · £30 students  
 **Capacity note:** Limited places (~20)
 
@@ -40,8 +40,8 @@ This is a serious subject, but will be delivered in a fun and engaging way. We'l
 
 **Price:** £40 · Students £30  
 **Who:** Women 18+ (teens 14+ welcome with a participating adult)  
-**Book (£40):** https://pay.sumup.com/b2c/QHL6GMDI  
-**Students (£30):** https://pay.sumup.com/b2c/QDOGQMPQ  
+**Book (£40):** https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price  
+**Students (£30):** https://scottish-krav-maga-systems-ltd.sumupstore.com/product/student-women-only-4-week-self-defence-course-january-2027  
 **More info:** https://scotkravmaga.co.uk/womens-self-defence-classes  
 
 Any questions, just let us know — WhatsApp/call Barbara on 07512 027 411 or email info@scotkravmaga.co.uk. Places are limited.
@@ -50,7 +50,7 @@ Any questions, just let us know — WhatsApp/call Barbara on 07512 027 411 or em
 
 - Create as public event  
 - Add cover: women training / SKMS branded still  
-- Ticket URL = https://pay.sumup.com/b2c/QHL6GMDI (£40); mention student link in description  
+- Ticket URL = https://scottish-krav-maga-systems-ltd.sumupstore.com/product/women-only-4-week-self-defence-course-january-2027-full-price (£40); mention student link in description  
 - Invite past women students + interested friends list once
 
 ---
